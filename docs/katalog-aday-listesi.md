@@ -1,4 +1,32 @@
-# Katalog aday listesi (onay bekliyor)
+# Katalog aday listesi (Melih onayladı, 17.11.2026)
+
+## Sonuç: kataloğa girenler ve girmeyenler
+
+Teknik özellikler üreticilerin sayfalarından toplandı; kayıtlar `data/catalog/` altında. **Katalogda 102 parça var.**
+
+**Üreticinin sayfası bulunamadığı için girmeyenler**
+
+- be quiet! Pure Rock 2: be quiet! sitesinden kalkmış; yerinde Pure Rock 3 ailesi var.
+- NZXT Kraken 360 (2024): NZXT'te bu adla bir sayfa yok (404). Güncel 360 mm modeller: Kraken Plus 360, Kraken Core 360, Kraken Elite 360.
+
+**Türkiye'de listelenmediği için çıkarılanlar** (Akakçe'de arandı, sonuç çıkmadı)
+
+- Fractal Design Pop Air, Montech AIR 903 Max, be quiet! Pure Base 500DX, Cooler Master MasterBox NR200P V2.
+- Cooler Master MasterBox Q300L: Akakçe'de yalnızca **Q300L V2** çıkıyor.
+- Bu yüzden katalogda şu an Micro-ATX ve Mini-ITX'e özel kasa yok (kalan 8 kasanın hepsi bu anakartları da alıyor).
+
+**Değişenler**
+
+- Lian Li O11 Dynamic EVO → **O11 Dynamic EVO RGB**: Lian Li'nin O11 Dynamic EVO sayfası RGB sürümüne yönleniyor.
+- Seasonic FOCUS GX-750 / GX-850 ATX 3 → güncel **ATX 3.1 (v5)** sürümü.
+
+**Türkiye'de satış kontrolü**
+
+- Kasa, işlemci soğutucu ve işlemcilerin hepsi Akakçe'de arandı. Kalan kasalar, soğutucular ve 15 işlemcinin hepsi listeleniyor.
+- Şu soğutucuların Akakçe'de yalnızca başka sürümleri görüldü: DeepCool AK620 (WH, Zero Dark, G2), Arctic Freezer 36 (ARGB), Arctic Liquid Freezer III 240 / 360 (ARGB ve Pro). Ölçüleri ve soket desteği bu sürümlerde farklı olabilir; kataloğa üreticinin sayfasındaki temel sürüm girdi.
+- Ekran kartı, bellek, anakart, güç kaynağı ve depolamada Akakçe araması uzun model adlarında güvenilir sonuç vermedi (çoğu zaman yalnızca başlık eşleşti). Bu kategorilerde satış durumu 3. aşamada fiyat motoruyla kesinleşecek; mağazada bulunamayan parça orada "bulunamadı" görünür.
+
+---
 
 İlk katalog için önerdiğim modeller: 8 kategori, platformlar AMD AM5 ve AM4, Intel LGA1851 ve LGA1700. Bu liste **yalnızca model adlarıdır**; burada hiçbir teknik özellik ya da fiyat yok.
 
