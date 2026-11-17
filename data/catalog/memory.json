@@ -1,1 +1,572 @@
-[]
+[
+  {
+    "id": "memory-g-skill-flare-x5-ddr5-6000-cl30-32-gb-2-16-gb",
+    "category": "memory",
+    "brand": "G.Skill",
+    "model": "Flare X5 DDR5-6000 CL30 32 GB (2×16 GB)",
+    "mpn": "F5-6000J3038F16GX2-FX5",
+    "sources": {
+      "maker": {
+        "url": "https://www.gskill.com/specification/165/396/1673491242/F5-6000J3038F16GX2-FX5-Specification",
+        "retrieved": "2026-11-17",
+        "title": "G.Skill Flare X5 teknik özellikler"
+      },
+      "overview": {
+        "url": "https://www.gskill.com/product/165/396/1673491242/F5-6000J3038F16GX2-FX5",
+        "retrieved": "2026-11-17",
+        "title": "G.Skill Flare X5 genel bakış"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 32,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 6000,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 30,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": 33,
+        "source": "overview",
+        "note": "\"low-profile module height at 33mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-g-skill-trident-z5-neo-rgb-ddr5-6000-cl30-64-gb-2-32-gb",
+    "category": "memory",
+    "brand": "G.Skill",
+    "model": "Trident Z5 Neo RGB DDR5-6000 CL30 64 GB (2×32 GB)",
+    "mpn": "F5-6000J3040G32GX2-TZ5NR",
+    "sources": {
+      "maker": {
+        "url": "https://www.gskill.com/specification/165/390/1665020865/F5-6000J3040G32GX2-TZ5NR-Specification",
+        "retrieved": "2026-11-17",
+        "title": "G.Skill Trident Z5 Neo RGB teknik özellikler"
+      },
+      "overview": {
+        "url": "https://www.gskill.com/product/165/390/1665020865/F5-6000J3040G32GX2-TZ5NR",
+        "retrieved": "2026-11-17",
+        "title": "G.Skill Trident Z5 Neo RGB genel bakış"
+      },
+      "faq": {
+        "url": "https://www.gskill.com/faq/1502180912/DRAM-Memory",
+        "retrieved": "2026-11-17",
+        "title": "G.Skill SSS (modül yükseklikleri)"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 64,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 6000,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 30,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": 44,
+        "source": "faq",
+        "note": "G.Skill SSS: \"Trident Z5 Neo RGB: 44mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-kingston-fury-beast-ddr5-6000-cl30-32-gb-2-16-gb-expo",
+    "category": "memory",
+    "brand": "Kingston",
+    "model": "FURY Beast DDR5-6000 CL30 32 GB (2×16 GB) EXPO",
+    "mpn": "KF560C30BBEK2-32",
+    "sources": {
+      "maker": {
+        "url": "https://www.kingston.com/en/memory/search?partid=KF560C30BBEK2-32",
+        "retrieved": "2026-11-17",
+        "title": "Kingston parça arama sayfası"
+      },
+      "family": {
+        "url": "https://www.kingston.com/en/memory/gaming/kingston-beast-ddr5-memory",
+        "retrieved": "2026-11-17",
+        "title": "Kingston Beast DDR5 ürün ailesi sayfası"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 32,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 6000,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 30,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": 34.9,
+        "source": "family",
+        "note": "Aile sayfası: \"Dimensions 133.35 mm x 34.9 mm x 6.62 mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-kingston-fury-beast-ddr5-5600-cl40-32-gb-2-16-gb",
+    "category": "memory",
+    "brand": "Kingston",
+    "model": "FURY Beast DDR5-5600 CL40 32 GB (2×16 GB)",
+    "mpn": "KF556C40BBK2-32",
+    "sources": {
+      "maker": {
+        "url": "https://www.kingston.com/en/memory/search?partid=KF556C40BBK2-32",
+        "retrieved": "2026-11-17",
+        "title": "Kingston parça arama sayfası"
+      },
+      "family": {
+        "url": "https://www.kingston.com/en/memory/gaming/kingston-beast-ddr5-memory",
+        "retrieved": "2026-11-17",
+        "title": "Kingston Beast DDR5 ürün ailesi sayfası"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 32,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 5600,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 40,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": 34.9,
+        "source": "family",
+        "note": "Aile sayfası: \"Dimensions 133.35 mm x 34.9 mm x 6.62 mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-corsair-vengeance-ddr5-6000-cl30-32-gb-2-16-gb",
+    "category": "memory",
+    "brand": "Corsair",
+    "model": "Vengeance DDR5-6000 CL30 32 GB (2×16 GB)",
+    "mpn": "CMK32GX5M2B6000C30",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/memory/cmk32gx5m2b6000c30/vengeance-32gb-2x16gb-ddr5-dram-6000mt-s-c30-memory-kit-black-cmk32gx5m2b6000c30",
+        "retrieved": "2026-11-17",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 32,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 6000,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 30,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": null,
+        "note": "Corsair ürün sayfasında modül yüksekliği yazmıyor."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-corsair-vengeance-rgb-ddr5-6000-cl30-64-gb-2-32-gb",
+    "category": "memory",
+    "brand": "Corsair",
+    "model": "Vengeance RGB DDR5-6000 CL30 64 GB (2×32 GB)",
+    "mpn": "CMH64GX5M2B6000C30",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/memory/cmh64gx5m2b6000c30/vengeance-rgb-64gb-2x32gb-ddr5-dram-6000mt-s-cl30-memory-kit-black-cmh64gx5m2b6000c30",
+        "retrieved": "2026-11-17",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 64,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 6000,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 30,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": null,
+        "note": "Corsair ürün sayfasında modül yüksekliği yazmıyor."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-teamgroup-t-force-delta-rgb-ddr5-6000-cl30-32-gb-2-16-gb",
+    "category": "memory",
+    "brand": "TeamGroup",
+    "model": "T-Force Delta RGB DDR5-6000 CL30 32 GB (2×16 GB)",
+    "mpn": "FF3D532G6000HC30DC01",
+    "sources": {
+      "maker": {
+        "url": "https://www.teamgroupinc.com/en/product-detail/memory/T-FORCE/delta-rgb-ddr5-black/delta-rgb-ddr5-black-FF3D532G6000HC30DC01/",
+        "retrieved": "2026-11-17",
+        "title": "TeamGroup ürün sayfası"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 32,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 6000,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 30,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": 46.1,
+        "source": "maker",
+        "note": "\"Dimensions 46.1(H) x 144.2(L) x 7(W)mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-kingston-fury-beast-ddr4-3200-cl16-16-gb-2-8-gb",
+    "category": "memory",
+    "brand": "Kingston",
+    "model": "FURY Beast DDR4-3200 CL16 16 GB (2×8 GB)",
+    "mpn": "KF432C16BBK2/16",
+    "sources": {
+      "maker": {
+        "url": "https://www.kingston.com/en/memory/search?partid=KF432C16BBK2%2F16",
+        "retrieved": "2026-11-17",
+        "title": "Kingston parça arama sayfası"
+      },
+      "family": {
+        "url": "https://www.kingston.com/en/memory/gaming/kingston-beast-ddr4-memory",
+        "retrieved": "2026-11-17",
+        "title": "Kingston Beast DDR4 ürün ailesi sayfası"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 16,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 3200,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 16,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": 34.1,
+        "source": "family",
+        "note": "Aile sayfası: \"Dimensions 133.35mm x 34.1mm x 7.2mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-kingston-fury-beast-ddr4-3600-cl18-32-gb-2-16-gb",
+    "category": "memory",
+    "brand": "Kingston",
+    "model": "FURY Beast DDR4-3600 CL18 32 GB (2×16 GB)",
+    "mpn": "KF436C18BBK2/32",
+    "sources": {
+      "maker": {
+        "url": "https://www.kingston.com/en/memory/search?partid=KF436C18BBK2%2F32",
+        "retrieved": "2026-11-17",
+        "title": "Kingston parça arama sayfası"
+      },
+      "family": {
+        "url": "https://www.kingston.com/en/memory/gaming/kingston-beast-ddr4-memory",
+        "retrieved": "2026-11-17",
+        "title": "Kingston Beast DDR4 ürün ailesi sayfası"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 32,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 3600,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 18,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": 34.1,
+        "source": "family",
+        "note": "Aile sayfası: \"Dimensions 133.35mm x 34.1mm x 7.2mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-corsair-vengeance-lpx-ddr4-3200-cl16-32-gb-2-16-gb",
+    "category": "memory",
+    "brand": "Corsair",
+    "model": "Vengeance LPX DDR4-3200 CL16 32 GB (2×16 GB)",
+    "mpn": "CMK32GX4M2E3200C16",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/memory/cmk32gx4m2e3200c16/vengeance-lpx-32gb-2-x-16gb-ddr4-dram-3200mhz-c16-memory-kit-black-cmk32gx4m2e3200c16",
+        "retrieved": "2026-11-17",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 32,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 3200,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 16,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": null,
+        "note": "Corsair ürün sayfasında modül yüksekliği yazmıyor."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-g-skill-ripjaws-v-ddr4-3600-cl16-32-gb-2-16-gb",
+    "category": "memory",
+    "brand": "G.Skill",
+    "model": "Ripjaws V DDR4-3600 CL16 32 GB (2×16 GB)",
+    "mpn": "F4-3600C16D-32GVKC",
+    "sources": {
+      "maker": {
+        "url": "https://www.gskill.com/specification/165/184/1562831784/F4-3600C16D-32GVKC-Specification",
+        "retrieved": "2026-11-17",
+        "title": "G.Skill Ripjaws V teknik özellikler"
+      },
+      "overview": {
+        "url": "https://www.gskill.com/product/165/184/1562831784/F4-3600C16D-32GVKC",
+        "retrieved": "2026-11-17",
+        "title": "G.Skill Ripjaws V genel bakış"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 32,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 3600,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 16,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": 42,
+        "source": "overview",
+        "note": "\"42mm Module Height\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-g-skill-ripjaws-v-ddr4-3200-cl16-64-gb-2-32-gb",
+    "category": "memory",
+    "brand": "G.Skill",
+    "model": "Ripjaws V DDR4-3200 CL16 64 GB (2×32 GB)",
+    "mpn": "F4-3200C16D-64GVK",
+    "sources": {
+      "maker": {
+        "url": "https://www.gskill.com/specification/165/184/1571733948/F4-3200C16D-64GVK-Specification",
+        "retrieved": "2026-11-17",
+        "title": "G.Skill Ripjaws V teknik özellikler"
+      },
+      "overview": {
+        "url": "https://www.gskill.com/product/165/184/1571733948/F4-3200C16D-64GVK",
+        "retrieved": "2026-11-17",
+        "title": "G.Skill Ripjaws V genel bakış"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 64,
+        "source": "maker"
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 3200,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 16,
+        "source": "maker"
+      },
+      "heightMm": {
+        "value": 42,
+        "source": "overview",
+        "note": "\"42mm Module Height\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  }
+]
