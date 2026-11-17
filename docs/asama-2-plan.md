@@ -11,6 +11,15 @@ Kapsam: uygulama iskeleti, katalog, uyumluluk, 3D kasa ve Kasa Topla ekranı. Me
 - **İlk katalog:** 8 kategoride, her birinde Türkiye'de satılan 10–15 güncel parça. Platformlar: AMD AM5 ve AM4, Intel LGA1851 ve LGA1700.
 - **Fiyatlar:** 3. aşamaya kadar yok. Fiyat alanı "Fiyat: henüz yok" olarak görünür; hiçbir fiyat uydurulmaz.
 
+### Başlarken netleşenler (17.11.2026, Melih onayladı)
+
+- **Çalışma düzeni:** `asama-2` dalında, her adım ayrı commit; sonunda PR.
+- **Ara kontrol:** İskelet, katalog ve uyumluluk bitince durulur, uygulama gösterilir; sonra 3D ve Kasa Topla ekranı.
+- **Katalog parçaları:** Önce aday model listesi (`docs/katalog-aday-listesi.md`) Melih'in onayına sunulur, özellikler onaydan sonra üretici sayfalarından toplanır. Ölçüsü markaya göre değişen kategorilerde (ekran kartı, RAM, soğutucu) belirli ürünler girer, referans kart değil.
+- **Bilinmeyen değer:** "bilinmiyor" görünür; o değere bağlı kural "uyarı: kontrol edilemedi" döndürür, uyumlu saymaz.
+- **İşlemci gücü:** Üreticinin yayımladığı değerlerin hepsi saklanır (Intel: temel güç ve en yüksek turbo gücü; AMD: TDP). Güç hesabında yayımlanmış en yüksek değer kullanılır.
+- **Güç hesabı varsayımları** (arayüzde "varsayım" olarak görünür): diğer parçalar için sabit 100 W; tahmini tüketim güç kaynağının %80'ini geçerse uyarı, %100'ünü geçerse uyumsuz; güç kaynağı ekran kartı üreticisinin önerdiği değerin altındaysa uyarı.
+
 ## Yapılacaklar (sırayla)
 
 ### 1. Proje iskeleti
