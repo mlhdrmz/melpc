@@ -85,6 +85,12 @@ describe('çözümleme ve gösterim', () => {
     expect(
       formatSpecValue(getSpecDef('case', 'radiatorMounts')!, [{ position: 'top', sizesMm: [240, 360] }])
     ).toBe('Üst: 240 / 360 mm')
+    expect(
+      formatSpecValue(getSpecDef('case', 'radiatorMounts')!, [
+        { position: 'top', maxMm: 420 },
+        { position: 'rear', sizesMm: [120] }
+      ])
+    ).toBe('Üst: en fazla 420 mm · Arka: 120 mm')
   })
   it('kısa özet bilinmeyenleri atlar', () => {
     expect(partSummary(resolvePart(record()))).toBe('8 çekirdek · AM5')

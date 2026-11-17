@@ -202,7 +202,12 @@ export function formatSpecValue(def: SpecDef, value: SpecValue | null): string {
     }
     case 'radiatorMounts':
       return (value as RadiatorMount[])
-        .map((m) => `${RADIATOR_POSITION_LABELS[m.position]}: ${m.sizesMm.join(' / ')} mm`)
+        .map(
+          (m) =>
+            `${RADIATOR_POSITION_LABELS[m.position]}: ${
+              m.sizesMm ? `${m.sizesMm.join(' / ')} mm` : `en fazla ${m.maxMm} mm`
+            }`
+        )
         .join(' · ')
   }
 }

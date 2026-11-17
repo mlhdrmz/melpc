@@ -138,6 +138,13 @@ describe('soğutucu', () => {
       'fail'
     )
   })
+  it('yalnızca en büyük boyu verilen yerde o boya kadar radyatör kabul edilir', () => {
+    const kasa = caseAtx({ radiatorMounts: [{ position: 'top', maxMm: 360 }] })
+    const ok = coolerFitRule({ ...empty, cooler: liquidCooler({ radiatorSizeMm: 280 }), case: kasa })
+    expect(ok?.status).toBe('ok')
+    expect(ok?.message).toContain('en fazla 360 mm')
+    expect(coolerFitRule({ ...empty, cooler: liquidCooler({ radiatorSizeMm: 420 }), case: kasa })?.status).toBe('fail')
+  })
   it('tipi bilinmiyorsa uyarı', () => {
     expect(coolerFitRule({ ...empty, cooler: airCooler({ coolerType: null }), case: caseAtx() })?.status).toBe('warn')
   })

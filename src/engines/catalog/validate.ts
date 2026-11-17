@@ -33,16 +33,15 @@ function checkValue(def: SpecDef, value: unknown): string | null {
         : 'konnektör → adet nesnesi olmalı'
     case 'radiatorMounts':
       return Array.isArray(value) &&
-        value.every(
-          (m) =>
-            isObject(m) &&
-            RADIATOR_POSITIONS.includes(m.position as never) &&
-            Array.isArray(m.sizesMm) &&
-            m.sizesMm.length > 0 &&
-            m.sizesMm.every((s) => Number.isInteger(s) && s > 0)
-        )
+        value.every((m) => {
+          if (!isObject(m) || !RADIATOR_POSITIONS.includes(m.position as never)) return false
+          const posInt = (s: unknown): boolean => Number.isInteger(s) && (s as number) > 0
+          const sizesOk = m.sizesMm === undefined || (Array.isArray(m.sizesMm) && m.sizesMm.length > 0 && m.sizesMm.every(posInt))
+          const maxOk = m.maxMm === undefined || posInt(m.maxMm)
+          return sizesOk && maxOk && (m.sizesMm !== undefined || m.maxMm !== undefined)
+        })
         ? null
-        : 'radyatör yeri listesi olmalı ({ position, sizesMm })'
+        : 'radyatör yeri listesi olmalı ({ position, sizesMm } ya da { position, maxMm })'
   }
 }
 

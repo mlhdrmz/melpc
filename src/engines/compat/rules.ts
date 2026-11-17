@@ -198,7 +198,10 @@ export const coolerFitRule: Rule = (b) => {
     [mounts, 'kasanın radyatör yerleri']
   ])
   if (missing.length) return unknownResult(id, title, cats, missing)
-  const fits = mounts!.filter((m) => m.sizesMm.includes(size!)).map((m) => RADIATOR_POSITION_LABELS[m.position])
+  // Boyları sayılan yerlerde tam eşleşme aranır; yalnızca en büyük boyu verilen yerlerde o boya kadar kabul edilir.
+  const fits = mounts!
+    .filter((m) => (m.sizesMm ? m.sizesMm.includes(size!) : m.maxMm !== undefined && size! <= m.maxMm))
+    .map((m) => RADIATOR_POSITION_LABELS[m.position] + (m.sizesMm ? '' : ` (en fazla ${mm(m.maxMm!)})`))
   return fits.length
     ? result(id, 'ok', title, `${mm(size!)} radyatör kasaya takılabilir: ${fits.join(', ')}.`, cats)
     : result(id, 'fail', title, `Kasada ${mm(size!)} radyatör takılabilecek bir yer yok.`, cats)

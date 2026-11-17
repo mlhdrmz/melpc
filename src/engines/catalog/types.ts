@@ -25,10 +25,16 @@ export interface SourceRef {
 
 export type RadiatorPosition = 'front' | 'top' | 'rear' | 'bottom' | 'side'
 
+/**
+ * Kasada bir radyatör yeri. Üretici ya boyları tek tek sayar (sizesMm) ya da yalnızca en büyük boyu verir
+ * ("up to 420 mm" → maxMm). İkisinden en az biri bulunur.
+ */
 export interface RadiatorMount {
   position: RadiatorPosition
   /** Bu yere takılabilen radyatör boyları (mm), ör. [240, 280, 360]. */
-  sizesMm: number[]
+  sizesMm?: number[]
+  /** Üreticinin yalnızca en büyük boyu verdiği durumda o boy (mm). */
+  maxMm?: number
 }
 
 /** Konnektör adı → adet, ör. { "8-pin": 2, "16-pin": 1 }. */

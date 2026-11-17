@@ -1,1 +1,804 @@
-[]
+[
+  {
+    "id": "case-lian-li-lancool-216",
+    "category": "case",
+    "brand": "Lian Li",
+    "model": "Lancool 216",
+    "mpn": "LANCOOL 216X",
+    "sources": {
+      "maker": {
+        "url": "https://lian-li.com/product/lancool-216/",
+        "retrieved": "2026-11-17",
+        "title": "Lian Li ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "E-ATX",
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"E-ATX (Under 280mm)/ATX/Micro-ATX/Mini-ITX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 392,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 180.5,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "front",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "top",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "bottom",
+            "sizesMm": [
+              240
+            ]
+          }
+        ],
+        "source": "maker"
+      },
+      "maxPsuLengthMm": {
+        "value": 220,
+        "source": "maker",
+        "note": "\"ATX (Under 220mm)\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-lian-li-lancool-207",
+    "category": "case",
+    "brand": "Lian Li",
+    "model": "Lancool 207",
+    "sources": {
+      "maker": {
+        "url": "https://lian-li.com/product/lancool-207/",
+        "retrieved": "2026-11-17",
+        "title": "Lian Li ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Standard ATX ( Width Max 244mm ) /Micro-ATX/Mini-ITX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 375,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 180,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          }
+        ],
+        "source": "maker"
+      },
+      "maxPsuLengthMm": {
+        "value": 160,
+        "source": "maker",
+        "note": "\"ATX (Under 160mm)\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-lian-li-o11-dynamic-evo-rgb",
+    "category": "case",
+    "brand": "Lian Li",
+    "model": "O11 Dynamic EVO RGB",
+    "sources": {
+      "maker": {
+        "url": "https://lian-li.com/product/o11d-evo-rgb/",
+        "retrieved": "2026-11-17",
+        "title": "Lian Li ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "E-ATX",
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"E-ATX (Under 280mm)/ATX /M-ATX/MINI-ITX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 455.7,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 167,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              240,
+              360,
+              420
+            ]
+          },
+          {
+            "position": "side",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "bottom",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          }
+        ],
+        "source": "maker"
+      },
+      "maxPsuLengthMm": {
+        "value": 220,
+        "source": "maker",
+        "note": "\"ATX (Under 220mm)\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-fractal-design-north",
+    "category": "case",
+    "brand": "Fractal Design",
+    "model": "North",
+    "sources": {
+      "maker": {
+        "url": "https://www.fractal-design.com/products/cases/north/north/",
+        "retrieved": "2026-11-17",
+        "title": "Fractal Design ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker"
+      },
+      "maxGpuLengthMm": {
+        "value": 355,
+        "source": "maker",
+        "note": "Önde 360 mm radyatörle en fazla 300 mm"
+      },
+      "maxCoolerHeightMm": {
+        "value": 145,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "front",
+            "sizesMm": [
+              120,
+              140,
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "top",
+            "sizesMm": [
+              120,
+              240
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120
+            ]
+          }
+        ],
+        "source": "maker",
+        "note": "Sayfadaki \"Side radiator compatibility 2x 120/140 mm\" satırı radyatör boyu olarak alınmadı."
+      },
+      "maxPsuLengthMm": {
+        "value": 255,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-fractal-design-pop-air",
+    "category": "case",
+    "brand": "Fractal Design",
+    "model": "Pop Air",
+    "sources": {
+      "maker": {
+        "url": "https://www.fractal-design.com/products/cases/pop/pop-air/",
+        "retrieved": "2026-11-17",
+        "title": "Fractal Design ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "Bağlantı \"Pop Air RGB Orange Core TG Clear Tint\" sürümünün sayfasına yönleniyor"
+      },
+      "maxGpuLengthMm": {
+        "value": 405,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 170,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              120,
+              240
+            ]
+          },
+          {
+            "position": "front",
+            "sizesMm": [
+              120,
+              240,
+              280
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120
+            ]
+          }
+        ],
+        "source": "maker"
+      },
+      "maxPsuLengthMm": {
+        "value": 170,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-corsair-4000d-airflow",
+    "category": "case",
+    "brand": "Corsair",
+    "model": "4000D Airflow",
+    "mpn": "CC-9011200-WW",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/pc-cases/cc-9011200-ww/4000d-airflow-tempered-glass-mid-tower-atx-case-black-cc-9011200-ww",
+        "retrieved": "2026-11-17",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "E-ATX",
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Mini-ITX | MicroATX | ATX | E-ATX (305mm x 277mm)\""
+      },
+      "maxGpuLengthMm": {
+        "value": 360,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 170,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "front",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120
+            ]
+          }
+        ],
+        "source": "maker",
+        "note": "Corsair tablosunda üst radyatör satırı yok; ön ve arka yazıldığı gibi alındı."
+      },
+      "maxPsuLengthMm": {
+        "value": 220,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-corsair-3500x",
+    "category": "case",
+    "brand": "Corsair",
+    "model": "3500X",
+    "mpn": "CC-9011276-WW",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/pc-cases/cc-9011276-ww/3500x-mid-tower-pc-case-cc-9011276-ww",
+        "retrieved": "2026-11-17",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "E-ATX",
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Mini-ITX,Micro-ATX,ATX,E-ATX (305mm x 277mm)\""
+      },
+      "maxGpuLengthMm": {
+        "value": 425,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 170,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "side",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120
+            ]
+          }
+        ],
+        "source": "maker"
+      },
+      "maxPsuLengthMm": {
+        "value": 180,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-nzxt-h5-flow-2024",
+    "category": "case",
+    "brand": "NZXT",
+    "model": "H5 Flow (2024)",
+    "mpn": "CC-H52FB-01",
+    "sources": {
+      "maker": {
+        "url": "https://support.nzxt.com/hc/en-us/articles/40225168535451-H5-Flow-2024-Specs",
+        "retrieved": "2026-11-17",
+        "title": "NZXT destek sayfası (H5 Flow 2024 teknik özellikler)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "E-ATX",
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"E-ATX (Up to 277 mm wide), ATX, Micro-ATX, Mini-ITX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 410,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 170,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "maxMm": 240
+          },
+          {
+            "position": "front",
+            "maxMm": 360
+          }
+        ],
+        "source": "maker",
+        "note": "Üst: \"Up to 240 mm (120 mm base)\"; 280 mm yalnızca düşük profilli bellekle. Ön: \"Up to 360 mm (120 mm base)\", \"Up to 280 mm (140 mm base)\"."
+      },
+      "maxPsuLengthMm": {
+        "value": 200,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-nzxt-h9-flow",
+    "category": "case",
+    "brand": "NZXT",
+    "model": "H9 Flow",
+    "mpn": "CM-H92FB-01",
+    "sources": {
+      "maker": {
+        "url": "https://nzxt.com/en-intl/products/h9-flow",
+        "retrieved": "2026-11-17",
+        "title": "NZXT ürün sayfası (Specs)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "E-ATX",
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"E-ATX (Up to 277 mm), ATX, Micro-ATX, Mini-ITX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 459,
+        "source": "maker",
+        "note": "Sağ öne 56 mm kalın 420 mm sıvı soğutma takılırsa en fazla 410 mm"
+      },
+      "maxCoolerHeightMm": {
+        "value": 165,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "side",
+            "maxMm": 420
+          },
+          {
+            "position": "top",
+            "maxMm": 420
+          },
+          {
+            "position": "bottom",
+            "maxMm": 360
+          },
+          {
+            "position": "rear",
+            "maxMm": 120
+          }
+        ],
+        "source": "maker",
+        "note": "\"Front-Right Radiator Up to 420 mm\" yan (sağ ön) yer olarak yazıldı."
+      },
+      "maxPsuLengthMm": {
+        "value": 200,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-montech-air-903-max",
+    "category": "case",
+    "brand": "Montech",
+    "model": "AIR 903 Max",
+    "sources": {
+      "maker": {
+        "url": "https://www.montechpc.com/air-903-max",
+        "retrieved": "2026-11-17",
+        "title": "Montech ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "E-ATX",
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker"
+      },
+      "maxGpuLengthMm": {
+        "value": 400,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 180,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              120,
+              140,
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "front",
+            "sizesMm": [
+              120,
+              140,
+              240,
+              280,
+              360
+            ]
+          }
+        ],
+        "source": "maker"
+      },
+      "maxPsuLengthMm": {
+        "value": 240,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-be-quiet-pure-base-500dx",
+    "category": "case",
+    "brand": "be quiet!",
+    "model": "Pure Base 500DX",
+    "sources": {
+      "maker": {
+        "url": "https://www.bequiet.com/en/case/1854",
+        "retrieved": "2026-11-17",
+        "title": "be quiet! ürün sayfası"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker"
+      },
+      "maxGpuLengthMm": {
+        "value": 369,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 190,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              120,
+              240
+            ]
+          },
+          {
+            "position": "front",
+            "sizesMm": [
+              120,
+              140,
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120,
+              140
+            ]
+          }
+        ],
+        "source": "maker"
+      },
+      "maxPsuLengthMm": {
+        "value": 258,
+        "source": "maker",
+        "note": "\"Maximum dimensions excl. bottom fan 258\"; alt fan takılıysa 225 mm"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-cooler-master-masterbox-q300l",
+    "category": "case",
+    "brand": "Cooler Master",
+    "model": "MasterBox Q300L",
+    "sources": {
+      "maker": {
+        "url": "https://www.coolermaster.com/en-global/products/masterbox-q300l.html",
+        "retrieved": "2026-11-17",
+        "title": "Cooler Master ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker"
+      },
+      "maxGpuLengthMm": {
+        "value": 360,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 159,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "front",
+            "sizesMm": [
+              120,
+              240
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120
+            ]
+          }
+        ],
+        "source": "maker"
+      },
+      "maxPsuLengthMm": {
+        "value": 160,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-cooler-master-masterbox-nr200p-v2",
+    "category": "case",
+    "brand": "Cooler Master",
+    "model": "MasterBox NR200P V2",
+    "mpn": "NR200PV2-KCNN-S00",
+    "sources": {
+      "maker": {
+        "url": "https://www.coolermaster.com/en-global/products/masterbox-nr200p-v2.html",
+        "retrieved": "2026-11-17",
+        "title": "Cooler Master ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Mini-ITX, Max. size: 170 x180mm\""
+      },
+      "maxGpuLengthMm": {
+        "value": 357,
+        "source": "maker",
+        "note": "Ön braketi aşarak 357 mm, aşmadan 334 mm (güç soketi dahil)"
+      },
+      "maxCoolerHeightMm": {
+        "value": 67,
+        "source": "maker",
+        "note": "Üretici sayfasında \"Clearance - CPU Cooler 67mm\" yazıyor"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              120,
+              140,
+              240,
+              280
+            ]
+          }
+        ],
+        "source": "maker"
+      },
+      "maxPsuLengthMm": {
+        "value": 130,
+        "source": "maker",
+        "note": "Yalnızca SFX / SFX-L güç kaynağı (\"Power Supply Support SFX, SFX-L\")"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  }
+]
