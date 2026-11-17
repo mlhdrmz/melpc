@@ -1,1 +1,819 @@
-[]
+[
+  {
+    "id": "motherboard-asus-rog-strix-x870e-e-gaming-wifi",
+    "category": "motherboard",
+    "brand": "ASUS",
+    "model": "ROG Strix X870E-E Gaming WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-x870e-e-gaming-wifi/spec/",
+        "retrieved": "2026-11-17",
+        "title": "ASUS ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "X870E",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 5,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. 1 × PCIe 5.0 x16 (işlemciden); 1 × PCIe 4.0 x16 yuva, x4 modunda (yonga setinden)."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-msi-mag-b850-tomahawk-max-wifi",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "MAG B850 Tomahawk Max WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/MAG-B850-TOMAHAWK-MAX-WIFI/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B850",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 3,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. PCI_E1 PCIe 5.0 x16 (işlemciden); PCI_E2 PCIe 3.0 en fazla x1, PCI_E3 PCIe 4.0 en fazla x4 (yonga setinden)."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-gigabyte-b850-aorus-elite-wifi7-rev-1-x",
+    "category": "motherboard",
+    "brand": "Gigabyte",
+    "model": "B850 Aorus Elite WiFi7 (rev. 1.x)",
+    "sources": {
+      "maker": {
+        "url": "https://www.gigabyte.com/Motherboard/B850-AORUS-ELITE-WIFI7-rev-1x/sp",
+        "retrieved": "2026-11-17",
+        "title": "Gigabyte ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B850",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 3,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 3,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. PCIEX16 PCIe 5.0 x16 (işlemciden); yonga setine bağlı 2 yuva PCIe 3.0 x1 hızında çalışır."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-msi-mag-b650-tomahawk-wifi",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "MAG B650 Tomahawk WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/MAG-B650-TOMAHAWK-WIFI/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B650",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 3,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 6,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. PCI_E1 PCIe 4.0 x16 (işlemciden); PCI_E2 PCIe 4.0 en fazla x2 (yonga setinden)."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-asus-tuf-gaming-b650-plus-wifi",
+    "category": "motherboard",
+    "brand": "ASUS",
+    "model": "TUF Gaming B650-Plus WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b650-plus-wifi/techspec/",
+        "retrieved": "2026-11-17",
+        "title": "ASUS ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B650",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 3,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. 1 × PCIe 4.0 x16 (işlemciden); 1 × PCIe 4.0 x16 yuva, x4 modunda (yonga setinden)."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-msi-pro-b650m-a-wifi",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "PRO B650M-A WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/PRO-B650M-A-WIFI/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B650",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. Ryzen 9000/7000 ile x16/x4 çalışır; PCI_E1 PCIe 4.0 x16 (işlemciden)."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-asrock-b650m-pro-rs-wifi",
+    "category": "motherboard",
+    "brand": "ASRock",
+    "model": "B650M Pro RS WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.asrock.com/mb/AMD/B650M%20Pro%20RS%20WiFi/index.asp#Specification",
+        "retrieved": "2026-11-17",
+        "title": "ASRock ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B650",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 3,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. PCIE1 PCIe 4.0 x16; PCIE2 PCIe 3.0 x16 yuva, x4 modunda."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-asus-rog-strix-b850-i-gaming-wifi",
+    "category": "motherboard",
+    "brand": "ASUS",
+    "model": "ROG Strix B850-I Gaming WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://rog.asus.com/motherboards/rog-strix/rog-strix-b850-i-gaming-wifi/spec/",
+        "retrieved": "2026-11-17",
+        "title": "ASUS ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B850",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "Mini-ITX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 2,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 128,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 2,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. Ryzen 9000/7000 ile PCIe 5.0 x16."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-msi-mag-b550-tomahawk",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "MAG B550 Tomahawk",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/MAG-B550-TOMAHAWK/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM4",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B550",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker",
+        "note": "Tabloda tip yazmıyor; MSI sayfa başlığında \"AMD AM4 DDR4\" yazıyor."
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 128,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 6,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. MSI tablosunda \"PCI-E X16: 2\"."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-gigabyte-b550m-ds3h-rev-1-0-1-1-1-2-1-3",
+    "category": "motherboard",
+    "brand": "Gigabyte",
+    "model": "B550M DS3H (rev. 1.0/1.1/1.2/1.3)",
+    "sources": {
+      "maker": {
+        "url": "https://www.gigabyte.com/Motherboard/B550M-DS3H-rev-10-11-12-13/sp",
+        "retrieved": "2026-11-17",
+        "title": "Gigabyte ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM4",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B550",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 128,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. PCIEX16 işlemciden (Ryzen 5000/3000 ile PCIe 4.0 x16); PCIEX4 yuvası x16 boyunda, PCIe 3.0 x4 hızında (yonga setinden)."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-msi-mag-z890-tomahawk-wifi",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "MAG Z890 Tomahawk WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/MAG-Z890-TOMAHAWK-WIFI/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1851",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "Z890",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 3,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. PCI_E1 PCIe 5.0 x16 (işlemciden); PCI_E2 ve PCI_E3 PCIe 4.0 en fazla x4 (yonga setinden)."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-asus-tuf-gaming-b860-plus-wifi",
+    "category": "motherboard",
+    "brand": "ASUS",
+    "model": "TUF Gaming B860-Plus WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b860-plus-wifi/techspec/",
+        "retrieved": "2026-11-17",
+        "title": "ASUS ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1851",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B860",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 3,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. 1 × PCIe 5.0 x16 (işlemciden); 1 × PCIe 4.0 x16 yuva, x4 modunda (yonga setinden)."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-msi-mag-z790-tomahawk-wifi",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "MAG Z790 Tomahawk WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (teknik özellikler)"
+      },
+      "overview": {
+        "url": "https://www.msi.com/Motherboard/MAG-Z790-TOMAHAWK-WIFI",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (genel bakış)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1700",
+        "source": "overview",
+        "note": "Teknik özellik tablosunda soket yazmıyor; genel bakış sayfasında \"for LGA 1700 socket\"."
+      },
+      "chipset": {
+        "value": "Z790",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 7,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. Ayrıca 1 × PCIe x1 yuva."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-msi-pro-b760m-a-wifi",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "PRO B760M-A WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/PRO-B760M-A-WIFI/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1700",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B760",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. Ayrıca 1 × PCIe x1 yuva."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-msi-pro-b760m-p-ddr4",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "PRO B760M-P DDR4",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/PRO-B760M-P-DDR4/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1700",
+        "source": "maker"
+      },
+      "chipset": {
+        "value": "B760",
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker"
+      },
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker"
+      },
+      "maxMemoryGb": {
+        "value": 128,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker"
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. Ayrıca 2 × PCIe x1 yuva."
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  }
+]
