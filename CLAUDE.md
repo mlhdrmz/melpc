@@ -23,12 +23,17 @@ Hem oyuncu hem mühendis dostu olmalı.
 
 - **Platform:** Windows masaüstü uygulaması. Şimdilik yalnızca Melih'in kişisel kullanımı için; hesap ve giriş sistemi yok.
 - **Teknoloji:** Electron, 3D için Three.js, yerel veritabanı olarak SQLite. Arayüz HTML/CSS/JS ile yazılır.
+- **Arayüz çatısı:** React + TypeScript, Vite ile. 3D görünüm Three.js ile, React Three Fiber üzerinden yazılır.
+- **Veritabanı kütüphanesi:** Windows'ta ek derleme aracı (Visual Studio Build Tools, Python) gerektirmeyen bir SQLite kütüphanesi.
+- **Fontlar:** Uygulama internetsiz de açılabilmeli; fontlar (Saira, Inter) uygulamanın içine paketlenir.
 - **Tasarım yönü:** "B · Vitrin" taslağı: koyu zemin, mor ve turkuaz ışıklar, kasa ekranın ortasında büyük. Logo olarak "A · Atölye" taslağındaki çip logosu kullanılır.
 - **İlk sürümün (v1) kapsamı:** Yalnızca masaüstü kasa toplama. Laptop ve monitörler sonraki sürümde; klavye, mouse, monitör kolu gibi çevre birimleri daha sonra.
 - **Pazar:** Türkiye. Fiyatlar TL olarak, Türkiye'deki mağazalardan alınır.
 - **Fiyat takibi:** Baştan otomatik (bkz. Fiyat motoru).
 - **Açıklamalar:** "Neden iyi, neden kötü" metinleri önceden yazılmış kurallara dayanır. Uygulamanın içinde canlı yapay zekâ yok (API maliyeti yüzünden).
-- **3D:** Tek bir standart kasa (genel model). Anakart, işlemci ve soğutucusu, RAM, ekran kartı, güç kaynağı (PSU), diskler ve fanların kasada genelde nerede durduğunu gösterir. Kasa toplama ekranında seçilen parçanın yeri vurgulanır. Her ürün için ayrı 3D model yapılmaz.
+- **Kasa görünümü:** MelPC'ye özgü bir kasa. Gri metal gövde, pahlı kenarlar, köşeleri vidalı cam yan pencere, camın altında mor-turkuaz ışık çizgisi ve güç kaynağını örten havalandırmalı bir bant var; ön yüzde ışıklı, ızgaralı bir altıgen ve arkasında üç fan bulunuyor. Herhangi bir markanın kasasının kopyası değil; üzerinde yazı ya da logo yok.
+- **3D:** Tek bir standart kasa (genel model); bütün toplamalarda aynı temel görsel kullanılır. Parçalar gerçekte durdukları yerde, ATX ölçülerine göre yerleşir (bkz. `design/kasa-olculeri.md`). Temel görselde sıvı soğutma (işlemcide pompa, tavanda 360 mm radyatör ve 3 fan), arka fan, önde 3 fan ve mor-siyah kılıflı kablolar var. Kasa Topla ekranında seçilen parçanın yeri mor ışıkla vurgulanır. Her ürün için ayrı 3D model yapılmaz.
+- **3D görünümün yapısı:** Görünüm, ileride laptop modeli de eklenebilecek şekilde kurulur; gösterilen "gövde modeli" (masaüstü kasa, laptop) değiştirilebilir olmalı.
 - **Kurulum dosyası:** Şimdilik yok. Uygulama sık güncelleneceği için sonraya bırakıldı. Geliştirme sırasında `npm install` ve `npm start` ile çalıştırılır.
 
 ## Motorlar
@@ -53,16 +58,23 @@ Uygulamanın mantığı, birbiriyle birlikte çalışan motorlara ayrılır:
 
 ## Aşamalar
 
-1. Proje dokümanı ve tasarım taslakları. "B · Vitrin" seçildi; kasanın görünümü örnek fotoğrafa göre netleşecek. ← **şu an burada**
-2. Uygulama iskeleti, katalog, uyumluluk, 3D kasa ve Kasa Topla ekranı.
+1. Proje dokümanı ve tasarım taslakları. ✓ Tamamlandı: "B · Vitrin" seçildi, kasanın dışı ve içi netleşti (bkz. `design/`).
+2. Uygulama iskeleti, katalog, uyumluluk, 3D kasa ve Kasa Topla ekranı. ← **şu an burada** — ayrıntılı plan: `docs/asama-2-plan.md` (Melih onayladı)
 3. Fiyat motoru (Türkiye mağazaları).
 4. Karşılaştırma ekranları, puanlama, açıklamalar ve hazır satılan kasalarla karşılaştırma.
 5. "Bilgisayarım": kendi bilgisayarını okuma ve yükseltme önerileri.
 
 Sonra: laptop ve monitörler; klavye, mouse, ek ekran ve monitör kolu gibi çevre birimleri; "bilgisayar nasıl toplanır" rehberi; kurulum dosyası.
 
+Laptop görseli (laptoplar eklendiğinde ya da 5. aşamada): Laptoplarda toplama yok; işlemci ve ekran kartı karta lehimli, kullanıcı genelde yalnızca RAM (bazı modellerde), SSD ve bazen Wi-Fi kartını değiştirebilir. Bu yüzden görsel "içinde ne var, neyi yükseltebilirim" sorusuna cevap verir. Genel düzen: arkada iki fan ve ısı boruları, altlarında işlemci ve ekran kartı, ortada RAM ve SSD yuvaları, önde batarya. İnce laptoplar için RAM'in lehimli olduğu ikinci bir sürüm gerekebilir. Melih'in kendi bilgisayarı da bir laptop; "Bilgisayarım" ekranında yükseltme önerilerini bu görselle göstermek işe yarar.
+
+## Tasarım dosyaları (`design/`)
+
+- `kasa-topla-vitrin.html`: Seçilen "B · Vitrin" Kasa Topla ekranı; tarayıcıda tek başına açılır. Görünüşün referansıdır, uygulamaya doğrudan kopyalanacak kod değildir.
+- `kasa-ici.svg` ve `kasa-gorunumu.png`: Kasanın dışı ve sıvı soğutmalı iç görseli.
+- `kasa-olculeri.md`: 3D modelde kullanılacak koordinat sistemi ve parçaların milimetre cinsinden yerleri.
+- Taslaklardaki parça adları, fiyatlar, puanlar ve mağazalar örnektir; gerçek değildir.
+
 ## Henüz karar verilmeyenler (başlamadan önce Melih'e sor)
 
-- Kasanın görünümü: kutu gibi değil, daha farklı bir kasa olacak. Melih örnek bir kasa fotoğrafı gönderecek; kasa ona göre çizilecek.
-- Arayüz çatısı: React, Svelte ya da sade JavaScript.
 - Takip edilecek mağazalar. Öneri: İtopya, Gaming.gen.tr, Vatan Bilgisayar, İncehesap, Sinerji, Hepsiburada, Amazon Türkiye. 3. aşamada kesinleşecek.
