@@ -23,6 +23,9 @@ Hem oyuncu hem mühendis dostu olmalı.
 
 - **Platform:** Windows masaüstü uygulaması. Şimdilik yalnızca Melih'in kişisel kullanımı için; hesap ve giriş sistemi yok.
 - **Teknoloji:** Electron, 3D için Three.js, yerel veritabanı olarak SQLite. Arayüz HTML/CSS/JS ile yazılır.
+- **Arayüz çatısı:** React + TypeScript, Vite ile. 3D görünüm Three.js ile, React Three Fiber üzerinden yazılır.
+- **Veritabanı kütüphanesi:** Windows'ta ek derleme aracı (Visual Studio Build Tools, Python) gerektirmeyen bir SQLite kütüphanesi.
+- **Fontlar:** Uygulama internetsiz de açılabilmeli; fontlar (Saira, Inter) uygulamanın içine paketlenir.
 - **Tasarım yönü:** "B · Vitrin" taslağı: koyu zemin, mor ve turkuaz ışıklar, kasa ekranın ortasında büyük. Logo olarak "A · Atölye" taslağındaki çip logosu kullanılır.
 - **İlk sürümün (v1) kapsamı:** Yalnızca masaüstü kasa toplama. Laptop ve monitörler sonraki sürümde; klavye, mouse, monitör kolu gibi çevre birimleri daha sonra.
 - **Pazar:** Türkiye. Fiyatlar TL olarak, Türkiye'deki mağazalardan alınır.
@@ -56,7 +59,7 @@ Uygulamanın mantığı, birbiriyle birlikte çalışan motorlara ayrılır:
 ## Aşamalar
 
 1. Proje dokümanı ve tasarım taslakları. ✓ Tamamlandı: "B · Vitrin" seçildi, kasanın dışı ve içi netleşti (bkz. `design/`).
-2. Uygulama iskeleti, katalog, uyumluluk, 3D kasa ve Kasa Topla ekranı. ← **şu an burada**
+2. Uygulama iskeleti, katalog, uyumluluk, 3D kasa ve Kasa Topla ekranı. ← **şu an burada** — ayrıntılı plan: `docs/asama-2-plan.md` (Melih onayladı)
 3. Fiyat motoru (Türkiye mağazaları).
 4. Karşılaştırma ekranları, puanlama, açıklamalar ve hazır satılan kasalarla karşılaştırma.
 5. "Bilgisayarım": kendi bilgisayarını okuma ve yükseltme önerileri.
@@ -74,5 +77,4 @@ Laptop görseli (laptoplar eklendiğinde ya da 5. aşamada): Laptoplarda toplama
 
 ## Henüz karar verilmeyenler (başlamadan önce Melih'e sor)
 
-- Arayüz çatısı: React, Svelte ya da sade JavaScript.
 - Takip edilecek mağazalar. Öneri: İtopya, Gaming.gen.tr, Vatan Bilgisayar, İncehesap, Sinerji, Hepsiburada, Amazon Türkiye. 3. aşamada kesinleşecek.
