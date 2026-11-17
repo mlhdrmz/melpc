@@ -1,0 +1,35 @@
+/* B · Vitrin tasarım dili (design/kasa-topla-vitrin.html). */
+:root {
+  --bg: #0b0a10;
+  --bg-stage: #0d0b14;
+  --surface: #15131e;
+  --surface-2: #221e31;
+  --surface-selected: #1f1a33;
+  --line: #221e31;
+  --line-header: #1f1c2c;
+  --line-strong: #3a3452;
+  --line-control: #2b2740;
+  --control: #15121f;
+  --control-active: #2b2442;
+
+  --text: #f2effa;
+  --text-soft: #d9d3f0;
+  --muted: #aaa4c2;
+
+  --violet: #a58bff;
+  --violet-hover: #c6b6ff;
+  --cyan: #62d2f4;
+  --logo: #5cc8ff;
+  --warn: #f3cd63;
+  --warn-bg: #2a2416;
+  --ok-bg: #142430;
+  /* Uyumsuz durumu: tasarım taslağında yoktu, 2. aşamada eklendi. */
+  --fail: #ff7d93;
+  --fail-bg: #2e1620;
+
+  --font-display: 'Saira', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+  --radius-card: 14px;
+  --radius-panel: 18px;
+}
