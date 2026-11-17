@@ -1,1 +1,907 @@
-[]
+[
+  {
+    "id": "cpu-amd-ryzen-9-9950x3d",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 9 9950X3D",
+    "mpn": "100-100000719WOF",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 16,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 32,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 4.3,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 5.7,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 170,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "AMD Radeon™ Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-amd-ryzen-7-9800x3d",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 7 9800X3D",
+    "mpn": "100-100001084WOF",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 8,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 16,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 4.7,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 5.2,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 120,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "AMD Radeon™ Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-amd-ryzen-7-9700x",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 7 9700X",
+    "mpn": "100-100001404WOF",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9700x.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 8,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 16,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.8,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 5.5,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "AMD Radeon™ Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-amd-ryzen-5-9600x",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 5 9600X",
+    "mpn": "100-100001405WOF",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9600x.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 6,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 12,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.9,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 5.4,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "AMD Radeon™ Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-amd-ryzen-7-7800x3d",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 7 7800X3D",
+    "mpn": "100-100000910WOF",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800x3d.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 8,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 16,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 4.2,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 5,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 120,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "AMD Radeon™ Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-amd-ryzen-5-7600",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 5 7600",
+    "mpn": "100-100001015BOX",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 6,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 12,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.8,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 5.1,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "AMD Radeon™ Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-amd-ryzen-7-5700x3d",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 7 5700X3D",
+    "mpn": "100-100001503WOF",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-7-5700x3d.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM4",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 8,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 16,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 4.1,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 105,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": false,
+        "source": "maker",
+        "note": "AMD sayfasında \"Discrete Graphics Card Required\" yazıyor"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR4"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-amd-ryzen-5-5600",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 5 5600",
+    "mpn": "100-100000927BOX",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-5-5600.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM4",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 6,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 12,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.5,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 4.4,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": false,
+        "source": "maker",
+        "note": "AMD sayfasında \"Discrete Graphics Card Required\" yazıyor"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR4"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-intel-core-ultra-9-285k",
+    "category": "cpu",
+    "brand": "Intel",
+    "model": "Core Ultra 9 285K",
+    "mpn": "BX80768285K",
+    "sources": {
+      "maker": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/241060/intel-core-ultra-9-processor-285k-36m-cache-up-to-5-70-ghz/specifications.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Specifications)"
+      },
+      "ordering": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/241060/intel-core-ultra-9-processor-285k-36m-cache-up-to-5-70-ghz/ordering.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Ordering and Compliance)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1851",
+        "source": "maker",
+        "note": "Intel sayfasında FCLGA1851"
+      },
+      "cores": {
+        "value": 24,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 24,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.7,
+        "source": "maker",
+        "note": "Performans çekirdeği (P-core) temel frekansı"
+      },
+      "boostClockGhz": {
+        "value": 5.7,
+        "source": "maker",
+        "note": "Max Turbo Frequency"
+      },
+      "tdpW": {
+        "value": 125,
+        "source": "maker",
+        "note": "Intel \"Processor Base Power\""
+      },
+      "maxTurboPowerW": {
+        "value": 250,
+        "source": "maker",
+        "note": "Intel \"Maximum Turbo Power\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "Intel® Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-intel-core-ultra-7-265k",
+    "category": "cpu",
+    "brand": "Intel",
+    "model": "Core Ultra 7 265K",
+    "mpn": "BX80768265K",
+    "sources": {
+      "maker": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/241063/intel-core-ultra-7-processor-265k-30m-cache-up-to-5-50-ghz/specifications.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Specifications)"
+      },
+      "ordering": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/241063/intel-core-ultra-7-processor-265k-30m-cache-up-to-5-50-ghz/ordering.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Ordering and Compliance)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1851",
+        "source": "maker",
+        "note": "Intel sayfasında FCLGA1851"
+      },
+      "cores": {
+        "value": 20,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 20,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.9,
+        "source": "maker",
+        "note": "Performans çekirdeği (P-core) temel frekansı"
+      },
+      "boostClockGhz": {
+        "value": 5.5,
+        "source": "maker",
+        "note": "Max Turbo Frequency"
+      },
+      "tdpW": {
+        "value": 125,
+        "source": "maker",
+        "note": "Intel \"Processor Base Power\""
+      },
+      "maxTurboPowerW": {
+        "value": 250,
+        "source": "maker",
+        "note": "Intel \"Maximum Turbo Power\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "Intel® Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-intel-core-ultra-5-245k",
+    "category": "cpu",
+    "brand": "Intel",
+    "model": "Core Ultra 5 245K",
+    "mpn": "BX80768245K",
+    "sources": {
+      "maker": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/241067/intel-core-ultra-5-processor-245k-24m-cache-up-to-5-20-ghz/specifications.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Specifications)"
+      },
+      "ordering": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/241067/intel-core-ultra-5-processor-245k-24m-cache-up-to-5-20-ghz/ordering.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Ordering and Compliance)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1851",
+        "source": "maker",
+        "note": "Intel sayfasında FCLGA1851"
+      },
+      "cores": {
+        "value": 14,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 14,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 4.2,
+        "source": "maker",
+        "note": "Performans çekirdeği (P-core) temel frekansı"
+      },
+      "boostClockGhz": {
+        "value": 5.2,
+        "source": "maker",
+        "note": "Max Turbo Frequency"
+      },
+      "tdpW": {
+        "value": 125,
+        "source": "maker",
+        "note": "Intel \"Processor Base Power\""
+      },
+      "maxTurboPowerW": {
+        "value": 159,
+        "source": "maker",
+        "note": "Intel \"Maximum Turbo Power\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "Intel® Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-intel-core-i7-14700k",
+    "category": "cpu",
+    "brand": "Intel",
+    "model": "Core i7-14700K",
+    "mpn": "BX8071514700K",
+    "sources": {
+      "maker": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/236783/intel-core-i7-processor-14700k-33m-cache-up-to-5-60-ghz/specifications.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Specifications)"
+      },
+      "ordering": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/236783/intel-core-i7-processor-14700k-33m-cache-up-to-5-60-ghz/ordering.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Ordering and Compliance)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1700",
+        "source": "maker",
+        "note": "Intel sayfasında FCLGA1700"
+      },
+      "cores": {
+        "value": 20,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 28,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.4,
+        "source": "maker",
+        "note": "Performans çekirdeği (P-core) temel frekansı"
+      },
+      "boostClockGhz": {
+        "value": 5.6,
+        "source": "maker",
+        "note": "Max Turbo Frequency"
+      },
+      "tdpW": {
+        "value": 125,
+        "source": "maker",
+        "note": "Intel \"Processor Base Power\""
+      },
+      "maxTurboPowerW": {
+        "value": 253,
+        "source": "maker",
+        "note": "Intel \"Maximum Turbo Power\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "Intel® UHD Graphics 770"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5",
+          "DDR4"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-intel-core-i5-14600k",
+    "category": "cpu",
+    "brand": "Intel",
+    "model": "Core i5-14600K",
+    "mpn": "BX8071514600K",
+    "sources": {
+      "maker": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/236799/intel-core-i5-processor-14600k-24m-cache-up-to-5-30-ghz/specifications.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Specifications)"
+      },
+      "ordering": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/236799/intel-core-i5-processor-14600k-24m-cache-up-to-5-30-ghz/ordering.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Ordering and Compliance)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1700",
+        "source": "maker",
+        "note": "Intel sayfasında FCLGA1700"
+      },
+      "cores": {
+        "value": 14,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 20,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.5,
+        "source": "maker",
+        "note": "Performans çekirdeği (P-core) temel frekansı"
+      },
+      "boostClockGhz": {
+        "value": 5.3,
+        "source": "maker",
+        "note": "Max Turbo Frequency"
+      },
+      "tdpW": {
+        "value": 125,
+        "source": "maker",
+        "note": "Intel \"Processor Base Power\""
+      },
+      "maxTurboPowerW": {
+        "value": 181,
+        "source": "maker",
+        "note": "Intel \"Maximum Turbo Power\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "Intel® UHD Graphics 770"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5",
+          "DDR4"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-intel-core-i5-14400f",
+    "category": "cpu",
+    "brand": "Intel",
+    "model": "Core i5-14400F",
+    "mpn": "BX8071514400F",
+    "sources": {
+      "maker": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/236777/intel-core-i5-processor-14400f-20m-cache-up-to-4-70-ghz/specifications.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Specifications)"
+      },
+      "ordering": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/236777/intel-core-i5-processor-14400f-20m-cache-up-to-4-70-ghz/ordering.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Ordering and Compliance)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1700",
+        "source": "maker",
+        "note": "Intel sayfasında FCLGA1700"
+      },
+      "cores": {
+        "value": 10,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 16,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 2.5,
+        "source": "maker",
+        "note": "Performans çekirdeği (P-core) temel frekansı"
+      },
+      "boostClockGhz": {
+        "value": 4.7,
+        "source": "maker",
+        "note": "Max Turbo Frequency"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "Intel \"Processor Base Power\""
+      },
+      "maxTurboPowerW": {
+        "value": 148,
+        "source": "maker",
+        "note": "Intel \"Maximum Turbo Power\""
+      },
+      "integratedGraphics": {
+        "value": false,
+        "source": "maker",
+        "note": "Intel sayfasında grafik (GPU) bölümü yok; F modeli dahili grafik içermez"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5",
+          "DDR4"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-intel-core-i5-12400f",
+    "category": "cpu",
+    "brand": "Intel",
+    "model": "Core i5-12400F",
+    "mpn": "BX8071512400F",
+    "sources": {
+      "maker": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/134587/intel-core-i512400f-processor-18m-cache-up-to-4-40-ghz/specifications.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Specifications)"
+      },
+      "ordering": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/134587/intel-core-i512400f-processor-18m-cache-up-to-4-40-ghz/ordering.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel ürün sayfası (Ordering and Compliance)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1700",
+        "source": "maker",
+        "note": "Intel sayfasında FCLGA1700"
+      },
+      "cores": {
+        "value": 6,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 12,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 2.5,
+        "source": "maker",
+        "note": "Performans çekirdeği (P-core) temel frekansı"
+      },
+      "boostClockGhz": {
+        "value": 4.4,
+        "source": "maker",
+        "note": "Max Turbo Frequency"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "Intel \"Processor Base Power\""
+      },
+      "maxTurboPowerW": {
+        "value": 117,
+        "source": "maker",
+        "note": "Intel \"Maximum Turbo Power\""
+      },
+      "integratedGraphics": {
+        "value": false,
+        "source": "maker",
+        "note": "Intel sayfasında grafik (GPU) bölümü yok; F modeli dahili grafik içermez"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5",
+          "DDR4"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  }
+]
