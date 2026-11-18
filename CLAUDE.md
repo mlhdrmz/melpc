@@ -62,8 +62,8 @@ Uygulamanın mantığı, birbiriyle birlikte çalışan motorlara ayrılır:
 1. Proje dokümanı ve tasarım taslakları. ✓ Tamamlandı: "B · Vitrin" seçildi, kasanın dışı ve içi netleşti (bkz. `design/`).
 2. Uygulama iskeleti, katalog, uyumluluk, 3D kasa ve Kasa Topla ekranı. ✓ Tamamlandı — plan: `docs/asama-2-plan.md`
 3. Fiyat motoru (Türkiye mağazaları). ✓ Tamamlandı — plan ve açık kalanlar: `docs/asama-3-plan.md`
-4. Karşılaştırma ekranları, puanlama, açıklamalar ve hazır satılan kasalarla karşılaştırma. ← **şu an burada** — ayrıntılı plan: `docs/asama-4-plan.md` (Melih onayladı)
-5. "Bilgisayarım": kendi bilgisayarını okuma ve yükseltme önerileri.
+4. Karşılaştırma ekranları, puanlama, açıklamalar ve hazır satılan kasalarla karşılaştırma. ✓ Tamamlandı — plan ve açık kalanlar: `docs/asama-4-plan.md`
+5. "Bilgisayarım": kendi bilgisayarını okuma ve yükseltme önerileri. ← **şu an burada**
 
 Sonra: laptop ve monitörler; klavye, mouse, ek ekran ve monitör kolu gibi çevre birimleri; "bilgisayar nasıl toplanır" rehberi; kurulum dosyası.
 
