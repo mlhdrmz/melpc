@@ -815,5 +815,65 @@
     },
     "addedAt": "2026-11-17",
     "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "motherboard-asus-prime-b650m-r",
+    "category": "motherboard",
+    "brand": "ASUS",
+    "model": "Prime B650M-R",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/motherboards/prime/prime-b650m-r/techspec/",
+        "retrieved": "2026-11-18",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker",
+        "note": "\"AMD Socket AM5 for AMD Ryzen™ 9000 & 8000 & 7000 Series Desktop Processors\""
+      },
+      "chipset": {
+        "value": "B650",
+        "source": "maker",
+        "note": "\"AMD B650 Chipset\""
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker",
+        "note": "\"micro-ATX Form Factor\", 23,6 × 22,1 cm"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 2,
+        "source": "maker",
+        "note": "\"2 x DIMM slots, Max. 96GB, DDR5\""
+      },
+      "maxMemoryGb": {
+        "value": 96,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "M.2_1 ve M.2_2, ikisi de \"supports PCIe 4.0 x4 mode\""
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker",
+        "note": "\"4 x SATA 6Gb/s ports\""
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı. Ryzen 9000/7000 ile x16, Ryzen 8000 ile x8/x4 çalışır; ayrıca 1 × PCIe 4.0 x1."
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
   }
 ]

@@ -627,5 +627,126 @@
     },
     "addedAt": "2026-11-18",
     "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "case-asus-rog-z11",
+    "category": "case",
+    "brand": "ASUS",
+    "model": "ROG Z11",
+    "sources": {
+      "maker": {
+        "url": "https://rog.asus.com/cases/rog-z11-model/spec/",
+        "retrieved": "2026-11-18",
+        "title": "ASUS ROG ürün sayfası (Spec)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Motherboard Support\": \"Mini-ITX\", \"Mini-DTX\" (Mini-DTX katalogdaki form faktörleri arasında yok)."
+      },
+      "maxGpuLengthMm": {
+        "value": 320,
+        "source": "maker",
+        "note": "\"Maximum GPU Length\": \"320 mm\""
+      },
+      "maxCoolerHeightMm": {
+        "value": 130,
+        "source": "maker",
+        "note": "\"Maximum CPU Cooler Height\": \"130 mm\""
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "rear",
+            "sizesMm": [
+              120,
+              240
+            ]
+          }
+        ],
+        "source": "maker",
+        "note": "\"Radiator Support (Rear)\": \"120 mm\", \"240 mm\". Sayfada başka radyatör yeri yazmıyor."
+      },
+      "maxPsuLengthMm": {
+        "value": 160,
+        "source": "maker",
+        "note": "\"Maximum PSU Length\": \"160 mm (ATX or SFX)\""
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "case-bitfenix-grafi",
+    "category": "case",
+    "brand": "BitFenix",
+    "model": "Grafi",
+    "mpn": "BFC-GRM-KKGSK-4F",
+    "sources": {
+      "maker": {
+        "url": "https://www.bitfenix.com/products/chassis-2/atx/grafi/specs/",
+        "retrieved": "2026-11-18",
+        "title": "BitFenix ürün sayfası (Specs)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Mini-ITX, MicroATX, ATX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 360,
+        "source": "maker",
+        "note": "\"VGA Length Support\": \"360mm\""
+      },
+      "maxCoolerHeightMm": {
+        "value": 163,
+        "source": "maker",
+        "note": "\"Air Cooler Height Support\": \"163mm\""
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "front",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "top",
+            "sizesMm": [
+              240,
+              280
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120
+            ]
+          }
+        ],
+        "source": "maker",
+        "note": "Ön: \"360mm x 1/280mm x 1/ 240mm x 1 (Thickness up to 27mm)\"; üst: \"240mm x 1/ 280mm x 1 (Thickness up to 27mm)\"; arka: \"120mm x 1\"."
+      },
+      "maxPsuLengthMm": {
+        "value": 200,
+        "source": "maker",
+        "note": "\"ATX & Standard / up to 200mm\""
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
   }
 ]

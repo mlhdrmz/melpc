@@ -571,5 +571,86 @@
     },
     "addedAt": "2026-11-17",
     "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "storage-lexar-nm610pro-500-gb",
+    "category": "storage",
+    "brand": "Lexar",
+    "model": "NM610PRO 500 GB",
+    "mpn": "LNM610P500G-RNNNG",
+    "sources": {
+      "maker": {
+        "url": "https://resources.lexar.com/download/2043/na-version/14553/lexar_productsheet_nm610pro_ssd_202507.pdf",
+        "retrieved": "2026-11-18",
+        "title": "Lexar NM610 PRO ürün föyü (PDF)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker",
+        "note": "\"M.2 2280 PCIe Gen 3x4 NVMe SSD\""
+      },
+      "interface": {
+        "value": "PCIe 3.0",
+        "source": "maker",
+        "note": "\"PCIe Gen3x4\""
+      },
+      "capacityGb": {
+        "value": 500,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 3300,
+        "source": "maker",
+        "note": "500GB: \"sequential read up to 3,300MB/s, write up to 1,700MB/s\""
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "storage-lexar-nm610pro-1-tb",
+    "category": "storage",
+    "brand": "Lexar",
+    "model": "NM610PRO 1 TB",
+    "sources": {
+      "maker": {
+        "url": "https://resources.lexar.com/download/2043/na-version/14553/lexar_productsheet_nm610pro_ssd_202507.pdf",
+        "retrieved": "2026-11-18",
+        "title": "Lexar NM610 PRO ürün föyü (PDF)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker",
+        "note": "\"M.2 2280 PCIe Gen 3x4 NVMe SSD\""
+      },
+      "interface": {
+        "value": "PCIe 3.0",
+        "source": "maker",
+        "note": "\"PCIe Gen3x4\""
+      },
+      "capacityGb": {
+        "value": 1000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 3300,
+        "source": "maker",
+        "note": "1TB: \"sequential read up to 3,300MB/s, write up to 2,600MB/s\""
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
   }
 ]
