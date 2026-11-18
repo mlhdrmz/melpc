@@ -4,6 +4,7 @@ import initSqlJs, { type Database } from 'sql.js'
 import type { PartRecord, SourceRef, SpecEntry } from '../engines/catalog/types'
 import type { BuildSelection, SavedBuild } from '../shared/api'
 import type { OfferRecord, ParsedProduct, StoreId, StoreMatch } from '../engines/price/types'
+import type { HardwareReading } from '../engines/hardware/types'
 
 // SQLite (sql.js, WebAssembly): Windows'ta derleme aracı gerektirmez.
 // Veritabanı bellekte açılır ve her yazmadan sonra dosyaya kaydedilir.
@@ -78,6 +79,13 @@ CREATE TABLE IF NOT EXISTS price_runs (
   started_at TEXT NOT NULL,
   finished_at TEXT,
   summary TEXT
+);
+
+-- Bilgisayarım (5. aşama): yalnızca son donanım okuması; geçmiş tutulmaz, seri numarası yoktur.
+CREATE TABLE IF NOT EXISTS hardware_reading (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  reading_json TEXT NOT NULL,
+  read_at TEXT NOT NULL
 );
 `
 
@@ -328,6 +336,22 @@ export class MelpcDb {
       ...(r.finished_at ? { finishedAt: r.finished_at as string } : {}),
       ...(r.summary ? { summary: r.summary as string } : {})
     }))
+  }
+
+  // ---------- Bilgisayarım ----------
+
+  /** Son donanım okumasını yazar; öncekinin yerine geçer. */
+  saveHardwareReading(reading: HardwareReading): void {
+    this.db.run('INSERT OR REPLACE INTO hardware_reading (id, reading_json, read_at) VALUES (1, ?, ?)', [
+      JSON.stringify(reading),
+      reading.readAt
+    ])
+    this.persist()
+  }
+
+  lastHardwareReading(): HardwareReading | null {
+    const row = this.all('SELECT reading_json FROM hardware_reading WHERE id = 1')[0]
+    return row ? (JSON.parse(row.reading_json as string) as HardwareReading) : null
   }
 
   private all(sql: string, params: (string | number | null)[] = []): Record<string, unknown>[] {

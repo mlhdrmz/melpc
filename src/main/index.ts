@@ -6,12 +6,15 @@ import { resolvePart } from '../engines/catalog/validate'
 import { CATEGORY_IDS } from '../engines/catalog/types'
 import { parseBenchmarkFiles } from '../engines/benchmark/validate'
 import { STORE_IDS, type StoreId } from '../engines/price/types'
-import { IPC, type BuildSelection, type CatalogPayload, type SaveBuildInput } from '../shared/api'
+import { IPC, type BuildSelection, type CatalogPayload, type HardwareResult, type SaveBuildInput } from '../shared/api'
 import { MelpcDb } from './db'
+import { readHardware } from './hardware/reader'
 import { PriceService } from './price/service'
 
 let db: MelpcDb
 let price: PriceService
+/** Süren donanım okuması: üst üste basılan "Oku" ikinci bir okuma başlatmaz. */
+let hardwareJob: Promise<HardwareResult> | null = null
 let catalog: CatalogPayload = { parts: [], errors: [], benchmarks: { results: [], sources: {} } }
 
 /** `data/catalog/*.json` dosyalarını okur, doğrular ve veritabanına yükler. */
@@ -90,6 +93,24 @@ function registerIpc(): void {
     if (typeof url !== 'string' || url.length > 2000) throw new Error('Geçersiz link')
     return price.readSystem(url)
   })
+
+  // Bilgisayarım (5. aşama): Windows'un donanım bilgisi; yalnızca istenince okunur, son okuma saklanır.
+  ipcMain.handle(IPC.hardwareRead, (): Promise<HardwareResult> => {
+    if (process.platform !== 'win32') {
+      return Promise.resolve({ ok: false, message: "Donanım okuma yalnızca Windows'ta çalışıyor." })
+    }
+    hardwareJob ??= readHardware()
+      .then((reading): HardwareResult => {
+        db.saveHardwareReading(reading)
+        return { ok: true, reading }
+      })
+      .catch((e: Error): HardwareResult => ({ ok: false, message: e.message }))
+      .finally(() => {
+        hardwareJob = null
+      })
+    return hardwareJob
+  })
+  ipcMain.handle(IPC.hardwareLast, () => db.lastHardwareReading())
 }
 
 function createWindow(): void {
