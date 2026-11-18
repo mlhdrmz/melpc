@@ -645,5 +645,54 @@
     },
     "addedAt": "2026-11-17",
     "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-enermax-maxpro-iii-700w",
+    "category": "psu",
+    "brand": "Enermax",
+    "model": "MAXPRO III 700W",
+    "mpn": "EMP700W",
+    "sources": {
+      "maker": {
+        "url": "https://www.enermax.com/en/products/maxpro-iii-700w",
+        "retrieved": "2026-11-18",
+        "title": "Enermax ürün sayfası"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 700,
+        "source": "maker",
+        "note": "\"Total power (W) | 700\""
+      },
+      "efficiency": {
+        "value": "80 PLUS Standard (230V EU)",
+        "source": "maker",
+        "note": "\"80 PLUS® Standard 230V EU Certified\""
+      },
+      "atxVersion": {
+        "value": null,
+        "note": "Enermax sayfasında ATX sürümü yazmıyor."
+      },
+      "modularity": {
+        "value": "none",
+        "source": "maker",
+        "note": "\"Non-modular\""
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"Dimension (D x W x H), (mm) | 140 x 150 x 86\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "8-pin": 4
+        },
+        "source": "maker",
+        "note": "\"PCIe (6+2) pin\" × 4 (2 kabloda)"
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
   }
 ]

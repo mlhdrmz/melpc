@@ -203,6 +203,14 @@ describe('hazır sistem: eşleştirme kuralları', () => {
     expect(scoreText(cooler, 'Thermalright Peerless Assassin 120 SE Hava Soğutucu')).toBeGreaterThanOrEqual(TEXT_MATCH_MIN)
     // Parçanın adında olmayan sürüm kelimesi eşiğin altına düşürür.
     expect(scoreText(cooler, 'Thermalright Peerless Assassin 120 SE ARGB Hava Soğutucu')!).toBeLessThan(TEXT_MATCH_MIN)
+    // Resmî adda olup mağazanın yazmadığı "Edition" zorunlu değil; "OC" ise zorunlu kalır.
+    const dual: Part = { ...testPart('gpu', {}, 'gpu9'), brand: 'ASUS', model: 'Dual GeForce RTX 5070 12GB GDDR7 OC Edition' }
+    expect(scoreText(dual, 'ASUS DUAL GeForce RTX 5070 OC 12GB GDDR7 192 Bit Ekran Kartı')).toBeGreaterThanOrEqual(TEXT_MATCH_MIN)
+    expect(scoreText(dual, 'ASUS DUAL GeForce RTX 5070 12GB GDDR7 Ekran Kartı')).toBeNull()
+    // Koddan sonra boşlukla gelen tek harf modelin parçasıdır: "A620M H" ile "A620M S2H" ayrı kartlar.
+    const a620: Part = { ...testPart('motherboard', {}, 'mb2'), brand: 'Gigabyte', model: 'A620M H (rev. 1.x/2.x)' }
+    expect(scoreText(a620, 'GIGABYTE A620M H 6400MHz(OC) DDR5 Soket AM5 mATX Anakart')).toBeGreaterThanOrEqual(TEXT_MATCH_MIN)
+    expect(scoreText(a620, 'GIGABYTE A620M S2H DDR5 Soket AM5 mATX Anakart')).toBeNull()
     // Ürün adındaki "Gaming Anakart" gibi tanımlar sürüm sayılmaz.
     const board: Part = { ...testPart('motherboard', {}, 'mb1'), brand: 'MSI', model: 'MAG B850 Tomahawk Max WiFi' }
     expect(scoreText(board, 'MSI MAG B850 TOMAHAWK MAX WIFI DDR5 AM5 ATX Gaming Anakart')).toBeGreaterThanOrEqual(TEXT_MATCH_MIN)

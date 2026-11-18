@@ -472,5 +472,40 @@
     },
     "addedAt": "2026-11-17",
     "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-thermalright-assassin-x-120-refined-se-argb-am4-am5",
+    "category": "cooler",
+    "brand": "Thermalright",
+    "model": "Assassin X 120 Refined SE ARGB (AM4, AM5)",
+    "sources": {
+      "maker": {
+        "url": "https://www.thermalright.com/product/assassin-x-120-refined-se-argb-am4am5/",
+        "retrieved": "2026-11-18",
+        "title": "Thermalright ürün sayfası"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker",
+        "note": "Tek kule hava soğutucu, \"6mm heat pipe x 4 units\""
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4"
+        ],
+        "source": "maker",
+        "note": "\"AMD：AM4/AM5\". Bu sürümde Intel desteği yok; Intel destekli sürüm ayrı bir ürün."
+      },
+      "heightMm": {
+        "value": 148,
+        "source": "maker",
+        "note": "\"L120 mm x W46 mm x H148 mm\""
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
   }
 ]

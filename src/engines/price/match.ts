@@ -70,13 +70,19 @@ interface Slug {
 
 const uniq = (xs: string[]): string[] => [...new Set(xs)]
 
-/** "1 TB" → "1TB", "X870E-E" → "X870EE": birimi ve tek harflik model sonekini sayıya bitiştirir. */
-function prepareName(s: string): string {
-  return s.replace(/(\d)\s+(tb|gb|mb|w)\b/gi, '$1$2').replace(/([A-Za-z0-9]*\d[A-Za-z0-9]*)-([A-Za-z])\b/g, '$1$2')
+/**
+ * "1 TB" → "1TB", "X870E-E" → "X870EE": birimi ve tek harflik model sonekini sayıya bitiştirir.
+ * joinSpacedLetter (yalnızca ad karşılaştırmasında): boşlukla ayrılmış tek harf de bitişir ("A620M H" → "A620MH");
+ * böylece "A620M H" ile "A620M S2H", "Pure Power 12 M" ile "Pure Power 12" ayrılır.
+ */
+function prepareName(s: string, joinSpacedLetter = false): string {
+  const out = s.replace(/(\d)\s+(tb|gb|mb|w)\b/gi, '$1$2').replace(/([A-Za-z0-9]*\d[A-Za-z0-9]*)-([A-Za-z])\b/g, '$1$2')
+  return joinSpacedLetter ? out.replace(/([A-Za-z0-9]*\d[A-Za-z0-9]*) ([A-Za-z])\b/g, '$1$2') : out
 }
 
-export function partTokens(part: Part): PartTokens {
-  const name = prepareName(part.model)
+/** textMode: hazır sistemdeki ürün adı karşılaştırması için (bkz. prepareName). Link eşleştirmesi varsayılanı kullanır. */
+export function partTokens(part: Part, textMode = false): PartTokens {
+  const name = prepareName(part.model, textMode)
   const outside = tokens(name.replace(/\([^)]*\)/g, ' '))
   const inside = tokens((name.match(/\(([^)]*)\)/g) ?? []).join(' '))
   const brand = uniq(tokens(part.brand)).filter((t) => t.length > 1)
@@ -212,21 +218,29 @@ interface ScoreOptions {
   strict?: boolean
 }
 
+/**
+ * Üreticinin resmî adında olup mağazaların çoğu zaman yazmadığı, ürünü değiştirmeyen kelimeler ("OC Edition" →
+ * "OC"). Ad karşılaştırmasında zorunlu değildir; link eşleştirmesinde değişiklik yok.
+ */
+const TEXT_FILLER_WORDS = ['edition']
+
 function scoreSlug(p: PartTokens, slug: Slug, o: ScoreOptions = {}): number | null {
   const has = (t: string): boolean => hasWord(t, slug, p.own)
+  const model = o.strict ? p.model.filter((t) => !TEXT_FILLER_WORDS.includes(t)) : p.model
+  const optional = o.strict ? [...p.optional, ...p.model.filter((t) => TEXT_FILLER_WORDS.includes(t))] : p.optional
   const codeInSlug = Boolean(p.code && slug.squash.includes(p.code))
   if (!codeInSlug) {
     const brandOk = p.brand.some(has) || p.brand.some((b) => (BRAND_ALIASES[b] ?? []).some((a) => slug.words.includes(a)))
     if (!brandOk) return null
     if (!p.keys.every(has)) return null
-    const missing = p.model.filter((t) => !has(t)).length
-    if (missing > (o.strict ? 0 : p.model.length >= 3 ? 1 : 0)) return null
-    if (p.model.some((t) => MODEL_VARIANT_WORDS.includes(t) && !slug.words.includes(t))) return null
+    const missing = model.filter((t) => !has(t)).length
+    if (missing > (o.strict ? 0 : model.length >= 3 ? 1 : 0)) return null
+    if (model.some((t) => MODEL_VARIANT_WORDS.includes(t) && !slug.words.includes(t))) return null
   }
   if (p.layout && !layoutOk(p.layout, slug)) return null
-  const required = [...p.brand, ...p.model]
+  const required = [...p.brand, ...model]
   let score = required.filter(has).length / Math.max(1, required.length)
-  if (p.optional.length) score += (0.2 * p.optional.filter(has).length) / p.optional.length
+  if (optional.length) score += (0.2 * optional.filter(has).length) / optional.length
   if (codeInSlug) score += 1
   if (!o.strict && SYSTEM_WORDS.some((w) => slug.text.includes(w))) score -= 1.5
   const inSlug = new Set(slug.words)
@@ -248,7 +262,7 @@ export const TEXT_MATCH_MIN = 0.9
 
 /** Mağazanın yazdığı bir ürün adının bir parçaya ne kadar benzediği (katı kurallarla). Aday olamıyorsa null. */
 export function scoreText(part: Part, text: string): number | null {
-  return scoreSlug(partTokens(part), makeSlug(text, GAMING_DESCRIPTOR_TEXT), { strict: true })
+  return scoreSlug(partTokens(part, true), makeSlug(text, GAMING_DESCRIPTOR_TEXT), { strict: true })
 }
 
 /** En iyi adaylar (en fazla `limit` tane), puana göre azalan, eşitlikte kısa link önce. */
