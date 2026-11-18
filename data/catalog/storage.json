@@ -39,6 +39,11 @@
         "value": 14700,
         "source": "speed",
         "note": "\"Sequential Read: Up to 14,700 MB/s\" (teknik tablo; sayfanın tanıtım bölümünde 14,800 yazıyor). \"Performance may vary based on system hardware & configuration\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "speed",
+        "note": "\"Dimension (WxHxD)\": \"Max 80.15 x Max 22.15 x Max 2.38 mm\"; özelliklerde soğutucu (heatsink) yok."
       }
     },
     "addedAt": "2026-11-17",
@@ -85,6 +90,10 @@
         "value": 14500,
         "source": "speed",
         "note": "\"Sequential Read: 14,500 MB/s\""
+      },
+      "heatsink": {
+        "value": null,
+        "note": "Crucial'ın sayfası 18.11.2026'da otomatik okumaya kapalıydı (\"Request Rejected\"); doğrulanamadı."
       }
     },
     "addedAt": "2026-11-17",
@@ -130,6 +139,11 @@
         "value": 7450,
         "source": "speed",
         "note": "\"sequential read/write speeds up to 7450/6900 MB/s\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "speed",
+        "note": "\"Dimension (WxHxD)\": \"80 x 22 x 2.3 mm\", \"Weight\": \"Max 9.0g\"; özelliklerde soğutucu (heatsink) yok, yalnızca \"heat spreader label\"."
       }
     },
     "addedAt": "2026-11-17",
@@ -175,6 +189,11 @@
         "value": 7450,
         "source": "speed",
         "note": "\"sequential read/write speeds up to 7450/6900 MB/s\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "speed",
+        "note": "\"Dimension (WxHxD)\": \"80 x 22 x 2.3 mm\", \"Weight\": \"Max 9.0g\"; özelliklerde soğutucu (heatsink) yok, yalnızca \"heat spreader label\"."
       }
     },
     "addedAt": "2026-11-17",
@@ -220,6 +239,11 @@
         "value": 7250,
         "source": "speed",
         "note": "\"Sequential Read: Up to 7,250 MB/s\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "speed",
+        "note": "\"Dimension (WxHxD)\": \"Max 80.15 x Max 22.15 x Max 2.38 mm\"; özelliklerde soğutucu (heatsink) yok."
       }
     },
     "addedAt": "2026-11-17",
@@ -266,6 +290,10 @@
         "value": 7300,
         "source": "speed",
         "note": "\"Sequential Read Performance: 7300MB/s\" (1TB)"
+      },
+      "heatsink": {
+        "value": null,
+        "note": "SanDisk'in sayfasında özellik tablosu okunamadı; sayfa başlığı soğutuculu sürümü gösteriyor. Bu kodun soğutucusuz olduğu doğrulanamadı."
       }
     },
     "addedAt": "2026-11-17",
@@ -312,6 +340,10 @@
         "value": 7300,
         "source": "speed",
         "note": "\"Sequential Read Performance: 7300MB/s\" (2TB)"
+      },
+      "heatsink": {
+        "value": null,
+        "note": "SanDisk'in sayfasında özellik tablosu okunamadı; sayfa başlığı soğutuculu sürümü gösteriyor. Bu kodun soğutucusuz olduğu doğrulanamadı."
       }
     },
     "addedAt": "2026-11-17",
@@ -351,6 +383,10 @@
       "seqReadMbps": {
         "value": null,
         "note": "Kingston'ın sayfası 18.11.2026'da okunamadı (bot doğrulaması); bilinmiyor."
+      },
+      "heatsink": {
+        "value": null,
+        "note": "Kingston'ın sayfası otomatik okumaya kapalı (bot doğrulaması); doğrulanamadı."
       }
     },
     "addedAt": "2026-11-17",
@@ -391,6 +427,10 @@
       "seqReadMbps": {
         "value": null,
         "note": "Kingston'ın sayfası 18.11.2026'da okunamadı (bot doğrulaması); bilinmiyor."
+      },
+      "heatsink": {
+        "value": null,
+        "note": "Kingston'ın sayfası otomatik okumaya kapalı (bot doğrulaması); doğrulanamadı."
       }
     },
     "addedAt": "2026-11-17",
@@ -436,6 +476,10 @@
         "value": 5000,
         "source": "speed",
         "note": "\"Sequential Read: 5,000 MB/s\""
+      },
+      "heatsink": {
+        "value": null,
+        "note": "Crucial'ın sayfası 18.11.2026'da otomatik okumaya kapalıydı (\"Request Rejected\"); doğrulanamadı."
       }
     },
     "addedAt": "2026-11-17",
@@ -608,6 +652,11 @@
         "value": 3300,
         "source": "maker",
         "note": "500GB: \"sequential read up to 3,300MB/s, write up to 1,700MB/s\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "maker",
+        "note": "\"Dimensions (W x L x H)\": \"80 x 22 x 2.45mm\" (with front label), \"Weight\": \"9g\"; föyde soğutucu yok."
       }
     },
     "addedAt": "2026-11-18",
@@ -648,6 +697,11 @@
         "value": 3300,
         "source": "maker",
         "note": "1TB: \"sequential read up to 3,300MB/s, write up to 2,600MB/s\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "maker",
+        "note": "\"Dimensions (W x L x H)\": \"80 x 22 x 2.45mm\" (with front label), \"Weight\": \"9g\"; föyde soğutucu yok."
       }
     },
     "addedAt": "2026-11-18",
