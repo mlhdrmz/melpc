@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import type { PartRecord } from '../catalog/types'
-import { parseBenchmarkFiles, resultsForPart } from './validate'
+import { parseBenchmarkFiles, resultsForDevice, resultsForPart } from './validate'
 
 // Ölçüm dosyalarının biçimi ve gerçek veri dosyalarının katalogla tutarlılığı.
 
@@ -60,6 +60,24 @@ describe('performans ölçümleri', () => {
     const cards = catalog.filter((p) => p.category === 'gpu' && p.specs.gpuChip?.value === 'GeForce RTX 5070')
     expect(cards.length).toBeGreaterThan(1)
     for (const card of cards) expect(resultsForPart(r.results, card)).toHaveLength(1)
+  })
+
+  it('katalogda olmayan cihazın ölçümü Windows\'un okuduğu adla bulunur', () => {
+    const laptopCpu = { ...ok, subject: { deviceName: 'Test Core i7-0000H', category: 'cpu' } }
+    const laptopGpu = { ...ok, subject: { deviceName: 'Test GeForce 0000 Laptop GPU', category: 'gpu' }, conditions: { ...ok.conditions, computeType: 'OPTIX' } }
+    const r = parseBenchmarkFiles([file([laptopCpu, laptopGpu])], catalog)
+    expect(r.errors).toEqual([])
+    expect(resultsForDevice(r.results, '12th Gen Test(R) Core(TM) i7-0000H', 'cpu')).toHaveLength(1)
+    expect(resultsForDevice(r.results, 'Test Core i7-0000H', 'gpu')).toEqual([])
+    expect(resultsForDevice(r.results, 'Test GeForce 0000 Laptop GPU', 'gpu')).toHaveLength(1)
+    // Katalog parçalarına karışmaz.
+    expect(r.results.flatMap((x) => resultsForPart([x], catalog[0] as never))).toEqual([])
+    // Kategori zorunlu; aynı cihaz iki kez yüklenmez.
+    const bad = parseBenchmarkFiles([file([{ ...ok, subject: { deviceName: 'Test X' } }, laptopCpu, laptopCpu])], catalog)
+    expect(bad.errors.map((e) => e.message)).toEqual([
+      'deviceName ile category (cpu ya da gpu) gerekli',
+      'aynı test, parça ve koşulla ikinci ölçüm'
+    ])
   })
 
   it('data/benchmarks altındaki gerçek ölçümler katalogla tutarlı', () => {

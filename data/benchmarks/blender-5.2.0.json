@@ -417,6 +417,40 @@
       },
       "sampleCount": 24,
       "source": "bod-oneapi-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "deviceName": "Intel Core i7-12700H",
+        "category": "cpu"
+      },
+      "device": "Intel Core i7-12700H",
+      "value": 176.79,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 21,
+      "note": "Laptop işlemcisi (Bilgisayarım); katalogda değil. Laptopun gücü ve soğutması ölçümü etkiler.",
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "deviceName": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "category": "gpu"
+      },
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "value": 1957.21,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "OPTIX",
+        "statistic": "median"
+      },
+      "sampleCount": 46,
+      "note": "Laptop ekran kartı (Bilgisayarım); katalogda değil. Laptoplarda kartın gücü modele göre değişir; ortanca farklı laptoplardan.",
+      "source": "bod-optix-5.2.0"
     }
   ]
 }

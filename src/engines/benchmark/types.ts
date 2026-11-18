@@ -25,8 +25,10 @@ export interface BenchmarkTest {
  * - partId: katalogdaki tek bir parça (işlemciler).
  * - gpuChip: aynı grafik işlemcisini kullanan bütün ekran kartları. Ölçüm kartın kendisiyle değil,
  *   o grafik işlemcisiyle yapılmıştır; arayüz bunu belirtir.
+ * - deviceName: katalogda olmayan bir cihaz (ör. Bilgisayarım'daki laptopun işlemcisi); Windows'un okuduğu adla
+ *   eşleştirilir (5. aşama).
  */
-export type BenchmarkSubject = { partId: string } | { gpuChip: string }
+export type BenchmarkSubject = { partId: string } | { gpuChip: string } | { deviceName: string; category: 'cpu' | 'gpu' }
 
 export interface BenchmarkResult {
   test: TestId
