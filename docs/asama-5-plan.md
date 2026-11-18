@@ -24,9 +24,9 @@ Kapsam: Melih'in kendi bilgisayarını (Dell G15 5520 laptop) okumak; içinde ne
 8. **Saklama:** Yalnızca son okuma, seri numarası olmadan, yerel veritabanında tutulur. Geçmiş tutulmaz; "Yeniden oku" ile güncellenir.
 9. **Çalışma düzeni:** `asama-5` dalı `main`'den açılır, her adım bir commit olur, sonunda PR açılır (taban `main`). Önce görsel taslak ve laptop profili Melih'e gösterilir.
 
-## Laptop profili: Dell G15 5520 (taslak, Melih'in onayı bekleniyor)
+## Laptop profili: Dell G15 5520 (Melih onayladı, 18.11.2026)
 
-Windows'un okuduğu (18.11.2026, WMI) ve Dell'in "Dell G15 5520 Setup and Specifications" sayfalarında yazan değerler. Dell'in PDF'i otomatik okumaya kapalı; aynı içerik dell.com'daki HTML sayfalarından okundu.
+Windows'un okuduğu (18.11.2026, WMI) ve Dell'in "Dell G15 5520 Setup and Specifications" sayfalarında yazan değerler. Dell'in PDF'i otomatik okumaya kapalı; aynı içerik dell.com'daki HTML sayfalarından okundu. Profil dosyası: `data/laptops/dell-g15-5520.json`.
 
 | Konu | Windows'un okuduğu | Dell'in yazdığı | Kaynak sayfa |
 |---|---|---|---|
@@ -41,17 +41,37 @@ Bu değerlerden çıkan durum:
 - **Bellek:** İki yuva da Dell'in yuva başına izin verdiği en büyük modülle (32 GB) dolu. Dell'in listelediği en büyük yapılandırma 32 GB olsa da sistem 64 GB'ı görüyor. Daha fazla bellek eklenemez.
 - **SSD:** İkinci SSD için yuva yok. Yükseltme, mevcut diskin yerine M.2 2280 PCIe Gen4 x4 bir SSD takmak demek; Dell 2 TB'a kadar yazıyor.
 - **Wi-Fi:** Takılı kart, Dell'in iki seçeneğinden biri (Killer 1650i). Ekranda yalnızca bilgi olarak geçer.
-- **İşlemci ve ekran kartı:** Karta lehimli, değiştirilemez.
+- **İşlemci:** Karta lehimli. Intel'in sayfası paketi "FCBGA1744" (BGA) diye yazıyor.
+- **Ekran kartı:** Dell'in servis kılavuzundaki değiştirilebilir parça listesinde ("Major components of your computer") ayrı parça olarak yok; değiştirilemez.
 
 ## Yapılacaklar
 
-1. Laptop profili (Dell kılavuzu) ve görsel taslak. Melih'in onayı bekleniyor.
-2. Donanım okuma motoru (WMI) ve son okumanın saklanması.
-3. Laptop profilinin veri biçimi ve doğrulaması.
-4. Depolamaya "soğutucu" alanı ve katalogdaki SSD'lerin verisi.
-5. Laptopun işlemci ve ekran kartı için Blender ölçümleri.
-6. Yükseltme önerileri motoru ve açıklamalar.
-7. "Bilgisayarım" ekranı ve 3D laptop gövde modeli.
+1. ✓ Laptop profili (Dell kılavuzu) ve görsel taslak (Melih onayladı).
+2. ✓ Donanım okuma motoru (WMI) ve son okumanın saklanması.
+3. ✓ Laptop profilinin veri biçimi ve doğrulaması.
+4. ✓ Depolamaya "soğutucu" alanı ve katalogdaki SSD'lerin verisi.
+5. ✓ Laptopun işlemci ve ekran kartı için Blender ölçümleri.
+6. ✓ Yükseltme önerileri motoru ve açıklamalar.
+7. ✓ "Bilgisayarım" ekranı ve 3D laptop gövde modeli.
+
+## Deneme (18.11.2026)
+
+- Uygulamada, test veri klasörüyle "Oku" denendi; Windows'tan gerçek okuma yapıldı.
+- Okunan değerler: Dell G15 5520, i7-12700H, RTX 3060 Laptop (bellek kılavuzdan 6 GB), 2 × 32 GB DDR5-4800 SO-DIMM, Samsung PM991a 1 TB, Killer AX1650i.
+- Her satırda değerin nereden geldiği yazıyor.
+- Son okuma saklanıyor; sayfaya dönünce yeniden okumadan görünüyor. Kayıtta seri numarası yok.
+- 162 test geçiyor, tip denetimi temiz.
+
+## Açık kalanlar
+
+- **SSD fiyatları:** Önerilen SSD'lerin çoğu henüz mağazalarla eşleştirilmedi. "Mağaza eşleştirme → Mağazalarda ara" ile eşleştirilince fiyatları görünür.
+- **Soğutucu bilgisi bilinmeyen 6 SSD, laptoplara önerilmiyor:**
+  - Crucial T705 ve P3 Plus: sayfa "Request Rejected" verdi.
+  - SanDisk SN850X 1 ve 2 TB: özellik tablosu okunamadı.
+  - Kingston KC3000 ve NV3: bot doğrulaması var.
+- **Mevcut disk:** Samsung PM991a (OEM) için üretici okuma hızı kataloğa eklenmedi; ekranda mevcut diskle hız karşılaştırması yok.
+- **Masaüstü:** Masaüstü bilgisayar okuma sonraya kaldı (1. karar).
+- **3D hata önlemi:** Sayfa değişince 3D görünüm kapanırken bir kez "removeChild" hatası görüldü. Önlem olarak Bilgisayarım, Kasa Topla gibi gizleniyor, kapanmıyor.
 
 ## Bitiş ölçütleri
 
