@@ -28,6 +28,9 @@ const VARIANT_WORDS = [
 /** Farklı bir yonga anlamına gelen kelimeler (ör. 5070 ile 5070 Ti): bunlarla aday gösterilmez. */
 const CHIP_WORDS = ['ti', 'super', 'xt', 'xtx', 'x3d']
 
+/** Parçanın adında varsa linkte de olması gereken sürüm kelimeleri (Kraken Plus ≠ Kraken Core, 990 Evo Plus ≠ 990 Evo). */
+const MODEL_VARIANT_WORDS = ['pro', 'plus', 'max', 'mini', 'elite', 'evo', 'se', 'ti', 'super', 'xt', 'xtx']
+
 /** Mağaza linklerinde aynı şeyi anlatan kelimeler. */
 const SYNONYMS: Record<string, string> = { beyaz: 'white', sogutuculu: 'heatsink', d4: 'ddr4', d5: 'ddr5' }
 
@@ -125,6 +128,8 @@ function slugOf(url: string): Slug {
   }
   // "mini-itx" kart boyutudur, "mini" sürümü değil.
   for (let i = words.length - 2; i >= 0; i--) if (words[i] === 'mini' && words[i + 1] === 'itx') words.splice(i, 1)
+  // "gaming kasa" genel bir tanımdır, ürünün "Gaming" sürümü değil.
+  for (let i = words.length - 2; i >= 0; i--) if (words[i] === 'gaming' && /^kasa/.test(words[i + 1])) words.splice(i, 1)
   const slug = { words, squash: words.join(''), text: words.join(' ') }
   if (slugCache.size > 100_000) slugCache.clear()
   slugCache.set(url, slug)
@@ -193,6 +198,7 @@ function scoreSlug(p: PartTokens, slug: Slug): number | null {
     if (!p.keys.every(has)) return null
     const missing = p.model.filter((t) => !has(t)).length
     if (missing > (p.model.length >= 3 ? 1 : 0)) return null
+    if (p.model.some((t) => MODEL_VARIANT_WORDS.includes(t) && !slug.words.includes(t))) return null
   }
   if (p.layout && !layoutOk(p.layout, slug)) return null
   const required = [...p.brand, ...p.model]

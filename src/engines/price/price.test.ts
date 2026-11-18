@@ -202,6 +202,17 @@ describe('aday bulma', () => {
     expect(scoreUrl(itx, u('asus-rog-strix-b850-i-gaming-wifi-8400mhz-oc-ddr5-soket-am5-mini-itx-anakart'))).toBeGreaterThan(1)
   })
 
+  it('adındaki sürüm kelimesi linkte yoksa aday göstermez (Kraken Plus ≠ Kraken Core)', () => {
+    const aio = part('cooler', 'NZXT', 'Kraken Plus 360 RGB (2025)')
+    expect(scoreUrl(aio, u('nzxt-kraken-core-360-rgb-360mm-siyah-islemci-sivi-sogutucu'))).toBeNull()
+    expect(scoreUrl(aio, u('nzxt-kraken-plus-360-rgb-360mm-beyaz-islemci-sivi-sogutucu'))).toBeGreaterThan(0.5)
+  })
+
+  it('"gaming kasa" sürüm sayılmaz', () => {
+    const box = part('case', 'MSI', 'MAG PANO M100R PZ')
+    expect(scoreUrl(box, u('msi-mag-pano-m100r-pz-argb-temperli-cam-usb-3-2-matx-siyah-gaming-kasa'))).toBeGreaterThan(0.5)
+  })
+
   it('DDR5 anakart ararken DDR4 sürümünü geriye atar', () => {
     const board = part('motherboard', 'MSI', 'PRO B760M-A WiFi', { memoryType: 'DDR5' })
     const urls = [u('msi-pro-b760m-a-wifi-5333mhzoc-ddr4-matx-anakart'), u('msi-pro-b760m-a-wifi-6800mhz-oc-ddr5-matx-anakart')]

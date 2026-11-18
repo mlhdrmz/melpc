@@ -498,5 +498,134 @@
     },
     "addedAt": "2026-11-17",
     "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "case-asus-a21-plus",
+    "category": "case",
+    "brand": "ASUS",
+    "model": "A21 Plus",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/cases/asus/asus-a21-plus-case/techspec/",
+        "retrieved": "2026-11-18",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Motherboard Support\": \"Mini-ITX\", \"Micro-ATX\"; \"BTF motherboard compatible\""
+      },
+      "maxGpuLengthMm": {
+        "value": 380,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 165,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "front",
+            "sizesMm": [
+              120,
+              140,
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "top",
+            "sizesMm": [
+              120,
+              140,
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120
+            ]
+          }
+        ],
+        "source": "maker",
+        "note": "Ön ve üst: \"360 mm\", \"280 mm\", \"240 mm\", \"140 mm\", \"120 mm\"; arka: \"120 mm\"."
+      },
+      "maxPsuLengthMm": {
+        "value": 210,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "case-msi-mag-pano-m100r-pz",
+    "category": "case",
+    "brand": "MSI",
+    "model": "MAG PANO M100R PZ",
+    "sources": {
+      "maker": {
+        "url": "https://storage-asset.msi.com/datasheet/pcc/tw/MAG-PANO-M100R-PZ.pdf",
+        "retrieved": "2026-11-18",
+        "title": "MSI teknik föyü (MAG PANO M100R PZ / WHITE)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"M-ATX (Back-connect supported) / ITX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 390,
+        "source": "maker",
+        "note": "\"390 mm / 15.35 inches *Support horizontal installation only.\""
+      },
+      "maxCoolerHeightMm": {
+        "value": 175,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              120,
+              240,
+              360
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120,
+              140
+            ]
+          }
+        ],
+        "source": "maker",
+        "note": "Üst: \"120 / 240 / 360 mm\"; arka: \"120 / 140 mm\"; ön, yan ve alt: \"NA\"."
+      },
+      "maxPsuLengthMm": {
+        "value": 200,
+        "source": "maker",
+        "note": "\"Power Supply Support ATX\", \"Maximum PSU Length 200 mm\""
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
   }
 ]
