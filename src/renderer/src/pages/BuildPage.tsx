@@ -8,6 +8,8 @@ import { checkBuild, estimatePower, POWER_ASSUMPTIONS, type Build, type CompatRe
 import { CategoryIcon } from '../components/icons'
 import { PartPicker } from '../components/PartPicker'
 import { CaseViewer } from '../three/CaseViewer'
+import { PricePanel } from '../price/PricePanel'
+import { PriceLine } from '../price/PriceLine'
 import { desktopCase } from '../three/DesktopCase'
 
 const EMPTY_SELECTION: BuildSelection = { storage: [] }
@@ -210,9 +212,9 @@ export function BuildPage({ catalog }: { catalog: CatalogPayload }): ReactElemen
                       <span key={`${p.id}-${i}`} className="part-slot__item">
                         <span className="part-slot__name">{partName(p)}</span>
                         <span className="part-slot__meta">{partSummary(p)}</span>
+                        <PriceLine partId={p.id} className="part-slot__price" showCount={false} />
                       </span>
                     ))}
-                    <span className="part-slot__price">Fiyat: henüz yok</span>
                   </span>
                 </button>
                 <div className="part-slot__actions">
@@ -313,10 +315,7 @@ export function BuildPage({ catalog }: { catalog: CatalogPayload }): ReactElemen
             </div>
           </div>
 
-          <div className="panel">
-            <span className="section-title">FİYAT</span>
-            <p className="muted small">Fiyatlar 3. aşamada Türkiye mağazalarından gelecek. Şimdilik hiçbir fiyat gösterilmiyor.</p>
-          </div>
+          <PricePanel parts={CATEGORY_IDS.flatMap((c) => selectedParts(c))} />
 
           {catalog.errors.length > 0 && (
             <div className="panel">
