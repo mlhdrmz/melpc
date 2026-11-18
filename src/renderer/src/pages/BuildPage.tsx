@@ -10,6 +10,7 @@ import { PartPicker } from '../components/PartPicker'
 import { CaseViewer } from '../three/CaseViewer'
 import { PricePanel } from '../price/PricePanel'
 import { PriceLine } from '../price/PriceLine'
+import { EvaluationPanel } from '../score/EvaluationPanel'
 import { desktopCase } from '../three/DesktopCase'
 
 const EMPTY_SELECTION: BuildSelection = { storage: [] }
@@ -314,6 +315,8 @@ export function BuildPage({ catalog }: { catalog: CatalogPayload }): ReactElemen
               </span>
             </div>
           </div>
+
+          <EvaluationPanel build={build} compat={results} />
 
           <PricePanel parts={CATEGORY_IDS.flatMap((c) => selectedParts(c))} />
 

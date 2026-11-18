@@ -53,7 +53,9 @@ function renderExplanation(part: Part, category: 'cpu' | 'gpu', catalog: Part[],
   const chip = category === 'gpu' ? specStr(part, 'gpuChip') : undefined
   const parts = [
     `Blender ${r.conditions.blenderVersion} render ölçümü: ${n(r.value)} örnek/dk; katalogdaki ${of} ${category === 'cpu' ? 'işlemci' : 'ekran kartı'} arasında ${rank}. sırada.`,
-    `Kullanıcı ölçümlerinin ortancası${r.sampleCount ? ` (${r.sampleCount} ölçüm)` : ''}, ${COMPUTE_TYPE_LABELS[r.conditions.computeType] ?? r.conditions.computeType}.`
+    `Kullanıcı ölçümlerinin ortancası${r.sampleCount ? ` (${r.sampleCount} ölçüm)` : ''}${
+      r.conditions.computeType !== 'CPU' ? `, ${COMPUTE_TYPE_LABELS[r.conditions.computeType] ?? r.conditions.computeType}` : ''
+    }.`
   ]
   if (chip) parts.push(`Ölçüm bu kartla değil, aynı grafik işlemcisiyle (${chip}) yapıldı.`)
   return { id: `${category}-render`, tone, title, detail: parts.join(' '), categories: [category] }

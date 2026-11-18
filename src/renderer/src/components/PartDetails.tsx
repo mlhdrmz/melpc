@@ -3,6 +3,7 @@ import type { Part } from '@engines/catalog/types'
 import { CATEGORY_LABELS, formatSpecValue, SPEC_DEFS } from '@engines/catalog/specDefs'
 import { partName } from '@engines/catalog/access'
 import { StorePrices } from '../price/StorePrices'
+import { PerformanceSection } from '../score/PerformanceSection'
 
 function formatDate(iso: string): string {
   const [y, m, d] = iso.split('-')
@@ -17,6 +18,7 @@ export function PartDetails({ part }: { part: Part }): ReactElement {
       <span className="details__eyebrow">{CATEGORY_LABELS[part.category].toLocaleUpperCase('tr-TR')}</span>
       <h3 className="details__name">{partName(part)}</h3>
       {part.mpn && <span className="details__mpn">Üretici kodu: {part.mpn}</span>}
+      <PerformanceSection part={part} />
       <StorePrices part={part} />
       <table className="spec-table">
         <tbody>

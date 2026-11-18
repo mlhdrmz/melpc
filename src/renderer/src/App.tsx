@@ -5,6 +5,7 @@ import { BuildPage } from './pages/BuildPage'
 import { MatchPage } from './pages/MatchPage'
 import { PriceProvider, usePrices } from './price/PriceContext'
 import { PriceStatus } from './price/PriceStatus'
+import { CatalogProvider } from './catalog/CatalogContext'
 
 type LoadState = { status: 'loading' } | { status: 'ready'; catalog: CatalogPayload } | { status: 'error'; message: string }
 type Page = 'build' | 'match'
@@ -45,13 +46,13 @@ export function App(): ReactElement {
           {state.status === 'loading' && <p className="muted">Katalog yükleniyor…</p>}
           {state.status === 'error' && <p className="error-text">Katalog yüklenemedi: {state.message}</p>}
           {state.status === 'ready' && (
-            <>
+            <CatalogProvider catalog={state.catalog}>
               {/* Kasa Topla ekranı gizlenir ama kapanmaz: başka ekrana geçip dönünce toplama kaybolmasın. */}
               <div hidden={page !== 'build'}>
                 <BuildPage catalog={state.catalog} />
               </div>
               {page === 'match' && <MatchPage catalog={state.catalog} />}
-            </>
+            </CatalogProvider>
           )}
         </main>
         {toast && (
