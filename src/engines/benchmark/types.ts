@@ -38,6 +38,8 @@ export interface BenchmarkResult {
   conditions: Record<string, string>
   /** Değer birden çok ölçümün ortancasıysa ölçüm sayısı. */
   sampleCount?: number
+  /** Ölçümle ilgili not, ör. kaynağın ayırmadığı sürümler. */
+  note?: string
   /** `sources` içindeki anahtar. */
   source: string
 }

@@ -42,6 +42,7 @@ export function validateResult(raw: unknown, sources: BenchmarkFile['sources'], 
   if (raw.sampleCount !== undefined && (!Number.isInteger(raw.sampleCount) || (raw.sampleCount as number) < 1)) {
     problems.push('sampleCount pozitif bir tam sayı olmalı')
   }
+  if (raw.note !== undefined && typeof raw.note !== 'string') problems.push('note metin olmalı')
   const conditions = raw.conditions
   if (!isObject(conditions)) problems.push('conditions eksik')
   else {

@@ -20,6 +20,7 @@ Her dosya bir kaynaktan alınmış ölçümleri tutar ve `{ "sources": {...}, "r
 - `device`: Kaynakta cihazın geçtiği ad, değerin hangi satırdan alındığı izlenebilsin diye.
 - `conditions`: Testin gerektirdiği koşulların hepsi (ör. Blender sürümü, hesaplama türü, istatistik).
 - `sampleCount`: Değer birden çok ölçümün ortancasıysa ölçüm sayısı. Az ölçümlü değerler daha az güvenilirdir; arayüz sayıyı gösterir.
+- `note` (isteğe bağlı): Ölçümle ilgili bilinmesi gereken bir durum; ör. kaynağın kartın 8 GB ve 16 GB sürümlerini ayırmaması.
 - `source`: Aynı dosyadaki `sources` anahtarı; kaynakta `url`, `retrieved` (YYYY-AA-GG) ve varsa `license` bulunur.
 
 ## Kurallar

@@ -26,7 +26,7 @@ Kapsam: parçaları kendi kategorisinde sıralamak, toplanan sistemi oyun ve mü
 
 Blender Open Data'da, Blender 5.2.0 ile, katalogdaki 15 işlemcinin ve 11 ekran kartı işlemcisinin hepsinin ortanca puanı var. Ekran kartları kendi üreticisinin hızlandırıcısıyla sorgulanır: NVIDIA OptiX, AMD HIP, Intel oneAPI.
 
-**Açık soru:** Oyun ve tek çekirdek (CAD) ölçümü için şartları izin veren bir kaynak bulunamadı. Melih'e soruldu.
+**Oyun ve tek çekirdek (Melih onayladı, 18.11.2026):** Şartları izin veren bir kaynak bulunamadığı için oyun puanı şimdilik yok; oyun tarafında yalnızca kaynağı belli kurallarla notlar var. Mühendislik puanı işlemcinin Blender puanı (çok çekirdekli iş), ekran kartının Blender puanı ve bellek miktarıyla hesaplanır; CAD için "tek çekirdek ölçümü yok" görünür. İzin alınırsa (ör. TechPowerUp) oyun ölçümleri eklenir.
 
 ## Yapılacaklar
 
