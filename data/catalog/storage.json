@@ -1,0 +1,469 @@
+[
+  {
+    "id": "storage-samsung-9100-pro-2-tb",
+    "category": "storage",
+    "brand": "Samsung",
+    "model": "9100 Pro 2 TB",
+    "mpn": "MZ-VAP2T0BW",
+    "sources": {
+      "maker": {
+        "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/9100-pro-2tb-nvme-pcie-gen-5-mz-vap2t0bw/",
+        "retrieved": "2026-11-17",
+        "title": "Samsung ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 5.0",
+        "source": "maker",
+        "note": "\"PCIe® 5.0 x4, NVMe™ 2.0\""
+      },
+      "capacityGb": {
+        "value": 2000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-crucial-t705-2-tb",
+    "category": "storage",
+    "brand": "Crucial",
+    "model": "T705 2 TB",
+    "mpn": "CT2000T705SSD3",
+    "sources": {
+      "maker": {
+        "url": "https://www.crucial.com/ssd/t705/ct2000t705ssd3",
+        "retrieved": "2026-11-17",
+        "title": "Crucial ürün sayfası"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 5.0",
+        "source": "maker",
+        "note": "\"NVMe (PCIe Gen 5 x4)\""
+      },
+      "capacityGb": {
+        "value": 2000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker",
+        "note": "Soğutucusuz sürüm"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-samsung-990-pro-1-tb",
+    "category": "storage",
+    "brand": "Samsung",
+    "model": "990 Pro 1 TB",
+    "mpn": "MZ-V9P1T0BW",
+    "sources": {
+      "maker": {
+        "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/",
+        "retrieved": "2026-11-17",
+        "title": "Samsung ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe Gen 4.0 x4, NVMe 2.0\""
+      },
+      "capacityGb": {
+        "value": 1000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-samsung-990-pro-2-tb",
+    "category": "storage",
+    "brand": "Samsung",
+    "model": "990 Pro 2 TB",
+    "mpn": "MZ-V9P2T0BW",
+    "sources": {
+      "maker": {
+        "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-2tb-nvme-pcie-gen-4-mz-v9p2t0bw/",
+        "retrieved": "2026-11-17",
+        "title": "Samsung ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe Gen 4.0 x4, NVMe 2.0\""
+      },
+      "capacityGb": {
+        "value": 2000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-samsung-990-evo-plus-2-tb",
+    "category": "storage",
+    "brand": "Samsung",
+    "model": "990 Evo Plus 2 TB",
+    "mpn": "MZ-V9S2T0BW",
+    "sources": {
+      "maker": {
+        "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-evo-plus-2tb-nvme-pcie-gen-4-mz-v9s2t0bw/",
+        "retrieved": "2026-11-17",
+        "title": "Samsung ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe® 4.0 x4 / 5.0 x2 NVMe™ 2.0\": PCIe 5.0 yuvada iki hatla çalışır"
+      },
+      "capacityGb": {
+        "value": 2000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-sandisk-wd-black-sn850x-1-tb",
+    "category": "storage",
+    "brand": "SanDisk",
+    "model": "WD_BLACK SN850X 1 TB",
+    "mpn": "WDS100T2X0E",
+    "sources": {
+      "maker": {
+        "url": "https://www.sandisk.com/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS100T2X0E-00BCA0",
+        "retrieved": "2026-11-17",
+        "title": "SanDisk ürün sayfası (WD_BLACK SN850X)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe 4.0 x4\""
+      },
+      "capacityGb": {
+        "value": 1000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker",
+        "note": "Soğutucusuz sürüm (WDS100T2X0E-00BCA0)"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-sandisk-wd-black-sn850x-2-tb",
+    "category": "storage",
+    "brand": "SanDisk",
+    "model": "WD_BLACK SN850X 2 TB",
+    "mpn": "WDS200T2X0E",
+    "sources": {
+      "maker": {
+        "url": "https://www.sandisk.com/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS200T2X0E-00BCA0",
+        "retrieved": "2026-11-17",
+        "title": "SanDisk ürün sayfası (WD_BLACK SN850X)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe 4.0 x4\""
+      },
+      "capacityGb": {
+        "value": 2000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker",
+        "note": "Soğutucusuz sürüm (WDS200T2X0E-00BCA0)"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-kingston-kc3000-2048-gb",
+    "category": "storage",
+    "brand": "Kingston",
+    "model": "KC3000 2048 GB",
+    "mpn": "SKC3000D/2048G",
+    "sources": {
+      "maker": {
+        "url": "https://www.kingston.com/en/ssd/kc3000-nvme-m2-solid-state-drive",
+        "retrieved": "2026-11-17",
+        "title": "Kingston ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe 4.0 x4 NVMe\""
+      },
+      "capacityGb": {
+        "value": 2048,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-kingston-nv3-1-tb",
+    "category": "storage",
+    "brand": "Kingston",
+    "model": "NV3 1 TB",
+    "mpn": "SNV3S/1000G",
+    "sources": {
+      "maker": {
+        "url": "https://www.kingston.com/en/ssd/nv3-nvme-pcie-ssd",
+        "retrieved": "2026-11-17",
+        "title": "Kingston ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe 4.0 x4 NVMe\""
+      },
+      "capacityGb": {
+        "value": 1000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker",
+        "note": "SNV3S M.2 2280; aynı ailede M.2 2230 sürümü (SNV3SM3) de var"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-crucial-p3-plus-1-tb",
+    "category": "storage",
+    "brand": "Crucial",
+    "model": "P3 Plus 1 TB",
+    "mpn": "CT1000P3PSSD8",
+    "sources": {
+      "maker": {
+        "url": "https://www.crucial.com/ssd/p3-plus/ct1000p3pssd8",
+        "retrieved": "2026-11-17",
+        "title": "Crucial ürün sayfası"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"NVMe (PCIe Gen 4 x4)\""
+      },
+      "capacityGb": {
+        "value": 1000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-samsung-870-evo-1-tb",
+    "category": "storage",
+    "brand": "Samsung",
+    "model": "870 EVO 1 TB",
+    "mpn": "MZ-77E1T0B/EU",
+    "sources": {
+      "maker": {
+        "url": "https://www.samsung.com/uk/memory-storage/sata-ssd/870-evo-1tb-sata-3-2-5-ssd-mz-77e1t0b-eu/",
+        "retrieved": "2026-11-17",
+        "title": "Samsung ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "SATA SSD",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "SATA III",
+        "source": "maker",
+        "note": "\"SATA 6 Gb/s Interface\""
+      },
+      "capacityGb": {
+        "value": 1000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "2.5\"",
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-kingston-a400-480-gb",
+    "category": "storage",
+    "brand": "Kingston",
+    "model": "A400 480 GB",
+    "mpn": "SA400S37/480G",
+    "sources": {
+      "maker": {
+        "url": "https://www.kingston.com/en/ssd/a400-solid-state-drive",
+        "retrieved": "2026-11-17",
+        "title": "Kingston ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "SATA SSD",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "SATA III",
+        "source": "maker",
+        "note": "\"SATA Rev. 3.0 (6Gb/s)\""
+      },
+      "capacityGb": {
+        "value": 480,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "2.5\"",
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "storage-seagate-barracuda-2-tb-3-5",
+    "category": "storage",
+    "brand": "Seagate",
+    "model": "BarraCuda 2 TB (3,5\")",
+    "mpn": "ST2000DM008",
+    "sources": {
+      "maker": {
+        "url": "https://www.seagate.com/tr/tr/support/internal-hard-drives/desktop-hard-drives/barracuda-3-5/",
+        "retrieved": "2026-11-17",
+        "title": "Seagate destek sayfası (BarraCuda 3,5\")"
+      },
+      "manual": {
+        "url": "https://www.seagate.com/content/dam/seagate/migrated-assets/www-content/product-content/barracuda-fam/barracuda-new/en-us/docs/100817550n.pdf",
+        "retrieved": "2026-11-17",
+        "title": "Seagate BarraCuda ürün kılavuzu, Rev. N (PDF)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "SATA HDD",
+        "source": "manual",
+        "note": "\"SATA Product Manual\", modeller ST2000DM008 / ST1000DM014"
+      },
+      "interface": {
+        "value": "SATA III",
+        "source": "manual",
+        "note": "\"Serial ATA Revision 3.0\""
+      },
+      "capacityGb": {
+        "value": 2000,
+        "source": "maker",
+        "note": "\"Kapasite: 2 TB\""
+      },
+      "formFactor": {
+        "value": "3.5\"",
+        "source": "maker",
+        "note": "\"Form Factor: 3.5 inç\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  }
+]

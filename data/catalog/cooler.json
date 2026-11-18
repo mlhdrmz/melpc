@@ -1,0 +1,476 @@
+[
+  {
+    "id": "cooler-thermalright-peerless-assassin-120-se",
+    "category": "cooler",
+    "brand": "Thermalright",
+    "model": "Peerless Assassin 120 SE",
+    "sources": {
+      "maker": {
+        "url": "https://www.thermalright.com/product/peerless-assassin-120-se/",
+        "retrieved": "2026-11-17",
+        "title": "Thermalright ürün sayfası"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel：115X/1200/1700/1851\", \"AMD：AM4/AM5\""
+      },
+      "heightMm": {
+        "value": 155,
+        "source": "maker",
+        "note": "\"Dimension L125 mm x W110 mm x H155 mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-thermalright-phantom-spirit-120-se",
+    "category": "cooler",
+    "brand": "Thermalright",
+    "model": "Phantom Spirit 120 SE",
+    "sources": {
+      "maker": {
+        "url": "https://www.thermalright.com/product/phantom-spirit-120-se/",
+        "retrieved": "2026-11-17",
+        "title": "Thermalright ürün sayfası"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel：LGA115X/1200/1700/1851\", \"AMD：AM4/AM5\""
+      },
+      "heightMm": {
+        "value": 154,
+        "source": "maker",
+        "note": "\"Dimension L110 mm x W125 mm x H154 mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-deepcool-ak400",
+    "category": "cooler",
+    "brand": "DeepCool",
+    "model": "AK400",
+    "sources": {
+      "maker": {
+        "url": "https://www.deepcool.com/products/Cooling/cpuaircoolers/AK400-Performance-CPU-Cooler-1851-1700-AM5/2024/15222.shtml",
+        "retrieved": "2026-11-17",
+        "title": "DeepCool ürün sayfası (Technical Spec)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel LGA1851/1700/1200/1151/1150/1155 AMD AM5/AM4\""
+      },
+      "heightMm": {
+        "value": 155,
+        "source": "maker",
+        "note": "\"Product Dimensions 127×97×155 mm(L×W×H)\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-deepcool-ak620",
+    "category": "cooler",
+    "brand": "DeepCool",
+    "model": "AK620",
+    "sources": {
+      "maker": {
+        "url": "https://www.deepcool.com/products/Cooling/cpuaircoolers/AK620-High-Performance-CPU-Cooler-1700-AM5/2021/13067.shtml",
+        "retrieved": "2026-11-17",
+        "title": "DeepCool ürün sayfası (Technical Spec)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "Sayfada \"LGA2066/2011-v3/2011/1700/1200/1151/1150/1155\", \"AM5/AM4\" yazıyor; LGA1851 listede yok."
+      },
+      "heightMm": {
+        "value": 160,
+        "source": "maker",
+        "note": "\"160mm Cooler height\", \"Product Dimensions 129×138×160 mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-noctua-nh-d15-g2",
+    "category": "cooler",
+    "brand": "Noctua",
+    "model": "NH-D15 G2",
+    "sources": {
+      "maker": {
+        "url": "https://www.noctua.at/en/products/nh-d15-g2/specifications",
+        "retrieved": "2026-11-17",
+        "title": "Noctua ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"AM5, AM4, LGA1700, LGA1851, LGA1954, ...\""
+      },
+      "heightMm": {
+        "value": 168,
+        "source": "maker",
+        "note": "\"Height with fan(s) 168 mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-id-cooling-se-224-xts",
+    "category": "cooler",
+    "brand": "ID-Cooling",
+    "model": "SE-224-XTS",
+    "sources": {
+      "maker": {
+        "url": "https://www.idcooling.com/product/detail?id=318&name=SE-224-XTS",
+        "retrieved": "2026-11-17",
+        "title": "ID-Cooling ürün sayfası"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel LGA1851/1700/1200/1151/1150/1155/1156 AMD AM5/AM4\""
+      },
+      "heightMm": {
+        "value": 151,
+        "source": "maker",
+        "note": "\"Overall Dimension 120×75×151mm (L×W×H)\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-arctic-freezer-36",
+    "category": "cooler",
+    "brand": "Arctic",
+    "model": "Freezer 36",
+    "mpn": "ACFRE00121A",
+    "sources": {
+      "maker": {
+        "url": "https://www.arctic.de/en/Freezer-36",
+        "retrieved": "2026-11-17",
+        "title": "ARCTIC ürün sayfası (Technical specifications)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel: LGA1851 | LGA1700 AMD: AM5 | AM4\""
+      },
+      "heightMm": {
+        "value": 159,
+        "source": "maker",
+        "note": "\"Dimensions: 104 (L) x 126 (W) x 159 (H) mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-arctic-liquid-freezer-iii-240",
+    "category": "cooler",
+    "brand": "Arctic",
+    "model": "Liquid Freezer III 240",
+    "mpn": "ACFRE00134A",
+    "sources": {
+      "maker": {
+        "url": "https://www.arctic.de/en/Liquid-Freezer-III-240/ACFRE00134A",
+        "retrieved": "2026-11-17",
+        "title": "ARCTIC ürün sayfası (Technical specifications)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Compatibillity Intel 1851, 1700 AMD AM5, AM4\""
+      },
+      "radiatorSizeMm": {
+        "value": 240,
+        "source": "maker",
+        "note": "Ürün adı: Liquid Freezer III 240"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-arctic-liquid-freezer-iii-360",
+    "category": "cooler",
+    "brand": "Arctic",
+    "model": "Liquid Freezer III 360",
+    "mpn": "ACFRE00136A",
+    "sources": {
+      "maker": {
+        "url": "https://www.arctic.de/en/Liquid-Freezer-III-360/",
+        "retrieved": "2026-11-17",
+        "title": "ARCTIC ürün sayfası (Technical specifications)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Compatibillity Intel 1851, 1700 AMD AM5, AM4\""
+      },
+      "radiatorSizeMm": {
+        "value": 360,
+        "source": "maker",
+        "note": "Ürün adı: Liquid Freezer III 360"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-lian-li-galahad-ii-trinity-360",
+    "category": "cooler",
+    "brand": "Lian Li",
+    "model": "Galahad II Trinity 360",
+    "mpn": "GA2T36B",
+    "sources": {
+      "maker": {
+        "url": "https://lian-li.com/product/galahad-ii-trinity/",
+        "retrieved": "2026-11-17",
+        "title": "Lian Li ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel: LGA 1851 / 1700 / 1200 / 115x\", \"AMD: AM5 / AM4\""
+      },
+      "radiatorSizeMm": {
+        "value": 360,
+        "source": "maker",
+        "note": "\"GA II Trinity 360 · TYPE 360mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-nzxt-kraken-plus-360-rgb-2025",
+    "category": "cooler",
+    "brand": "NZXT",
+    "model": "Kraken Plus 360 RGB (2025)",
+    "mpn": "RL-KR360-B2",
+    "sources": {
+      "maker": {
+        "url": "https://support.nzxt.com/hc/en-us/articles/47510572562075-Kraken-Plus-2025-Specs",
+        "retrieved": "2026-11-18",
+        "title": "NZXT destek sayfası · Kraken Plus (2025) Specs"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker",
+        "note": "\"AIO Liquid Cooler with 1.54\" LCD\""
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "Intel: \"LGA 1851\", \"LGA 1700\", \"LGA 1200\", \"LGA 115X\"; AMD: \"AM5\", \"AM4\""
+      },
+      "radiatorSizeMm": {
+        "value": 360,
+        "source": "maker",
+        "note": "Model listesinde 360 boyu: RL-KR360-B2 (siyah), RL-KR360-W2 (beyaz)"
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "cooler-msi-mag-coreliquid-a13-360",
+    "category": "cooler",
+    "brand": "MSI",
+    "model": "MAG CoreLiquid A13 360",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Liquid-Cooling/MAG-CORELIQUID-A13-360/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"AMD Socket Support AM5 / AM4\", \"Intel Socket Support LGA 1700 / 1851\""
+      },
+      "radiatorSizeMm": {
+        "value": 360,
+        "source": "maker",
+        "note": "\"Radiator Size 360 mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cooler-corsair-icue-link-titan-360-rx-rgb",
+    "category": "cooler",
+    "brand": "Corsair",
+    "model": "iCUE Link Titan 360 RX RGB",
+    "mpn": "CW-9061018-WW",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/cpu-coolers/cw-9061018-ww/icue-link-titan-360-rx-rgb-aio-liquid-cpu-cooler-cw-9061018-ww",
+        "retrieved": "2026-11-17",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"CPU Socket Intel 1851,Intel 1700,AMD AM5,AMD AM4\""
+      },
+      "radiatorSizeMm": {
+        "value": 360,
+        "source": "maker",
+        "note": "\"Radiator Size 360mm\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  }
+]

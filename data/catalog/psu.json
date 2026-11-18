@@ -1,0 +1,649 @@
+[
+  {
+    "id": "psu-corsair-rm750e-atx-3-1",
+    "category": "psu",
+    "brand": "Corsair",
+    "model": "RM750e (ATX 3.1)",
+    "mpn": "CP-9020295",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/psu/cp-9020295-na/rme-series-rm750e-fully-modular-low-noise-atx-power-supply-cp-9020295-na",
+        "retrieved": "2026-11-17",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 750,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "Cybenetics Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "maker",
+        "note": "\"ATX12V Version 3.1\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"Dimensions 140x150x86\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 3
+        },
+        "source": "maker",
+        "note": "Kablo listesi: 1 × 12V-2x6 (12+4), 1 × \"12V-2x6 to Dual 8-Pin (6+2)\" (2 uç), 1 × PCIe 8-pin (6+2)"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-corsair-rm850x-atx-3-1-2024",
+    "category": "psu",
+    "brand": "Corsair",
+    "model": "RM850x (ATX 3.1, 2024)",
+    "mpn": "CP-9020270",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/psu/cp-9020270-na/rmx-series-rm850x-fully-modular-power-supply-cp-9020270-na",
+        "retrieved": "2026-11-17",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      },
+      "cables": {
+        "url": "https://www.corsair.com/us/en/explorer/diy-builder/power-supply-units/rmx-atx-31-psus-cable-compatibility/",
+        "retrieved": "2026-11-17",
+        "title": "Corsair: RMx ATX 3.1 kutudaki kablolar"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 850,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "Cybenetics Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "maker",
+        "note": "\"ATX12V Version 3.1\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 160,
+        "source": "maker",
+        "note": "\"Dimensions 160x150x86\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 3
+        },
+        "source": "cables",
+        "note": "\"1x PCIe 12V-2x6-pin (12+4) Cable\", \"3x PCIe 8-pin (6+2) Cable\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-corsair-rm1000x-atx-3-1-2024",
+    "category": "psu",
+    "brand": "Corsair",
+    "model": "RM1000x (ATX 3.1, 2024)",
+    "mpn": "CP-9020271",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/psu/cp-9020271-na/rmx-series-rm1000x-fully-modular-power-supply-cp-9020271-na",
+        "retrieved": "2026-11-17",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      },
+      "cables": {
+        "url": "https://www.corsair.com/us/en/explorer/diy-builder/power-supply-units/rmx-atx-31-psus-cable-compatibility/",
+        "retrieved": "2026-11-17",
+        "title": "Corsair: RMx ATX 3.1 kutudaki kablolar"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 1000,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "Cybenetics Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "maker",
+        "note": "\"ATX12V Version 3.1\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 160,
+        "source": "maker",
+        "note": "\"Dimensions 160x150x86\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 4
+        },
+        "source": "cables",
+        "note": "\"1x PCIe 12V-2x6-pin (12+4) Cable\", \"4x PCIe 8-pin (6+2) Cable\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-seasonic-focus-gx-750-atx-3-1-v5",
+    "category": "psu",
+    "brand": "Seasonic",
+    "model": "FOCUS GX-750 ATX 3.1 (v5)",
+    "sources": {
+      "maker": {
+        "url": "https://seasonic.com/focus-gx-atx-3-1/",
+        "retrieved": "2026-11-17",
+        "title": "Seasonic FOCUS GX ATX 3.1 ürün sayfası"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 750,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold · Cybenetics Platinum",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "maker",
+        "note": "Ürün adı ve sayfa: \"ATX 3.1 & PCIe 5.1 Ready\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"FOCUS GX v5 provides up to 1000 W while remaining 140 mm long\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 3
+        },
+        "source": "maker",
+        "note": "Kablolar: 1 × 12V-2x6; PCIe (8/6) 1 uçlu × 1 kablo + 2 uçlu × 1 kablo"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-seasonic-focus-gx-850-atx-3-1-v5",
+    "category": "psu",
+    "brand": "Seasonic",
+    "model": "FOCUS GX-850 ATX 3.1 (v5)",
+    "sources": {
+      "maker": {
+        "url": "https://seasonic.com/focus-gx-atx-3-1/",
+        "retrieved": "2026-11-17",
+        "title": "Seasonic FOCUS GX ATX 3.1 ürün sayfası"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 850,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold · Cybenetics Platinum",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "maker",
+        "note": "Ürün adı ve sayfa: \"ATX 3.1 & PCIe 5.1 Ready\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"FOCUS GX v5 provides up to 1000 W while remaining 140 mm long\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 4
+        },
+        "source": "maker",
+        "note": "Kablolar: 1 × 12V-2x6; PCIe (8/6) 1 uçlu × 2 kablo + 2 uçlu × 1 kablo"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-msi-mag-a750gl-pcie5",
+    "category": "psu",
+    "brand": "MSI",
+    "model": "MAG A750GL PCIE5",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Power-Supply/MAG-A750GL-PCIE5/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (Specification)"
+      },
+      "overview": {
+        "url": "https://www.msi.com/Power-Supply/MAG-A750GL-PCIE5",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (genel bakış)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 750,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "overview",
+        "note": "\"ATX 3.1 Ready\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker",
+        "note": "\"Yes (full modular)\""
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"Dimensions (DxWxH) 140 x 150 x 86 mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 3
+        },
+        "source": "maker",
+        "note": "\"PCI-E (6+2 pin) 3\", \"PCI-E 5.0 (16 pin) 1 (450W)\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-msi-mag-a850gl-pcie5",
+    "category": "psu",
+    "brand": "MSI",
+    "model": "MAG A850GL PCIE5",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Power-Supply/MAG-A850GL-PCIE5/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (Specification)"
+      },
+      "overview": {
+        "url": "https://www.msi.com/Power-Supply/MAG-A850GL-PCIE5",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (genel bakış)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 850,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "overview",
+        "note": "\"ATX 3.1 Ready\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker",
+        "note": "\"Yes (full modular)\""
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"Dimensions (DxWxH) 140 x 150 x 86 mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 4
+        },
+        "source": "maker",
+        "note": "\"PCI-E (6+2 pin) 4\", \"PCI-E 5.0 (16 pin) 1 (600W)\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-be-quiet-pure-power-12-m-750w",
+    "category": "psu",
+    "brand": "be quiet!",
+    "model": "Pure Power 12 M 750W",
+    "sources": {
+      "maker": {
+        "url": "https://www.bequiet.com/en/powersupply/4073",
+        "retrieved": "2026-11-17",
+        "title": "be quiet! ürün sayfası"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 750,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.0",
+        "source": "maker",
+        "note": "Sayfada hem \"ATX 3.1 PSU\" hem \"ATX 3.0 compliant\" geçiyor; düşük olan yazıldı."
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker",
+        "note": "Sayfada \"Modular cables ✓\""
+      },
+      "lengthMm": {
+        "value": 160,
+        "source": "maker",
+        "note": "\"Dimensions without cable (L x W x H) 160 x 150 x 86\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 2
+        },
+        "source": "maker",
+        "note": "\"12V-2x6 cables 1\", \"PCI-e 6+2-pin (GPU) 2\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-be-quiet-pure-power-12-m-850w",
+    "category": "psu",
+    "brand": "be quiet!",
+    "model": "Pure Power 12 M 850W",
+    "sources": {
+      "maker": {
+        "url": "https://www.bequiet.com/en/powersupply/4072",
+        "retrieved": "2026-11-17",
+        "title": "be quiet! ürün sayfası"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 850,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.0",
+        "source": "maker",
+        "note": "\"ATX 3.0 compliant\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker",
+        "note": "Sayfada \"Modular cables ✓\""
+      },
+      "lengthMm": {
+        "value": 160,
+        "source": "maker",
+        "note": "\"Dimensions without cable (L x W x H) 160 x 150 x 86\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 4
+        },
+        "source": "maker",
+        "note": "\"12V-2x6 cables 1\", \"PCI-e 6+2-pin (GPU) 4\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-thermaltake-toughpower-gf-a3-gold-850w",
+    "category": "psu",
+    "brand": "Thermaltake",
+    "model": "Toughpower GF A3 Gold 850W",
+    "sources": {
+      "maker": {
+        "url": "https://www.thermaltake.com/toughpower-gf-a3-gold-850w-tt-premium-edition.html",
+        "retrieved": "2026-11-17",
+        "title": "Thermaltake ürün sayfası"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 850,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.0",
+        "source": "maker",
+        "note": "\"compatible with Intel’s ATX 3.0 specifications\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker",
+        "note": "\"Fully Modular Low-Profile Flat Cables\""
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"Dimensions 150mm(W)x86mm(H)x140mm(D)\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 4
+        },
+        "source": "maker",
+        "note": "\"PCIe(6+2Pin) X 4\", \"PCIe (12+4Pin) 450W X 1\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-gigabyte-ud850gm-pg5-rev-1-0",
+    "category": "psu",
+    "brand": "Gigabyte",
+    "model": "UD850GM PG5 (rev. 1.0)",
+    "mpn": "GP-UD850GM PG5",
+    "sources": {
+      "maker": {
+        "url": "https://www.gigabyte.com/Power-Supply/GP-UD850GM-PG5-rev-10/sp",
+        "retrieved": "2026-11-17",
+        "title": "Gigabyte ürün sayfası (Specification)"
+      },
+      "overview": {
+        "url": "https://www.gigabyte.com/Power-Supply/GP-UD850GM-PG5-rev-10",
+        "retrieved": "2026-11-17",
+        "title": "Gigabyte ürün sayfası (genel bakış)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 850,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": null,
+        "note": "Gigabyte sayfasında ATX sürümü yazmıyor (\"Intel Form Factor ATX 12V\")."
+      },
+      "modularity": {
+        "value": "full",
+        "source": "overview",
+        "note": "\"Fully modular design\""
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"Dimensions 150 x 140 x 86 mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 4
+        },
+        "source": "maker",
+        "note": "\"PCI-e 12+4 Pin x 1\", \"PCI-e 6+2 Pin x 4\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-cooler-master-mwe-gold-850-v3-atx-3-1",
+    "category": "psu",
+    "brand": "Cooler Master",
+    "model": "MWE Gold 850 V3 ATX 3.1",
+    "sources": {
+      "maker": {
+        "url": "https://www.coolermaster.com/en-global/products/mwe-gold-850-v3-atx-3-1.html",
+        "retrieved": "2026-11-17",
+        "title": "Cooler Master ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 850,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "maker",
+        "note": "\"ATX 12V Ver. 3.1\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "maker",
+        "note": "\"Modular: Fully Modular\""
+      },
+      "lengthMm": {
+        "value": 160,
+        "source": "maker",
+        "note": "\"Dimensions (L x W x H) 160 x 150 x 86 mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 4
+        },
+        "source": "maker",
+        "note": "\"PCI-e 6+2 Pin Connectors 4\", \"12V-2x6 Connectors 1\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "psu-asus-rog-strix-1000w-gold-aura-edition",
+    "category": "psu",
+    "brand": "ASUS",
+    "model": "ROG Strix 1000W Gold Aura Edition",
+    "mpn": "ROG-STRIX-1000G-AURA-GAMING",
+    "sources": {
+      "maker": {
+        "url": "https://rog.asus.com/power-supply-units/rog-strix/rog-strix-1000g-aura-gaming-model/spec/",
+        "retrieved": "2026-11-17",
+        "title": "ASUS ROG ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 1000,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.0",
+        "source": "maker",
+        "note": "\"ATX Standard: ATX 3.0\""
+      },
+      "modularity": {
+        "value": null,
+        "note": "ASUS sayfasında modülerlik yazmıyor."
+      },
+      "lengthMm": {
+        "value": 180,
+        "source": "maker",
+        "note": "\"Dimensions 180 x 150 x 86 mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 4
+        },
+        "source": "maker",
+        "note": "\"PCI-E 16-pin x 1\", \"PCI-E 8-pin x 4\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  }
+]

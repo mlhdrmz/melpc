@@ -1,0 +1,736 @@
+[
+  {
+    "id": "gpu-msi-geforce-rtx-5090-32g-gaming-trio-oc",
+    "category": "gpu",
+    "brand": "MSI",
+    "model": "GeForce RTX 5090 32G Gaming Trio OC",
+    "mpn": "G5090-32GTC",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Graphics-Card/GeForce-RTX-5090-32G-GAMING-TRIO-OC/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5090",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 32,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 359,
+        "source": "maker",
+        "note": "Kart ölçüsü 359 x 149 x 70 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 359 x 149 x 70 mm (kalınlık 70 mm)."
+      },
+      "boardPowerW": {
+        "value": 575,
+        "source": "maker",
+        "note": "MSI \"Power consumption\""
+      },
+      "powerConnectors": {
+        "value": {
+          "16-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 1000,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-asus-tuf-gaming-geforce-rtx-5080-16gb-gddr7-oc-edition",
+    "category": "gpu",
+    "brand": "ASUS",
+    "model": "TUF Gaming GeForce RTX 5080 16GB GDDR7 OC Edition",
+    "mpn": "TUF-RTX5080-O16G-GAMING",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/graphics-cards/tuf-gaming/tuf-rtx5080-o16g-gaming/techspec/",
+        "retrieved": "2026-11-17",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      },
+      "nvidia": {
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/",
+        "retrieved": "2026-11-17",
+        "title": "NVIDIA GeForce RTX 5080 sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5080",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 16,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 348,
+        "source": "maker",
+        "note": "Kart ölçüsü 348 x 146 x 72 mm"
+      },
+      "slotWidth": {
+        "value": 3.6,
+        "source": "maker"
+      },
+      "boardPowerW": {
+        "value": 360,
+        "source": "nvidia",
+        "note": "NVIDIA'nın RTX 5080 için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "16-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 850,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-msi-geforce-rtx-5070-ti-16g-gaming-trio-oc",
+    "category": "gpu",
+    "brand": "MSI",
+    "model": "GeForce RTX 5070 Ti 16G Gaming Trio OC",
+    "mpn": "G507T-16GTC",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Graphics-Card/GeForce-RTX-5070-Ti-16G-GAMING-TRIO-OC/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5070 Ti",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 16,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 338,
+        "source": "maker",
+        "note": "Kart ölçüsü 338 x 140 x 50 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 338 x 140 x 50 mm (kalınlık 50 mm)."
+      },
+      "boardPowerW": {
+        "value": 300,
+        "source": "maker",
+        "note": "MSI \"Power consumption\""
+      },
+      "powerConnectors": {
+        "value": {
+          "16-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 750,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-gigabyte-geforce-rtx-5070-ti-windforce-oc-sff-16g",
+    "category": "gpu",
+    "brand": "Gigabyte",
+    "model": "GeForce RTX 5070 Ti Windforce OC SFF 16G",
+    "mpn": "GV-N507TWF3OC-16GD",
+    "sources": {
+      "maker": {
+        "url": "https://www.gigabyte.com/Graphics-Card/GV-N507TWF3OC-16GD/sp",
+        "retrieved": "2026-11-17",
+        "title": "Gigabyte ürün sayfası (Specification)"
+      },
+      "nvidia": {
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+        "retrieved": "2026-11-17",
+        "title": "NVIDIA GeForce RTX 5070 ailesi sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5070 Ti",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 16,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 304,
+        "source": "maker",
+        "note": "Kart ölçüsü L=304 W=126 H=50 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler L=304 W=126 H=50 mm (kalınlık 50 mm)."
+      },
+      "boardPowerW": {
+        "value": 300,
+        "source": "nvidia",
+        "note": "NVIDIA'nın RTX 5070 Ti için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "16-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 750,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-asus-prime-geforce-rtx-5070-12gb-gddr7-oc-edition",
+    "category": "gpu",
+    "brand": "ASUS",
+    "model": "Prime GeForce RTX 5070 12GB GDDR7 OC Edition",
+    "mpn": "PRIME-RTX5070-O12G",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/graphics-cards/prime/prime-rtx5070-o12g/techspec/",
+        "retrieved": "2026-11-17",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      },
+      "nvidia": {
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+        "retrieved": "2026-11-17",
+        "title": "NVIDIA GeForce RTX 5070 ailesi sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5070",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 12,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 304,
+        "source": "maker",
+        "note": "Kart ölçüsü 304 x 126 x 50 mm"
+      },
+      "slotWidth": {
+        "value": 2.5,
+        "source": "maker"
+      },
+      "boardPowerW": {
+        "value": 250,
+        "source": "nvidia",
+        "note": "NVIDIA'nın RTX 5070 için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "16-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 750,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-msi-geforce-rtx-5070-12g-ventus-2x-oc",
+    "category": "gpu",
+    "brand": "MSI",
+    "model": "GeForce RTX 5070 12G Ventus 2X OC",
+    "mpn": "G5070-12V2C",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Graphics-Card/GeForce-RTX-5070-12G-VENTUS-2X-OC/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5070",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 12,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 236,
+        "source": "maker",
+        "note": "Kart ölçüsü 236 x 126 x 50 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 236 x 126 x 50 mm (kalınlık 50 mm)."
+      },
+      "boardPowerW": {
+        "value": 250,
+        "source": "maker",
+        "note": "MSI \"Power consumption\""
+      },
+      "powerConnectors": {
+        "value": {
+          "16-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 650,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-gigabyte-geforce-rtx-5060-ti-windforce-oc-16g",
+    "category": "gpu",
+    "brand": "Gigabyte",
+    "model": "GeForce RTX 5060 Ti Windforce OC 16G",
+    "mpn": "GV-N506TWF2OC-16GD",
+    "sources": {
+      "maker": {
+        "url": "https://www.gigabyte.com/Graphics-Card/GV-N506TWF2OC-16GD/sp",
+        "retrieved": "2026-11-17",
+        "title": "Gigabyte ürün sayfası (Specification)"
+      },
+      "nvidia": {
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+        "retrieved": "2026-11-17",
+        "title": "NVIDIA GeForce RTX 5060 ailesi sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5060 Ti",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 16,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 208,
+        "source": "maker",
+        "note": "Kart ölçüsü L=208 W=120 H=40 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler L=208 W=120 H=40 mm (kalınlık 40 mm)."
+      },
+      "boardPowerW": {
+        "value": 180,
+        "source": "nvidia",
+        "note": "NVIDIA'nın RTX 5060 Ti için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 650,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-asus-dual-geforce-rtx-5060-8gb-gddr7-oc-edition",
+    "category": "gpu",
+    "brand": "ASUS",
+    "model": "Dual GeForce RTX 5060 8GB GDDR7 OC Edition",
+    "mpn": "DUAL-RTX5060-O8G",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/graphics-cards/dual/dual-rtx5060-o8g/techspec/",
+        "retrieved": "2026-11-17",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      },
+      "nvidia": {
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+        "retrieved": "2026-11-17",
+        "title": "NVIDIA GeForce RTX 5060 ailesi sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5060",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 8,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 228,
+        "source": "maker",
+        "note": "Kart ölçüsü 228 x 123 x 50 mm"
+      },
+      "slotWidth": {
+        "value": 2.5,
+        "source": "maker"
+      },
+      "boardPowerW": {
+        "value": 145,
+        "source": "nvidia",
+        "note": "NVIDIA'nın RTX 5060 için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 550,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-msi-geforce-rtx-4060-ventus-2x-black-8g-oc",
+    "category": "gpu",
+    "brand": "MSI",
+    "model": "GeForce RTX 4060 Ventus 2X Black 8G OC",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Graphics-Card/GeForce-RTX-4060-VENTUS-2X-BLACK-8G-OC/Specification",
+        "retrieved": "2026-11-17",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 4060",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 8,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 199,
+        "source": "maker",
+        "note": "Kart ölçüsü 199 x 120 x 41 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 199 x 120 x 41 mm (kalınlık 41 mm)."
+      },
+      "boardPowerW": {
+        "value": 120,
+        "source": "maker",
+        "note": "MSI \"115 W or 120 W\" yazıyor; güç hesabında yüksek olan kullanılır"
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 550,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-sapphire-pulse-radeon-rx-9070-xt-16gb",
+    "category": "gpu",
+    "brand": "Sapphire",
+    "model": "Pulse Radeon RX 9070 XT 16GB",
+    "sources": {
+      "maker": {
+        "url": "https://www.sapphiretech.com/en/consumer/pulse-radeon-rx-9070-xt-16g-gddr6",
+        "retrieved": "2026-11-17",
+        "title": "Sapphire ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "Radeon RX 9070 XT",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 16,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 320,
+        "source": "maker",
+        "note": "Kart ölçüsü 320(L) x 120.25(W) x 61.6(H) mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 320 x 120,25 x 61,6 mm (kalınlık 61,6 mm)."
+      },
+      "boardPowerW": {
+        "value": 304,
+        "source": "maker",
+        "note": "\"304W Typical Board Power\""
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 2
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 750,
+        "source": "maker",
+        "note": "\"Minimum 750 Watt Power Supply\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-powercolor-hellhound-radeon-rx-9070-xt-16gb",
+    "category": "gpu",
+    "brand": "PowerColor",
+    "model": "Hellhound Radeon RX 9070 XT 16GB",
+    "mpn": "RX9070XT 16G-L/OC",
+    "sources": {
+      "maker": {
+        "url": "https://www.powercolor.com/product-detail211.htm",
+        "retrieved": "2026-11-17",
+        "title": "PowerColor ürün sayfası (Specification)"
+      },
+      "amd": {
+        "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD Radeon RX 9070 XT sayfası"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "Radeon RX 9070 XT",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 16,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 327,
+        "source": "maker",
+        "note": "Kart 327 x 128 x 49 mm; braketle 340 x 142 x 49 mm"
+      },
+      "slotWidth": {
+        "value": 2.5,
+        "source": "maker"
+      },
+      "boardPowerW": {
+        "value": 304,
+        "source": "amd",
+        "note": "AMD'nın RX 9070 XT (\"Typical Board Power\") için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 2
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 800,
+        "source": "maker",
+        "note": "\"Minimum System Power requirement (W) 800W\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-sapphire-pulse-radeon-rx-9070-16gb",
+    "category": "gpu",
+    "brand": "Sapphire",
+    "model": "Pulse Radeon RX 9070 16GB",
+    "sources": {
+      "maker": {
+        "url": "https://www.sapphiretech.com/en/consumer/pulse-radeon-rx-9070-16g-gddr6",
+        "retrieved": "2026-11-17",
+        "title": "Sapphire ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "Radeon RX 9070",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 16,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 280,
+        "source": "maker",
+        "note": "Kart ölçüsü 280(L) x 120.25(W) x 51.5(H) mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 280 x 120,25 x 51,5 mm (kalınlık 51,5 mm)."
+      },
+      "boardPowerW": {
+        "value": 220,
+        "source": "maker",
+        "note": "\"220W Typical Board Power\""
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 2
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 650,
+        "source": "maker",
+        "note": "\"Minimum 650 Watt Power Supply\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-sapphire-pulse-radeon-rx-9060-xt-oc-16gb",
+    "category": "gpu",
+    "brand": "Sapphire",
+    "model": "Pulse Radeon RX 9060 XT OC 16GB",
+    "sources": {
+      "maker": {
+        "url": "https://www.sapphiretech.com/en/consumer/pulse-radeon-rx-9060-xt-16g-gddr6",
+        "retrieved": "2026-11-17",
+        "title": "Sapphire ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "Radeon RX 9060 XT",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 16,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 240,
+        "source": "maker",
+        "note": "Kart ölçüsü 240(L) x 111.25(W) x 46.08(H) mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 240 x 111,25 x 46,08 mm (kalınlık 46,08 mm)."
+      },
+      "boardPowerW": {
+        "value": 170,
+        "source": "maker",
+        "note": "\"170W Typical Board Power\""
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 450,
+        "source": "maker",
+        "note": "\"Minimum 450 Watt Power Supply\""
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "gpu-asrock-intel-arc-b580-challenger-12gb-oc",
+    "category": "gpu",
+    "brand": "ASRock",
+    "model": "Intel Arc B580 Challenger 12GB OC",
+    "sources": {
+      "maker": {
+        "url": "https://www.asrock.com/Graphics-Card/Intel/Intel%20Arc%20B580%20Challenger%2012GB%20OC/index.asp#Specification",
+        "retrieved": "2026-11-17",
+        "title": "ASRock ürün sayfası (Specification)"
+      },
+      "intel": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/241598/intel-arc-b580-graphics/specifications.html",
+        "retrieved": "2026-11-17",
+        "title": "Intel Arc B580 teknik özellikler"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "Arc B580",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 12,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 249,
+        "source": "maker",
+        "note": "\"249 x 132 x 41mm, 2-slot\""
+      },
+      "slotWidth": {
+        "value": 2,
+        "source": "maker"
+      },
+      "boardPowerW": {
+        "value": 190,
+        "source": "intel",
+        "note": "Intel'nın Arc B580 (\"TBP\") için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 650,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-17",
+    "updatedAt": "2026-11-17"
+  }
+]
