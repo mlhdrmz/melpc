@@ -9,6 +9,7 @@ import { PartDetails } from './PartDetails'
 import { PriceLine } from '../price/PriceLine'
 import { usePrices } from '../price/PriceContext'
 import { useCatalog } from '../catalog/CatalogContext'
+import { MAX_PARTS, useCompare } from '../compare/CompareContext'
 import { CategoryIcon } from './icons'
 
 interface PartPickerProps {
@@ -45,7 +46,9 @@ export function PartPicker({ category, parts, build, selectedIds, onChoose, onCl
   const [focusId, setFocusId] = useState<string | null>(selectedIds[0] ?? null)
   const [sortId, setSortId] = useState('compat')
   const { catalog } = useCatalog()
-  const { index } = usePrices()
+  const { index, notify } = usePrices()
+  const compare = useCompare()
+  const inCompare = compare.parts[category]
   const ctx = useMemo(() => ({ results: catalog.benchmarks.results }), [catalog])
   const sortOptions = SORT_OPTIONS[category]
   const sortOption = sortOptions.find((o) => o.id === sortId)
@@ -220,6 +223,18 @@ export function PartPicker({ category, parts, build, selectedIds, onChoose, onCl
                     </div>
                     <div className="picker__side">
                       <PriceLine partId={part.id} className="picker__price" />
+                      <button
+                        type="button"
+                        className={`chip-button${inCompare.includes(part.id) ? ' chip-button--on' : ' chip-button--quiet'}`}
+                        aria-pressed={inCompare.includes(part.id)}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          const r = compare.togglePart(category, part.id)
+                          if (r === 'full') notify(`Karşılaştırmada bu kategoriden en fazla ${MAX_PARTS} parça olabilir.`)
+                        }}
+                      >
+                        {inCompare.includes(part.id) ? 'Karşılaştırmada' : 'Karşılaştır'}
+                      </button>
                       <button
                         type="button"
                         className={selected ? 'button button--ghost' : 'button button--primary'}

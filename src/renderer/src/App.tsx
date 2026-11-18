@@ -6,9 +6,11 @@ import { MatchPage } from './pages/MatchPage'
 import { PriceProvider, usePrices } from './price/PriceContext'
 import { PriceStatus } from './price/PriceStatus'
 import { CatalogProvider } from './catalog/CatalogContext'
+import { CompareProvider, useCompare } from './compare/CompareContext'
+import { ComparePage } from './pages/ComparePage'
 
 type LoadState = { status: 'loading' } | { status: 'ready'; catalog: CatalogPayload } | { status: 'error'; message: string }
-type Page = 'build' | 'match'
+type Page = 'build' | 'compare' | 'match'
 
 export function App(): ReactElement {
   const [state, setState] = useState<LoadState>({ status: 'loading' })
@@ -31,6 +33,7 @@ export function App(): ReactElement {
 
   return (
     <PriceProvider notify={notify}>
+      <CompareProvider>
       <div className="app">
         <header className="app-header">
           <div className="app-header__inner">
@@ -52,6 +55,7 @@ export function App(): ReactElement {
                 <BuildPage catalog={state.catalog} />
               </div>
               {page === 'match' && <MatchPage catalog={state.catalog} />}
+              {page === 'compare' && <ComparePage />}
             </CatalogProvider>
           )}
         </main>
@@ -61,12 +65,14 @@ export function App(): ReactElement {
           </div>
         )}
       </div>
+      </CompareProvider>
     </PriceProvider>
   )
 }
 
 function MainNav({ page, onChange }: { page: Page; onChange: (p: Page) => void }): ReactElement {
   const { state } = usePrices()
+  const { count } = useCompare()
   const pending = state?.matches.filter((m) => m.status === 'candidate').length ?? 0
   const item = (p: Page, label: string, extra?: ReactElement): ReactElement => (
     <button
@@ -82,6 +88,15 @@ function MainNav({ page, onChange }: { page: Page; onChange: (p: Page) => void }
   return (
     <nav aria-label="Ana menü" className="main-nav">
       {item('build', 'Kasa Topla')}
+      {item(
+        'compare',
+        'Karşılaştır',
+        count > 0 ? (
+          <span className="nav-count" title={`Karşılaştırma listesinde ${count} öğe`}>
+            {count}
+          </span>
+        ) : undefined
+      )}
       {item(
         'match',
         'Mağaza eşleştirme',

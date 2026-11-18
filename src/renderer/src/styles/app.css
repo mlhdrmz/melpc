@@ -1489,3 +1489,94 @@ button.main-nav__item:not(.main-nav__item--active):hover {
 .eval-sources {
   color: var(--muted);
 }
+
+/* ---------- Karşılaştır sayfası (4. aşama) ---------- */
+.compare-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.compare-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.segmented--wrap {
+  flex-wrap: wrap;
+  border-radius: 16px;
+  align-self: flex-start;
+}
+.compare-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 14px;
+}
+.compare-toolbar .select select {
+  max-width: 420px;
+  min-width: 280px;
+}
+.compare-builds-pick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+}
+.cmp-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-x: auto;
+}
+.cmp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.cmp-table th,
+.cmp-table td {
+  padding: 9px 12px;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.cmp-table thead th {
+  border-top: 0;
+  background: var(--surface-2);
+}
+.cmp-table tbody th {
+  width: 210px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.cmp-head {
+  display: block;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.cmp-note {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.8;
+}
+.cmp-row--diff td {
+  background: rgba(165, 139, 255, 0.07);
+}
+.cmp-cell--best {
+  box-shadow: inset 0 0 0 2px var(--cyan);
+  font-weight: 700;
+}
+.chip-button--on {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+.saved__item .chip-button {
+  align-self: center;
+}
