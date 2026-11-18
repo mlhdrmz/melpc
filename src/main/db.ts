@@ -3,6 +3,7 @@ import { dirname, join } from 'node:path'
 import initSqlJs, { type Database } from 'sql.js'
 import type { PartRecord, SourceRef, SpecEntry } from '../engines/catalog/types'
 import type { BuildSelection, SavedBuild } from '../shared/api'
+import type { OfferRecord, ParsedProduct, StoreId, StoreMatch } from '../engines/price/types'
 
 // SQLite (sql.js, WebAssembly): Windows'ta derleme aracı gerektirmez.
 // Veritabanı bellekte açılır ve her yazmadan sonra dosyaya kaydedilir.
@@ -41,6 +42,36 @@ CREATE TABLE IF NOT EXISTS builds (
   updated_at TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS parts_category ON parts(category);
+
+-- Fiyat motoru (3. aşama). Katalog her açılışta yeniden yüklendiği için bu tablolar parts'a bağlı değil.
+CREATE TABLE IF NOT EXISTS store_matches (
+  part_id TEXT NOT NULL,
+  store_id TEXT NOT NULL,
+  status TEXT NOT NULL,
+  url TEXT,
+  product_json TEXT,
+  code_check TEXT,
+  updated_at TEXT NOT NULL,
+  PRIMARY KEY (part_id, store_id)
+);
+CREATE TABLE IF NOT EXISTS offers (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  part_id TEXT NOT NULL,
+  store_id TEXT NOT NULL,
+  url TEXT NOT NULL,
+  price REAL,
+  in_stock INTEGER,
+  fetched_at TEXT NOT NULL,
+  error TEXT
+);
+CREATE INDEX IF NOT EXISTS offers_part_store ON offers(part_id, store_id, fetched_at);
+CREATE TABLE IF NOT EXISTS price_runs (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  kind TEXT NOT NULL,
+  started_at TEXT NOT NULL,
+  finished_at TEXT,
+  summary TEXT
+);
 `
 
 export class MelpcDb {
@@ -173,6 +204,86 @@ export class MelpcDb {
     this.persist()
   }
 
+  // ---------- Fiyat motoru ----------
+
+  listMatches(): StoreMatch[] {
+    return this.all('SELECT * FROM store_matches').map((r) => ({
+      partId: r.part_id as string,
+      storeId: r.store_id as StoreId,
+      status: r.status as StoreMatch['status'],
+      ...(r.url ? { url: r.url as string } : {}),
+      ...(r.product_json ? { product: JSON.parse(r.product_json as string) as ParsedProduct } : {}),
+      ...(r.code_check ? { codeCheck: r.code_check as StoreMatch['codeCheck'] } : {}),
+      updatedAt: r.updated_at as string
+    }))
+  }
+
+  upsertMatch(m: StoreMatch, persist = true): void {
+    this.db.run(
+      `INSERT INTO store_matches (part_id, store_id, status, url, product_json, code_check, updated_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(part_id, store_id) DO UPDATE SET status = excluded.status, url = excluded.url,
+         product_json = excluded.product_json, code_check = excluded.code_check, updated_at = excluded.updated_at`,
+      [m.partId, m.storeId, m.status, m.url ?? null, m.product ? JSON.stringify(m.product) : null, m.codeCheck ?? null, m.updatedAt]
+    )
+    if (persist) this.persist()
+  }
+
+  deleteMatch(partId: string, storeId: StoreId): void {
+    this.db.run('DELETE FROM store_matches WHERE part_id = ? AND store_id = ?', [partId, storeId])
+    this.persist()
+  }
+
+  /** Fiyat okumasını ekler. Çok sayıda yazmada `persist` çağrıyı yapan tarafa bırakılır. */
+  addOffer(o: OfferRecord, persist = false): void {
+    this.db.run(
+      'INSERT INTO offers (part_id, store_id, url, price, in_stock, fetched_at, error) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [o.partId, o.storeId, o.url, o.price, o.inStock === null ? null : o.inStock ? 1 : 0, o.fetchedAt, o.error ?? null]
+    )
+    if (persist) this.persist()
+  }
+
+  /** Her parça ve mağaza için son okuma. */
+  latestOffers(): OfferRecord[] {
+    return this.all(
+      `SELECT o.* FROM offers o
+       JOIN (SELECT part_id, store_id, MAX(id) AS id FROM offers GROUP BY part_id, store_id) last ON last.id = o.id`
+    ).map(toOffer)
+  }
+
+  /** Her parça ve mağaza için fiyatı okunabilmiş son okuma (okuma hatalarında eski fiyatı göstermek için). */
+  latestPricedOffers(): OfferRecord[] {
+    return this.all(
+      `SELECT o.* FROM offers o
+       JOIN (SELECT part_id, store_id, MAX(id) AS id FROM offers WHERE price IS NOT NULL GROUP BY part_id, store_id) last
+       ON last.id = o.id`
+    ).map(toOffer)
+  }
+
+  offerHistory(partId: string): OfferRecord[] {
+    return this.all('SELECT * FROM offers WHERE part_id = ? AND price IS NOT NULL ORDER BY fetched_at', [partId]).map(toOffer)
+  }
+
+  startRun(kind: 'update' | 'match', startedAt: string): number {
+    this.db.run('INSERT INTO price_runs (kind, started_at) VALUES (?, ?)', [kind, startedAt])
+    const id = this.all('SELECT last_insert_rowid() AS id')[0].id as number
+    this.persist()
+    return id
+  }
+
+  finishRun(id: number, finishedAt: string, summary: string): void {
+    this.db.run('UPDATE price_runs SET finished_at = ?, summary = ? WHERE id = ?', [finishedAt, summary, id])
+    this.persist()
+  }
+
+  listRuns(kind: 'update' | 'match', limit = 20): { startedAt: string; finishedAt?: string; summary?: string }[] {
+    return this.all('SELECT * FROM price_runs WHERE kind = ? ORDER BY id DESC LIMIT ?', [kind, limit]).map((r) => ({
+      startedAt: r.started_at as string,
+      ...(r.finished_at ? { finishedAt: r.finished_at as string } : {}),
+      ...(r.summary ? { summary: r.summary as string } : {})
+    }))
+  }
+
   private all(sql: string, params: (string | number | null)[] = []): Record<string, unknown>[] {
     const stmt = this.db.prepare(sql)
     stmt.bind(params)
@@ -180,6 +291,18 @@ export class MelpcDb {
     while (stmt.step()) rows.push(stmt.getAsObject())
     stmt.free()
     return rows
+  }
+}
+
+function toOffer(r: Record<string, unknown>): OfferRecord {
+  return {
+    partId: r.part_id as string,
+    storeId: r.store_id as StoreId,
+    url: r.url as string,
+    price: r.price === null ? null : (r.price as number),
+    inStock: r.in_stock === null ? null : r.in_stock === 1,
+    fetchedAt: r.fetched_at as string,
+    ...(r.error ? { error: r.error as string } : {})
   }
 }
 
