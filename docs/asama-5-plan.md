@@ -24,6 +24,25 @@ Kapsam: Melih'in kendi bilgisayarını (Dell G15 5520 laptop) okumak; içinde ne
 8. **Saklama:** Yalnızca son okuma, seri numarası olmadan, yerel veritabanında tutulur. Geçmiş tutulmaz; "Yeniden oku" ile güncellenir.
 9. **Çalışma düzeni:** `asama-5` dalı `main`'den açılır, her adım bir commit olur, sonunda PR açılır (taban `main`). Önce görsel taslak ve laptop profili Melih'e gösterilir.
 
+## Laptop profili: Dell G15 5520 (taslak, Melih'in onayı bekleniyor)
+
+Windows'un okuduğu (18.11.2026, WMI) ve Dell'in "Dell G15 5520 Setup and Specifications" sayfalarında yazan değerler. Dell'in PDF'i otomatik okumaya kapalı; aynı içerik dell.com'daki HTML sayfalarından okundu.
+
+| Konu | Windows'un okuduğu | Dell'in yazdığı | Kaynak sayfa |
+|---|---|---|---|
+| Bilgisayar | "Dell G15 5520" (taşınabilir, pil var) | | |
+| İşlemci | "12th Gen Intel Core i7-12700H", 14 çekirdek, 20 izlek | "12th Generation Intel Core i7-12700H": "45 W", "14" çekirdek, "20" izlek. Seçenekler: i7-12700H ya da i5-12500H. | [Processor](https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/processor?guid=guid-5487570d-81b8-4be9-8a7a-38ee06c4b03d&lang=en-us) |
+| Ekran kartı | "NVIDIA GeForce RTX 3060 Laptop GPU". Bellek 4 GB görünüyor, bu yanlış: Windows'un bu alanı 4 GB'ta kesiliyor. | "NVIDIA GeForce RTX 3060", "6 GB", "GDDR6" | [GPU—Discrete](https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/gpudiscrete?guid=guid-e2fe761c-386b-4115-8b4e-034eb55fbd37&lang=en-us) |
+| Bellek | 2 × 32 GB, DDR5, 4800 MT/s, SO-DIMM; yuvalar "DIMM A" ve "DIMM B", ikisi de dolu. Windows'un bellek üst sınırı 32 GB görünüyor; takılı belleğin altında olduğu için kullanılmıyor. | "Two SoDIMM slots", "Dual-channel DDR5", "4800 MHz"; en büyük yapılandırma "32 GB"; yuva başına "8 GB, 16 GB, 32 GB". Listelenen yapılandırmalar 8, 16 ve 32 GB (2 × 16 GB). | [Memory](https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/memory?guid=guid-e9d2ea83-38a4-431d-803c-96d63c1dbc34&lang=en-us) |
+| SSD | "PM991a NVMe Samsung 1024GB" (tek disk) | "only one M.2 slot for either an M.2 2230 solid-state drive or an M.2 2280 solid-state drive"; 2280 için "PCIe Gen4 x4 NVMe", "Up to 2 TB"; 2230 için Gen3 ya da Gen4, "Up to 1 TB". | [Storage](https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/storage?guid=guid-d79f17ca-e619-43e7-82a5-a0b0e7fb5c0a&lang=en-us) |
+| Wi-Fi | "Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)" | "One M.2 2230 slot for WiFi and Bluetooth combo card"; seçenekler "Intel AX201" ya da "Killer 1650i", Wi-Fi 6, "Bluetooth 5.2". | [Internal slots](https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/internal-slots?guid=guid-647a9bd6-0be5-4b27-9df1-31e3c269abed&lang=en-us), [Wireless module](https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/wireless-module?guid=guid-17e9c29d-abc5-44bd-95ce-79e58b869635&lang=en-us) |
+
+Bu değerlerden çıkan durum:
+- **Bellek:** İki yuva da Dell'in yuva başına izin verdiği en büyük modülle (32 GB) dolu. Dell'in listelediği en büyük yapılandırma 32 GB olsa da sistem 64 GB'ı görüyor. Daha fazla bellek eklenemez.
+- **SSD:** İkinci SSD için yuva yok. Yükseltme, mevcut diskin yerine M.2 2280 PCIe Gen4 x4 bir SSD takmak demek; Dell 2 TB'a kadar yazıyor.
+- **Wi-Fi:** Takılı kart, Dell'in iki seçeneğinden biri (Killer 1650i). Ekranda yalnızca bilgi olarak geçer.
+- **İşlemci ve ekran kartı:** Karta lehimli, değiştirilemez.
+
 ## Yapılacaklar
 
 1. Laptop profili (Dell kılavuzu) ve görsel taslak. Melih'in onayı bekleniyor.
