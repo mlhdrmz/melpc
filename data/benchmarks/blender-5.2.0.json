@@ -1,0 +1,60 @@
+{
+  "sources": {
+    "bod-cpu-5.2.0": {
+      "url": "https://opendata.blender.org/benchmarks/query/?compute_type=CPU&blender_version=5.2.0&group_by=device_name",
+      "retrieved": "2026-11-18",
+      "title": "Blender Open Data · İşlemci · Blender 5.2.0 (cihaza göre ortanca)",
+      "license": "CC0"
+    },
+    "bod-optix-5.2.0": {
+      "url": "https://opendata.blender.org/benchmarks/query/?compute_type=OPTIX&blender_version=5.2.0&group_by=device_name",
+      "retrieved": "2026-11-18",
+      "title": "Blender Open Data · NVIDIA OptiX · Blender 5.2.0 (cihaza göre ortanca)",
+      "license": "CC0"
+    },
+    "bod-hip-5.2.0": {
+      "url": "https://opendata.blender.org/benchmarks/query/?compute_type=HIP&blender_version=5.2.0&group_by=device_name",
+      "retrieved": "2026-11-18",
+      "title": "Blender Open Data · AMD HIP · Blender 5.2.0 (cihaza göre ortanca)",
+      "license": "CC0"
+    }
+  },
+  "results": [
+    {
+      "test": "blender-cycles",
+      "subject": { "partId": "cpu-amd-ryzen-7-9800x3d" },
+      "device": "AMD Ryzen 7 9800X3D 8-Core Processor",
+      "value": 367.88,
+      "conditions": { "blenderVersion": "5.2.0", "computeType": "CPU", "statistic": "median" },
+      "sampleCount": 222,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": { "partId": "cpu-intel-core-ultra-9-285k" },
+      "device": "Intel Core Ultra 9 285K",
+      "value": 575.87,
+      "conditions": { "blenderVersion": "5.2.0", "computeType": "CPU", "statistic": "median" },
+      "sampleCount": 131,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": { "gpuChip": "GeForce RTX 5070" },
+      "device": "NVIDIA GeForce RTX 5070",
+      "value": 5806.64,
+      "conditions": { "blenderVersion": "5.2.0", "computeType": "OPTIX", "statistic": "median" },
+      "sampleCount": 192,
+      "source": "bod-optix-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": { "gpuChip": "Radeon RX 9070 XT" },
+      "device": "AMD Radeon RX 9070 XT",
+      "value": 3364.74,
+      "conditions": { "blenderVersion": "5.2.0", "computeType": "HIP", "statistic": "median" },
+      "sampleCount": 433,
+      "source": "bod-hip-5.2.0"
+    }
+  ]
+}
