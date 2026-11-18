@@ -119,7 +119,9 @@ export const SPEC_DEFS: Record<CategoryId, SpecDef[]> = {
       label: 'Form faktörü',
       kind: 'enum',
       options: ['M.2 2280', 'M.2 2230', '2.5"', '3.5"']
-    }
+    },
+    // Üreticinin "en fazla" diye verdiği sıralı okuma hızı (4. aşamada eklendi).
+    { key: 'seqReadMbps', label: 'Sıralı okuma (üretici)', kind: 'integer', unit: 'MB/s', optional: true }
   ],
   psu: [
     { key: 'wattage', label: 'Güç', kind: 'integer', unit: 'W', filter: true },

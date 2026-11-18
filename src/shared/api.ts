@@ -1,5 +1,6 @@
 import type { CatalogLoadError, CategoryId, Part } from '../engines/catalog/types'
 import type { OfferRecord, StoreId, StoreMatch } from '../engines/price/types'
+import type { BenchmarkResult, BenchmarkSource } from '../engines/benchmark/types'
 
 // Ana süreç ile arayüz arasındaki sözleşme. Arayüz veriye yalnızca preload'un açtığı bu API ile erişir.
 
@@ -23,8 +24,10 @@ export interface SaveBuildInput {
 
 export interface CatalogPayload {
   parts: Part[]
-  /** Kataloğa alınamayan kayıtlar ve nedenleri. */
+  /** Kataloğa ya da ölçümlere alınamayan kayıtlar ve nedenleri. */
   errors: CatalogLoadError[]
+  /** Performans ölçümleri (data/benchmarks). */
+  benchmarks: { results: BenchmarkResult[]; sources: Record<string, BenchmarkSource> }
 }
 
 // ---------- Fiyat motoru ----------
