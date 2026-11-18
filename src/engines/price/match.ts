@@ -70,13 +70,19 @@ interface Slug {
 
 const uniq = (xs: string[]): string[] => [...new Set(xs)]
 
-/** "1 TB" → "1TB", "X870E-E" → "X870EE": birimi ve tek harflik model sonekini sayıya bitiştirir. */
-function prepareName(s: string): string {
-  return s.replace(/(\d)\s+(tb|gb|mb|w)\b/gi, '$1$2').replace(/([A-Za-z0-9]*\d[A-Za-z0-9]*)-([A-Za-z])\b/g, '$1$2')
+/**
+ * "1 TB" → "1TB", "X870E-E" → "X870EE": birimi ve tek harflik model sonekini sayıya bitiştirir.
+ * joinSpacedLetter (yalnızca ad karşılaştırmasında): boşlukla ayrılmış tek harf de bitişir ("A620M H" → "A620MH");
+ * böylece "A620M H" ile "A620M S2H", "Pure Power 12 M" ile "Pure Power 12" ayrılır.
+ */
+function prepareName(s: string, joinSpacedLetter = false): string {
+  const out = s.replace(/(\d)\s+(tb|gb|mb|w)\b/gi, '$1$2').replace(/([A-Za-z0-9]*\d[A-Za-z0-9]*)-([A-Za-z])\b/g, '$1$2')
+  return joinSpacedLetter ? out.replace(/([A-Za-z0-9]*\d[A-Za-z0-9]*) ([A-Za-z])\b/g, '$1$2') : out
 }
 
-export function partTokens(part: Part): PartTokens {
-  const name = prepareName(part.model)
+/** textMode: hazır sistemdeki ürün adı karşılaştırması için (bkz. prepareName). Link eşleştirmesi varsayılanı kullanır. */
+export function partTokens(part: Part, textMode = false): PartTokens {
+  const name = prepareName(part.model, textMode)
   const outside = tokens(name.replace(/\([^)]*\)/g, ' '))
   const inside = tokens((name.match(/\(([^)]*)\)/g) ?? []).join(' '))
   const brand = uniq(tokens(part.brand)).filter((t) => t.length > 1)
@@ -256,7 +262,7 @@ export const TEXT_MATCH_MIN = 0.9
 
 /** Mağazanın yazdığı bir ürün adının bir parçaya ne kadar benzediği (katı kurallarla). Aday olamıyorsa null. */
 export function scoreText(part: Part, text: string): number | null {
-  return scoreSlug(partTokens(part), makeSlug(text, GAMING_DESCRIPTOR_TEXT), { strict: true })
+  return scoreSlug(partTokens(part, true), makeSlug(text, GAMING_DESCRIPTOR_TEXT), { strict: true })
 }
 
 /** En iyi adaylar (en fazla `limit` tane), puana göre azalan, eşitlikte kısa link önce. */
