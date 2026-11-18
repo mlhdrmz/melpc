@@ -1,0 +1,115 @@
+{
+  "id": "dell-g15-5520",
+  "brand": "Dell",
+  "model": "G15 5520",
+  "identify": {
+    "manufacturer": "Dell Inc.",
+    "model": "Dell G15 5520"
+  },
+  "sources": {
+    "memory": {
+      "url": "https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/memory?guid=guid-e9d2ea83-38a4-431d-803c-96d63c1dbc34&lang=en-us",
+      "retrieved": "2026-11-18",
+      "title": "Dell G15 5520 Setup and Specifications: Memory"
+    },
+    "storage": {
+      "url": "https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/storage?guid=guid-d79f17ca-e619-43e7-82a5-a0b0e7fb5c0a&lang=en-us",
+      "retrieved": "2026-11-18",
+      "title": "Dell G15 5520 Setup and Specifications: Storage"
+    },
+    "slots": {
+      "url": "https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/internal-slots?guid=guid-647a9bd6-0be5-4b27-9df1-31e3c269abed&lang=en-us",
+      "retrieved": "2026-11-18",
+      "title": "Dell G15 5520 Setup and Specifications: Internal slots"
+    },
+    "wireless": {
+      "url": "https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/wireless-module?guid=guid-17e9c29d-abc5-44bd-95ce-79e58b869635&lang=en-us",
+      "retrieved": "2026-11-18",
+      "title": "Dell G15 5520 Setup and Specifications: Wireless module"
+    },
+    "cpu": {
+      "url": "https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/processor?guid=guid-5487570d-81b8-4be9-8a7a-38ee06c4b03d&lang=en-us",
+      "retrieved": "2026-11-18",
+      "title": "Dell G15 5520 Setup and Specifications: Processor"
+    },
+    "gpu": {
+      "url": "https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-setup-and-specifications/gpudiscrete?guid=guid-e2fe761c-386b-4115-8b4e-034eb55fbd37&lang=en-us",
+      "retrieved": "2026-11-18",
+      "title": "Dell G15 5520 Setup and Specifications: GPU—Discrete"
+    },
+    "parts": {
+      "url": "https://www.dell.com/support/manuals/en-us/g-series-15-5520-laptop/dell-g15-5520-service-manual/major-components-of-your-computer?guid=guid-42b9809d-ed95-40c3-a8ee-3b4352e2caf2&lang=en-us",
+      "retrieved": "2026-11-18",
+      "title": "Dell G15 5520 Service Manual: Major components of your computer"
+    },
+    "intel": {
+      "url": "https://www.intel.com/content/www/us/en/products/sku/132228/intel-core-i712700h-processor-24m-cache-up-to-4-70-ghz/specifications.html",
+      "retrieved": "2026-11-18",
+      "title": "Intel Core i7-12700H teknik özellikleri"
+    }
+  },
+  "memory": {
+    "slots": { "value": 2, "source": "memory", "note": "\"Two SoDIMM slots\"" },
+    "formFactor": { "value": "SO-DIMM", "source": "memory", "note": "\"Two SoDIMM slots\"" },
+    "type": { "value": "DDR5", "source": "memory", "note": "\"Dual-channel DDR5\"" },
+    "speedMts": { "value": 4800, "source": "memory", "note": "\"4800 MHz\"" },
+    "maxConfigGb": {
+      "value": 32,
+      "source": "memory",
+      "note": "\"Maximum memory configuration\": \"32 GB\"; listelenen yapılandırmalar 8 GB (1 × 8), 16 GB (2 × 8) ve 32 GB (2 × 16)."
+    },
+    "moduleSizesGb": { "value": [8, 16, 32], "source": "memory", "note": "\"Memory size per slot\": \"8 GB, 16 GB, 32 GB\"" }
+  },
+  "storage": {
+    "m2Slots": {
+      "value": 1,
+      "source": "storage",
+      "note": "\"Your Dell G15 5520 supports only one M.2 slot for either an M.2 2230 solid-state drive or an M.2 2280 solid-state drive.\""
+    },
+    "options": {
+      "value": [
+        { "formFactor": "M.2 2280", "interface": "PCIe 4.0", "maxCapacityGb": 2000 },
+        { "formFactor": "M.2 2230", "interface": "PCIe 4.0", "maxCapacityGb": 1000 }
+      ],
+      "source": "storage",
+      "note": "\"M.2 2280 solid-state drive\" | \"PCIe Gen4 x4 NVMe\" | \"Up to 2 TB\"; \"M.2 2230 solid-state drive\" | \"PCIe Gen3 x4 NVMe\" ya da \"PCIe Gen4 x4 NVMe\" | \"Up to 1 TB\"."
+    }
+  },
+  "wifi": {
+    "slot": { "value": "M.2 2230", "source": "slots", "note": "\"One M.2 2230 slot for WiFi and Bluetooth combo card\"" },
+    "options": {
+      "value": ["Intel AX201", "Killer 1650i"],
+      "source": "wireless",
+      "note": "İkisi de \"Wi-Fi 6 (WiFi 802.11ax)\", \"Up to 2400 Mbps\", \"Bluetooth 5.2\"."
+    }
+  },
+  "cpus": {
+    "value": [
+      { "name": "Intel Core i7-12700H", "cores": 14, "threads": 20, "powerW": 45 },
+      { "name": "Intel Core i5-12500H", "cores": 12, "threads": 16, "powerW": 45 }
+    ],
+    "source": "cpu",
+    "note": "\"12th Generation Intel Core i7-12700H\" ya da \"12th Generation Intel Core i5-12500H\"; \"Processor wattage\": \"45 W\"."
+  },
+  "cpuPackages": {
+    "value": { "Intel Core i7-12700H": "FCBGA1744" },
+    "source": "intel",
+    "note": "\"Sockets Supported\": \"FCBGA1744\" (BGA paket: karta lehimli). i5-12500H için ayrıca bakılmadı."
+  },
+  "gpus": {
+    "value": [
+      { "name": "NVIDIA GeForce RTX 3060", "vramGb": 6, "memoryType": "GDDR6" },
+      { "name": "NVIDIA GeForce RTX 3050 Ti", "vramGb": 4, "memoryType": "GDDR6" },
+      { "name": "NVIDIA GeForce RTX 3070 Ti", "vramGb": 8, "memoryType": "GDDR6" }
+    ],
+    "source": "gpu",
+    "note": "\"NVIDIA GeForce RTX 3060\" | \"6 GB\" | \"GDDR6\"; \"NVIDIA GeForce RTX 3050 Ti\" | \"4 GB\"; \"NVIDIA GeForce RTX 3070 Ti\" | \"8 GB\"."
+  },
+  "replaceable": {
+    "value": ["memory", "storage", "wifi", "battery", "fans"],
+    "source": "parts",
+    "note": "Parça listesinde \"Memory module\", \"M.2 2280 solid-state drive\", \"M.2 2230 solid-state drive\", \"Wireless card\", \"Battery\", \"Left fan\", \"Right fan\" var; işlemci ve ekran kartı ayrı parça olarak yok."
+  },
+  "addedAt": "2026-11-18",
+  "updatedAt": "2026-11-18"
+}

@@ -2,6 +2,7 @@ import type { CatalogLoadError, CategoryId, Part } from '../engines/catalog/type
 import type { OfferRecord, StoreId, StoreMatch } from '../engines/price/types'
 import type { ReadySystem } from '../engines/price/readySystem'
 import type { HardwareReading } from '../engines/hardware/types'
+import type { LaptopProfile } from '../engines/laptop/types'
 import type { BenchmarkResult, BenchmarkSource } from '../engines/benchmark/types'
 
 // Ana süreç ile arayüz arasındaki sözleşme. Arayüz veriye yalnızca preload'un açtığı bu API ile erişir.
@@ -30,6 +31,8 @@ export interface CatalogPayload {
   errors: CatalogLoadError[]
   /** Performans ölçümleri (data/benchmarks). */
   benchmarks: { results: BenchmarkResult[]; sources: Record<string, BenchmarkSource> }
+  /** Laptop profilleri (data/laptops): Bilgisayarım ekranının yükseltme bilgileri. */
+  laptops: LaptopProfile[]
 }
 
 // ---------- Fiyat motoru ----------
