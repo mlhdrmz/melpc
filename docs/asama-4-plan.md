@@ -30,12 +30,29 @@ Blender Open Data'da, Blender 5.2.0 ile, katalogdaki 15 işlemcinin ve 11 ekran 
 
 ## Yapılacaklar
 
-1. Performans verisinin biçimi ve birkaç parçalık örnek (Melih'in onayı bekleniyor).
-2. Bütün işlemci ve ekran kartları için ölçümler.
-3. Puan motoru: işlemci ve ekran kartı sıralaması, öbür kategorilerde üretici değerleriyle sıralama, sistem puanları.
-4. Açıklama motoru: kurallar ve metinler.
-5. Karşılaştır sayfası: parçalar ve toplamalar.
-6. Hazır sistemle karşılaştırma.
+1. ✓ Performans verisinin biçimi ve birkaç parçalık örnek (Melih onayladı).
+2. ✓ Bütün işlemci ve ekran kartları için ölçümler (`data/benchmarks/blender-5.2.0.json`).
+3. ✓ Puan motoru: işlemci ve ekran kartı sıralaması, öbür kategorilerde üretici değerleriyle sıralama, sistem puanları.
+4. ✓ Açıklama motoru: kurallar ve metinler.
+5. ✓ Karşılaştır sayfası: parçalar ve toplamalar.
+6. ✓ Hazır sistemle karşılaştırma.
+
+## Hazır sistem karşılaştırması nasıl çalışıyor
+
+- Melih, İtopya ya da Gaming.gen.tr'deki hazır sistemin linkini "Karşılaştır → Hazır sistem" sekmesine yapıştırır. Sayfa yalnızca "Oku"ya basınca, fiyat motorunun okuma kuyruğundan (robots.txt, bekleme süreleri, erişim sınırı algılama) bir kez okunur. Okunan hiçbir şey kaydedilmez.
+- İtopya'da sistemin parçaları sayfadaki seçili ("active") ürün kartlarıdır; öbür kartlar seçeneklerdir. Gaming.gen.tr'de sayfadaki parça tablosu okunur; montaj, kablolama gibi hizmetler de bu tabloda satırdır. Sistemin adı ve fiyatı sayfanın yapılandırılmış verisinden gelir. İtopya'nın hazır sistem sayfasında stok bilgisi yok.
+- Parça tanıma sırası:
+  1. Satırın ürün linki, Melih'in onayladığı bir mağaza eşleşmesinin linkiyse o parça.
+  2. Mağazanın kodu katalogdaki üretici koduyla tutuyorsa o parça.
+  3. Ürün adı: modelin bütün kelimeleri geçmeli; parçanın adında olmayan bir sürüm kelimesi (ARGB, Plus, Ti, HeatSink...) olmamalı. Ad tutup kod farklıysa parça tanınır ama ekranda "kodu farklı" diye işaretlenir.
+- "Kendin toplasan", tanınan parçaların en ucuz güncel ve stokta fiyatlarının toplamıdır. Bir parça tanınmadıysa ya da fiyatı yoksa fark hesaplanmaz. Bu durumda ekranda karşılaştırmanın kısmi olduğu, fiyatı bilinen parça sayısı ve sistemin fiyatından geriye kalan tutar yazar.
+- Deneme (18.11.2026): Bir İtopya sistem sayfasındaki 274 ürün kartının hepsi katalogla eşleştirildi. 5'i tanındı ve hepsi doğru; örneğin soğutuculu 990 Pro, katalogdaki 990 Pro sanılmadı. Link eşleştirmesinin (3. aşama) sonuçları değişmedi.
+
+## Açık kalanlar
+
+- Oyun puanı: Şartları izin veren bir oyun ölçümü kaynağı yok. TechPowerUp'tan izin alınırsa eklenebilir.
+- Hazır sistemlerdeki parçaların çoğu katalogda yok: giriş seviyesi anakartlar, OEM bellekler, güç kaynağıyla birlikte satılan kasalar gibi. Katalog büyüyene kadar karşılaştırmalar çoğunlukla kısmi kalır.
+- Vatan Bilgisayar'ın hazır sistemleri okunmuyor; kapsam İtopya ve Gaming.gen.tr.
 
 ## Bitiş ölçütleri
 
