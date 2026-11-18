@@ -1,4 +1,5 @@
 import type { PartRecord } from '../catalog/types'
+import { normalizeDeviceName } from '../hardware/parse'
 import { BENCHMARK_TESTS } from './tests'
 import { TEST_IDS, type BenchmarkFile, type BenchmarkLoadError, type BenchmarkResult } from './types'
 
@@ -35,7 +36,10 @@ export function validateResult(raw: unknown, sources: BenchmarkFile['sources'], 
     else if (!parts.some((p) => p.category === 'gpu' && p.specs.gpuChip?.value === subject.gpuChip)) {
       problems.push(`katalogda bu grafik işlemcisini kullanan kart yok: ${subject.gpuChip}`)
     }
-  } else problems.push('subject partId ya da gpuChip içermeli')
+  } else if (typeof subject.deviceName === 'string' && subject.deviceName.trim()) {
+    if (subject.category !== 'cpu' && subject.category !== 'gpu') problems.push('deviceName ile category (cpu ya da gpu) gerekli')
+    else if (!def.categories.includes(subject.category)) problems.push(`${def.label} ${subject.category} için değil`)
+  } else problems.push('subject partId, gpuChip ya da deviceName içermeli')
 
   if (typeof raw.device !== 'string' || !raw.device.trim()) problems.push('device (kaynaktaki cihaz adı) eksik')
   if (typeof raw.value !== 'number' || !Number.isFinite(raw.value) || raw.value <= 0) problems.push('value pozitif bir sayı olmalı')
@@ -55,7 +59,10 @@ export function validateResult(raw: unknown, sources: BenchmarkFile['sources'], 
 }
 
 function subjectKey(r: BenchmarkResult): string {
-  return 'partId' in r.subject ? `part:${r.subject.partId}` : `chip:${r.subject.gpuChip}`
+  const s = r.subject
+  if ('partId' in s) return `part:${s.partId}`
+  if ('gpuChip' in s) return `chip:${s.gpuChip}`
+  return `device:${s.category}:${normalizeDeviceName(s.deviceName)}`
 }
 
 /** Ölçüm dosyalarını okur; katalogdaki parçalarla karşılaştırarak doğrular. */
@@ -103,5 +110,13 @@ export function parseBenchmarkFiles(files: { name: string; content: string }[], 
 /** Bir parçaya ait ölçümler: işlemcide parça id'si, ekran kartında grafik işlemcisi üzerinden. */
 export function resultsForPart(results: BenchmarkResult[], part: { id: string; category: string; specs: Record<string, { value: unknown }> }): BenchmarkResult[] {
   const chip = part.category === 'gpu' ? part.specs.gpuChip?.value : undefined
-  return results.filter((r) => ('partId' in r.subject ? r.subject.partId === part.id : chip !== undefined && r.subject.gpuChip === chip))
+  return results.filter((r) =>
+    'partId' in r.subject ? r.subject.partId === part.id : 'gpuChip' in r.subject && chip !== undefined && r.subject.gpuChip === chip
+  )
+}
+
+/** Katalogda olmayan bir cihazın ölçümleri; ad Windows'un okuduğu biçimde olabilir ("12th Gen Intel(R) Core(TM) i7-12700H"). */
+export function resultsForDevice(results: BenchmarkResult[], name: string, category: 'cpu' | 'gpu'): BenchmarkResult[] {
+  const n = normalizeDeviceName(name)
+  return results.filter((r) => 'deviceName' in r.subject && r.subject.category === category && normalizeDeviceName(r.subject.deviceName) === n)
 }

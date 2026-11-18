@@ -4,6 +4,7 @@ import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
 import type { PartRecord } from '../engines/catalog/types'
+import type { HardwareReading } from '../engines/hardware/types'
 import { MelpcDb } from './db'
 
 const wasmDir = dirname(createRequire(import.meta.url).resolve('sql.js'))
@@ -122,5 +123,27 @@ describe('fiyat tabloları', () => {
     expect(db.listRuns('match')).toHaveLength(1)
     db.deleteRun(id)
     expect(db.listRuns('update')).toEqual([])
+  })
+})
+
+describe('Bilgisayarım', () => {
+  it('yalnızca son donanım okuması saklanır ve yeniden açınca durur', async () => {
+    const file = tempFile()
+    const db = await MelpcDb.open(file, wasmDir)
+    expect(db.lastHardwareReading()).toBeNull()
+    const reading = (readAt: string, model: string): HardwareReading => ({
+      readAt,
+      system: { manufacturer: 'Test', model, family: null, isLaptop: true },
+      cpus: [{ name: 'Test CPU', cores: 8, threads: 16 }],
+      gpus: [],
+      memory: { slots: 2, modules: [] },
+      disks: [],
+      wifi: [],
+      board: { manufacturer: null, product: null }
+    })
+    db.saveHardwareReading(reading('2026-11-18T10:00:00.000Z', 'Test Laptop 1'))
+    db.saveHardwareReading(reading('2026-11-18T11:00:00.000Z', 'Test Laptop 2'))
+    const again = await MelpcDb.open(file, wasmDir)
+    expect(again.lastHardwareReading()).toEqual(reading('2026-11-18T11:00:00.000Z', 'Test Laptop 2'))
   })
 })

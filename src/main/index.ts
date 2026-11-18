@@ -1,18 +1,29 @@
-import { readdirSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { parseCatalogFiles } from '../engines/catalog/loader'
 import { resolvePart } from '../engines/catalog/validate'
 import { CATEGORY_IDS } from '../engines/catalog/types'
 import { parseBenchmarkFiles } from '../engines/benchmark/validate'
+import { parseLaptopFiles } from '../engines/laptop/validate'
 import { STORE_IDS, type StoreId } from '../engines/price/types'
-import { IPC, type BuildSelection, type CatalogPayload, type SaveBuildInput } from '../shared/api'
+import { IPC, type BuildSelection, type CatalogPayload, type HardwareResult, type SaveBuildInput } from '../shared/api'
 import { MelpcDb } from './db'
+import { readHardware } from './hardware/reader'
 import { PriceService } from './price/service'
 
 let db: MelpcDb
 let price: PriceService
-let catalog: CatalogPayload = { parts: [], errors: [], benchmarks: { results: [], sources: {} } }
+/** Süren donanım okuması: üst üste basılan "Oku" ikinci bir okuma başlatmaz. */
+let hardwareJob: Promise<HardwareResult> | null = null
+let catalog: CatalogPayload = { parts: [], errors: [], benchmarks: { results: [], sources: {} }, laptops: [] }
+
+function readJsonDir(dir: string): { name: string; content: string }[] {
+  if (!existsSync(dir)) return []
+  return readdirSync(dir)
+    .filter((f) => f.endsWith('.json'))
+    .map((name) => ({ name, content: readFileSync(join(dir, name), 'utf8') }))
+}
 
 /** `data/catalog/*.json` dosyalarını okur, doğrular ve veritabanına yükler. */
 function loadCatalog(): void {
@@ -31,9 +42,19 @@ function loadCatalog(): void {
   for (const e of bench.errors) {
     errors.push({ file: `benchmarks/${e.file}`, message: `${e.index !== undefined ? `#${e.index}: ` : ''}${e.message}` })
   }
-  catalog = { parts: db.readCatalog().map(resolvePart), errors, benchmarks: { results: bench.results, sources: bench.sources } }
+  // Laptop profilleri (5. aşama): Bilgisayarım ekranındaki yükseltme bilgileri.
+  const laptops = parseLaptopFiles(readJsonDir(join(app.getAppPath(), 'data', 'laptops')))
+  for (const e of laptops.errors) errors.push({ ...e, file: `laptops/${e.file}` })
+  catalog = {
+    parts: db.readCatalog().map(resolvePart),
+    errors,
+    benchmarks: { results: bench.results, sources: bench.sources },
+    laptops: laptops.profiles
+  }
   for (const e of errors) console.warn(`[katalog] ${e.file}${e.partId ? ` / ${e.partId}` : ''}: ${e.message}`)
-  console.log(`[katalog] ${catalog.parts.length} parça, ${bench.results.length} ölçüm yüklendi, ${errors.length} hata.`)
+  console.log(
+    `[katalog] ${catalog.parts.length} parça, ${bench.results.length} ölçüm, ${laptops.profiles.length} laptop profili yüklendi, ${errors.length} hata.`
+  )
 }
 
 function isValidSelection(v: unknown): v is BuildSelection {
@@ -90,6 +111,24 @@ function registerIpc(): void {
     if (typeof url !== 'string' || url.length > 2000) throw new Error('Geçersiz link')
     return price.readSystem(url)
   })
+
+  // Bilgisayarım (5. aşama): Windows'un donanım bilgisi; yalnızca istenince okunur, son okuma saklanır.
+  ipcMain.handle(IPC.hardwareRead, (): Promise<HardwareResult> => {
+    if (process.platform !== 'win32') {
+      return Promise.resolve({ ok: false, message: "Donanım okuma yalnızca Windows'ta çalışıyor." })
+    }
+    hardwareJob ??= readHardware()
+      .then((reading): HardwareResult => {
+        db.saveHardwareReading(reading)
+        return { ok: true, reading }
+      })
+      .catch((e: Error): HardwareResult => ({ ok: false, message: e.message }))
+      .finally(() => {
+        hardwareJob = null
+      })
+    return hardwareJob
+  })
+  ipcMain.handle(IPC.hardwareLast, () => db.lastHardwareReading())
 }
 
 function createWindow(): void {

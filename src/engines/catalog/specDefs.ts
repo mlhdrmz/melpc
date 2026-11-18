@@ -121,7 +121,10 @@ export const SPEC_DEFS: Record<CategoryId, SpecDef[]> = {
       options: ['M.2 2280', 'M.2 2230', '2.5"', '3.5"']
     },
     // Üreticinin "en fazla" diye verdiği sıralı okuma hızı (4. aşamada eklendi).
-    { key: 'seqReadMbps', label: 'Sıralı okuma (üretici)', kind: 'integer', unit: 'MB/s', optional: true }
+    { key: 'seqReadMbps', label: 'Sıralı okuma (üretici)', kind: 'integer', unit: 'MB/s', optional: true },
+    // M.2 SSD'nin üstünde soğutucu (heatsink) var mı (5. aşama): soğutuculu SSD laptop yuvasına sığmayabilir.
+    // 2,5 ve 3,5 inç disklerde anlamsız olduğu için yalnızca M.2 SSD'lerde girilir.
+    { key: 'heatsink', label: 'Soğutucu (heatsink)', kind: 'boolean', optional: true }
   ],
   psu: [
     { key: 'wattage', label: 'Güç', kind: 'integer', unit: 'W', filter: true },

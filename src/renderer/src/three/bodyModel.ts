@@ -1,8 +1,8 @@
 import type { ComponentType } from 'react'
 import type { CategoryId } from '@engines/catalog/types'
 
-// 3D görünümde gösterilen "gövde modeli". Şimdilik yalnızca masaüstü kasa var;
-// ileride laptop gibi başka modeller aynı arayüzle eklenebilir.
+// 3D görünümde gösterilen "gövde modeli": masaüstü kasa (Kasa Topla) ve laptop (Bilgisayarım, 5. aşama).
+// Başka modeller aynı arayüzle eklenebilir.
 
 /** Milimetre cinsinden nokta: [x, y, z] (bkz. design/kasa-olculeri.md). */
 export type Vec3 = [number, number, number]

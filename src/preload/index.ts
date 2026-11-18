@@ -17,6 +17,8 @@ const api: MelpcApi = {
   cancelPriceJob: () => ipcRenderer.invoke(IPC.priceCancel),
   getPriceHistory: (partId) => ipcRenderer.invoke(IPC.priceHistory, partId),
   readReadySystem: (url) => ipcRenderer.invoke(IPC.priceReadSystem, url),
+  readHardware: () => ipcRenderer.invoke(IPC.hardwareRead),
+  getLastHardware: () => ipcRenderer.invoke(IPC.hardwareLast),
   onPriceState: (listener) => {
     // Electron'un olay nesnesi arayüze geçmez; yalnızca durum verilir.
     const handler = (_e: IpcRendererEvent, state: PriceState): void => listener(state)

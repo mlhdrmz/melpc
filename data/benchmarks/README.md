@@ -17,6 +17,7 @@ Her dosya bir kaynaktan alınmış ölçümleri tutar ve `{ "sources": {...}, "r
 ```
 
 - `subject`: İşlemcide katalogdaki parçanın id'si (`partId`). Ekran kartında grafik işlemcisi (`gpuChip`, katalogdaki `gpuChip` değeriyle aynı); ölçüm o grafik işlemcisini kullanan bütün kartlara uygulanır. Ölçüm kartın kendisiyle yapılmamıştır; arayüz bunu belirtir.
+  - Katalogda olmayan bir cihaz için `{ "deviceName": "...", "category": "cpu" | "gpu" }` kullanılır (5. aşama, Bilgisayarım). Örnek: laptopun işlemcisi. Ad, Windows'un okuduğu adla sadeleştirilerek eşleştirilir ("12th Gen Intel(R) Core(TM) i7-12700H" ile "Intel Core i7-12700H" aynı sayılır).
 - `device`: Kaynakta cihazın geçtiği ad, değerin hangi satırdan alındığı izlenebilsin diye.
 - `conditions`: Testin gerektirdiği koşulların hepsi (ör. Blender sürümü, hesaplama türü, istatistik).
 - `sampleCount`: Değer birden çok ölçümün ortancasıysa ölçüm sayısı. Az ölçümlü değerler daha az güvenilirdir; arayüz sayıyı gösterir.

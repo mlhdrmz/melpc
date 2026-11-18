@@ -8,13 +8,16 @@ import { PriceStatus } from './price/PriceStatus'
 import { CatalogProvider } from './catalog/CatalogContext'
 import { CompareProvider, useCompare } from './compare/CompareContext'
 import { ComparePage } from './pages/ComparePage'
+import { MyPcPage } from './pages/MyPcPage'
 
 type LoadState = { status: 'loading' } | { status: 'ready'; catalog: CatalogPayload } | { status: 'error'; message: string }
-type Page = 'build' | 'compare' | 'match'
+type Page = 'build' | 'compare' | 'match' | 'mypc'
 
 export function App(): ReactElement {
   const [state, setState] = useState<LoadState>({ status: 'loading' })
   const [page, setPage] = useState<Page>('build')
+  // Bilgisayarım ilk açılışta kurulur, sonra gizlenir ama kapanmaz (3D görünüm sayfa değişince kapatılmasın).
+  const [myPcOpened, setMyPcOpened] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
   const notify = useCallback((message: string) => setToast(message || null), [])
 
@@ -24,6 +27,10 @@ export function App(): ReactElement {
       .then((catalog) => setState({ status: 'ready', catalog }))
       .catch((e: Error) => setState({ status: 'error', message: e.message }))
   }, [])
+
+  useEffect(() => {
+    if (page === 'mypc') setMyPcOpened(true)
+  }, [page])
 
   useEffect(() => {
     if (!toast) return
@@ -56,6 +63,12 @@ export function App(): ReactElement {
               </div>
               {page === 'match' && <MatchPage catalog={state.catalog} />}
               {page === 'compare' && <ComparePage />}
+              {/* Bilgisayarım da 3D görünüm içerdiği için gizlenir ama kapanmaz. */}
+              {(myPcOpened || page === 'mypc') && (
+                <div hidden={page !== 'mypc'}>
+                  <MyPcPage />
+                </div>
+              )}
             </CatalogProvider>
           )}
         </main>
@@ -106,6 +119,7 @@ function MainNav({ page, onChange }: { page: Page; onChange: (p: Page) => void }
           </span>
         ) : undefined
       )}
+      {item('mypc', 'Bilgisayarım')}
     </nav>
   )
 }

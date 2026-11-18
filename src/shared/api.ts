@@ -1,6 +1,8 @@
 import type { CatalogLoadError, CategoryId, Part } from '../engines/catalog/types'
 import type { OfferRecord, StoreId, StoreMatch } from '../engines/price/types'
 import type { ReadySystem } from '../engines/price/readySystem'
+import type { HardwareReading } from '../engines/hardware/types'
+import type { LaptopProfile } from '../engines/laptop/types'
 import type { BenchmarkResult, BenchmarkSource } from '../engines/benchmark/types'
 
 // Ana süreç ile arayüz arasındaki sözleşme. Arayüz veriye yalnızca preload'un açtığı bu API ile erişir.
@@ -29,6 +31,8 @@ export interface CatalogPayload {
   errors: CatalogLoadError[]
   /** Performans ölçümleri (data/benchmarks). */
   benchmarks: { results: BenchmarkResult[]; sources: Record<string, BenchmarkSource> }
+  /** Laptop profilleri (data/laptops): Bilgisayarım ekranının yükseltme bilgileri. */
+  laptops: LaptopProfile[]
 }
 
 // ---------- Fiyat motoru ----------
@@ -75,6 +79,8 @@ export type MatchDecision = 'confirm' | 'reject'
 
 export type ReadySystemResult = { ok: true; system: ReadySystem } | { ok: false; message: string }
 
+export type HardwareResult = { ok: true; reading: HardwareReading } | { ok: false; message: string }
+
 export interface MelpcApi {
   getCatalog(): Promise<CatalogPayload>
   listBuilds(): Promise<SavedBuild[]>
@@ -95,6 +101,11 @@ export interface MelpcApi {
   getPriceHistory(partId: string): Promise<OfferRecord[]>
   /** Hazır sistem linki (İtopya, Gaming.gen.tr): sayfa bir kez okunur; sistemin adı, fiyatı ve parça listesi döner. */
   readReadySystem(url: string): Promise<ReadySystemResult>
+
+  /** Bilgisayarım: Windows'un donanım bilgisini okur ve son okuma olarak saklar. */
+  readHardware(): Promise<HardwareResult>
+  /** Saklanan son donanım okuması (yoksa null). */
+  getLastHardware(): Promise<HardwareReading | null>
   /** Fiyat durumu değişince çağrılır. Dönen fonksiyon aboneliği bitirir. */
   onPriceState(listener: (state: PriceState) => void): () => void
 }
@@ -113,6 +124,8 @@ export const IPC = {
   priceCancel: 'price:cancel',
   priceHistory: 'price:history',
   priceReadSystem: 'price:readSystem',
+  hardwareRead: 'hardware:read',
+  hardwareLast: 'hardware:last',
   /** Ana süreçten arayüze: fiyat durumu değişti. */
   priceChanged: 'price:changed'
 } as const

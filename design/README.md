@@ -8,5 +8,6 @@ Seçilen tasarım yönü: **B · Vitrin** (koyu zemin, mor ve turkuaz ışıklar
 | `kasa-ici.svg` | Kasanın dışı ve sıvı soğutmalı iç görseli (bütün toplamalarda kullanılacak temel görsel). |
 | `kasa-gorunumu.png` | Aynı görselin işaret noktaları ve ekran kartı kartıyla önizlemesi. |
 | `kasa-olculeri.md` | 3D modelin koordinat sistemi ve parçaların milimetre cinsinden yerleri (ATX ölçülerine göre). |
+| `bilgisayarim-taslak.html` | Bilgisayarım ekranının taslağı (5. aşama, Melih onayladı). Tarayıcıda tek başına açılır. Laptopun bilgileri ve Blender değerleri gerçek; SSD önerileri ve fiyatlar örnek. |
 
 Taslaklardaki parça adları, fiyatlar, puanlar ve mağazalar **örnektir, gerçek değildir**. Uygulamada bu değerler katalog ve fiyat motorundan gelir.
