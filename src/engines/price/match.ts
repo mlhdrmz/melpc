@@ -212,21 +212,29 @@ interface ScoreOptions {
   strict?: boolean
 }
 
+/**
+ * Üreticinin resmî adında olup mağazaların çoğu zaman yazmadığı, ürünü değiştirmeyen kelimeler ("OC Edition" →
+ * "OC"). Ad karşılaştırmasında zorunlu değildir; link eşleştirmesinde değişiklik yok.
+ */
+const TEXT_FILLER_WORDS = ['edition']
+
 function scoreSlug(p: PartTokens, slug: Slug, o: ScoreOptions = {}): number | null {
   const has = (t: string): boolean => hasWord(t, slug, p.own)
+  const model = o.strict ? p.model.filter((t) => !TEXT_FILLER_WORDS.includes(t)) : p.model
+  const optional = o.strict ? [...p.optional, ...p.model.filter((t) => TEXT_FILLER_WORDS.includes(t))] : p.optional
   const codeInSlug = Boolean(p.code && slug.squash.includes(p.code))
   if (!codeInSlug) {
     const brandOk = p.brand.some(has) || p.brand.some((b) => (BRAND_ALIASES[b] ?? []).some((a) => slug.words.includes(a)))
     if (!brandOk) return null
     if (!p.keys.every(has)) return null
-    const missing = p.model.filter((t) => !has(t)).length
-    if (missing > (o.strict ? 0 : p.model.length >= 3 ? 1 : 0)) return null
-    if (p.model.some((t) => MODEL_VARIANT_WORDS.includes(t) && !slug.words.includes(t))) return null
+    const missing = model.filter((t) => !has(t)).length
+    if (missing > (o.strict ? 0 : model.length >= 3 ? 1 : 0)) return null
+    if (model.some((t) => MODEL_VARIANT_WORDS.includes(t) && !slug.words.includes(t))) return null
   }
   if (p.layout && !layoutOk(p.layout, slug)) return null
-  const required = [...p.brand, ...p.model]
+  const required = [...p.brand, ...model]
   let score = required.filter(has).length / Math.max(1, required.length)
-  if (p.optional.length) score += (0.2 * p.optional.filter(has).length) / p.optional.length
+  if (optional.length) score += (0.2 * optional.filter(has).length) / optional.length
   if (codeInSlug) score += 1
   if (!o.strict && SYSTEM_WORDS.some((w) => slug.text.includes(w))) score -= 1.5
   const inSlug = new Set(slug.words)

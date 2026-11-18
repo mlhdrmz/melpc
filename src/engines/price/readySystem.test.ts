@@ -203,6 +203,10 @@ describe('hazır sistem: eşleştirme kuralları', () => {
     expect(scoreText(cooler, 'Thermalright Peerless Assassin 120 SE Hava Soğutucu')).toBeGreaterThanOrEqual(TEXT_MATCH_MIN)
     // Parçanın adında olmayan sürüm kelimesi eşiğin altına düşürür.
     expect(scoreText(cooler, 'Thermalright Peerless Assassin 120 SE ARGB Hava Soğutucu')!).toBeLessThan(TEXT_MATCH_MIN)
+    // Resmî adda olup mağazanın yazmadığı "Edition" zorunlu değil; "OC" ise zorunlu kalır.
+    const dual: Part = { ...testPart('gpu', {}, 'gpu9'), brand: 'ASUS', model: 'Dual GeForce RTX 5070 12GB GDDR7 OC Edition' }
+    expect(scoreText(dual, 'ASUS DUAL GeForce RTX 5070 OC 12GB GDDR7 192 Bit Ekran Kartı')).toBeGreaterThanOrEqual(TEXT_MATCH_MIN)
+    expect(scoreText(dual, 'ASUS DUAL GeForce RTX 5070 12GB GDDR7 Ekran Kartı')).toBeNull()
     // Ürün adındaki "Gaming Anakart" gibi tanımlar sürüm sayılmaz.
     const board: Part = { ...testPart('motherboard', {}, 'mb1'), brand: 'MSI', model: 'MAG B850 Tomahawk Max WiFi' }
     expect(scoreText(board, 'MSI MAG B850 TOMAHAWK MAX WIFI DDR5 AM5 ATX Gaming Anakart')).toBeGreaterThanOrEqual(TEXT_MATCH_MIN)
