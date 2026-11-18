@@ -1,4 +1,5 @@
 import { productFromJsonLd } from './jsonld'
+import { looksLikeCode } from './text'
 import type { ParsedProduct, StoreId } from './types'
 
 // Her mağaza için okuyucu (adaptör) ayarları. Ağ isteği yapmazlar; yalnızca hangi adreslerin
@@ -40,11 +41,13 @@ export function codeFromText(text: string, labels: string[]): string | undefined
   return undefined
 }
 
+/** Yapılandırılmış veri; üretici kodu orada yoksa (ya da kod değil de model adıysa) sayfadaki etiketten. */
 function withTextCode(html: string, labels: string[]): ParsedProduct {
   const p = productFromJsonLd(html) ?? {}
+  if (p.mpn && !looksLikeCode(p.mpn)) delete p.mpn
   if (!p.mpn) {
     const code = codeFromText(htmlToText(html), labels)
-    if (code) p.mpn = code
+    if (code && looksLikeCode(code)) p.mpn = code
   }
   return p
 }
@@ -85,6 +88,28 @@ export const STORES: Record<StoreId, StoreConfig> = {
     delayMs: 15000,
     parse: (html) => withTextCode(html, ['Üretici Kodu', 'Üretici Parça No', 'Model Kodu'])
   }
+}
+
+/**
+ * Elle girilen ürün linkini mağazanın biçimine getirir: https, mağazanın alan adı, sorgu ve # kısmı atılmış.
+ * Mağazanın ürün sayfası değilse null.
+ */
+export function normalizeStoreUrl(raw: string, store: StoreConfig): string | null {
+  let u: URL
+  try {
+    u = new URL(raw.trim())
+  } catch {
+    return null
+  }
+  if (u.protocol !== 'https:' && u.protocol !== 'http:') return null
+  const host = new URL(store.homepage).host
+  if (u.host !== host && `www.${u.host}` !== host) return null
+  u.protocol = 'https:'
+  u.host = host
+  u.search = ''
+  u.hash = ''
+  const s = u.toString()
+  return store.isProductUrl(s) ? s : null
 }
 
 /** Site haritası XML'inden linkler; dizinse alt haritalar, değilse sayfalar. */

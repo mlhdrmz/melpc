@@ -5,8 +5,10 @@ import { availabilityToStock, productFromJsonLd } from './jsonld'
 import { checkCode, findCandidates, scoreUrl } from './match'
 import { bestOffer, computeTotals, STALE_AFTER_MS } from './totals'
 import { canRunNow, nextAllowedAt, shouldAutoRun, WINDOW_MS } from './schedule'
-import { codeFromText, parseSitemap, STORES } from './stores'
+import { codeFromText, normalizeStoreUrl, parseSitemap, STORES } from './stores'
+import { buildPriceIndex, formatTl } from './view'
 import type { OfferRecord } from './types'
+import type { Part } from '../catalog/types'
 import { testPart } from '../compat/testParts'
 
 // Bu dosyadaki sayfa parçaları mağazaların gerçek sayfa yapısına benzetilmiş test girdileridir; fiyatlar test değeridir.
@@ -92,6 +94,14 @@ describe('yapılandırılmış veri (JSON-LD)', () => {
     const gg = STORES.gaming.parse('<div>Üretici Kodu</div><div>100-100001084WOF</div>')
     expect(gg.mpn).toBe('100-100001084WOF')
   })
+  it('kod alanındaki model adını ya da barkodu kod saymaz', () => {
+    const ld = (mpn: string): string =>
+      `<script type="application/ld+json">{"@type":"Product","name":"X","mpn":"${mpn}","offers":{"price":"10"}}</script>`
+    expect(STORES.itopya.parse(ld('RTX 5070 12G VENTUS 2X OC')).mpn).toBeUndefined()
+    expect(STORES.itopya.parse(ld('0730143315289')).mpn).toBeUndefined()
+    expect(STORES.itopya.parse(ld('100-000001084')).mpn).toBe('100-000001084')
+    expect(STORES.gaming.parse('<div>Üretici Kodu</div><div>GEFORCE RTX 5070</div>').mpn).toBeUndefined()
+  })
 })
 
 describe('site haritası', () => {
@@ -109,6 +119,19 @@ describe('site haritası', () => {
     expect(STORES.itopya.isProductUrl('https://www.itopya.com/kartal-sistem_h32819')).toBe(false)
     expect(STORES.gaming.isProductUrl('https://www.gaming.gen.tr/urun/542784/amd-ryzen-7-9800x3d/')).toBe(true)
     expect(STORES.vatan.isProductUrl('https://www.vatanbilgisayar.com/amd-ryzen-7-9800x3d.html')).toBe(true)
+  })
+  it('elle girilen linki mağaza biçimine getirir', () => {
+    expect(normalizeStoreUrl(' http://itopya.com/amd-ryzen-7-9800x3d_u27208?utm_source=x#yorum ', STORES.itopya)).toBe(
+      'https://www.itopya.com/amd-ryzen-7-9800x3d_u27208'
+    )
+    expect(normalizeStoreUrl('https://www.gaming.gen.tr/urun/542784/amd-ryzen-7-9800x3d/', STORES.gaming)).toBe(
+      'https://www.gaming.gen.tr/urun/542784/amd-ryzen-7-9800x3d/'
+    )
+    // başka mağaza, ürün olmayan sayfa, link olmayan metin
+    expect(normalizeStoreUrl('https://www.itopya.com/amd-ryzen-7-9800x3d_u27208', STORES.vatan)).toBeNull()
+    expect(normalizeStoreUrl('https://www.itopya.com/islemci', STORES.itopya)).toBeNull()
+    expect(normalizeStoreUrl('9800x3d', STORES.itopya)).toBeNull()
+    expect(normalizeStoreUrl('javascript:alert(1)', STORES.itopya)).toBeNull()
   })
 })
 
@@ -137,6 +160,54 @@ describe('aday bulma', () => {
     const urls = ['https://x.com/amd-ryzen-7-9800x3d-islemci_u1', 'https://x.com/amd-ryzen-7-9800x3d-100-100001084wof_u2']
     expect(findCandidates(cpu, urls)[0].url).toBe(urls[1])
   })
+  // Aşağıdaki linkler mağaza linklerinin biçimine benzetilmiş test girdileridir.
+  const part = (category: Part['category'], brand: string, model: string, specs: Record<string, string> = {}, mpn?: string): Part => ({
+    ...testPart(category, specs),
+    brand,
+    model,
+    ...(mpn ? { mpn } : {})
+  })
+  const u = (slug: string): string => `https://x.com/${slug}_u1`
+
+  it('kapasiteyi ayırır (1 TB ≠ 2 TB)', () => {
+    const ssd = part('storage', 'Samsung', '990 Pro 2 TB')
+    const urls = ['samsung-1tb-990-pro-nvme-m2-ssd', 'samsung-2tb-990-pro-nvme-m2-ssd', 'samsung-990-pro-4tb-pcie-ssd'].map(u)
+    expect(findCandidates(ssd, urls).map((c) => c.url)).toEqual([urls[1]])
+  })
+
+  it('model sonekini ayırır (B850 ≠ B850M, 245K ≠ 245KF, B650-Plus ≠ B650-E, X870E-E ≠ X870E-A)', () => {
+    expect(scoreUrl(part('motherboard', 'MSI', 'MAG B850 Tomahawk Max WiFi'), u('msi-mag-b850m-mortar-max-wifi-anakart'))).toBeNull()
+    expect(scoreUrl(part('cpu', 'Intel', 'Core Ultra 5 245K'), u('intel-core-ultra-5-245kf-42ghz-islemci'))).toBeNull()
+    expect(scoreUrl(part('motherboard', 'ASUS', 'TUF Gaming B650-Plus WiFi'), u('asus-tuf-gaming-b650-e-wifi-atx-anakart'))).toBeNull()
+    const x870 = part('motherboard', 'ASUS', 'ROG Strix X870E-E Gaming WiFi')
+    expect(scoreUrl(x870, u('asus-rog-strix-x870e-a-gaming-wifi7-anakart'))).toBeNull()
+    expect(scoreUrl(x870, u('asus-rog-strix-x870e-e-gaming-wifi-ddr5-anakart'))).toBeGreaterThan(0.5)
+  })
+
+  it('başka markanın ürününü aday göstermez', () => {
+    const ram = part('memory', 'Corsair', 'Vengeance DDR5-6000 CL30 32 GB (2×16 GB)')
+    expect(scoreUrl(ram, u('kingston-32gb-2x16gb-beast-6000mhz-cl30-ddr5-ram'))).toBeNull()
+  })
+
+  it('bellek kitinde modül düzenine bakar (2×16 ≠ 1×32)', () => {
+    const ram = part('memory', 'Kingston', 'FURY Beast DDR5-6000 CL30 32 GB (2×16 GB)')
+    expect(scoreUrl(ram, u('kingston-32gb1x32gb-beast-6000-mhz-cl30-ddr5-single-kit-ram'))).toBeNull()
+    expect(scoreUrl(ram, u('kingston-32gb2x16gb-beast-black-6000mhz-cl30-ddr5-dual-kit-ram'))).toBeGreaterThan(0.5)
+  })
+
+  it('paketleri geriye atar; "mini-itx" ve "8400mhz-oc" sürüm sayılmaz', () => {
+    const gpu5080 = part('gpu', 'ASUS', 'TUF Gaming GeForce RTX 5080 16GB GDDR7 OC Edition', {}, 'TUF-RTX5080-O16G-GAMING')
+    expect(findCandidates(gpu5080, [u('2li-paket-asus-tuf-rtx5080-o16g-gaming-16gb-ekran-karti-asus-psu')])).toEqual([])
+    const itx = part('motherboard', 'ASUS', 'ROG Strix B850-I Gaming WiFi', { memoryType: 'DDR5' })
+    expect(scoreUrl(itx, u('asus-rog-strix-b850-i-gaming-wifi-8400mhz-oc-ddr5-soket-am5-mini-itx-anakart'))).toBeGreaterThan(1)
+  })
+
+  it('DDR5 anakart ararken DDR4 sürümünü geriye atar', () => {
+    const board = part('motherboard', 'MSI', 'PRO B760M-A WiFi', { memoryType: 'DDR5' })
+    const urls = [u('msi-pro-b760m-a-wifi-5333mhzoc-ddr4-matx-anakart'), u('msi-pro-b760m-a-wifi-6800mhz-oc-ddr5-matx-anakart')]
+    expect(findCandidates(board, urls).map((c) => c.url)).toEqual([urls[1], urls[0]])
+  })
+
   it('üretici kodu karşılaştırması', () => {
     expect(checkCode(cpu, { mpn: '100-100001084WOF' })).toBe('match')
     expect(checkCode(cpu, { mpn: '100-000001084' })).toBe('mismatch')
@@ -177,6 +248,72 @@ describe('toplamlar', () => {
   it('fiyatı olmayan parça eksik listesine girer', () => {
     const t = computeTotals(['cpu', 'yok'], new Map([['cpu', [offer('cpu', 'itopya', 1000, true)]]]), now)
     expect(t).toEqual({ cheapest: 1000, missing: ['yok'], singleStore: null })
+  })
+})
+
+describe('fiyat görünümü', () => {
+  const now = Date.parse('2026-11-18T12:00:00Z')
+  const at = (hoursAgo: number): string => new Date(now - hoursAgo * 3600_000).toISOString()
+  const confirmed = (partId: string, storeId: OfferRecord['storeId']) =>
+    ({ partId, storeId, status: 'confirmed', url: `https://${storeId}/${partId}`, updatedAt: at(100) }) as const
+  const o = (partId: string, storeId: OfferRecord['storeId'], price: number | null, inStock: boolean | null, hoursAgo: number, error?: string): OfferRecord => ({
+    partId,
+    storeId,
+    url: `https://${storeId}/${partId}`,
+    price,
+    inStock,
+    fetchedAt: at(hoursAgo),
+    ...(error ? { error } : {})
+  })
+
+  it('en ucuzu, güncel olmayanı ve stokta olmayanı ayırır', () => {
+    const idx = buildPriceIndex(
+      {
+        matches: [confirmed('cpu', 'itopya'), confirmed('cpu', 'gaming'), confirmed('cpu', 'vatan')],
+        // Gaming son çekimde okunamadı; Vatan'da stok yok.
+        latest: [o('cpu', 'itopya', 1000, true, 2), o('cpu', 'gaming', null, null, 2, 'Zaman aşımı'), o('cpu', 'vatan', 900, false, 2)],
+        lastPriced: [o('cpu', 'itopya', 1000, true, 2), o('cpu', 'gaming', 950, true, 26), o('cpu', 'vatan', 900, false, 2)],
+        storeCount: 3
+      },
+      now
+    )
+    const p = idx.get('cpu')
+    expect(p.status).toBe('priced')
+    // Gaming'in dünkü fiyatı (3 günden yeni) hâlâ en ucuz; ama "güncel değil" diye işaretli.
+    expect(p.best).toMatchObject({ storeId: 'gaming', price: 950, stale: true, error: 'Zaman aşımı' })
+    expect(p.stores.map((s) => s.storeId)).toEqual(['gaming', 'itopya', 'vatan'])
+    expect(p.stores[2]).toMatchObject({ usable: false, inStock: false, stale: false })
+    expect(idx.totals(['cpu']).cheapest).toBe(950)
+  })
+
+  it('3 günden eski fiyat toplama girmez; eşleşme durumları', () => {
+    const idx = buildPriceIndex(
+      {
+        matches: [
+          confirmed('gpu', 'itopya'),
+          { partId: 'ssd', storeId: 'itopya', status: 'candidate', url: 'https://x', updatedAt: at(1) },
+          { partId: 'psu', storeId: 'itopya', status: 'notFound', updatedAt: at(1) },
+          { partId: 'psu', storeId: 'gaming', status: 'rejected', updatedAt: at(1) },
+          { partId: 'psu', storeId: 'vatan', status: 'notFound', updatedAt: at(1) },
+          { partId: 'case', storeId: 'itopya', status: 'notFound', updatedAt: at(1) }
+        ],
+        latest: [o('gpu', 'itopya', 5000, true, 80)],
+        lastPriced: [o('gpu', 'itopya', 5000, true, 80)],
+        storeCount: 3
+      },
+      now
+    )
+    expect(idx.get('gpu')).toMatchObject({ status: 'noUsable', best: null, stores: [{ stale: true, usable: false }] })
+    expect(idx.get('ssd').status).toBe('pending')
+    expect(idx.get('psu').status).toBe('notFound')
+    expect(idx.get('case').status).toBe('unmatched')
+    expect(idx.get('yok').status).toBe('unmatched')
+    expect(idx.totals(['gpu'])).toEqual({ cheapest: 0, missing: ['gpu'], singleStore: null })
+  })
+
+  it('TL biçimi', () => {
+    expect(formatTl(29256.56)).toBe('29.256,56 TL')
+    expect(formatTl(1250)).toBe('1.250,00 TL')
   })
 })
 

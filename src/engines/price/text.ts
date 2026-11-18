@@ -38,6 +38,19 @@ export function codesMatch(catalogCode: string, pageCode: string): boolean {
   return short.length >= 8 && long.startsWith(short)
 }
 
+/**
+ * Mağazanın "üretici kodu" alanındaki değer gerçekten bir kod mu? Bazı mağazalar bu alana model adını yazar
+ * ("RTX 5070 12G VENTUS 2X OC", "GEFORCE") ya da barkodu koyar; bunlar kod sayılmaz.
+ */
+export function looksLikeCode(s: string): boolean {
+  const t = s.trim()
+  if (t.length < 4 || t.length > 40 || /\s/.test(t)) return false
+  if (!/\d/.test(t)) return false
+  // EAN/UPC barkodu
+  if (/^\d{12,14}$/.test(t)) return false
+  return true
+}
+
 /** "29.256,56" / "29256.56" / "29,256.56" → 29256.56. Okunamazsa undefined. */
 export function parsePrice(raw: string | number | undefined | null): number | undefined {
   if (raw === undefined || raw === null) return undefined

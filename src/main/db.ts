@@ -65,6 +65,13 @@ CREATE TABLE IF NOT EXISTS offers (
   error TEXT
 );
 CREATE INDEX IF NOT EXISTS offers_part_store ON offers(part_id, store_id, fetched_at);
+CREATE TABLE IF NOT EXISTS rejected_urls (
+  part_id TEXT NOT NULL,
+  store_id TEXT NOT NULL,
+  url TEXT NOT NULL,
+  rejected_at TEXT NOT NULL,
+  PRIMARY KEY (part_id, store_id, url)
+);
 CREATE TABLE IF NOT EXISTS price_runs (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   kind TEXT NOT NULL,
@@ -243,25 +250,58 @@ export class MelpcDb {
     if (persist) this.persist()
   }
 
+  // Okumalar yalnızca onaylı eşleşmenin linkiyle birlikte kullanılır: eşleşme değişirse (yanlış ürün
+  // reddedilip başka link onaylanırsa) eski linkin fiyatları gösterilmez ve geçmişe karışmaz.
+
   /** Her parça ve mağaza için son okuma. */
   latestOffers(): OfferRecord[] {
-    return this.all(
-      `SELECT o.* FROM offers o
-       JOIN (SELECT part_id, store_id, MAX(id) AS id FROM offers GROUP BY part_id, store_id) last ON last.id = o.id`
-    ).map(toOffer)
+    return this.lastConfirmedOffers('')
   }
 
   /** Her parça ve mağaza için fiyatı okunabilmiş son okuma (okuma hatalarında eski fiyatı göstermek için). */
   latestPricedOffers(): OfferRecord[] {
+    return this.lastConfirmedOffers('AND o2.price IS NOT NULL')
+  }
+
+  private lastConfirmedOffers(extra: string): OfferRecord[] {
     return this.all(
       `SELECT o.* FROM offers o
-       JOIN (SELECT part_id, store_id, MAX(id) AS id FROM offers WHERE price IS NOT NULL GROUP BY part_id, store_id) last
-       ON last.id = o.id`
+       JOIN (SELECT o2.part_id, o2.store_id, MAX(o2.id) AS id FROM offers o2
+             JOIN store_matches m ON m.part_id = o2.part_id AND m.store_id = o2.store_id
+                  AND m.status = 'confirmed' AND m.url = o2.url
+             WHERE 1 = 1 ${extra}
+             GROUP BY o2.part_id, o2.store_id) last ON last.id = o.id`
     ).map(toOffer)
   }
 
+  /** Bir parçanın onaylı linklerden okunmuş fiyat geçmişi, eskiden yeniye. */
   offerHistory(partId: string): OfferRecord[] {
-    return this.all('SELECT * FROM offers WHERE part_id = ? AND price IS NOT NULL ORDER BY fetched_at', [partId]).map(toOffer)
+    return this.all(
+      `SELECT o.* FROM offers o
+       JOIN store_matches m ON m.part_id = o.part_id AND m.store_id = o.store_id AND m.status = 'confirmed' AND m.url = o.url
+       WHERE o.part_id = ? AND o.price IS NOT NULL ORDER BY o.fetched_at, o.id`,
+      [partId]
+    ).map(toOffer)
+  }
+
+  /** Melih'in "bu ürün değil" dediği linkler; aday aramasında bir daha önerilmez. */
+  addRejected(partId: string, storeId: StoreId, url: string, at: string): void {
+    this.db.run('INSERT OR REPLACE INTO rejected_urls (part_id, store_id, url, rejected_at) VALUES (?, ?, ?, ?)', [
+      partId,
+      storeId,
+      url,
+      at
+    ])
+  }
+
+  rejectedUrls(partId: string, storeId: StoreId): string[] {
+    return this.all('SELECT url FROM rejected_urls WHERE part_id = ? AND store_id = ?', [partId, storeId]).map(
+      (r) => r.url as string
+    )
+  }
+
+  removeRejected(partId: string, storeId: StoreId, url: string): void {
+    this.db.run('DELETE FROM rejected_urls WHERE part_id = ? AND store_id = ? AND url = ?', [partId, storeId, url])
   }
 
   startRun(kind: 'update' | 'match', startedAt: string): number {
@@ -273,6 +313,12 @@ export class MelpcDb {
 
   finishRun(id: number, finishedAt: string, summary: string): void {
     this.db.run('UPDATE price_runs SET finished_at = ?, summary = ? WHERE id = ?', [finishedAt, summary, id])
+    this.persist()
+  }
+
+  /** Hiçbir mağazaya ulaşılamayan çekim (ör. internet yok) günlük sınırdan düşülmesin diye silinir. */
+  deleteRun(id: number): void {
+    this.db.run('DELETE FROM price_runs WHERE id = ?', [id])
     this.persist()
   }
 
