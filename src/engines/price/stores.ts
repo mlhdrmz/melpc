@@ -1,4 +1,5 @@
 import { productFromJsonLd } from './jsonld'
+import { parseGamingSystem, parseItopyaSystem, type ParsedSystem } from './readySystem'
 import { looksLikeCode } from './text'
 import type { ParsedProduct, StoreId } from './types'
 
@@ -19,6 +20,11 @@ export interface StoreConfig {
   /** Bu mağazaya iki istek arasındaki en kısa süre (ms). */
   delayMs: number
   parse: (html: string) => ParsedProduct
+  /** Hazır sistem sayfası okunabiliyorsa: linkin bir hazır sistem sayfası olup olmadığı ve sayfanın okuyucusu. */
+  readySystem?: {
+    isUrl: (url: string) => boolean
+    parse: (html: string) => ParsedSystem
+  }
 }
 
 /** HTML'i düz metne çevirir (etiketler ve betikler atılır). */
@@ -63,7 +69,11 @@ export const STORES: Record<StoreId, StoreConfig> = {
     // Ürünler "_u123", hazır sistemler "_h123" ile biter.
     isProductUrl: (u) => /_u\d+$/i.test(u),
     delayMs: 6000,
-    parse: (html) => withTextCode(html, ['Üretici Kodu', 'Ürün Kodu'])
+    parse: (html) => withTextCode(html, ['Üretici Kodu', 'Ürün Kodu']),
+    readySystem: {
+      isUrl: (u) => /_h\d+$/i.test(u),
+      parse: (html) => parseItopyaSystem(html, 'https://www.itopya.com/')
+    }
   },
   gaming: {
     id: 'gaming',
@@ -74,7 +84,12 @@ export const STORES: Record<StoreId, StoreConfig> = {
     isProductSitemap: (u) => /wp-sitemap-posts-product-\d+\.xml$/i.test(u),
     isProductUrl: (u) => /\/urun\/\d+\//i.test(u),
     delayMs: 6000,
-    parse: (html) => withTextCode(html, ['Üretici Kodu'])
+    parse: (html) => withTextCode(html, ['Üretici Kodu']),
+    // Hazır sistemler ("sistem tavsiyesi") de ürün sayfasıdır; parça tablosu yoksa sayfa hazır sistem değildir.
+    readySystem: {
+      isUrl: (u) => /\/urun\/\d+\//i.test(u),
+      parse: (html) => parseGamingSystem(html, 'https://www.gaming.gen.tr/')
+    }
   },
   vatan: {
     id: 'vatan',
@@ -92,9 +107,13 @@ export const STORES: Record<StoreId, StoreConfig> = {
 
 /**
  * Elle girilen ürün linkini mağazanın biçimine getirir: https, mağazanın alan adı, sorgu ve # kısmı atılmış.
- * Mağazanın ürün sayfası değilse null.
+ * Mağazanın ürün sayfası değilse (accept verilmişse ona uymuyorsa) null.
  */
-export function normalizeStoreUrl(raw: string, store: StoreConfig): string | null {
+export function normalizeStoreUrl(
+  raw: string,
+  store: StoreConfig,
+  accept: (url: string) => boolean = store.isProductUrl
+): string | null {
   let u: URL
   try {
     u = new URL(raw.trim())
@@ -109,7 +128,18 @@ export function normalizeStoreUrl(raw: string, store: StoreConfig): string | nul
   u.search = ''
   u.hash = ''
   const s = u.toString()
-  return store.isProductUrl(s) ? s : null
+  return accept(s) ? s : null
+}
+
+/** Linkin hangi mağazaya ait olduğu (alan adına göre); bilinen bir mağaza değilse null. */
+export function storeForUrl(raw: string): StoreConfig | null {
+  let host: string
+  try {
+    host = new URL(raw.trim()).host.replace(/^www\./, '')
+  } catch {
+    return null
+  }
+  return Object.values(STORES).find((s) => new URL(s.homepage).host.replace(/^www\./, '') === host) ?? null
 }
 
 /** Site haritası XML'inden linkler; dizinse alt haritalar, değilse sayfalar. */

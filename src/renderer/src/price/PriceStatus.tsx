@@ -6,7 +6,8 @@ import { usePrices } from './PriceContext'
 export const JOB_LABEL: Record<PriceJob['kind'], string> = {
   update: 'Fiyatlar güncelleniyor',
   match: 'Mağazalarda aranıyor',
-  link: 'Link okunuyor'
+  link: 'Link okunuyor',
+  system: 'Hazır sistem okunuyor'
 }
 
 /** Üst bardaki fiyat durumu ve "Şimdi güncelle". */

@@ -1,5 +1,6 @@
 import type { CatalogLoadError, CategoryId, Part } from '../engines/catalog/types'
 import type { OfferRecord, StoreId, StoreMatch } from '../engines/price/types'
+import type { ReadySystem } from '../engines/price/readySystem'
 import type { BenchmarkResult, BenchmarkSource } from '../engines/benchmark/types'
 
 // Ana süreç ile arayüz arasındaki sözleşme. Arayüz veriye yalnızca preload'un açtığı bu API ile erişir.
@@ -38,9 +39,9 @@ export interface PriceRunInfo {
   summary?: string
 }
 
-/** Süren fiyat işi (güncelleme, eşleştirme ya da elle girilen link). */
+/** Süren fiyat işi (güncelleme, eşleştirme, elle girilen link ya da hazır sistem sayfası). */
 export interface PriceJob {
-  kind: 'update' | 'match' | 'link'
+  kind: 'update' | 'match' | 'link' | 'system'
   startedAt: string
   done: number
   total: number
@@ -72,6 +73,8 @@ export type ActionResult = { ok: true; message?: string } | { ok: false; message
 
 export type MatchDecision = 'confirm' | 'reject'
 
+export type ReadySystemResult = { ok: true; system: ReadySystem } | { ok: false; message: string }
+
 export interface MelpcApi {
   getCatalog(): Promise<CatalogPayload>
   listBuilds(): Promise<SavedBuild[]>
@@ -90,6 +93,8 @@ export interface MelpcApi {
   setMatchUrl(partId: string, storeId: StoreId, url: string): Promise<ActionResult>
   cancelPriceJob(): Promise<void>
   getPriceHistory(partId: string): Promise<OfferRecord[]>
+  /** Hazır sistem linki (İtopya, Gaming.gen.tr): sayfa bir kez okunur; sistemin adı, fiyatı ve parça listesi döner. */
+  readReadySystem(url: string): Promise<ReadySystemResult>
   /** Fiyat durumu değişince çağrılır. Dönen fonksiyon aboneliği bitirir. */
   onPriceState(listener: (state: PriceState) => void): () => void
 }
@@ -107,6 +112,7 @@ export const IPC = {
   priceSetUrl: 'price:setUrl',
   priceCancel: 'price:cancel',
   priceHistory: 'price:history',
+  priceReadSystem: 'price:readSystem',
   /** Ana süreçten arayüze: fiyat durumu değişti. */
   priceChanged: 'price:changed'
 } as const

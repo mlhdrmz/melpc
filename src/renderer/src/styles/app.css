@@ -1580,3 +1580,102 @@ button.main-nav__item:not(.main-nav__item--active):hover {
 .saved__item .chip-button {
   align-self: center;
 }
+
+/* ---------- Hazır sistem karşılaştırması (4. aşama) ---------- */
+.ready-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 14px;
+}
+.ready-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 420px;
+  max-width: 760px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.ready-form__field .input {
+  flex: none;
+  width: 100%;
+  min-width: 0;
+}
+.ready-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ready-head__name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+.ready-head__name:hover {
+  color: var(--violet-hover);
+  text-decoration: underline;
+}
+.ready-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.ready-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+.ready-stat__label {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.ready-stat__value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+.ready-stat__value--muted {
+  font-size: 16px;
+  color: var(--muted);
+}
+.ready-stat__detail {
+  font-size: 12px;
+  color: var(--muted);
+}
+.ready-table td a {
+  color: var(--text-soft);
+}
+.ready-table td a:hover {
+  color: var(--violet-hover);
+}
+.ready-table td .strong {
+  display: block;
+}
+/* Katalogda ve en ucuz fiyat sütunları uzun ürün adlarının yanında ezilmesin. */
+.ready-table tbody td:nth-of-type(2) {
+  min-width: 210px;
+}
+.ready-table tbody td:nth-of-type(3) {
+  min-width: 170px;
+}
+.ready-table .match-badge {
+  display: inline-block;
+  margin-top: 6px;
+  border-radius: 8px;
+}
+.ready-notes {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}

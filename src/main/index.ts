@@ -86,6 +86,10 @@ function registerIpc(): void {
   })
   ipcMain.handle(IPC.priceCancel, () => price.cancel())
   ipcMain.handle(IPC.priceHistory, (_e, p: unknown) => price.history(partId(p)))
+  ipcMain.handle(IPC.priceReadSystem, (_e, url: unknown) => {
+    if (typeof url !== 'string' || url.length > 2000) throw new Error('Geçersiz link')
+    return price.readSystem(url)
+  })
 }
 
 function createWindow(): void {

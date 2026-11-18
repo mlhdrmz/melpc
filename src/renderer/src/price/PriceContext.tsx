@@ -51,9 +51,10 @@ export function PriceProvider({ children, notify }: { children: ReactNode; notif
     if (!state) return
     setNow(Date.now())
     // Biten güncelleme ya da eşleştirme işinin sonucu bir kez bildirilir; ekran açılırken var olan eski sonuç bildirilmez.
+    // Elle girilen link ve hazır sistem sonuçları kendi ekranlarında gösterilir.
     const r = state.lastResult
     const at = r?.finishedAt ?? null
-    if (seenResult.current.init && r && at !== seenResult.current.at && r.kind !== 'link') {
+    if (seenResult.current.init && r && at !== seenResult.current.at && r.kind !== 'link' && r.kind !== 'system') {
       notify(`${r.kind === 'update' ? 'Fiyat güncellemesi bitti' : 'Mağaza araması bitti'}: ${r.summary}`)
     }
     seenResult.current = { init: true, at }

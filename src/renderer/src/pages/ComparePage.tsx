@@ -11,11 +11,12 @@ import { MAX_BUILDS, MAX_PARTS, useCompare } from '../compare/CompareContext'
 import { usePrices } from '../price/PriceContext'
 import { formatTl, PRICE_NOTE } from '../price/format'
 import { conditionsText } from '../score/format'
+import { ReadySystemCompare } from '../compare/ReadySystemCompare'
 
 // Karşılaştır sayfası (Melih onayladı, 4. aşama): Parçalar (aynı kategoriden 2–4 parça), Toplamalar (kayıtlı
 // 2–3 toplama) ve Hazır sistem (mağazadaki hazır bir sistemi "kendin toplasan" fiyatıyla karşılaştırma).
 
-type Tab = 'parts' | 'builds'
+type Tab = 'parts' | 'builds' | 'ready'
 
 export function ComparePage(): ReactElement {
   const [tab, setTab] = useState<Tab>('parts')
@@ -30,7 +31,8 @@ export function ComparePage(): ReactElement {
           {(
             [
               ['parts', 'Parçalar'],
-              ['builds', 'Toplamalar']
+              ['builds', 'Toplamalar'],
+              ['ready', 'Hazır sistem']
             ] as [Tab, string][]
           ).map(([t, label]) => (
             <button
@@ -48,6 +50,7 @@ export function ComparePage(): ReactElement {
       </div>
       {tab === 'parts' && <PartsCompare />}
       {tab === 'builds' && <BuildsCompare />}
+      {tab === 'ready' && <ReadySystemCompare />}
     </div>
   )
 }

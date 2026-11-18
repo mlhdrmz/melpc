@@ -175,12 +175,56 @@ describe('fiyat servisi', () => {
     expect(service.state().latest).toEqual([])
   })
 
+  it('hazır sistem: link denetlenir, sayfa bir kez okunur, hiçbir şey kaydedilmez', async () => {
+    const { impl, pages, calls } = site()
+    pages[`${IT}/kartal-sistem_h9`] = `<html>
+      <script type="application/ld+json">{"@type":"Product","name":"KARTAL TEST","offers":{"price":"50.000,00","priceCurrency":"TRY"}}</script>
+      <div class="product-card active" data-stok-kodu="TEST-CPU-0001" data-kategori-adi="İşlemci">
+        <a href="/amd-ryzen-7-9800x3d-islemci_u1" class="product-href">Ürüne Git</a><h3>AMD Ryzen 7 9800X3D</h3>
+      </div></html>`
+    pages[`${IT}/bos-sistem_h10`] = '<html>parça listesi yok</html>'
+    const { service } = await setup(impl)
+
+    expect(await service.readSystem('https://example.com/sistem_h1')).toMatchObject({ ok: false })
+    expect(await service.readSystem('https://www.vatanbilgisayar.com/sistem.html')).toMatchObject({
+      ok: false,
+      message: expect.stringContaining('Vatan Bilgisayar hazır sistemleri okunmuyor')
+    })
+    expect(await service.readSystem(`${IT}/amd-ryzen-7-9800x3d-islemci_u1`)).toMatchObject({ ok: false })
+    expect(calls).toEqual([])
+
+    const r = await service.readSystem('itopya.com/kartal-sistem_h9?utm_source=x')
+    expect(r).toMatchObject({
+      ok: true,
+      system: { storeId: 'itopya', url: `${IT}/kartal-sistem_h9`, name: 'KARTAL TEST', price: 50000, fetchedAt: '2026-11-18T10:00:00.000Z' }
+    })
+    expect(r.ok && r.system.lines).toEqual([
+      {
+        label: 'İşlemci',
+        category: 'cpu',
+        name: 'AMD Ryzen 7 9800X3D',
+        code: 'TEST-CPU-0001',
+        url: `${IT}/amd-ryzen-7-9800x3d-islemci_u1`
+      }
+    ])
+    expect(calls).toEqual([`${IT}/robots.txt`, `${IT}/kartal-sistem_h9`])
+
+    expect(await service.readSystem(`${IT}/bos-sistem_h10`)).toMatchObject({
+      ok: false,
+      message: expect.stringContaining('parça listesi bulunamadı')
+    })
+    expect(service.state().lastResult?.kind).toBe('system')
+    expect(service.state().matches).toEqual([])
+    expect(service.state().latest).toEqual([])
+  })
+
   it('iş sürerken ikinci iş başlamaz; durdurulabilir', async () => {
     const { impl } = site()
     const { service } = await setup(impl)
     service.findMatches()
     expect(service.findMatches()).toMatchObject({ ok: false })
     expect(service.update('manual')).toMatchObject({ ok: false })
+    expect(await service.readSystem(`${IT}/kartal-sistem_h9`)).toMatchObject({ ok: false })
     service.cancel()
     await service.whenIdle()
     expect(service.state().job).toBeNull()

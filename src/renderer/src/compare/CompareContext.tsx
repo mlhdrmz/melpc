@@ -1,7 +1,9 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactElement, type ReactNode } from 'react'
 import { CATEGORY_IDS, type CategoryId } from '@engines/catalog/types'
+import type { ReadySystem } from '@engines/price/readySystem'
 
 // Karşılaştırma listesi: kategori başına en fazla 4 parça, en fazla 3 kayıtlı toplama.
+// Son okunan hazır sistem de burada durur: başka ekrana geçip dönünce yeniden okumak gerekmesin.
 
 export const MAX_PARTS = 4
 export const MAX_BUILDS = 3
@@ -12,6 +14,9 @@ interface CompareContextValue {
   togglePart: (category: CategoryId, partId: string) => 'added' | 'removed' | 'full'
   toggleBuild: (id: number) => 'added' | 'removed' | 'full'
   count: number
+  /** Son okunan hazır sistem (uygulama kapanınca kaybolur). */
+  ready: ReadySystem | null
+  setReady: (system: ReadySystem | null) => void
 }
 
 const CompareContext = createContext<CompareContextValue | null>(null)
@@ -22,6 +27,7 @@ const emptyParts = (): Record<CategoryId, string[]> =>
 export function CompareProvider({ children }: { children: ReactNode }): ReactElement {
   const [parts, setParts] = useState<Record<CategoryId, string[]>>(emptyParts)
   const [builds, setBuilds] = useState<number[]>([])
+  const [ready, setReady] = useState<ReadySystem | null>(null)
 
   const togglePart = useCallback(
     (category: CategoryId, partId: string): 'added' | 'removed' | 'full' => {
@@ -51,7 +57,10 @@ export function CompareProvider({ children }: { children: ReactNode }): ReactEle
   )
 
   const count = Object.values(parts).reduce((n, l) => n + l.length, 0) + builds.length
-  const value = useMemo(() => ({ parts, builds, togglePart, toggleBuild, count }), [parts, builds, togglePart, toggleBuild, count])
+  const value = useMemo(
+    () => ({ parts, builds, togglePart, toggleBuild, count, ready, setReady }),
+    [parts, builds, togglePart, toggleBuild, count, ready]
+  )
   return <CompareContext.Provider value={value}>{children}</CompareContext.Provider>
 }
 

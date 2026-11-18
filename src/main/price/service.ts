@@ -1,9 +1,9 @@
 import type { Part } from '../../engines/catalog/types'
 import { checkCode, findCandidates } from '../../engines/price/match'
 import { canRunNow, nextAllowedAt, shouldAutoRun } from '../../engines/price/schedule'
-import { normalizeStoreUrl, STORES, type StoreConfig } from '../../engines/price/stores'
+import { normalizeStoreUrl, storeForUrl, STORES, type StoreConfig } from '../../engines/price/stores'
 import { STORE_IDS, type CodeCheck, type OfferRecord, type ParsedProduct, type StoreId, type StoreMatch } from '../../engines/price/types'
-import type { ActionResult, MatchDecision, PriceJob, PriceState } from '../../shared/api'
+import type { ActionResult, MatchDecision, PriceJob, PriceState, ReadySystemResult } from '../../shared/api'
 import type { MelpcDb } from '../db'
 import { BlockedError, StoreFetcher } from './fetcher'
 import { productUrls } from './sitemaps'
@@ -391,6 +391,43 @@ export class PriceService {
       this.idle(storeId)
       this.step(1)
       return result.message ?? ''
+    })
+    await this.whenIdle()
+    return result
+  }
+
+  // ---------- Hazır sistem ----------
+
+  /**
+   * Hazır sistem linki (Melih onayladı, 4. aşama): sayfa bir kez, mağazanın okuma kuyruğundan (robots.txt ve
+   * bekleme süreleriyle) okunur. Sistemin adı, fiyatı ve parça listesi döner; hiçbir şey kaydedilmez.
+   */
+  async readSystem(raw: string): Promise<ReadySystemResult> {
+    if (this.job) return { ok: false, message: BUSY }
+    const text = raw.trim()
+    const withScheme = /^https?:\/\//i.test(text) ? text : `https://${text}`
+    const store = storeForUrl(withScheme)
+    if (!store) return { ok: false, message: 'Bu link bir İtopya ya da Gaming.gen.tr linki değil.' }
+    const reader = store.readySystem
+    if (!reader) {
+      return { ok: false, message: `${store.name} hazır sistemleri okunmuyor; İtopya ya da Gaming.gen.tr linki yapıştırın.` }
+    }
+    const url = normalizeStoreUrl(withScheme, store, reader.isUrl)
+    if (!url) return { ok: false, message: `Bu link bir ${store.name} hazır sistem sayfası değil. Sistemin kendi sayfasının linkini yapıştırın.` }
+    let result: ReadySystemResult = { ok: false, message: 'Sayfa okunamadı.' }
+    this.startJob('system', 1, async () => {
+      this.progress(store.id, `${store.name} · hazır sistem`)
+      try {
+        const parsed = reader.parse(await this.fetcher(store).get(url))
+        result = parsed.lines.length
+          ? { ok: true, system: { ...parsed, storeId: store.id, url, fetchedAt: this.iso() } }
+          : { ok: false, message: 'Bu sayfada sistemin parça listesi bulunamadı. Hazır sistemin kendi sayfasının linkini yapıştırın.' }
+      } catch (e) {
+        result = { ok: false, message: (e as Error).message }
+      }
+      this.idle(store.id)
+      this.step(1)
+      return result.ok ? `${store.name}: hazır sistem okundu` : result.message
     })
     await this.whenIdle()
     return result
