@@ -51,10 +51,11 @@ CLAUDE.md kuralı: kullanım şartlarında otomatik erişimi açıkça yasaklaya
 
 Satış durumu İtopya ve Gaming.gen.tr'nin site haritalarından kontrol edildi (Vatan'ınki hız sınırı yüzünden okunamadı).
 
-- **NZXT Kraken Plus 360:** İtopya'da 2025 RGB sürümü var (siyah RL-KR360-B2, beyaz RL-KR360-W2; kontrol sırasında ikisi de stokta yoktu). Kataloğa siyah sürüm "Kraken Plus 360 RGB (2025)" olarak girdi; özellikler NZXT'nin teknik sayfasından. Katalogda artık 103 parça var.
+- **NZXT Kraken Plus 360:** İtopya'da 2025 RGB sürümü var (siyah RL-KR360-B2, beyaz RL-KR360-W2; kontrol sırasında ikisi de stokta yoktu). Kataloğa siyah sürüm "Kraken Plus 360 RGB (2025)" olarak girdi; özellikler NZXT'nin teknik sayfasından.
 - **be quiet! Pure Rock 3:** İki mağazada da yok; eklenmedi.
 - **Cooler Master MasterBox Q300L V2:** İki mağazada da yok; eklenmedi.
-- **Micro-ATX ve Mini-ITX kasa:** Melih'in seçimi bekleniyor. İki mağazada da satılan Micro-ATX kasalar: ASUS A21 Plus, ASUS A23 Plus, MSI MAG PANO M100R PZ, Corsair iCUE Link 2500X RGB. Mini-ITX'te iki mağazada birden satılan yok (İtopya: NZXT H2 Flow; Gaming.gen.tr: HYTE Revolt 3, Razer Tomahawk Mini-ITX, ASUS ROG Z11).
+- **Micro-ATX kasa (Melih seçti):** ASUS A21 Plus ve MSI MAG PANO M100R PZ eklendi; ikisi de İtopya'da ve Gaming.gen.tr'de var. Özellikler ASUS'un ürün sayfasından ve MSI'ın teknik föyünden (MSI'ın sayfası otomatik okumaya kapalı). İkisinin de üretici kodu üretici kaynaklarında yazmadığı için katalogda kod yok; eşleşme ürün adına bakılarak onaylanır. Katalogda artık 105 parça var.
+- **Mini-ITX kasa:** Melih NZXT H2 Flow'u seçti, ama NZXT'nin teknik sayfasına göre bu kasa yalnızca SFX/SFX-L güç kaynağı (en fazla 130 mm) ve en fazla 75 mm hava soğutucu alıyor; radyatör yalnızca önde, 280 mm'ye kadar ve fan + radyatör en fazla 60 mm kalınlıkta. Katalogdaki güç kaynaklarının ve hava soğutucuların hiçbiri sığmıyor, radyatör kalınlığını da uyumluluk motoru henüz denetleyemiyor. Eklenmeden önce Melih'e soruldu.
 
 ## Bitiş ölçütleri
 

@@ -30,6 +30,7 @@ Hem oyuncu hem mühendis dostu olmalı.
 - **İlk sürümün (v1) kapsamı:** Yalnızca masaüstü kasa toplama. Laptop ve monitörler sonraki sürümde; klavye, mouse, monitör kolu gibi çevre birimleri daha sonra.
 - **Pazar:** Türkiye. Fiyatlar TL olarak, Türkiye'deki mağazalardan alınır.
 - **Fiyat takibi:** Baştan otomatik (bkz. Fiyat motoru).
+- **Mağazalar:** İtopya, Gaming.gen.tr ve Vatan Bilgisayar (3. aşamada kesinleşti). Sinerji ve Amazon Türkiye'nin robots.txt dosyası bütün siteyi yasaklıyor; İncehesap ve Hepsiburada bot korumalı. Bunlar şimdilik yok; ayrıntı `docs/asama-3-plan.md`.
 - **Açıklamalar:** "Neden iyi, neden kötü" metinleri önceden yazılmış kurallara dayanır. Uygulamanın içinde canlı yapay zekâ yok (API maliyeti yüzünden).
 - **Kasa görünümü:** MelPC'ye özgü bir kasa. Gri metal gövde, pahlı kenarlar, köşeleri vidalı cam yan pencere, camın altında mor-turkuaz ışık çizgisi ve güç kaynağını örten havalandırmalı bir bant var; ön yüzde ışıklı, ızgaralı bir altıgen ve arkasında üç fan bulunuyor. Herhangi bir markanın kasasının kopyası değil; üzerinde yazı ya da logo yok.
 - **3D:** Tek bir standart kasa (genel model); bütün toplamalarda aynı temel görsel kullanılır. Parçalar gerçekte durdukları yerde, ATX ölçülerine göre yerleşir (bkz. `design/kasa-olculeri.md`). Temel görselde sıvı soğutma (işlemcide pompa, tavanda 360 mm radyatör ve 3 fan), arka fan, önde 3 fan ve mor-siyah kılıflı kablolar var. Kasa Topla ekranında seçilen parçanın yeri mor ışıkla vurgulanır. Her ürün için ayrı 3D model yapılmaz.
@@ -59,8 +60,8 @@ Uygulamanın mantığı, birbiriyle birlikte çalışan motorlara ayrılır:
 ## Aşamalar
 
 1. Proje dokümanı ve tasarım taslakları. ✓ Tamamlandı: "B · Vitrin" seçildi, kasanın dışı ve içi netleşti (bkz. `design/`).
-2. Uygulama iskeleti, katalog, uyumluluk, 3D kasa ve Kasa Topla ekranı. ← **şu an burada** — ayrıntılı plan: `docs/asama-2-plan.md` (Melih onayladı)
-3. Fiyat motoru (Türkiye mağazaları).
+2. Uygulama iskeleti, katalog, uyumluluk, 3D kasa ve Kasa Topla ekranı. ✓ Tamamlandı — plan: `docs/asama-2-plan.md`
+3. Fiyat motoru (Türkiye mağazaları). ← **şu an burada** — ayrıntılı plan ve durum: `docs/asama-3-plan.md` (Melih onayladı)
 4. Karşılaştırma ekranları, puanlama, açıklamalar ve hazır satılan kasalarla karşılaştırma.
 5. "Bilgisayarım": kendi bilgisayarını okuma ve yükseltme önerileri.
 
@@ -77,4 +78,4 @@ Laptop görseli (laptoplar eklendiğinde ya da 5. aşamada): Laptoplarda toplama
 
 ## Henüz karar verilmeyenler (başlamadan önce Melih'e sor)
 
-- Takip edilecek mağazalar. Öneri: İtopya, Gaming.gen.tr, Vatan Bilgisayar, İncehesap, Sinerji, Hepsiburada, Amazon Türkiye. 3. aşamada kesinleşecek.
+- Şu an açık karar yok.
