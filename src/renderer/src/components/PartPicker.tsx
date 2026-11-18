@@ -5,6 +5,7 @@ import { partName } from '@engines/catalog/access'
 import { partSummary } from '@engines/catalog/summary'
 import { checkCandidate, worstStatus, type Build, type CompatResult } from '@engines/compat'
 import { PartDetails } from './PartDetails'
+import { PriceLine } from '../price/PriceLine'
 import { CategoryIcon } from './icons'
 
 interface PartPickerProps {
@@ -160,7 +161,7 @@ export function PartPicker({ category, parts, build, selectedIds, onChoose, onCl
                       )}
                     </div>
                     <div className="picker__side">
-                      <span className="picker__price">Fiyat: henüz yok</span>
+                      <PriceLine partId={part.id} className="picker__price" />
                       <button
                         type="button"
                         className={selected ? 'button button--ghost' : 'button button--primary'}

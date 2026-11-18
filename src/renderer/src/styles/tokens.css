@@ -27,6 +27,12 @@
   --fail: #ff7d93;
   --fail-bg: #2e1620;
 
+  /* Fiyat geçmişi çizgileri: mağaza başına sabit (1 İtopya, 2 Gaming.gen.tr, 3 Vatan). 3. aşamada eklendi;
+     bu koyu zeminde renk körlüğü ayrımı ve kontrast denetiminden geçti. Yalnızca çizgi ve noktada, yazıda değil. */
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+
   --font-display: 'Saira', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
 

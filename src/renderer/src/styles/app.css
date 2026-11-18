@@ -880,3 +880,455 @@ a:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
   font-size: 13.5px;
 }
+
+/* ---------- Fiyatlar (3. aşama) ---------- */
+button.main-nav__item {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+button.main-nav__item--active {
+  background: var(--violet);
+}
+button.main-nav__item:not(.main-nav__item--active):hover {
+  color: var(--text);
+}
+.nav-count {
+  margin-left: 8px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 11.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-nav__item--active .nav-count {
+  background: var(--bg);
+  color: var(--violet);
+}
+.status-dot--ok {
+  background: var(--cyan);
+}
+.status-dot--busy {
+  background: var(--violet);
+  animation: status-pulse 1.2s ease-in-out infinite;
+}
+@keyframes status-pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-dot--busy {
+    animation: none;
+  }
+}
+.header-status__next {
+  font-size: 12px;
+}
+.button:disabled,
+.chip-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.button:disabled:hover,
+.chip-button:disabled:hover {
+  border-color: var(--line-strong);
+}
+.button--primary:disabled:hover {
+  background: var(--violet);
+}
+.toast--app {
+  bottom: 84px;
+  max-width: min(760px, calc(100% - 48px));
+}
+
+/* Tek satırlık fiyat (parça listesi, seçme penceresi, eşleştirme ekranı) */
+.price-line,
+.part-slot__price,
+.picker__price {
+  font-size: 12px;
+  color: var(--muted);
+}
+.price-line--ok .price-line__text {
+  color: var(--text);
+  font-weight: 600;
+}
+.price-line--warn .price-line__text {
+  color: var(--warn);
+  font-weight: 600;
+}
+.picker__price {
+  text-align: right;
+}
+
+/* Kasa Topla: toplam */
+.price-total {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.price-total__label {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.price-total__value {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.price-total--secondary .price-total__value {
+  font-size: 16px;
+  font-weight: 600;
+}
+.price-total__store {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+/* Parça ayrıntısı: mağaza fiyatları */
+.store-prices {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+.store-prices__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.store-price {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 8px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+.store-price__key {
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  align-self: center;
+}
+.store-price__store {
+  font-weight: 600;
+}
+.store-price__value {
+  font-weight: 700;
+  text-align: right;
+}
+.store-price__best {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--ok-bg);
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 600;
+}
+.store-price__meta,
+.store-price__error,
+.store-price__link {
+  grid-column: 2 / -1;
+  font-size: 12px;
+  color: var(--muted);
+}
+.store-price__error {
+  color: var(--warn);
+}
+.store-price__link {
+  color: var(--violet);
+}
+.store-prices__history {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+.store-prices__note {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+/* Fiyat geçmişi çizgisi */
+.price-chart__plot {
+  position: relative;
+  border-radius: 10px;
+}
+.price-chart__plot:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 2px;
+}
+.price-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
+.price-chart__grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.price-chart__axis {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+.price-chart__crosshair {
+  stroke: var(--muted);
+  stroke-width: 1;
+}
+.price-chart__tick {
+  fill: var(--muted);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+}
+/* Nokta: 8px dolgu + dışında 2px zemin renginde halka (halka dolgunun altına çizilir, noktayı küçültmez). */
+.price-chart__dot {
+  stroke: var(--surface);
+  stroke-width: 4;
+  paint-order: stroke;
+}
+.price-chart__tooltip {
+  position: absolute;
+  top: 4px;
+  z-index: 2;
+  max-width: calc(100% - 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  pointer-events: none;
+}
+.price-chart__tooltip--left {
+  left: 50px;
+}
+.price-chart__tooltip--right {
+  right: 8px;
+}
+.price-chart__when {
+  color: var(--muted);
+}
+.price-chart__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 6px;
+}
+.price-chart__key {
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  flex: none;
+}
+.price-chart__value {
+  font-weight: 700;
+  color: var(--text);
+}
+.price-chart__table summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--violet);
+  margin-top: 4px;
+}
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6px;
+  font-size: 12px;
+}
+.history-table th,
+.history-table td {
+  text-align: left;
+  padding: 5px 6px 5px 0;
+  border-top: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+.history-table th {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Mağaza eşleştirme ekranı */
+.match-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.page-title__sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--violet);
+  letter-spacing: 0.04em;
+}
+.match-intro {
+  margin: 0;
+  max-width: 980px;
+  color: var(--muted);
+}
+.match-result {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+.job-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+}
+.job-bar__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.job-bar__head .chip-button {
+  margin-left: auto;
+}
+.job-bar__track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line-control);
+  overflow: hidden;
+}
+.job-bar__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--violet);
+  transition: width 0.3s ease;
+}
+.match-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 12px;
+}
+.match-filters .input {
+  max-width: 360px;
+}
+.match-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.match-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.1fr) repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+.match-row--head > div {
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.match-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.match-group__title {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--violet);
+}
+.match-part,
+.match-cell {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.match-cell {
+  font-size: 12.5px;
+}
+.match-cell--candidate {
+  background: var(--surface-selected);
+  border-color: var(--violet);
+}
+.match-cell__question {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--violet);
+}
+.match-cell__name {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+.match-cell__label {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+.match-cell__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.chip-button--confirm {
+  border-color: var(--violet);
+  background: var(--violet);
+  color: var(--bg);
+}
+.chip-button--confirm:hover {
+  background: var(--violet-hover);
+}
+.match-badge {
+  align-self: flex-start;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.match-badge--ok {
+  background: var(--ok-bg);
+  color: var(--cyan);
+}
+.match-badge--warn {
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+.match-badge--fail {
+  background: var(--fail-bg);
+  color: var(--fail);
+}
+.match-badge--muted {
+  background: var(--surface-2);
+  color: var(--muted);
+}
+.input--small {
+  min-height: 32px;
+  min-width: 0;
+  flex: none;
+  width: 100%;
+  padding: 0 10px;
+  font-size: 12.5px;
+}

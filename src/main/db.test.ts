@@ -60,3 +60,67 @@ describe('veritabanı', () => {
     expect((await MelpcDb.open(file, wasmDir)).listBuilds()).toEqual([])
   })
 })
+
+// Fiyatlar test değeridir.
+describe('fiyat tabloları', () => {
+  it('eşleştirme eklenir, güncellenir ve silinir', async () => {
+    const db = await MelpcDb.open(tempFile(), wasmDir)
+    db.upsertMatch({ partId: 'p', storeId: 'itopya', status: 'candidate', url: 'https://x/p_u1', product: { name: 'P', mpn: 'T-1' }, codeCheck: 'match', updatedAt: '2026-11-18T10:00:00Z' })
+    db.upsertMatch({ partId: 'p', storeId: 'itopya', status: 'confirmed', url: 'https://x/p_u1', product: { name: 'P', mpn: 'T-1' }, codeCheck: 'match', updatedAt: '2026-11-18T11:00:00Z' })
+    db.upsertMatch({ partId: 'p', storeId: 'gaming', status: 'notFound', updatedAt: '2026-11-18T11:00:00Z' })
+    const all = db.listMatches()
+    expect(all).toHaveLength(2)
+    expect(all.find((m) => m.storeId === 'itopya')).toMatchObject({ status: 'confirmed', product: { mpn: 'T-1' } })
+    expect(all.find((m) => m.storeId === 'gaming')).toEqual({ partId: 'p', storeId: 'gaming', status: 'notFound', updatedAt: '2026-11-18T11:00:00Z' })
+    db.deleteMatch('p', 'gaming')
+    expect(db.listMatches()).toHaveLength(1)
+  })
+
+  it('son okuma, fiyatı okunmuş son okuma ve geçmiş', async () => {
+    const file = tempFile()
+    const db = await MelpcDb.open(file, wasmDir)
+    const base = { partId: 'p', storeId: 'itopya' as const, url: 'https://x/p_u1' }
+    db.upsertMatch({ partId: 'p', storeId: 'itopya', status: 'confirmed', url: base.url, updatedAt: '2026-11-16T09:00:00Z' })
+    db.addOffer({ ...base, price: 1000, inStock: true, fetchedAt: '2026-11-16T10:00:00Z' })
+    db.addOffer({ ...base, price: 950, inStock: false, fetchedAt: '2026-11-17T10:00:00Z' })
+    db.addOffer({ ...base, price: null, inStock: null, fetchedAt: '2026-11-18T10:00:00Z', error: 'Zaman aşımı' }, true)
+
+    const again = await MelpcDb.open(file, wasmDir)
+    expect(again.latestOffers()).toEqual([{ ...base, price: null, inStock: null, fetchedAt: '2026-11-18T10:00:00Z', error: 'Zaman aşımı' }])
+    expect(again.latestPricedOffers()).toEqual([{ ...base, price: 950, inStock: false, fetchedAt: '2026-11-17T10:00:00Z' }])
+    expect(again.offerHistory('p').map((o) => o.price)).toEqual([1000, 950])
+  })
+
+  it('eşleşme başka linke geçince eski linkin fiyatları görünmez', async () => {
+    const db = await MelpcDb.open(tempFile(), wasmDir)
+    db.upsertMatch({ partId: 'p', storeId: 'gaming', status: 'confirmed', url: 'https://x/eski', updatedAt: '2026-11-16T09:00:00Z' })
+    db.addOffer({ partId: 'p', storeId: 'gaming', url: 'https://x/eski', price: 500, inStock: true, fetchedAt: '2026-11-16T10:00:00Z' })
+    db.upsertMatch({ partId: 'p', storeId: 'gaming', status: 'candidate', url: 'https://x/yeni', updatedAt: '2026-11-17T09:00:00Z' })
+    expect(db.latestOffers()).toEqual([])
+    expect(db.offerHistory('p')).toEqual([])
+    db.upsertMatch({ partId: 'p', storeId: 'gaming', status: 'confirmed', url: 'https://x/yeni', updatedAt: '2026-11-17T09:05:00Z' })
+    db.addOffer({ partId: 'p', storeId: 'gaming', url: 'https://x/yeni', price: 700, inStock: true, fetchedAt: '2026-11-17T09:00:00Z' })
+    expect(db.latestPricedOffers().map((o) => o.price)).toEqual([700])
+    expect(db.offerHistory('p').map((o) => o.price)).toEqual([700])
+  })
+
+  it('reddedilen linkler', async () => {
+    const db = await MelpcDb.open(tempFile(), wasmDir)
+    db.addRejected('p', 'vatan', 'https://x/a.html', '2026-11-18T10:00:00Z')
+    db.addRejected('p', 'vatan', 'https://x/b.html', '2026-11-18T10:00:00Z')
+    db.removeRejected('p', 'vatan', 'https://x/a.html')
+    expect(db.rejectedUrls('p', 'vatan')).toEqual(['https://x/b.html'])
+    expect(db.rejectedUrls('p', 'itopya')).toEqual([])
+  })
+
+  it('çekim kayıtları', async () => {
+    const db = await MelpcDb.open(tempFile(), wasmDir)
+    const id = db.startRun('update', '2026-11-18T10:00:00Z')
+    db.startRun('match', '2026-11-18T10:05:00Z')
+    db.finishRun(id, '2026-11-18T10:20:00Z', '12 fiyat okundu')
+    expect(db.listRuns('update')).toEqual([{ startedAt: '2026-11-18T10:00:00Z', finishedAt: '2026-11-18T10:20:00Z', summary: '12 fiyat okundu' }])
+    expect(db.listRuns('match')).toHaveLength(1)
+    db.deleteRun(id)
+    expect(db.listRuns('update')).toEqual([])
+  })
+})
