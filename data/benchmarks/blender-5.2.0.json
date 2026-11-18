@@ -1,0 +1,422 @@
+{
+  "sources": {
+    "bod-cpu-5.2.0": {
+      "url": "https://opendata.blender.org/benchmarks/query/?compute_type=CPU&blender_version=5.2.0&group_by=device_name",
+      "retrieved": "2026-11-18",
+      "title": "Blender Open Data · İşlemci · Blender 5.2.0 (cihaza göre ortanca)",
+      "license": "CC0"
+    },
+    "bod-optix-5.2.0": {
+      "url": "https://opendata.blender.org/benchmarks/query/?compute_type=OPTIX&blender_version=5.2.0&group_by=device_name",
+      "retrieved": "2026-11-18",
+      "title": "Blender Open Data · NVIDIA OptiX · Blender 5.2.0 (cihaza göre ortanca)",
+      "license": "CC0"
+    },
+    "bod-hip-5.2.0": {
+      "url": "https://opendata.blender.org/benchmarks/query/?compute_type=HIP&blender_version=5.2.0&group_by=device_name",
+      "retrieved": "2026-11-18",
+      "title": "Blender Open Data · AMD HIP · Blender 5.2.0 (cihaza göre ortanca)",
+      "license": "CC0"
+    },
+    "bod-oneapi-5.2.0": {
+      "url": "https://opendata.blender.org/benchmarks/query/?compute_type=ONEAPI&blender_version=5.2.0&group_by=device_name",
+      "retrieved": "2026-11-18",
+      "title": "Blender Open Data · Intel oneAPI · Blender 5.2.0 (cihaza göre ortanca)",
+      "license": "CC0"
+    }
+  },
+  "results": [
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-amd-ryzen-9-9950x3d"
+      },
+      "device": "AMD Ryzen 9 9950X3D 16-Core Processor",
+      "value": 686.98,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 210,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-amd-ryzen-7-9800x3d"
+      },
+      "device": "AMD Ryzen 7 9800X3D 8-Core Processor",
+      "value": 367.88,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 222,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-amd-ryzen-7-9700x"
+      },
+      "device": "AMD Ryzen 7 9700X 8-Core Processor",
+      "value": 321.12,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 85,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-amd-ryzen-5-9600x"
+      },
+      "device": "AMD Ryzen 5 9600X 6-Core Processor",
+      "value": 273.67,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 79,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-amd-ryzen-7-7800x3d"
+      },
+      "device": "AMD Ryzen 7 7800X3D 8-Core Processor",
+      "value": 293.17,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 116,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-amd-ryzen-5-7600"
+      },
+      "device": "AMD Ryzen 5 7600 6-Core Processor",
+      "value": 210.42,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 14,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-amd-ryzen-7-5700x3d"
+      },
+      "device": "AMD Ryzen 7 5700X3D 8-Core Processor",
+      "value": 210.98,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 20,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-amd-ryzen-5-5600"
+      },
+      "device": "AMD Ryzen 5 5600 6-Core Processor",
+      "value": 154.12,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 61,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-intel-core-ultra-9-285k"
+      },
+      "device": "Intel Core Ultra 9 285K",
+      "value": 575.87,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 131,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-intel-core-ultra-7-265k"
+      },
+      "device": "Intel Core Ultra 7 265K",
+      "value": 482.13,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 28,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-intel-core-ultra-5-245k"
+      },
+      "device": "Intel Core Ultra 5 245K",
+      "value": 271.75,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 28,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-intel-core-i7-14700k"
+      },
+      "device": "Intel Core i7-14700K",
+      "value": 449.44,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 20,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-intel-core-i5-14600k"
+      },
+      "device": "Intel Core i5-14600K",
+      "value": 320.08,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 33,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-intel-core-i5-14400f"
+      },
+      "device": "Intel Core i5-14400F",
+      "value": 212.82,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 15,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "partId": "cpu-intel-core-i5-12400f"
+      },
+      "device": "Intel Core i5-12400F",
+      "value": 167.88,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "CPU",
+        "statistic": "median"
+      },
+      "sampleCount": 16,
+      "source": "bod-cpu-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "GeForce RTX 5090"
+      },
+      "device": "NVIDIA GeForce RTX 5090",
+      "value": 16101.03,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "OPTIX",
+        "statistic": "median"
+      },
+      "sampleCount": 236,
+      "source": "bod-optix-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "GeForce RTX 5080"
+      },
+      "device": "NVIDIA GeForce RTX 5080",
+      "value": 9155.33,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "OPTIX",
+        "statistic": "median"
+      },
+      "sampleCount": 406,
+      "source": "bod-optix-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "GeForce RTX 5070 Ti"
+      },
+      "device": "NVIDIA GeForce RTX 5070 Ti",
+      "value": 7749.67,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "OPTIX",
+        "statistic": "median"
+      },
+      "sampleCount": 273,
+      "source": "bod-optix-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "GeForce RTX 5070"
+      },
+      "device": "NVIDIA GeForce RTX 5070",
+      "value": 5806.64,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "OPTIX",
+        "statistic": "median"
+      },
+      "sampleCount": 192,
+      "source": "bod-optix-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "GeForce RTX 5060 Ti"
+      },
+      "device": "NVIDIA GeForce RTX 5060 Ti",
+      "value": 4147.27,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "OPTIX",
+        "statistic": "median"
+      },
+      "sampleCount": 234,
+      "note": "Blender Open Data bu kartın 8 GB ve 16 GB sürümlerini ayırmıyor; ortanca ikisinin ölçümlerinden.",
+      "source": "bod-optix-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "GeForce RTX 5060"
+      },
+      "device": "NVIDIA GeForce RTX 5060",
+      "value": 3682.46,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "OPTIX",
+        "statistic": "median"
+      },
+      "sampleCount": 109,
+      "source": "bod-optix-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "GeForce RTX 4060"
+      },
+      "device": "NVIDIA GeForce RTX 4060",
+      "value": 2971.13,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "OPTIX",
+        "statistic": "median"
+      },
+      "sampleCount": 76,
+      "source": "bod-optix-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "Radeon RX 9070 XT"
+      },
+      "device": "AMD Radeon RX 9070 XT",
+      "value": 3364.74,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "HIP",
+        "statistic": "median"
+      },
+      "sampleCount": 433,
+      "source": "bod-hip-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "Radeon RX 9070"
+      },
+      "device": "AMD Radeon RX 9070",
+      "value": 2977.62,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "HIP",
+        "statistic": "median"
+      },
+      "sampleCount": 34,
+      "source": "bod-hip-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "Radeon RX 9060 XT"
+      },
+      "device": "AMD Radeon RX 9060 XT",
+      "value": 1662.3,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "HIP",
+        "statistic": "median"
+      },
+      "sampleCount": 68,
+      "note": "Blender Open Data bu kartın 8 GB ve 16 GB sürümlerini ayırmıyor; ortanca ikisinin ölçümlerinden.",
+      "source": "bod-hip-5.2.0"
+    },
+    {
+      "test": "blender-cycles",
+      "subject": {
+        "gpuChip": "Arc B580"
+      },
+      "device": "Intel Arc B580 Graphics",
+      "value": 2842.45,
+      "conditions": {
+        "blenderVersion": "5.2.0",
+        "computeType": "ONEAPI",
+        "statistic": "median"
+      },
+      "sampleCount": 24,
+      "source": "bod-oneapi-5.2.0"
+    }
+  ]
+}

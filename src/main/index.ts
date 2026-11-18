@@ -4,6 +4,7 @@ import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { parseCatalogFiles } from '../engines/catalog/loader'
 import { resolvePart } from '../engines/catalog/validate'
 import { CATEGORY_IDS } from '../engines/catalog/types'
+import { parseBenchmarkFiles } from '../engines/benchmark/validate'
 import { STORE_IDS, type StoreId } from '../engines/price/types'
 import { IPC, type BuildSelection, type CatalogPayload, type SaveBuildInput } from '../shared/api'
 import { MelpcDb } from './db'
@@ -11,7 +12,7 @@ import { PriceService } from './price/service'
 
 let db: MelpcDb
 let price: PriceService
-let catalog: CatalogPayload = { parts: [], errors: [] }
+let catalog: CatalogPayload = { parts: [], errors: [], benchmarks: { results: [], sources: {} } }
 
 /** `data/catalog/*.json` dosyalarını okur, doğrular ve veritabanına yükler. */
 function loadCatalog(): void {
@@ -21,9 +22,18 @@ function loadCatalog(): void {
     .map((name) => ({ name, content: readFileSync(join(dir, name), 'utf8') }))
   const { records, errors } = parseCatalogFiles(files)
   db.replaceCatalog(records)
-  catalog = { parts: db.readCatalog().map(resolvePart), errors }
+  // Performans ölçümleri katalogla birlikte doğrulanır (katalogda olmayan parçanın ölçümü yüklenmez).
+  const benchDir = join(app.getAppPath(), 'data', 'benchmarks')
+  const benchFiles = readdirSync(benchDir)
+    .filter((f) => f.endsWith('.json'))
+    .map((name) => ({ name, content: readFileSync(join(benchDir, name), 'utf8') }))
+  const bench = parseBenchmarkFiles(benchFiles, records)
+  for (const e of bench.errors) {
+    errors.push({ file: `benchmarks/${e.file}`, message: `${e.index !== undefined ? `#${e.index}: ` : ''}${e.message}` })
+  }
+  catalog = { parts: db.readCatalog().map(resolvePart), errors, benchmarks: { results: bench.results, sources: bench.sources } }
   for (const e of errors) console.warn(`[katalog] ${e.file}${e.partId ? ` / ${e.partId}` : ''}: ${e.message}`)
-  console.log(`[katalog] ${catalog.parts.length} parça yüklendi, ${errors.length} hata.`)
+  console.log(`[katalog] ${catalog.parts.length} parça, ${bench.results.length} ölçüm yüklendi, ${errors.length} hata.`)
 }
 
 function isValidSelection(v: unknown): v is BuildSelection {
@@ -76,6 +86,10 @@ function registerIpc(): void {
   })
   ipcMain.handle(IPC.priceCancel, () => price.cancel())
   ipcMain.handle(IPC.priceHistory, (_e, p: unknown) => price.history(partId(p)))
+  ipcMain.handle(IPC.priceReadSystem, (_e, url: unknown) => {
+    if (typeof url !== 'string' || url.length > 2000) throw new Error('Geçersiz link')
+    return price.readSystem(url)
+  })
 }
 
 function createWindow(): void {

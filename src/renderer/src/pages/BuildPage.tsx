@@ -10,6 +10,8 @@ import { PartPicker } from '../components/PartPicker'
 import { CaseViewer } from '../three/CaseViewer'
 import { PricePanel } from '../price/PricePanel'
 import { PriceLine } from '../price/PriceLine'
+import { EvaluationPanel } from '../score/EvaluationPanel'
+import { MAX_BUILDS, useCompare } from '../compare/CompareContext'
 import { desktopCase } from '../three/DesktopCase'
 
 const EMPTY_SELECTION: BuildSelection = { storage: [] }
@@ -40,6 +42,7 @@ export function BuildPage({ catalog }: { catalog: CatalogPayload }): ReactElemen
   const [savedBuilds, setSavedBuilds] = useState<SavedBuild[]>([])
   const [showSaved, setShowSaved] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
+  const compare = useCompare()
 
   const byId = useMemo(() => new Map(catalog.parts.map((p) => [p.id, p])), [catalog])
   const build = useMemo(() => toBuild(selection, byId), [selection, byId])
@@ -171,6 +174,18 @@ export function BuildPage({ catalog }: { catalog: CatalogPayload }): ReactElemen
                       <span className="muted small">
                         {new Date(b.updatedAt).toLocaleString('tr-TR', { dateStyle: 'medium', timeStyle: 'short' })}
                       </span>
+                    </button>
+                    <button
+                      type="button"
+                      className={`chip-button${compare.builds.includes(b.id) ? ' chip-button--on' : ' chip-button--quiet'}`}
+                      aria-pressed={compare.builds.includes(b.id)}
+                      onClick={() => {
+                        const r = compare.toggleBuild(b.id)
+                        if (r === 'full') setToast(`Karşılaştırmada en fazla ${MAX_BUILDS} toplama olabilir.`)
+                        else if (r === 'added') setToast(`"${b.name}" karşılaştırmaya eklendi.`)
+                      }}
+                    >
+                      {compare.builds.includes(b.id) ? 'Karşılaştırmada' : 'Karşılaştır'}
                     </button>
                     <button type="button" className="icon-button" aria-label={`${b.name} toplamasını sil`} onClick={() => void removeSaved(b)}>
                       <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" className="line-icon">
@@ -314,6 +329,8 @@ export function BuildPage({ catalog }: { catalog: CatalogPayload }): ReactElemen
               </span>
             </div>
           </div>
+
+          <EvaluationPanel build={build} compat={results} />
 
           <PricePanel parts={CATEGORY_IDS.flatMap((c) => selectedParts(c))} />
 

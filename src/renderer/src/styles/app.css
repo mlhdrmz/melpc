@@ -1332,3 +1332,350 @@ button.main-nav__item:not(.main-nav__item--active):hover {
   padding: 0 10px;
   font-size: 12.5px;
 }
+
+/* ---------- Puanlama ve açıklamalar (4. aşama) ---------- */
+.eval-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.eval-score__label {
+  font-size: 13px;
+  color: var(--muted);
+}
+.eval-score__value {
+  font-size: 22px;
+  font-weight: 700;
+}
+.eval-score--secondary .eval-score__value {
+  font-size: 16px;
+  color: var(--muted);
+}
+.eval-components {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.eval-components__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0 8px;
+  font-size: 12.5px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+.eval-components__item--off {
+  color: var(--muted);
+}
+.eval-components__value {
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+.eval-components__note {
+  grid-column: 1 / -1;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.eval-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.eval-list__title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.eval-list--good .eval-list__title {
+  color: var(--cyan);
+}
+.eval-list--bad .eval-list__title {
+  color: var(--warn);
+}
+.eval-list--info .eval-list__title {
+  color: var(--muted);
+}
+.eval-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.eval-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12.5px;
+}
+.eval-list--good li {
+  background: var(--ok-bg);
+}
+.eval-list--bad li {
+  background: var(--warn-bg);
+}
+.eval-list--info li {
+  background: var(--surface-2);
+}
+.eval-list__item-title {
+  font-weight: 600;
+}
+.eval-list__item-detail {
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+/* Parça ayrıntısı: performans */
+.perf {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 8px;
+}
+.perf__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+.perf__label {
+  font-weight: 600;
+}
+.perf__value {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.perf__value--muted {
+  color: var(--muted);
+  font-weight: 600;
+}
+.perf__meta,
+.perf__desc,
+.perf__source,
+.perf__warn {
+  font-size: 12px;
+  color: var(--muted);
+}
+.perf__source {
+  color: var(--violet);
+}
+.perf__warn {
+  color: var(--warn);
+}
+.perf__desc {
+  font-size: 11.5px;
+}
+
+/* Seçme penceresi: sıralama değeri */
+.picker__metric {
+  font-size: 12.5px;
+  color: var(--cyan);
+}
+.picker__formula {
+  align-self: center;
+}
+
+.eval-sources {
+  color: var(--muted);
+}
+
+/* ---------- Karşılaştır sayfası (4. aşama) ---------- */
+.compare-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.compare-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.segmented--wrap {
+  flex-wrap: wrap;
+  border-radius: 16px;
+  align-self: flex-start;
+}
+.compare-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 14px;
+}
+.compare-toolbar .select select {
+  max-width: 420px;
+  min-width: 280px;
+}
+.compare-builds-pick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+}
+.cmp-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-x: auto;
+}
+.cmp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.cmp-table th,
+.cmp-table td {
+  padding: 9px 12px;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.cmp-table thead th {
+  border-top: 0;
+  background: var(--surface-2);
+}
+.cmp-table tbody th {
+  width: 210px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.cmp-head {
+  display: block;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.cmp-note {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.8;
+}
+.cmp-row--diff td {
+  background: rgba(165, 139, 255, 0.07);
+}
+.cmp-cell--best {
+  box-shadow: inset 0 0 0 2px var(--cyan);
+  font-weight: 700;
+}
+.chip-button--on {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+.saved__item .chip-button {
+  align-self: center;
+}
+
+/* ---------- Hazır sistem karşılaştırması (4. aşama) ---------- */
+.ready-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 14px;
+}
+.ready-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 420px;
+  max-width: 760px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.ready-form__field .input {
+  flex: none;
+  width: 100%;
+  min-width: 0;
+}
+.ready-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ready-head__name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+.ready-head__name:hover {
+  color: var(--violet-hover);
+  text-decoration: underline;
+}
+.ready-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.ready-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+.ready-stat__label {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.ready-stat__value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+.ready-stat__value--muted {
+  font-size: 16px;
+  color: var(--muted);
+}
+.ready-stat__detail {
+  font-size: 12px;
+  color: var(--muted);
+}
+.ready-table td a {
+  color: var(--text-soft);
+}
+.ready-table td a:hover {
+  color: var(--violet-hover);
+}
+.ready-table td .strong {
+  display: block;
+}
+/* Katalogda ve en ucuz fiyat sütunları uzun ürün adlarının yanında ezilmesin. */
+.ready-table tbody td:nth-of-type(2) {
+  min-width: 210px;
+}
+.ready-table tbody td:nth-of-type(3) {
+  min-width: 170px;
+}
+.ready-table .match-badge {
+  display: inline-block;
+  margin-top: 6px;
+  border-radius: 8px;
+}
+.ready-notes {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}

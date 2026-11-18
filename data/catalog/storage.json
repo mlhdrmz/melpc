@@ -10,6 +10,11 @@
         "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/9100-pro-2tb-nvme-pcie-gen-5-mz-vap2t0bw/",
         "retrieved": "2026-11-17",
         "title": "Samsung ürün sayfası (Specifications)"
+      },
+      "speed": {
+        "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/9100-pro-2tb-nvme-pcie-gen-5-mz-vap2t0bw/",
+        "retrieved": "2026-11-18",
+        "title": "Samsung ürün sayfası (Specifications) · okuma hızı"
       }
     },
     "specs": {
@@ -29,10 +34,15 @@
       "formFactor": {
         "value": "M.2 2280",
         "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 14700,
+        "source": "speed",
+        "note": "\"Sequential Read: Up to 14,700 MB/s\" (teknik tablo; sayfanın tanıtım bölümünde 14,800 yazıyor). \"Performance may vary based on system hardware & configuration\""
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-crucial-t705-2-tb",
@@ -45,6 +55,11 @@
         "url": "https://www.crucial.com/ssd/t705/ct2000t705ssd3",
         "retrieved": "2026-11-17",
         "title": "Crucial ürün sayfası"
+      },
+      "speed": {
+        "url": "https://www.crucial.com/ssd/t705/ct2000t705ssd3",
+        "retrieved": "2026-11-18",
+        "title": "Crucial ürün sayfası · okuma hızı"
       }
     },
     "specs": {
@@ -65,10 +80,15 @@
         "value": "M.2 2280",
         "source": "maker",
         "note": "Soğutucusuz sürüm"
+      },
+      "seqReadMbps": {
+        "value": 14500,
+        "source": "speed",
+        "note": "\"Sequential Read: 14,500 MB/s\""
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-samsung-990-pro-1-tb",
@@ -81,6 +101,11 @@
         "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/",
         "retrieved": "2026-11-17",
         "title": "Samsung ürün sayfası (Specifications)"
+      },
+      "speed": {
+        "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-1tb-nvme-pcie-gen-4-mz-v9p1t0bw/",
+        "retrieved": "2026-11-18",
+        "title": "Samsung ürün sayfası (Specifications) · okuma hızı"
       }
     },
     "specs": {
@@ -100,10 +125,15 @@
       "formFactor": {
         "value": "M.2 2280",
         "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 7450,
+        "source": "speed",
+        "note": "\"sequential read/write speeds up to 7450/6900 MB/s\""
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-samsung-990-pro-2-tb",
@@ -116,6 +146,11 @@
         "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-2tb-nvme-pcie-gen-4-mz-v9p2t0bw/",
         "retrieved": "2026-11-17",
         "title": "Samsung ürün sayfası (Specifications)"
+      },
+      "speed": {
+        "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-pro-2tb-nvme-pcie-gen-4-mz-v9p2t0bw/",
+        "retrieved": "2026-11-18",
+        "title": "Samsung ürün sayfası (Specifications) · okuma hızı"
       }
     },
     "specs": {
@@ -135,10 +170,15 @@
       "formFactor": {
         "value": "M.2 2280",
         "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 7450,
+        "source": "speed",
+        "note": "\"sequential read/write speeds up to 7450/6900 MB/s\""
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-samsung-990-evo-plus-2-tb",
@@ -151,6 +191,11 @@
         "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-evo-plus-2tb-nvme-pcie-gen-4-mz-v9s2t0bw/",
         "retrieved": "2026-11-17",
         "title": "Samsung ürün sayfası (Specifications)"
+      },
+      "speed": {
+        "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-evo-plus-2tb-nvme-pcie-gen-4-mz-v9s2t0bw/",
+        "retrieved": "2026-11-18",
+        "title": "Samsung ürün sayfası (Specifications) · okuma hızı"
       }
     },
     "specs": {
@@ -170,10 +215,15 @@
       "formFactor": {
         "value": "M.2 2280",
         "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 7250,
+        "source": "speed",
+        "note": "\"Sequential Read: Up to 7,250 MB/s\""
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-sandisk-wd-black-sn850x-1-tb",
@@ -186,6 +236,11 @@
         "url": "https://www.sandisk.com/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS100T2X0E-00BCA0",
         "retrieved": "2026-11-17",
         "title": "SanDisk ürün sayfası (WD_BLACK SN850X)"
+      },
+      "speed": {
+        "url": "https://www.sandisk.com/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS100T2X0E-00BCA0",
+        "retrieved": "2026-11-18",
+        "title": "SanDisk ürün sayfası (WD_BLACK SN850X) · okuma hızı"
       }
     },
     "specs": {
@@ -206,10 +261,15 @@
         "value": "M.2 2280",
         "source": "maker",
         "note": "Soğutucusuz sürüm (WDS100T2X0E-00BCA0)"
+      },
+      "seqReadMbps": {
+        "value": 7300,
+        "source": "speed",
+        "note": "\"Sequential Read Performance: 7300MB/s\" (1TB)"
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-sandisk-wd-black-sn850x-2-tb",
@@ -222,6 +282,11 @@
         "url": "https://www.sandisk.com/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS200T2X0E-00BCA0",
         "retrieved": "2026-11-17",
         "title": "SanDisk ürün sayfası (WD_BLACK SN850X)"
+      },
+      "speed": {
+        "url": "https://www.sandisk.com/products/ssd/internal-ssd/wd-black-sn850x-nvme-ssd?sku=WDS200T2X0E-00BCA0",
+        "retrieved": "2026-11-18",
+        "title": "SanDisk ürün sayfası (WD_BLACK SN850X) · okuma hızı"
       }
     },
     "specs": {
@@ -242,10 +307,15 @@
         "value": "M.2 2280",
         "source": "maker",
         "note": "Soğutucusuz sürüm (WDS200T2X0E-00BCA0)"
+      },
+      "seqReadMbps": {
+        "value": 7300,
+        "source": "speed",
+        "note": "\"Sequential Read Performance: 7300MB/s\" (2TB)"
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-kingston-kc3000-2048-gb",
@@ -277,10 +347,14 @@
       "formFactor": {
         "value": "M.2 2280",
         "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": null,
+        "note": "Kingston'ın sayfası 18.11.2026'da okunamadı (bot doğrulaması); bilinmiyor."
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-kingston-nv3-1-tb",
@@ -313,10 +387,14 @@
         "value": "M.2 2280",
         "source": "maker",
         "note": "SNV3S M.2 2280; aynı ailede M.2 2230 sürümü (SNV3SM3) de var"
+      },
+      "seqReadMbps": {
+        "value": null,
+        "note": "Kingston'ın sayfası 18.11.2026'da okunamadı (bot doğrulaması); bilinmiyor."
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-crucial-p3-plus-1-tb",
@@ -329,6 +407,11 @@
         "url": "https://www.crucial.com/ssd/p3-plus/ct1000p3pssd8",
         "retrieved": "2026-11-17",
         "title": "Crucial ürün sayfası"
+      },
+      "speed": {
+        "url": "https://www.crucial.com/ssd/p3-plus/ct1000p3pssd8",
+        "retrieved": "2026-11-18",
+        "title": "Crucial ürün sayfası · okuma hızı"
       }
     },
     "specs": {
@@ -348,10 +431,15 @@
       "formFactor": {
         "value": "M.2 2280",
         "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 5000,
+        "source": "speed",
+        "note": "\"Sequential Read: 5,000 MB/s\""
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-samsung-870-evo-1-tb",
@@ -364,6 +452,11 @@
         "url": "https://www.samsung.com/uk/memory-storage/sata-ssd/870-evo-1tb-sata-3-2-5-ssd-mz-77e1t0b-eu/",
         "retrieved": "2026-11-17",
         "title": "Samsung ürün sayfası (Specifications)"
+      },
+      "speed": {
+        "url": "https://www.samsung.com/uk/memory-storage/sata-ssd/870-evo-1tb-sata-3-2-5-ssd-mz-77e1t0b-eu/",
+        "retrieved": "2026-11-18",
+        "title": "Samsung ürün sayfası (Specifications) · okuma hızı"
       }
     },
     "specs": {
@@ -383,10 +476,15 @@
       "formFactor": {
         "value": "2.5\"",
         "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 560,
+        "source": "speed",
+        "note": "\"560/530 MB/s sequential speeds\" (SATA arayüzünün sınırı)"
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-kingston-a400-480-gb",
@@ -418,10 +516,14 @@
       "formFactor": {
         "value": "2.5\"",
         "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": null,
+        "note": "Kingston'ın sayfası 18.11.2026'da okunamadı (bot doğrulaması); bilinmiyor."
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   },
   {
     "id": "storage-seagate-barracuda-2-tb-3-5",
@@ -461,9 +563,13 @@
         "value": "3.5\"",
         "source": "maker",
         "note": "\"Form Factor: 3.5 inç\""
+      },
+      "seqReadMbps": {
+        "value": null,
+        "note": "Üreticinin destek sayfasında yazmıyor; teknik föy 18.11.2026'da okunamadı; bilinmiyor."
       }
     },
     "addedAt": "2026-11-17",
-    "updatedAt": "2026-11-17"
+    "updatedAt": "2026-11-18"
   }
 ]

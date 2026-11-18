@@ -115,11 +115,16 @@ function lastSegment(url: string): string {
 
 const slugCache = new Map<string, Slug>()
 
-function slugOf(url: string): Slug {
-  const hit = slugCache.get(url)
-  if (hit) return hit
+/**
+ * "gaming kasa" genel bir tanımdır, ürünün "Gaming" sürümü değil. Mağazaların ürün adlarında ("... Gaming Anakart")
+ * aynı tanım başka ürün türleriyle de geçer; bunlar yalnızca ad karşılaştırmasında atılır.
+ */
+const GAMING_DESCRIPTOR_URL = /^kasa/
+const GAMING_DESCRIPTOR_TEXT = /^(kasa|anakart|ekran|bilgisayar|oyuncu|bellek|ram$|sogutucu|islemci|guc)/
+
+function makeSlug(text: string, gamingDescriptor: RegExp): Slug {
   const words: string[] = []
-  for (const raw of normalizeText(lastSegment(url).replace(/[_-]/g, ' ')).split(' ')) {
+  for (const raw of normalizeText(text).split(' ')) {
     if (!raw) continue
     const w = SYNONYMS[raw] ?? raw
     // "8400mhz-oc" bellek hız aşırtmasıdır, ürünün OC sürümü değil.
@@ -128,12 +133,22 @@ function slugOf(url: string): Slug {
   }
   // "mini-itx" kart boyutudur, "mini" sürümü değil.
   for (let i = words.length - 2; i >= 0; i--) if (words[i] === 'mini' && words[i + 1] === 'itx') words.splice(i, 1)
-  // "gaming kasa" genel bir tanımdır, ürünün "Gaming" sürümü değil.
-  for (let i = words.length - 2; i >= 0; i--) if (words[i] === 'gaming' && /^kasa/.test(words[i + 1])) words.splice(i, 1)
-  const slug = { words, squash: words.join(''), text: words.join(' ') }
+  for (let i = words.length - 2; i >= 0; i--) if (words[i] === 'gaming' && gamingDescriptor.test(words[i + 1])) words.splice(i, 1)
+  return { words, squash: words.join(''), text: words.join(' ') }
+}
+
+function slugOf(url: string): Slug {
+  const hit = slugCache.get(url)
+  if (hit) return hit
+  const slug = makeSlug(lastSegment(url).replace(/[_-]/g, ' '), GAMING_DESCRIPTOR_URL)
   if (slugCache.size > 100_000) slugCache.clear()
   slugCache.set(url, slug)
   return slug
+}
+
+/** Linkin son kısmındaki kelimeler ("/amd-ryzen-5-7600-islemci_u1" → "amd ryzen 5 7600 islemci u1"). */
+export function urlWords(url: string): string {
+  return lastSegment(url).replace(/[_-]/g, ' ')
 }
 
 /** Yonga kodu gibi ("b650", "x870e") kelimeler: linkte arkalarından tek harf gelirse ("b650-e") başka bir modeldir. */
@@ -189,7 +204,15 @@ function isOwn(v: string, own: Set<string>): boolean {
   return false
 }
 
-function scoreSlug(p: PartTokens, slug: Slug): number | null {
+interface ScoreOptions {
+  /**
+   * Ürün adı karşılaştırması (ör. hazır sistemin parça listesi): modelin bütün kelimeleri geçmeli. Ad zaten tek
+   * bir parçayı anlattığı için "sistem / paket / bilgisayar" kelimeleri ceza almaz ("Bilgisayar Kasası").
+   */
+  strict?: boolean
+}
+
+function scoreSlug(p: PartTokens, slug: Slug, o: ScoreOptions = {}): number | null {
   const has = (t: string): boolean => hasWord(t, slug, p.own)
   const codeInSlug = Boolean(p.code && slug.squash.includes(p.code))
   if (!codeInSlug) {
@@ -197,7 +220,7 @@ function scoreSlug(p: PartTokens, slug: Slug): number | null {
     if (!brandOk) return null
     if (!p.keys.every(has)) return null
     const missing = p.model.filter((t) => !has(t)).length
-    if (missing > (p.model.length >= 3 ? 1 : 0)) return null
+    if (missing > (o.strict ? 0 : p.model.length >= 3 ? 1 : 0)) return null
     if (p.model.some((t) => MODEL_VARIANT_WORDS.includes(t) && !slug.words.includes(t))) return null
   }
   if (p.layout && !layoutOk(p.layout, slug)) return null
@@ -205,7 +228,7 @@ function scoreSlug(p: PartTokens, slug: Slug): number | null {
   let score = required.filter(has).length / Math.max(1, required.length)
   if (p.optional.length) score += (0.2 * p.optional.filter(has).length) / p.optional.length
   if (codeInSlug) score += 1
-  if (SYSTEM_WORDS.some((w) => slug.text.includes(w))) score -= 1.5
+  if (!o.strict && SYSTEM_WORDS.some((w) => slug.text.includes(w))) score -= 1.5
   const inSlug = new Set(slug.words)
   for (const v of VARIANT_WORDS) if (inSlug.has(v) && !isOwn(v, p.own)) score -= 0.4
   for (const v of CHIP_WORDS) if (inSlug.has(v) && !isOwn(v, p.own)) score -= 1
@@ -215,6 +238,17 @@ function scoreSlug(p: PartTokens, slug: Slug): number | null {
 /** Bir linkin bir parçaya ne kadar benzediği. Aday olamıyorsa null. */
 export function scoreUrl(part: Part, url: string): number | null {
   return scoreSlug(partTokens(part), slugOf(url))
+}
+
+/**
+ * Ürün adıyla tanımada en düşük benzerlik. Bütün kelimeler tutunca puan 1 ile 1,2 arasındadır; adda parçanın
+ * kendisinde olmayan bir sürüm kelimesi ("ARGB", "Plus", "Ti") puanı bunun altına düşürür.
+ */
+export const TEXT_MATCH_MIN = 0.9
+
+/** Mağazanın yazdığı bir ürün adının bir parçaya ne kadar benzediği (katı kurallarla). Aday olamıyorsa null. */
+export function scoreText(part: Part, text: string): number | null {
+  return scoreSlug(partTokens(part), makeSlug(text, GAMING_DESCRIPTOR_TEXT), { strict: true })
 }
 
 /** En iyi adaylar (en fazla `limit` tane), puana göre azalan, eşitlikte kısa link önce. */

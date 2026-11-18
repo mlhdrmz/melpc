@@ -4,8 +4,12 @@ import { CATEGORY_LABELS, formatSpecValue, SPEC_DEFS, type SpecDef } from '@engi
 import { partName } from '@engines/catalog/access'
 import { partSummary } from '@engines/catalog/summary'
 import { checkCandidate, worstStatus, type Build, type CompatResult } from '@engines/compat'
+import { compareBy, rankParts, SORT_OPTIONS } from '@engines/score/sorting'
 import { PartDetails } from './PartDetails'
 import { PriceLine } from '../price/PriceLine'
+import { usePrices } from '../price/PriceContext'
+import { useCatalog } from '../catalog/CatalogContext'
+import { MAX_PARTS, useCompare } from '../compare/CompareContext'
 import { CategoryIcon } from './icons'
 
 interface PartPickerProps {
@@ -40,6 +44,19 @@ export function PartPicker({ category, parts, build, selectedIds, onChoose, onCl
   const [filters, setFilters] = useState<Record<string, string>>({})
   const [onlyCompatible, setOnlyCompatible] = useState(false)
   const [focusId, setFocusId] = useState<string | null>(selectedIds[0] ?? null)
+  const [sortId, setSortId] = useState('compat')
+  const { catalog } = useCatalog()
+  const { index, notify } = usePrices()
+  const compare = useCompare()
+  const inCompare = compare.parts[category]
+  const ctx = useMemo(() => ({ results: catalog.benchmarks.results }), [catalog])
+  const sortOptions = SORT_OPTIONS[category]
+  const sortOption = sortOptions.find((o) => o.id === sortId)
+  // İşlemci ve ekran kartında render ölçümündeki sıra; öbür kategorilerde seçili sıralamanın değeri gösterilir.
+  const renderRanks = useMemo(
+    () => (category === 'cpu' || category === 'gpu' ? rankParts(parts, sortOptions[0], ctx) : null),
+    [category, parts, sortOptions, ctx]
+  )
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent): void => {
@@ -78,8 +95,18 @@ export function PartPicker({ category, parts, build, selectedIds, onChoose, onCl
         return { part: p, problems, status: worstStatus(problems) }
       })
       .filter((r) => !onlyCompatible || r.status !== 'fail')
-      .sort((a, b) => STATUS_ORDER[a.status] - STATUS_ORDER[b.status] || partName(a.part).localeCompare(partName(b.part), 'tr'))
-  }, [parts, query, filters, filterDefs, onlyCompatible, build, category, selectedIds])
+      .sort((a, b) => {
+        const byName = partName(a.part).localeCompare(partName(b.part), 'tr')
+        if (sortId === 'name') return byName
+        if (sortId === 'price') {
+          const pa = index.get(a.part.id).best?.price ?? Number.POSITIVE_INFINITY
+          const pb = index.get(b.part.id).best?.price ?? Number.POSITIVE_INFINITY
+          return pa - pb || byName
+        }
+        if (sortOption) return compareBy(sortOption, ctx)(a.part, b.part) || byName
+        return STATUS_ORDER[a.status] - STATUS_ORDER[b.status] || byName
+      })
+  }, [parts, query, filters, filterDefs, onlyCompatible, build, category, selectedIds, sortId, sortOption, ctx, index])
 
   const focus = parts.find((p) => p.id === focusId) ?? rows[0]?.part ?? null
 
@@ -130,10 +157,24 @@ export function PartPicker({ category, parts, build, selectedIds, onChoose, onCl
               </select>
             </label>
           ))}
+          <label className="select">
+            <span>Sırala</span>
+            <select value={sortId} onChange={(e) => setSortId(e.target.value)}>
+              <option value="compat">Uyumluluğa göre</option>
+              {sortOptions.map((o) => (
+                <option key={o.id} value={o.id}>
+                  {o.label}
+                </option>
+              ))}
+              <option value="price">Fiyat (ucuzdan)</option>
+              <option value="name">Ada göre</option>
+            </select>
+          </label>
           <label className="checkbox">
             <input type="checkbox" checked={onlyCompatible} onChange={(e) => setOnlyCompatible(e.target.checked)} />
             Uyumsuzları gizle
           </label>
+          {sortOption?.formula && <span className="picker__formula muted small">Hesap: {sortOption.formula}</span>}
         </div>
 
         <div className="picker__body">
@@ -153,6 +194,26 @@ export function PartPicker({ category, parts, build, selectedIds, onChoose, onCl
                     <div className="picker__main">
                       <span className="picker__name">{partName(part)}</span>
                       <span className="picker__meta">{partSummary(part)}</span>
+                      {renderRanks ? (
+                        <span className="picker__metric">
+                          {(() => {
+                            const r = renderRanks.get(part.id)
+                            return r
+                              ? `Render (Blender): ${sortOptions[0].format(r.value)} · ${r.rank}./${r.of}`
+                              : 'Render (Blender): ölçüm yok'
+                          })()}
+                        </span>
+                      ) : (
+                        sortOption && (
+                          <span className="picker__metric">
+                            {sortOption.label}:{' '}
+                            {(() => {
+                              const v = sortOption.value(part, ctx)
+                              return v === null ? 'bilinmiyor' : sortOption.format(v)
+                            })()}
+                          </span>
+                        )
+                      )}
                       {first && (
                         <span className={`picker__problem picker__problem--${first.status}`}>
                           {first.status === 'fail' ? 'Uyumsuz' : 'Uyarı'}: {first.message}
@@ -162,6 +223,18 @@ export function PartPicker({ category, parts, build, selectedIds, onChoose, onCl
                     </div>
                     <div className="picker__side">
                       <PriceLine partId={part.id} className="picker__price" />
+                      <button
+                        type="button"
+                        className={`chip-button${inCompare.includes(part.id) ? ' chip-button--on' : ' chip-button--quiet'}`}
+                        aria-pressed={inCompare.includes(part.id)}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          const r = compare.togglePart(category, part.id)
+                          if (r === 'full') notify(`Karşılaştırmada bu kategoriden en fazla ${MAX_PARTS} parça olabilir.`)
+                        }}
+                      >
+                        {inCompare.includes(part.id) ? 'Karşılaştırmada' : 'Karşılaştır'}
+                      </button>
                       <button
                         type="button"
                         className={selected ? 'button button--ghost' : 'button button--primary'}
