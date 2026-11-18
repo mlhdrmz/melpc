@@ -307,7 +307,9 @@ function perfCompare(category: 'cpu' | 'gpu', r: HardwareReading, parts: Part[],
   for (const name of names) {
     const res = resultsForDevice(results, name, category).find((x) => x.test === 'blender-cycles')
     if (res) {
-      mineEntry = { name: displayDeviceName(name), value: res.value, mine: true, result: res }
+      // Ekran kartında katalogdaki grafik işlemcisi adları gibi üretici öneki yazılmaz ("GeForce RTX 4060").
+      const shown = category === 'gpu' ? displayDeviceName(name).replace(/^(NVIDIA|AMD|Intel)\s+/i, '') : displayDeviceName(name)
+      mineEntry = { name: shown, value: res.value, mine: true, result: res }
       break
     }
   }

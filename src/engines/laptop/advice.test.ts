@@ -122,7 +122,7 @@ describe('Bilgisayarım: yükseltme önerileri', () => {
     expect(cpu.reference?.name).toBe('AMD Ryzen 5 7600')
     expect(Math.round((cpu.reference?.ratio ?? 0) * 100)).toBe(84)
     const gpu = a.performance.find((p) => p.category === 'gpu')!
-    expect(gpu.entries.find((e) => e.mine)).toMatchObject({ name: 'NVIDIA GeForce RTX 3060 Laptop GPU', value: 1957.21 })
+    expect(gpu.entries.find((e) => e.mine)).toMatchObject({ name: 'GeForce RTX 3060 Laptop GPU', value: 1957.21 })
     expect(gpu.missing).toBeUndefined()
   })
 

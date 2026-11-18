@@ -17,7 +17,8 @@ interface CaseViewerProps {
 
 export function CaseViewer({ model, highlight, memoryModules, partNames, onPick }: CaseViewerProps): ReactElement {
   const controls = useRef<CameraControlsImpl>(null)
-  const [preset, setPreset] = useState<CameraPresetId>('side')
+  // İlk açı modelin ilk kamera açısı (kasada "Yan", laptopta "Üstten").
+  const [preset, setPreset] = useState<CameraPresetId>(model.cameraPresets[0].id)
   const [hovered, setHovered] = useState<CategoryId | null>(null)
   const Body = model.Component
   const [cx, cy, cz] = model.center

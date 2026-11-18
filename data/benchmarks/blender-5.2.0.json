@@ -432,7 +432,7 @@
         "statistic": "median"
       },
       "sampleCount": 21,
-      "note": "Laptop işlemcisi (Bilgisayarım); katalogda değil. Laptopun gücü ve soğutması ölçümü etkiler.",
+      "note": "laptop işlemcisi; laptopun güç ve soğutma ayarı sonucu etkiler.",
       "source": "bod-cpu-5.2.0"
     },
     {
@@ -449,7 +449,7 @@
         "statistic": "median"
       },
       "sampleCount": 46,
-      "note": "Laptop ekran kartı (Bilgisayarım); katalogda değil. Laptoplarda kartın gücü modele göre değişir; ortanca farklı laptoplardan.",
+      "note": "laptop ekran kartı; laptoplarda kartın gücü modele göre değişir, ortanca farklı laptoplardan.",
       "source": "bod-optix-5.2.0"
     }
   ]
