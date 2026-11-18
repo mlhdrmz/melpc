@@ -40,6 +40,22 @@ CLAUDE.md kuralı: kullanım şartlarında otomatik erişimi açıkça yasaklaya
 4. Arayüz: parça listesinde ve seçme penceresinde fiyatlar, üstte toplamlar, parça ayrıntısında mağaza fiyatları ve fiyat geçmişi, "Mağaza eşleştirme" ekranı, fiyat durumu ve "Şimdi güncelle".
 5. Çıkarılan parçaların yerine adaylar.
 
+## Durum (18.11.2026)
+
+- 1–4 yapıldı. Eşleştirme kuralları İtopya ve Gaming.gen.tr'nin site haritalarıyla (102 parça) çevrimdışı denendi ve sıkılaştırıldı: kapasite (1 TB ≠ 2 TB), model soneki (B850 ≠ B850M, 245K ≠ 245KF), marka, bellek modül düzeni (2×16 ≠ 1×32) ve paket ürünler ayrılıyor.
+- Canlı deneme: İtopya ve Gaming.gen.tr'de arama, "Bu ürün mü?" onayı ve fiyat okuma çalıştı (Samsung 990 Pro 2 TB iki mağazada da üretici koduyla eşleşti). İstekler mağaza başına 6 saniye arayla gitti.
+- Vatan Bilgisayar ilk istekte HTTP 429 (Cloudflare hız sınırı) döndürüyor. Okuyucu bunu tanıyıp o işte Vatan'ı atlıyor; koruma aşılmaya çalışılmıyor. Sınır kalkana kadar Vatan'dan fiyat gelmez.
+- Bazı mağazalar "üretici kodu" alanına model adı ya da barkod yazıyor; bunlar kod sayılmıyor ("kod yok" görünür, Melih ürün adına bakarak karar verir).
+
+### 2. aşamadan kalanlar
+
+Satış durumu İtopya ve Gaming.gen.tr'nin site haritalarından kontrol edildi (Vatan'ınki hız sınırı yüzünden okunamadı).
+
+- **NZXT Kraken Plus 360:** İtopya'da 2025 RGB sürümü var (siyah RL-KR360-B2, beyaz RL-KR360-W2; kontrol sırasında ikisi de stokta yoktu). Kataloğa siyah sürüm "Kraken Plus 360 RGB (2025)" olarak girdi; özellikler NZXT'nin teknik sayfasından. Katalogda artık 103 parça var.
+- **be quiet! Pure Rock 3:** İki mağazada da yok; eklenmedi.
+- **Cooler Master MasterBox Q300L V2:** İki mağazada da yok; eklenmedi.
+- **Micro-ATX ve Mini-ITX kasa:** Melih'in seçimi bekleniyor. İki mağazada da satılan Micro-ATX kasalar: ASUS A21 Plus, ASUS A23 Plus, MSI MAG PANO M100R PZ, Corsair iCUE Link 2500X RGB. Mini-ITX'te iki mağazada birden satılan yok (İtopya: NZXT H2 Flow; Gaming.gen.tr: HYTE Revolt 3, Razer Tomahawk Mini-ITX, ASUS ROG Z11).
+
 ## Bitiş ölçütleri
 
 - Üç mağazadan onaylanmış eşleşmelerin fiyatları çekiliyor; okunamayan fiyat "güncel değil" görünüyor ve toplama katılmıyor.

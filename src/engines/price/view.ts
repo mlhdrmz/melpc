@@ -2,10 +2,10 @@ import { computeTotals, isUsable, STALE_AFTER_MS, type Totals } from './totals'
 import type { OfferRecord, StoreId, StoreMatch } from './types'
 
 // Arayüzün gösterdiği fiyat bilgisi: her parça için onaylı mağazalardaki son fiyatlar, en ucuz mağaza ve durum.
-// Kurallar (Melih onayladı):
+// Kurallar (Melih onayladı, docs/asama-3-plan.md):
 // - Gösterilen fiyat, fiyatı okunabilmiş son okumadır; okunduğu zamanla birlikte gösterilir.
 // - Son okuma başarısızsa ya da fiyat 3 günden eskiyse fiyat "güncel değil" sayılır.
-// - Toplamlara yalnızca 3 günden yeni ve stokta olan fiyatlar katılır.
+// - Toplamlara yalnızca son okuması başarılı, 3 günden yeni ve stokta olan fiyatlar katılır; okunamayan fiyat katılmaz.
 
 export interface StorePrice {
   storeId: StoreId
@@ -21,7 +21,7 @@ export interface StorePrice {
   error?: string
   /** "Güncel değil": son okuma başarısız ya da fiyat 3 günden eski ya da hiç okunamadı. */
   stale: boolean
-  /** Toplamlara katılır: 3 günden yeni ve stokta. */
+  /** Toplamlara katılır: son okuma başarılı, 3 günden yeni ve stokta. */
   usable: boolean
 }
 
@@ -69,8 +69,9 @@ export function buildPriceIndex(input: PriceIndexInput, now: number): PriceIndex
   for (const m of input.matches) push(matchesByPart, m.partId, m)
   const latest = new Map(input.latest.map((o) => [key(o.partId, o.storeId), o]))
   const priced = new Map(input.lastPriced.map((o) => [key(o.partId, o.storeId), o]))
-  const pricedByPart = new Map<string, OfferRecord[]>()
-  for (const o of input.lastPriced) push(pricedByPart, o.partId, o)
+  // Toplamlar son okumalarla hesaplanır: son okuması başarısız (fiyatsız) olan mağaza toplama girmez.
+  const latestByPart = new Map<string, OfferRecord[]>()
+  for (const o of input.latest) push(latestByPart, o.partId, o)
   const cache = new Map<string, PartPrices>()
 
   const get = (partId: string): PartPrices => {
@@ -93,7 +94,7 @@ export function buildPriceIndex(input: PriceIndexInput, now: number): PriceIndex
           checkedAt: last?.fetchedAt ?? null,
           ...(failed && last?.error ? { error: last.error } : {}),
           stale: failed || old,
-          usable: Boolean(p && isUsable(p, now))
+          usable: Boolean(last && isUsable(last, now))
         }
       })
       .sort(
@@ -119,7 +120,7 @@ export function buildPriceIndex(input: PriceIndexInput, now: number): PriceIndex
 
   return {
     get,
-    totals: (partIds) => computeTotals(partIds, pricedByPart, now)
+    totals: (partIds) => computeTotals(partIds, latestByPart, now)
   }
 }
 

@@ -279,11 +279,13 @@ describe('fiyat görünümü', () => {
     )
     const p = idx.get('cpu')
     expect(p.status).toBe('priced')
-    // Gaming'in dünkü fiyatı (3 günden yeni) hâlâ en ucuz; ama "güncel değil" diye işaretli.
-    expect(p.best).toMatchObject({ storeId: 'gaming', price: 950, stale: true, error: 'Zaman aşımı' })
-    expect(p.stores.map((s) => s.storeId)).toEqual(['gaming', 'itopya', 'vatan'])
-    expect(p.stores[2]).toMatchObject({ usable: false, inStock: false, stale: false })
-    expect(idx.totals(['cpu']).cheapest).toBe(950)
+    // Gaming'in son okuması başarısız: dünkü fiyatı "güncel değil" diye gösterilir ama toplama katılmaz.
+    expect(p.best).toMatchObject({ storeId: 'itopya', price: 1000, stale: false })
+    const gaming = p.stores.find((s) => s.storeId === 'gaming')
+    expect(gaming).toMatchObject({ price: 950, stale: true, usable: false, error: 'Zaman aşımı' })
+    expect(p.stores.map((s) => s.storeId)).toEqual(['itopya', 'vatan', 'gaming'])
+    expect(p.stores.find((s) => s.storeId === 'vatan')).toMatchObject({ usable: false, inStock: false, stale: false })
+    expect(idx.totals(['cpu']).cheapest).toBe(1000)
   })
 
   it('3 günden eski fiyat toplama girmez; eşleşme durumları', () => {

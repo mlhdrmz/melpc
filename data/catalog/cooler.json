@@ -363,6 +363,44 @@
     "updatedAt": "2026-11-17"
   },
   {
+    "id": "cooler-nzxt-kraken-plus-360-rgb-2025",
+    "category": "cooler",
+    "brand": "NZXT",
+    "model": "Kraken Plus 360 RGB (2025)",
+    "mpn": "RL-KR360-B2",
+    "sources": {
+      "maker": {
+        "url": "https://support.nzxt.com/hc/en-us/articles/47510572562075-Kraken-Plus-2025-Specs",
+        "retrieved": "2026-11-18",
+        "title": "NZXT destek sayfası · Kraken Plus (2025) Specs"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker",
+        "note": "\"AIO Liquid Cooler with 1.54\" LCD\""
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "Intel: \"LGA 1851\", \"LGA 1700\", \"LGA 1200\", \"LGA 115X\"; AMD: \"AM5\", \"AM4\""
+      },
+      "radiatorSizeMm": {
+        "value": 360,
+        "source": "maker",
+        "note": "Model listesinde 360 boyu: RL-KR360-B2 (siyah), RL-KR360-W2 (beyaz)"
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
+  },
+  {
     "id": "cooler-msi-mag-coreliquid-a13-360",
     "category": "cooler",
     "brand": "MSI",

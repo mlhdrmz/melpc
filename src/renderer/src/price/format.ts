@@ -5,7 +5,7 @@ export { formatTl }
 
 /** Fiyatların neyi kapsadığı (Melih onayladı); fiyat gösterilen her yerde yazılır. */
 export const PRICE_NOTE =
-  'Ürün sayfasındaki KDV dahil peşin fiyat. Kargo, sepet indirimi, kupon ve taksit farkı dahil değil. 3 günden eski ya da stokta olmayan fiyat toplama katılmaz.'
+  'Ürün sayfasındaki KDV dahil peşin fiyat. Kargo, sepet indirimi, kupon ve taksit farkı dahil değil. Son çekimde okunamayan, 3 günden eski ya da stokta olmayan fiyat toplama katılmaz.'
 
 /** Fiyat geçmişi çizgisinde mağazanın rengi (tokens.css: --series-1..3). Yazıda kullanılmaz. */
 export function seriesColor(storeId: StoreId): string {
