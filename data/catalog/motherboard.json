@@ -875,5 +875,70 @@
     },
     "addedAt": "2026-11-18",
     "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "motherboard-gigabyte-a620m-h-rev-1-x-2-x",
+    "category": "motherboard",
+    "brand": "Gigabyte",
+    "model": "A620M H (rev. 1.x/2.x)",
+    "sources": {
+      "manual1": {
+        "url": "https://download.gigabyte.com/FileList/Manual/mb_manual_a620m-h-s2h_1004_e.pdf",
+        "retrieved": "2026-11-18",
+        "title": "Gigabyte kullanım kılavuzu Rev. 1004 (kart rev. 1.x), \"Product Specifications\""
+      },
+      "manual2": {
+        "url": "https://download.gigabyte.com/FileList/Manual/mb_manual_a620m-s2h_a620m-h_2201_e.pdf",
+        "retrieved": "2026-11-18",
+        "title": "Gigabyte kullanım kılavuzu Rev. 2201 (kart rev. 2.x), \"Product Specifications\""
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "manual1",
+        "note": "\"AMD Socket AM5\"; iki kılavuzda da aynı."
+      },
+      "chipset": {
+        "value": "A620 / A620A",
+        "source": "manual1",
+        "note": "Kart rev. 1.x: \"AMD A620\" (kılavuz Rev. 1004); rev. 2.x: \"AMD A620A\" (kılavuz Rev. 2201)."
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "manual1",
+        "note": "\"Micro ATX Form Factor; 23.0cm x 22.5cm\"; iki kılavuzda da aynı."
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "manual1"
+      },
+      "memorySlots": {
+        "value": 2,
+        "source": "manual1",
+        "note": "\"2 x DDR5 DIMM sockets supporting up to 128 GB (64 GB single DIMM capacity)\"; iki kılavuzda da aynı."
+      },
+      "maxMemoryGb": {
+        "value": 128,
+        "source": "manual1"
+      },
+      "m2Slots": {
+        "value": 1,
+        "source": "manual1",
+        "note": "\"1 x M.2 connector, integrated in the CPU\""
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "manual1",
+        "note": "\"4 x SATA 6Gb/s connectors\""
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "manual1",
+        "note": "\"1 x PCI Express x16 slot, integrated in the CPU\"; ayrıca yonga setinden 1 × PCIe 3.0 x1."
+      }
+    },
+    "addedAt": "2026-11-18",
+    "updatedAt": "2026-11-18"
   }
 ]
