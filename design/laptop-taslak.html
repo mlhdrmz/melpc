@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<!--
+  MelPC laptop taslağı (6. aşama, Melih 19.11.2026'da onayladı). Görünüşün referansıdır; uygulamaya doğrudan
+  kopyalanacak kod değildir. Ölçüler ve davranış: laptop-olculeri.md.
+  Açmak için depo kökünde bir yerel sunucu gerekir (ör. python -m http.server), sonra
+  /design/laptop-taslak.html?view=exterior, ?view=inside ya da ?view=inside-ram.
+-->
+<meta charset="utf-8">
+<title>MelPC · Laptop taslağı</title>
+<style>
+  :root {
+    --bg-stage: #0d0b14; --control: #15121f; --control-active: #2b2442; --line-control: #2b2740;
+    --line-strong: #3a3452; --text: #f2effa; --muted: #aaa4c2; --violet: #a58bff; --cyan: #62d2f4;
+  }
+  html, body { margin: 0; height: 100%; overflow: hidden; }
+  body {
+    background-color: var(--bg-stage);
+    background-image: radial-gradient(ellipse 62% 58% at 54% 46%, #251d40 0%, #15111f 58%, var(--bg-stage) 100%);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+  #c { position: absolute; left: 0; top: 0; }
+  .controls { position: absolute; left: 0; right: 0; bottom: 22px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .segmented { display: inline-flex; background: var(--control); border: 1px solid var(--line-control); border-radius: 999px; padding: 3px; }
+  .segmented span { color: var(--muted); padding: 7px 16px; border-radius: 999px; font-size: 14px; }
+  .segmented span.on { background: var(--control-active); color: var(--text); }
+  .toggle { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; font-size: 14px;
+    color: var(--text); background: var(--control-active); border: 1px solid var(--violet); box-shadow: 0 0 14px rgba(165,139,255,.35); }
+  .toggle svg { stroke: var(--violet); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .round { width: 36px; height: 36px; border-radius: 50%; background: var(--control); border: 1px solid var(--line-control); display: grid; place-items: center; }
+  .round svg { stroke: var(--muted); fill: none; stroke-width: 1.8; stroke-linecap: round; }
+  .marker { position: absolute; transform: translate(-7px, -7px); }
+  .marker .dot { display: block; width: 14px; height: 14px; border-radius: 50%; background: var(--violet);
+    box-shadow: 0 0 0 5px rgba(165,139,255,.45), 0 0 18px rgba(165,139,255,.9); }
+  .marker .label { position: absolute; left: 26px; top: 50%; transform: translateY(-50%); white-space: nowrap; display: flex; flex-direction: column;
+    padding: 6px 10px; border-radius: 10px; background: rgba(21,19,30,.92); border: 1px solid var(--line-strong); color: var(--text); font-size: 13px; }
+  .marker .label strong { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--violet); }
+  .marker .dot.white { background: var(--text); box-shadow: 0 0 0 4px rgba(165,139,255,.35), 0 0 12px rgba(165,139,255,.7); }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="overlay"></div>
+<div class="controls" id="controls"></div>
+<script type="module">
+import * as THREE from '../node_modules/three/build/three.module.js';
+
+const params = new URLSearchParams(location.search);
+const view = params.get('view') || 'exterior';          // exterior | inside | inside-ram
+const inside = view.startsWith('inside');
+const W = Number(params.get('w') ?? 1400), H = Number(params.get('h') ?? 900);
+
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1);
+renderer.setSize(W, H, true);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.setClearColor(0x000000, 0);
+
+const scene = new THREE.Scene();
+const MM = 0.01;
+const CENTER = [178.5, 95, 95];
+const root = new THREE.Group();
+root.scale.setScalar(MM);
+root.position.set(-CENTER[0] * MM, -CENTER[1] * MM, -CENTER[2] * MM);
+scene.add(root);
+
+// Işıklar: uygulamadaki 3D görünümle aynı (CaseViewer).
+scene.add(new THREE.AmbientLight(0xffffff, 0.9));
+scene.add(new THREE.HemisphereLight(0xe6e0ff, 0x15111f, 1));
+const d1 = new THREE.DirectionalLight(0xffffff, 2.4); d1.position.set(6, 9, 10); scene.add(d1);
+const d2 = new THREE.DirectionalLight(0x62d2f4, 0.9); d2.position.set(10, 3, -4); scene.add(d2);
+const d3 = new THREE.DirectionalLight(0xa58bff, 0.5); d3.position.set(-8, 4, -6); scene.add(d3);
+
+const C = {
+  shell: '#4a4d57', deck: '#33353d', lid: '#464953', bezel: '#0b0b0f', key: '#16151c', pad: '#2f3139',
+  floor: '#24252c', pcb: '#15161b', plate: '#2c2e36', plastic: '#1c1d22', chip: '#2b2740', copper: '#b07a55',
+  battery: '#1d1b26', grille: '#2b2740', violet: '#a58bff', cyan: '#62d2f4'
+};
+
+function std(color, o = {}) {
+  return new THREE.MeshStandardMaterial({
+    color, metalness: o.metalness ?? 0.4, roughness: o.roughness ?? 0.6,
+    emissive: o.emissive ?? 0x000000, emissiveIntensity: o.emissive ? (o.emissiveIntensity ?? 1) : 0,
+    transparent: o.opacity !== undefined, opacity: o.opacity ?? 1
+  });
+}
+function box(parent, b, color, o = {}) {
+  const [x0, x1, y0, y1, z0, z1] = b;
+  const m = new THREE.Mesh(new THREE.BoxGeometry(x1 - x0, y1 - y0, z1 - z0), o.material ?? std(color, o));
+  m.position.set((x0 + x1) / 2, (y0 + y1) / 2, (z0 + z1) / 2);
+  parent.add(m);
+  return m;
+}
+// Köşeleri yuvarlatılmış dikdörtgen (X–Z düzleminde). Şeklin y'si = -z; rotateX(-90°) sonrası dünya z'sine döner.
+function rrect(x0, z0, x1, z1, r) {
+  const s = new THREE.Shape();
+  const Y0 = -z1, Y1 = -z0;
+  s.moveTo(x0 + r, Y0);
+  s.lineTo(x1 - r, Y0); s.quadraticCurveTo(x1, Y0, x1, Y0 + r);
+  s.lineTo(x1, Y1 - r); s.quadraticCurveTo(x1, Y1, x1 - r, Y1);
+  s.lineTo(x0 + r, Y1); s.quadraticCurveTo(x0, Y1, x0, Y1 - r);
+  s.lineTo(x0, Y0 + r); s.quadraticCurveTo(x0, Y0, x0 + r, Y0);
+  return s;
+}
+function slabGeometry(shape, y0, y1, bevel = 0) {
+  const g = new THREE.ExtrudeGeometry(shape, {
+    depth: Math.max(0.01, (y1 - y0) - 2 * bevel), bevelEnabled: bevel > 0,
+    bevelThickness: bevel, bevelSize: bevel, bevelOffset: -bevel, bevelSegments: 3, curveSegments: 12
+  });
+  g.rotateX(-Math.PI / 2);
+  g.translate(0, y0 + bevel, 0);
+  return g;
+}
+
+// ---------- Malzemeler ----------
+const frosted = new THREE.MeshPhysicalMaterial({
+  color: '#eeecf8', metalness: 0, roughness: Number(params.get('rough') ?? 0.2), transmission: 1, thickness: 2, ior: 1.45,
+  specularIntensity: 0.7, envMapIntensity: 0
+});
+const deckMat = inside ? frosted : std(C.deck, { metalness: 0.5, roughness: 0.62 });
+const keyMat = inside ? frosted : std(C.key, { metalness: 0.1, roughness: 0.75 });
+const padMat = inside ? frosted : std(C.pad, { metalness: 0.3, roughness: 0.32 });
+const shellMat = std(C.shell, { metalness: 0.6, roughness: 0.42 });
+
+// ---------- Gövde (taban) ----------
+const BW = 357, BD = 265, R = 12;          // genişlik (X), derinlik (Z), köşe yarıçapı
+const Y_BOTTOM = 2, Y_DECK0 = 19, Y_DECK1 = 22;
+const base = new THREE.Group(); root.add(base);
+// Alt plaka ve yan duvarlar (tepsi).
+base.add(new THREE.Mesh(slabGeometry(rrect(0, 0, BW, BD, R), 0, Y_BOTTOM, 0.8), shellMat));
+const ring = rrect(0, 0, BW, BD, R);
+ring.holes.push(rrect(2.5, 2.5, BW - 2.5, BD - 2.5, R - 2.5));
+base.add(new THREE.Mesh(slabGeometry(ring, Y_BOTTOM - 0.01, Y_DECK0), shellMat));
+// Üst yüzey (klavye ve avuç içi): iç görünümde buzlu cam.
+const deckGeo = slabGeometry(rrect(0, 0, BW, BD, R), Y_DECK0, Y_DECK1, 1.1);
+const deck = new THREE.Mesh(deckGeo, deckMat); if (!params.get('nodeck')) base.add(deck);
+if (inside) {
+  const edges = new THREE.LineSegments(new THREE.EdgesGeometry(deckGeo, 25),
+    new THREE.LineBasicMaterial({ color: '#d9d2ff', transparent: true, opacity: 0.55 }));
+  base.add(edges);
+}
+
+// Klavye: 1u = 17,5 mm; ana blok + sayısal tuş takımı. Yazı yok.
+const U = 17.5, GAP = 2.6, KEY_Y0 = Y_DECK1 + 0.15, KEY_Y1 = Y_DECK1 + 1.7;
+const keyGeoCache = new Map();
+function keyGeo(w, d) {
+  const k = `${w.toFixed(2)}x${d.toFixed(2)}`;
+  if (!keyGeoCache.has(k)) keyGeoCache.set(k, slabGeometry(rrect(0, 0, w, d, 1.6), 0, KEY_Y1 - KEY_Y0, 0.45));
+  return keyGeoCache.get(k);
+}
+const keys = new THREE.Group(); if (!params.get('nodeck')) base.add(keys);
+function key(x, z, wu, du = 1) {
+  const w = wu * U - GAP, d = du * U - GAP;
+  const m = new THREE.Mesh(keyGeo(w, d), keyMat);
+  m.position.set(x + GAP / 2, KEY_Y0, z + GAP / 2);
+  keys.add(m);
+}
+const KX = 10, KZ = 36, NX = KX + 15 * U + 5;
+// İşlev tuşları (sığ sıra)
+for (let i = 0; i < 15; i++) { const w = U - GAP, d = 9; const m = new THREE.Mesh(keyGeo(w, d), keyMat); m.position.set(KX + i * U + GAP / 2, KEY_Y0, KZ); keys.add(m); }
+for (let i = 0; i < 4; i++) { const w = U - GAP, d = 9; const m = new THREE.Mesh(keyGeo(w, d), keyMat); m.position.set(NX + i * U + GAP / 2, KEY_Y0, KZ); keys.add(m); }
+const rows = [
+  [1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+  [1.5,1,1,1,1,1,1,1,1,1,1,1,1,1.5],
+  [1.75,1,1,1,1,1,1,1,1,1,1,1,2.25],
+  [2.25,1,1,1,1,1,1,1,1,1,1,2.75],
+  [1.25,1,1.25,1.25,5.25,1,1]
+];
+const RZ = KZ + 12;
+rows.forEach((row, r) => {
+  let x = KX;
+  for (const wu of row) { key(x, RZ + r * U, wu); x += wu * U; }
+  if (r === 4) {
+    // Ok tuşları: yarım yükseklik
+    const z = RZ + 4 * U, half = (U - GAP) / 2 - 0.4;
+    const arrow = (ax, az) => { const m = new THREE.Mesh(keyGeo(U - GAP, half), keyMat); m.position.set(ax + GAP / 2, KEY_Y0, az); keys.add(m); };
+    arrow(x, z + half + GAP / 2 + 0.8);            // sol
+    arrow(x + U, z + GAP / 2);                     // yukarı
+    arrow(x + U, z + half + GAP / 2 + 0.8);        // aşağı
+    arrow(x + 2 * U, z + half + GAP / 2 + 0.8);    // sağ
+  }
+});
+// Sayısal tuş takımı
+[[0,0,1,1],[1,0,1,1],[2,0,1,1],[3,0,1,1],
+ [0,1,1,1],[1,1,1,1],[2,1,1,1],[3,1,1,2],
+ [0,2,1,1],[1,2,1,1],[2,2,1,1],
+ [0,3,1,1],[1,3,1,1],[2,3,1,1],[3,3,1,2],
+ [0,4,2,1],[2,4,1,1]].forEach(([c, r, w, d]) => key(NX + c * U, RZ + r * U, w, d));
+// Klavye arka ışığı (dış görünümde): tuşların arasından mor ışık.
+if (!inside) {
+  const glow = new THREE.Mesh(new THREE.PlaneGeometry(NX + 4 * U - KX + 2, RZ + 5 * U - KZ + 2),
+    new THREE.MeshBasicMaterial({ color: C.violet, transparent: true, opacity: 0.22, toneMapped: false }));
+  glow.rotation.x = -Math.PI / 2;
+  glow.position.set((KX + NX + 4 * U) / 2, Y_DECK1 + 0.05, (KZ + RZ + 5 * U) / 2);
+  base.add(glow);
+}
+// Touchpad: boşluk tuşunun ortasına hizalı.
+const PAD_CX = KX + 4.75 * U + 5.25 * U / 2, PAD_W = 118, PAD_Z0 = 158, PAD_Z1 = 234;
+if (!inside) base.add(new THREE.Mesh(slabGeometry(rrect(PAD_CX - PAD_W / 2 - 1, PAD_Z0 - 1, PAD_CX + PAD_W / 2 + 1, PAD_Z1 + 1, 7), Y_DECK1 - 0.4, Y_DECK1 + 0.2), std('#5b5f6b', { metalness: 0.7, roughness: 0.3 })));
+base.add(new THREE.Mesh(slabGeometry(rrect(PAD_CX - PAD_W / 2, PAD_Z0, PAD_CX + PAD_W / 2, PAD_Z1, 6), Y_DECK1 - 0.4, Y_DECK1 + 0.32, 0.3), padMat));
+
+// Arkadaki hava çıkışları ve sağ yandaki bağlantı noktaları.
+for (const [x0, x1] of [[30, 125], [232, 327]]) {
+  box(base, [x0, x1, 5, 16, -0.45, 0.6], '#0e0e13', { roughness: 0.9 });
+  for (const y of [6.5, 9, 11.5, 14]) box(base, [x0, x1, y, y + 1.1, -0.6, 0.2], '#4b4f58', { metalness: 0.7, roughness: 0.4 });
+}
+for (const [z0, z1, y0, y1] of [[118, 131, 8.5, 13.5], [138, 151, 8.5, 13.5], [160, 170, 8.5, 13.5]]) {
+  box(base, [BW - 0.6, BW + 0.35, y0, y1, z0, z1], '#0b0b0f', { roughness: 0.8 });
+}
+
+// ---------- İç kısım (alttan bakışa göre çizilmişti; üstten bakış için sol-sağ aynalanır) ----------
+const inner = new THREE.Group();
+inner.scale.x = -1; inner.position.x = BW;
+root.add(inner);
+box(inner, [2.5, BW - 2.5, Y_BOTTOM, 3, 2.5, BD - 2.5], C.floor, { metalness: 0.5, roughness: 0.5 });
+box(inner, [36, 321, 3, 4, 26, 196], C.pcb);
+function frame(parent, b, color) {
+  const [x0, x1, , y1, z0, z1] = b; const t = 1.6, g = 0.7;
+  const o = { emissive: color, emissiveIntensity: g };
+  box(parent, [x0, x1, y1, y1 + 0.6, z0, z0 + t], color, o);
+  box(parent, [x0, x1, y1, y1 + 0.6, z1 - t, z1], color, o);
+  box(parent, [x0, x0 + t, y1, y1 + 0.6, z0, z1], color, o);
+  box(parent, [x1 - t, x1, y1, y1 + 0.6, z0, z1], color, o);
+}
+function pipe(parent, points, radius = 3, color = C.copper) {
+  const curve = new THREE.CatmullRomCurve3(points.map((p) => new THREE.Vector3(...p)));
+  parent.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 64, radius, 10, false), std(color, { metalness: 0.8, roughness: 0.35 })));
+}
+function fan(parent, center, radius = 42) {
+  const g = new THREE.Group(); g.position.set(...center); parent.add(g);
+  const disk = new THREE.Mesh(new THREE.CylinderGeometry(radius + 5, radius + 5, 2, 40), std(C.plastic, { roughness: 0.7 }));
+  disk.position.y = -5; g.add(disk);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(radius + 4, 1.6, 8, 48), std('#3a3452', { roughness: 0.5 }));
+  ring.rotation.x = Math.PI / 2; ring.position.y = 5; g.add(ring);
+  g.add(new THREE.Mesh(new THREE.CylinderGeometry(14, 14, 9, 24), std('#1a1b21', { roughness: 0.6 })));
+  for (let i = 0; i < 13; i++) {
+    const arm = new THREE.Group(); arm.rotation.y = (i / 13) * Math.PI * 2 + 0.3; g.add(arm);
+    const b = new THREE.Mesh(new THREE.BoxGeometry(radius * 0.62, 8, 1.4), std('#2a2150', { roughness: 0.5 }));
+    b.position.x = radius * 0.62; b.rotation.y = 0.5; arm.add(b);
+  }
+}
+function fins(parent, x0, x1) {
+  const n = Math.floor((x1 - x0) / 4);
+  for (let i = 0; i < n; i++) box(parent, [x0 + i * 4, x0 + i * 4 + 1.2, 4, 18, 3, 22], '#4b4f58', { metalness: 0.8, roughness: 0.35 });
+}
+function sodimm(parent, x0, z0, present) {
+  const b = [x0, x0 + 69.6, 4, 6, z0, z0 + 30];
+  if (!present) { box(parent, [x0, x0 + 69.6, 3, 5, z0, z0 + 6], C.plastic); return; }
+  box(parent, b, C.pcb);
+  for (let i = 0; i < 4; i++) box(parent, [x0 + 5 + i * 16, x0 + 17 + i * 16, 6, 7.4, z0 + 5, z0 + 18], C.chip);
+  box(parent, [x0 + 2, x0 + 67.6, 6, 6.4, z0 + 26, z0 + 29], '#b8964f', { metalness: 0.9, roughness: 0.3 });
+  frame(parent, b, C.violet);
+}
+fan(inner, [78, 13, 66]); fan(inner, [279, 13, 66]);
+fins(inner, 34, 122); fins(inner, 235, 323);
+pipe(inner, [[118, 15, 24], [150, 15, 90], [215, 15, 90], [244, 15, 24]]);
+pipe(inner, [[110, 15, 38], [148, 15, 108], [225, 15, 108], [252, 15, 38]]);
+pipe(inner, [[100, 15, 60], [140, 15, 124], [236, 15, 124], [262, 15, 60]]);
+box(inner, [128, 172, 4, 12, 85, 130], C.plate, { metalness: 0.7, roughness: 0.4 });
+box(inner, [190, 250, 4, 12, 82, 135], C.plate, { metalness: 0.7, roughness: 0.4 });
+sodimm(inner, 48, 150, true); sodimm(inner, 123, 150, true);
+box(inner, [214, 294, 4, 6, 156, 178], C.pcb);
+box(inner, [220, 236, 6, 7.4, 160, 174], '#3a3452');
+box(inner, [241, 263, 6, 7.4, 159, 175], C.chip);
+box(inner, [267, 289, 6, 7.4, 159, 175], C.chip);
+frame(inner, [214, 294, 4, 6, 156, 178], C.violet);
+box(inner, [302, 324, 4, 6, 150, 180], C.pcb);
+box(inner, [306, 320, 6, 7.2, 158, 170], C.chip);
+frame(inner, [302, 324, 4, 6, 150, 180], C.cyan);
+pipe(inner, [[308, 8, 152], [322, 9, 110], [334, 10, 40], [338, 11, 10]], 1.1, '#1a1b21');
+pipe(inner, [[316, 8, 152], [330, 9, 112], [342, 10, 44], [344, 11, 10]], 1.1, '#5b5f6a');
+box(inner, [62, 295, 3, 12, 200, 254], C.battery, { roughness: 0.8 });
+for (const x of [120, 178, 236]) box(inner, [x, x + 1.5, 12, 12.6, 202, 252], '#2b2740');
+box(inner, [12, 56, 3, 9, 212, 254], C.grille, { roughness: 0.9 });
+box(inner, [301, 345, 3, 9, 212, 254], C.grille, { roughness: 0.9 });
+if (inside) {
+  const pl1 = new THREE.PointLight(C.violet, 1.4, 6); pl1.position.set(180, 200, 140); inner.add(pl1);
+  const pl2 = new THREE.PointLight(C.cyan, 1.2, 5); pl2.position.set(300, 90, 60); inner.add(pl2);
+}
+if (view === 'inside-ram') {
+  const [x0, x1, y0, y1, z0, z1] = [46, 194, 3, 9, 148, 182]; const pad = 4;
+  const gm = new THREE.Mesh(new THREE.BoxGeometry(x1 - x0 + pad * 2, y1 - y0 + pad * 2, z1 - z0 + pad * 2),
+    new THREE.MeshBasicMaterial({ color: C.violet, transparent: true, opacity: 0.2, depthTest: false, depthWrite: false, blending: THREE.AdditiveBlending }));
+  gm.position.set((x0 + x1) / 2, (y0 + y1) / 2, (z0 + z1) / 2); gm.renderOrder = 10; inner.add(gm);
+  const ed = new THREE.LineSegments(new THREE.EdgesGeometry(gm.geometry), new THREE.LineBasicMaterial({ color: '#c6b6ff', depthTest: false }));
+  ed.position.copy(gm.position); ed.renderOrder = 11; inner.add(ed);
+  const pl = new THREE.PointLight(C.violet, 3, 2); pl.position.set((x0 + x1) / 2, y1 + 30, (z0 + z1) / 2); inner.add(pl);
+}
+
+// ---------- Kapak ve ekran ----------
+const OPEN_DEG = 115, LID_L = 238, LID_T = 7;
+const lid = new THREE.Group();
+lid.position.set(0, 24, 10);
+lid.rotation.x = -THREE.MathUtils.degToRad(OPEN_DEG);
+root.add(lid);
+lid.add(new THREE.Mesh(slabGeometry(rrect(0, 0, BW, LID_L, 10), 0, LID_T, 1.0), std(C.lid, { metalness: 0.6, roughness: 0.42 })));
+lid.add(new THREE.Mesh(slabGeometry(rrect(1.2, 1.2, BW - 1.2, LID_L - 1.2, 9), -0.35, 0.1), std(C.bezel, { metalness: 0.2, roughness: 0.35 })));
+// Ekran görüntüsü: MelPC renklerinde sade bir arka plan; yazı ve logo yok.
+const cv = document.createElement('canvas'); cv.width = 1600; cv.height = 900;
+const g2 = cv.getContext('2d');
+g2.fillStyle = '#0d0b15'; g2.fillRect(0, 0, 1600, 900);
+let rg = g2.createRadialGradient(360, 720, 0, 360, 720, 950);
+rg.addColorStop(0, 'rgba(165,139,255,0.62)'); rg.addColorStop(1, 'rgba(165,139,255,0)');
+g2.fillStyle = rg; g2.fillRect(0, 0, 1600, 900);
+rg = g2.createRadialGradient(1320, 170, 0, 1320, 170, 820);
+rg.addColorStop(0, 'rgba(98,210,244,0.5)'); rg.addColorStop(1, 'rgba(98,210,244,0)');
+g2.fillStyle = rg; g2.fillRect(0, 0, 1600, 900);
+g2.globalCompositeOperation = 'lighter';
+for (let i = 0; i < 6; i++) {
+  g2.strokeStyle = i % 2 ? 'rgba(98,210,244,0.10)' : 'rgba(165,139,255,0.12)';
+  g2.lineWidth = 70 - i * 9;
+  g2.beginPath(); g2.moveTo(-100, 640 - i * 38);
+  g2.bezierCurveTo(480, 430 - i * 55, 1020, 780 - i * 28, 1720, 380 - i * 48); g2.stroke();
+}
+g2.globalCompositeOperation = 'source-over';
+const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
+const SW = 345.6, SH = 194.4, CHIN = 32;
+const screen = new THREE.Mesh(new THREE.PlaneGeometry(SW, SH), new THREE.MeshBasicMaterial({ map: tex, toneMapped: false }));
+screen.rotation.x = Math.PI / 2;
+screen.position.set(BW / 2, -0.45, CHIN + SH / 2);
+lid.add(screen);
+// Menteşeler
+for (const [x0, x1] of [[38, 82], [275, 319]]) {
+  const h = new THREE.Mesh(new THREE.CylinderGeometry(6, 6, x1 - x0, 20), std('#1c1d22', { metalness: 0.5, roughness: 0.5 }));
+  h.rotation.z = Math.PI / 2; h.position.set((x0 + x1) / 2, 23, 9); root.add(h);
+}
+
+// Zemindeki yumuşak gölge
+const sc = document.createElement('canvas'); sc.width = sc.height = 256;
+const sg = sc.getContext('2d'); const sgr = sg.createRadialGradient(128, 128, 10, 128, 128, 128);
+sgr.addColorStop(0, 'rgba(0,0,0,0.55)'); sgr.addColorStop(1, 'rgba(0,0,0,0)'); sg.fillStyle = sgr; sg.fillRect(0, 0, 256, 256);
+const shadow = new THREE.Mesh(new THREE.PlaneGeometry(560, 420), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(sc), transparent: true, depthWrite: false }));
+shadow.rotation.x = -Math.PI / 2; shadow.position.set(BW / 2, -0.6, BD / 2 - 10); root.add(shadow);
+
+// ---------- Kamera ----------
+const camPos = {
+  exterior: [params.get('cx') ?? 4.5, params.get('cy') ?? 2.6, params.get('cz') ?? 6.9],
+  inside: [params.get('cx') ?? 3.55, params.get('cy') ?? 5.95, params.get('cz') ?? 6.5],
+  'inside-ram': [params.get('cx') ?? 3.55, params.get('cy') ?? 5.95, params.get('cz') ?? 6.5]
+}[view].map(Number);
+const target = (params.get('tx') !== null) ? [Number(params.get('tx')), Number(params.get('ty')), Number(params.get('tz'))] : (view === 'exterior' ? [0, -0.12, -0.05] : [0, -0.05, 0.1]);
+const camera = new THREE.PerspectiveCamera(Number(params.get('fov') ?? 32), W / H, 0.1, 200);
+camera.position.set(...camPos);
+camera.lookAt(...target);
+scene.updateMatrixWorld(true);
+renderer.render(scene, camera);
+
+// Arayüz: görünüm düğmeleri ve (iç görünümde) bellek işareti.
+const eye = '<svg width="18" height="18" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+const layers = '<svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>';
+document.getElementById('controls').innerHTML =
+  `<div class="segmented"><span class="on">Serbest</span><span>Üstten</span></div>` +
+  (inside ? `<span class="toggle">${eye}Dışını göster</span>` : `<span class="toggle">${layers}İçini göster</span>`) +
+  `<span class="round"><svg width="18" height="18" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5M11 8v6M8 11h6"/></svg></span>` +
+  `<span class="round"><svg width="18" height="18" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5M8 11h6"/></svg></span>`;
+if (inside) {
+  const marks = view === 'inside-ram'
+    ? [['Bellek', '2 yuva · SO-DIMM', [118, 12, 165], true]]
+    : [['Bellek', '', [118, 12, 165], false], ['SSD', '', [254, 12, 167], false]];
+  for (const [title, sub, p, active] of marks) {
+    const v = inner.localToWorld(new THREE.Vector3(...p)).project(camera);
+    const x = (v.x + 1) / 2 * W, y = (1 - v.y) / 2 * H;
+    const el = document.createElement('div'); el.className = 'marker'; el.style.left = x + 'px'; el.style.top = y + 'px';
+    el.innerHTML = `<span class="dot${active ? '' : ' white'}"></span>` + (active ? `<span class="label"><strong>${title}</strong>${sub}</span>` : '');
+    document.getElementById('overlay').appendChild(el);
+  }
+}
+document.title = 'ready';
+</script>
+</body>
+</html>

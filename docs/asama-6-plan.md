@@ -19,8 +19,8 @@ Kapsam: Bilgisayarım'daki laptop görselini normal bir laptop gibi göstermek v
 
 ### Sohbette (araştırma ve tasarım)
 
-1. Laptop görselinin taslağı: dış ve iç görünüm. Melih onaylayınca ölçüler `design/laptop-olculeri.md` dosyasına yazılır.
-2. Aday parça listesi. Melih onaylayınca parçalar kataloğa eklenir.
+1. Laptop görselinin taslağı: dış ve iç görünüm. ✓ Melih 19.11.2026'da onayladı; ölçüler `design/laptop-olculeri.md`'de, görseller ve taslak kodu `design/laptop-*` dosyalarında.
+2. Aday parça listesi (`docs/katalog-aday-listesi-2.md`, 46 parça). ✓ Melih 19.11.2026'da onayladı; parçalar kataloğa ekleniyor.
 
 ### Code'da (kodlama)
 

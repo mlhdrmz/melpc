@@ -1,4 +1,4 @@
-# Katalog aday listesi 2 (Melih'in onayını bekliyor)
+# Katalog aday listesi 2 (Melih onayladı, 19.11.2026)
 
 6. aşama: popüler markaların en çok kullanılan parçaları. Bu liste **yalnızca model adlarıdır**; burada teknik özellik ve fiyat yok. Onaydan sonra her parçanın özellikleri üreticinin sayfasından, kaynağıyla toplanır ve `data/catalog/` dosyalarına yazılır. Üretici sayfası bulunamayan ya da Türkiye'de satılmayan parça listeden çıkar ve Melih'e söylenir.
 

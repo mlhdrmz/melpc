@@ -79,8 +79,9 @@ Laptop görseli (laptoplar eklendiğinde ya da 5. aşamada): Laptoplarda toplama
 - `kasa-topla-vitrin.html`: Seçilen "B · Vitrin" Kasa Topla ekranı; tarayıcıda tek başına açılır. Görünüşün referansıdır, uygulamaya doğrudan kopyalanacak kod değildir.
 - `kasa-ici.svg` ve `kasa-gorunumu.png`: Kasanın dışı ve sıvı soğutmalı iç görseli.
 - `kasa-olculeri.md`: 3D modelde kullanılacak koordinat sistemi ve parçaların milimetre cinsinden yerleri.
+- `laptop-olculeri.md`, `laptop-taslak.html` ve `laptop-*.png`: Bilgisayarım'daki laptopun dış ve buzlu cam iç görünümü, ölçüleri ve davranışı (6. aşama, Melih onayladı).
 - Taslaklardaki parça adları, fiyatlar, puanlar ve mağazalar örnektir; gerçek değildir.
 
 ## Henüz karar verilmeyenler (başlamadan önce Melih'e sor)
 
-- Laptop görselinin taslağı ve yeni parçaların aday listesi Melih'in onayını bekliyor (6. aşama). Onaylanmadan Code laptop görünümüne başlamaz.
+- Şu an açık karar yok. Laptop taslağı ve yeni parçaların aday listesi 19.11.2026'da onaylandı; Code laptop görünümüne `design/laptop-olculeri.md`'ye göre başlayabilir.
