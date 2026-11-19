@@ -851,5 +851,431 @@
     },
     "addedAt": "2026-11-18",
     "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "gpu-gigabyte-geforce-rtx-5070-gaming-oc-12g",
+    "category": "gpu",
+    "brand": "Gigabyte",
+    "model": "GeForce RTX 5070 Gaming OC 12G",
+    "mpn": "GV-N5070GAMING OC-12GD",
+    "sources": {
+      "maker": {
+        "url": "https://www.gigabyte.com/Graphics-Card/GV-N5070GAMING-OC-12GD/sp",
+        "retrieved": "2026-11-19",
+        "title": "Gigabyte ürün sayfası (Specification)"
+      },
+      "nvidia": {
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+        "retrieved": "2026-11-17",
+        "title": "NVIDIA GeForce RTX 5070 ailesi sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5070",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 12,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 327,
+        "source": "maker",
+        "note": "Kart ölçüsü L=327 W=132 H=56 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler L=327 W=132 H=56 mm (kalınlık 56 mm)."
+      },
+      "boardPowerW": {
+        "value": 250,
+        "source": "nvidia",
+        "note": "NVIDIA'nın RTX 5070 için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "16-pin": 1
+        },
+        "source": "maker",
+        "note": "Kutudan 12V-2x6 → 2× PCIe 8-pin adaptör çıkıyor (üretici aksesuar listesi)"
+      },
+      "recommendedPsuW": {
+        "value": 750,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "gpu-gigabyte-geforce-rtx-5070-windforce-oc-sff-12g",
+    "category": "gpu",
+    "brand": "Gigabyte",
+    "model": "GeForce RTX 5070 Windforce OC SFF 12G",
+    "mpn": "GV-N5070WF3OC-12GD",
+    "sources": {
+      "maker": {
+        "url": "https://www.gigabyte.com/Graphics-Card/GV-N5070WF3OC-12GD/sp",
+        "retrieved": "2026-11-19",
+        "title": "Gigabyte ürün sayfası (Specification)"
+      },
+      "nvidia": {
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+        "retrieved": "2026-11-17",
+        "title": "NVIDIA GeForce RTX 5070 ailesi sayfası (teknik özellikler)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5070",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 12,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 282,
+        "source": "maker",
+        "note": "Kart ölçüsü L=282 W=110 H=50 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler L=282 W=110 H=50 mm (kalınlık 50 mm)."
+      },
+      "boardPowerW": {
+        "value": 250,
+        "source": "nvidia",
+        "note": "NVIDIA'nın RTX 5070 için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "16-pin": 1
+        },
+        "source": "maker",
+        "note": "Kutudan 12V-2x6 → 2× PCIe 8-pin adaptör çıkıyor (üretici aksesuar listesi)"
+      },
+      "recommendedPsuW": {
+        "value": 750,
+        "source": "maker",
+        "note": "Sayfada \"Power requirement 750W\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "gpu-msi-geforce-rtx-5060-8g-gaming-oc",
+    "category": "gpu",
+    "brand": "MSI",
+    "model": "GeForce RTX 5060 8G Gaming OC",
+    "mpn": "G5060-8GC",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Graphics-Card/GeForce-RTX-5060-8G-GAMING-OC/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5060",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 8,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 248,
+        "source": "maker",
+        "note": "Kart ölçüsü 248 x 135 x 41 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 248 x 135 x 41 mm (kalınlık 41 mm)."
+      },
+      "boardPowerW": {
+        "value": 155,
+        "source": "maker",
+        "note": "MSI \"Power consumption\""
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 550,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "gpu-msi-geforce-rtx-5060-8g-shadow-2x-oc",
+    "category": "gpu",
+    "brand": "MSI",
+    "model": "GeForce RTX 5060 8G Shadow 2X OC",
+    "mpn": "G5060-8S2C",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Graphics-Card/GeForce-RTX-5060-8G-SHADOW-2X-OC/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 5060",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 8,
+        "source": "maker"
+      },
+      "lengthMm": {
+        "value": 197,
+        "source": "maker",
+        "note": "Kart ölçüsü 197 x 120 x 40 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 197 x 120 x 40 mm (kalınlık 40 mm)."
+      },
+      "boardPowerW": {
+        "value": 145,
+        "source": "maker",
+        "note": "MSI \"Power consumption\""
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 550,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "gpu-msi-geforce-rtx-3060-ventus-2x-12g-oc",
+    "category": "gpu",
+    "brand": "MSI",
+    "model": "GeForce RTX 3060 Ventus 2X 12G OC",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Graphics-Card/GeForce-RTX-3060-VENTUS-2X-12G-OC/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 3060",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 12,
+        "source": "maker",
+        "note": "12GB GDDR6"
+      },
+      "lengthMm": {
+        "value": 235,
+        "source": "maker",
+        "note": "Kart ölçüsü 235 x 124 x 42 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 235 x 124 x 42 mm (kalınlık 42 mm)."
+      },
+      "boardPowerW": {
+        "value": 170,
+        "source": "maker",
+        "note": "MSI \"Power consumption\""
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 1
+        },
+        "source": "maker"
+      },
+      "recommendedPsuW": {
+        "value": 550,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "gpu-asus-prime-radeon-rx-9060-xt-8gb-gddr6-oc-edition",
+    "category": "gpu",
+    "brand": "ASUS",
+    "model": "Prime Radeon RX 9060 XT 8GB GDDR6 OC Edition",
+    "mpn": "PRIME-RX9060XT-O8G",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/tw/motherboards-components/graphics-cards/prime/prime-rx9060xt-o8g/techspec/",
+        "retrieved": "2026-11-19",
+        "title": "ASUS ürün sayfası (Tech Specs, Tayvan sitesi)"
+      },
+      "amd": {
+        "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt-8gb.html",
+        "retrieved": "2026-11-19",
+        "title": "AMD Radeon RX 9060 XT (8GB) sayfası"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "Radeon RX 9060 XT",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 8,
+        "source": "maker",
+        "note": "8GB GDDR6"
+      },
+      "lengthMm": {
+        "value": 304,
+        "source": "maker",
+        "note": "Kart ölçüsü 304 x 126 x 50 mm"
+      },
+      "slotWidth": {
+        "value": 2.5,
+        "source": "maker",
+        "note": "\"2.5 Slot\""
+      },
+      "boardPowerW": {
+        "value": 150,
+        "source": "amd",
+        "note": "AMD'nin RX 9060 XT 8 GB için yayımladığı \"Typical Board Power (Desktop)\" değeri; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 1
+        },
+        "source": "maker",
+        "note": "\"1 x 8-pin\""
+      },
+      "recommendedPsuW": {
+        "value": 550,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "gpu-gigabyte-radeon-rx-9070-xt-gaming-oc-16g",
+    "category": "gpu",
+    "brand": "Gigabyte",
+    "model": "Radeon RX 9070 XT Gaming OC 16G",
+    "mpn": "GV-R9070XTGAMING OC-16GD",
+    "sources": {
+      "maker": {
+        "url": "https://www.gigabyte.com/Graphics-Card/GV-R9070XTGAMING-OC-16GD/sp",
+        "retrieved": "2026-11-19",
+        "title": "Gigabyte ürün sayfası (Specification)"
+      },
+      "amd": {
+        "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html",
+        "retrieved": "2026-11-17",
+        "title": "AMD Radeon RX 9070 XT sayfası"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "Radeon RX 9070 XT",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 16,
+        "source": "maker",
+        "note": "16GB GDDR6"
+      },
+      "lengthMm": {
+        "value": 288,
+        "source": "maker",
+        "note": "Kart ölçüsü L=288 W=132 H=56 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler L=288 W=132 H=56 mm (kalınlık 56 mm)."
+      },
+      "boardPowerW": {
+        "value": 304,
+        "source": "amd",
+        "note": "AMD'nin RX 9070 XT (\"Typical Board Power\") için yayımladığı değer; kart üreticisi bu modelin gücünü ayrıca yazmıyor."
+      },
+      "powerConnectors": {
+        "value": {
+          "8-pin": 3
+        },
+        "source": "maker",
+        "note": "\"8 pin*3\""
+      },
+      "recommendedPsuW": {
+        "value": 850,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "gpu-msi-geforce-rtx-3050-ventus-2x-e-6g-oc",
+    "category": "gpu",
+    "brand": "MSI",
+    "model": "GeForce RTX 3050 Ventus 2X E 6G OC",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Graphics-Card/GeForce-RTX-3050-VENTUS-2X-E-6G-OC/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "gpuChip": {
+        "value": "GeForce RTX 3050",
+        "source": "maker"
+      },
+      "vramGb": {
+        "value": 6,
+        "source": "maker",
+        "note": "6GB GDDR6"
+      },
+      "lengthMm": {
+        "value": 189,
+        "source": "maker",
+        "note": "Kart ölçüsü 189 x 109 x 42 mm"
+      },
+      "slotWidth": {
+        "value": null,
+        "note": "Üretici yuva sayısını yazmıyor; ölçüler 189 x 109 x 42 mm (kalınlık 42 mm)."
+      },
+      "boardPowerW": {
+        "value": 70,
+        "source": "maker",
+        "note": "MSI \"Power consumption\""
+      },
+      "powerConnectors": {
+        "value": null,
+        "note": "MSI sayfasında güç konnektörü satırı yok (70 W kart); üretici açıkça yazmadığı için boş bırakıldı."
+      },
+      "recommendedPsuW": {
+        "value": 300,
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
   }
 ]

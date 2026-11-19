@@ -694,5 +694,251 @@
     },
     "addedAt": "2026-11-18",
     "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "psu-msi-mag-a650bn",
+    "category": "psu",
+    "brand": "MSI",
+    "model": "MAG A650BN",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Power-Supply/MAG-A650BN/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 650,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Bronze",
+        "source": "maker",
+        "note": "\"80 PLUS Bronze (up to 85%)\""
+      },
+      "atxVersion": {
+        "value": null,
+        "note": "MSI sayfasında ATX sürümü yazmıyor (yalnızca \"ATX (24 pin) 1\" konnektör sayısı var)."
+      },
+      "modularity": {
+        "value": "none",
+        "source": "maker",
+        "note": "\"Modular: No\""
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"Dimensions (DxWxH) 140 x 150 x 86 mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "8-pin": 2
+        },
+        "source": "maker",
+        "note": "\"PCI-E (6+2 pin) 2\"; 16 pinlik PCIe 5.0 konnektörü yok"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "psu-msi-mag-a750bn-pcie5",
+    "category": "psu",
+    "brand": "MSI",
+    "model": "MAG A750BN PCIE5",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Power-Supply/MAG-A750BN-PCIE5/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 750,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Bronze",
+        "source": "maker",
+        "note": "\"80 PLUS Bronze (up to 85%)\""
+      },
+      "atxVersion": {
+        "value": null,
+        "note": "MSI sayfasında ATX sürümü yazmıyor (yalnızca \"ATX (24 pin) 1\" konnektör sayısı var). Ürün sayfası yalnızca \"PCIe 5.0 Ready\" diyor."
+      },
+      "modularity": {
+        "value": "none",
+        "source": "maker",
+        "note": "\"Modular: No\""
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"Dimensions (DxWxH) 140mm x 150mm x 86mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 2
+        },
+        "source": "maker",
+        "note": "\"PCI-E 5.0 (16 pin) 1(300W)\", \"PCI-E (6+2 pin) 2\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "psu-msi-mag-a600dn",
+    "category": "psu",
+    "brand": "MSI",
+    "model": "MAG A600DN",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Power-Supply/MAG-A600DN/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 600,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Standard",
+        "source": "maker",
+        "note": "\"80 PLUS Standard (up to 80%)\""
+      },
+      "atxVersion": {
+        "value": null,
+        "note": "MSI sayfasında ATX sürümü yazmıyor (yalnızca \"ATX (24 pin) 1\" konnektör sayısı var)."
+      },
+      "modularity": {
+        "value": "none",
+        "source": "maker",
+        "note": "\"Modular: No\""
+      },
+      "lengthMm": {
+        "value": 150,
+        "source": "maker",
+        "note": "\"Dimensions (DxWxH) 150mm x 140mm x 86mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "8-pin": 2
+        },
+        "source": "maker",
+        "note": "\"PCI-E (6+2 pin) 2\"; 16 pinlik PCIe 5.0 konnektörü yok"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "psu-nzxt-c750-bronze-2025",
+    "category": "psu",
+    "brand": "NZXT",
+    "model": "C750 Bronze (2025)",
+    "mpn": "PA-7B3BB-EU",
+    "sources": {
+      "maker": {
+        "url": "https://nzxt.com/product/c750",
+        "retrieved": "2026-11-19",
+        "title": "NZXT ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 750,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Bronze",
+        "source": "maker"
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "maker",
+        "note": "\"ATX Version 3.1\""
+      },
+      "modularity": {
+        "value": "none",
+        "source": "maker",
+        "note": "\"Cabling: Non-modular\""
+      },
+      "lengthMm": {
+        "value": 140,
+        "source": "maker",
+        "note": "\"Dimensions (W x H x D): 150 x 86 x 140 mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 2
+        },
+        "source": "maker",
+        "note": "\"1x 16-pin 12V-2x6 PCIe\", \"2x 8-pin (6+2) PCIe\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "psu-asus-tuf-gaming-750w-gold",
+    "category": "psu",
+    "brand": "ASUS",
+    "model": "TUF Gaming 750W Gold",
+    "mpn": "TUF-GAMING-750G",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/power-supply-units/tuf-gaming/tuf-gaming-750g/techspec",
+        "retrieved": "2026-11-19",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      },
+      "overview": {
+        "url": "https://www.asus.com/ph/motherboards-components/power-supply-units/tuf-gaming/tuf-gaming-750g/",
+        "retrieved": "2026-11-19",
+        "title": "ASUS ürün sayfası (genel bakış)"
+      }
+    },
+    "specs": {
+      "wattage": {
+        "value": 750,
+        "source": "maker"
+      },
+      "efficiency": {
+        "value": "80 PLUS Gold",
+        "source": "maker",
+        "note": "\"80Plus Gold\""
+      },
+      "atxVersion": {
+        "value": "ATX 3.1",
+        "source": "maker",
+        "note": "\"ATX Standard: ATX 3.1\""
+      },
+      "modularity": {
+        "value": "full",
+        "source": "overview",
+        "note": "\"Fully modular etched cables keep your rig neat and tidy.\""
+      },
+      "lengthMm": {
+        "value": 150,
+        "source": "maker",
+        "note": "\"Dimensions 150 x 150 x 86 mm\""
+      },
+      "gpuConnectors": {
+        "value": {
+          "16-pin": 1,
+          "8-pin": 3
+        },
+        "source": "maker",
+        "note": "\"PCI-E 16-pin x 1 (both PSU & component side)\", \"PCI-E 8-pin x 3\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
   }
 ]

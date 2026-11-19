@@ -101,6 +101,24 @@ Not: Türkiye'de güç kaynağıyla birlikte satılan kasalar (Rampage, GamePowe
 
 Toplam: 46 parça.
 
+## Sonuç (19.11.2026)
+
+46 parçanın 43'ü kataloğa eklendi; katalog 115 parçadan 158'e çıktı. Her değer üreticinin ürün sayfasından ya da üreticinin kendi belgesinden alındı; linki kayıtta. Satıcı sayfaları kaynak olarak kullanılmadı.
+
+**Eklenmeyen 3 bellek kiti:** üreticinin kaynağı bulunamadı.
+
+- Kingston FURY Beast 32 GB (1 × 32) DDR4-3200 CL16 (KF432C16BB/32): kingston.com'a erişilemedi; İngilizce veri sayfası başka bir yerde de bulunamadı. Değerler yalnızca bir dağıtıcının (Mouser) sayfasında var.
+- Lexar THOR 16 GB (1 × 16) DDR5-6000 CL36 (LD5U16G60C360V-RGS): Lexar'ın belgelerinde bu bellek yalnızca 2'li kit olarak geçiyor; tek modüllü sürüm yok.
+- Patriot Viper Venom 16 GB (1 × 16) DDR5-6000 CL30 (PVV516G60C30): Patriot'un sayfası aramalarda çıkmadı; yalnızca satıcı sayfaları var.
+
+**Notlar**
+
+- Kingston FURY Beast 16 GB DDR5-6000 CL30: İncehesap'taki ilanda parça kodu yok; siyah, EXPO'lu KF560C30BBE-16 eklendi. Kaynak, Kingston veri sayfasının (belge no. 4811291A) bir kamu ihale portalındaki kopyası, çünkü kingston.com'a erişilemedi.
+- TeamGroup T-Force Vulcan: kaynak, TeamGroup ürün föyünün Icecat sunucusundaki kopyası.
+- XPG "Maestro Plus 120 ARGB": İncehesap'taki bu ilan, kendi sayfa başlığına göre XPG MAESTRO PLUS 42SA (MAESTROPLUS42SA-BKCWW). Katalogda üreticinin verdiği adla, "Maestro Plus 42SA" olarak yer alıyor.
+- Üretici yazmadığı için "bilinmiyor" kalanlar: üç MSI güç kaynağının (A650BN, A750BN PCIE5, A600DN) ATX sürümü, MSI RTX 3050 Ventus 2X E'nin güç soketi, Corsair Vengeance LPX'in yüksekliği ve ASUS Prime RX 9060 XT dışındaki yeni ekran kartlarının yuva kalınlığı (ölçüleri notta).
+- Blender ölçümü olmayanlar: yeni 5 işlemci, RTX 3060 ve RTX 3050. Diğer yeni ekran kartları, aynı grafik işlemcisinin katalogdaki ölçümünü kullanıyor.
+
 ## Kaynaklar (19.11.2026'da bakıldı)
 
 - Akakçe anakart, en çok satın alınanlar: https://www.akakce.com/anakart.html

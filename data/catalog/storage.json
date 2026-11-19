@@ -706,5 +706,279 @@
     },
     "addedAt": "2026-11-18",
     "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "storage-samsung-990-evo-plus-1-tb",
+    "category": "storage",
+    "brand": "Samsung",
+    "model": "990 Evo Plus 1 TB",
+    "mpn": "MZ-V9S1T0BW",
+    "sources": {
+      "maker": {
+        "url": "https://www.samsung.com/uk/memory-storage/nvme-ssd/990-evo-plus-1tb-nvme-pcie-gen-4-mz-v9s1t0bw",
+        "retrieved": "2026-11-19",
+        "title": "Samsung ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe® 4.0 x4 / 5.0 x2 NVMe™ 2.0\": PCIe 5.0 yuvada iki hatla çalışır"
+      },
+      "capacityGb": {
+        "value": 1000,
+        "source": "maker",
+        "note": "\"1,000GB (1GB=1 Billion byte by IDEMA)\""
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 7150,
+        "source": "maker",
+        "note": "\"Sequential Read: Up to 7,150 MB/s\" (teknik tablo; sayfanın tanıtım bölümünde 7,250 yazıyor)"
+      },
+      "heatsink": {
+        "value": false,
+        "source": "maker",
+        "note": "\"Dimension (WxHxD)\": \"Max 80.15 x Max 22.15 x Max 2.38 mm\"; özelliklerde soğutucu (heatsink) yok."
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "storage-kingston-kc3000-1024-gb",
+    "category": "storage",
+    "brand": "Kingston",
+    "model": "KC3000 1024 GB",
+    "mpn": "SKC3000S/1024G",
+    "sources": {
+      "datasheet": {
+        "url": "https://www.kingston.com/datasheets/KC3000_en.pdf",
+        "retrieved": "2026-11-19",
+        "title": "Kingston KC3000 veri sayfası (PDF)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "datasheet"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "datasheet",
+        "note": "\"PCIe 4.0 x4 NVMe\""
+      },
+      "capacityGb": {
+        "value": 1024,
+        "source": "datasheet"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "datasheet"
+      },
+      "seqReadMbps": {
+        "value": 7000,
+        "source": "datasheet",
+        "note": "\"1024GB – 7,000/6,000MB/s\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "datasheet",
+        "note": "Kalınlık 2,21 mm (512GB-1024GB); veri sayfasındaki \"Low profile graphene aluminum heat spreader\" ince bir ısı dağıtıcı, ayrı bir soğutucu (heatsink) değil."
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "storage-kingston-nv3-2-tb",
+    "category": "storage",
+    "brand": "Kingston",
+    "model": "NV3 2 TB",
+    "mpn": "SNV3S/2000G",
+    "sources": {
+      "datasheet": {
+        "url": "https://kingston.com/datasheets/SNV3S_tr.pdf",
+        "retrieved": "2026-11-19",
+        "title": "Kingston NV3 veri sayfası (PDF, Türkçe)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "datasheet"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "datasheet",
+        "note": "\"Arabirim PCIe 4,0 x4 NVMe\""
+      },
+      "capacityGb": {
+        "value": 2000,
+        "source": "datasheet"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "datasheet",
+        "note": "SNV3S M.2 2280; aynı ailede M.2 2230 sürümü (SNV3SM3) de var"
+      },
+      "seqReadMbps": {
+        "value": 6000,
+        "source": "datasheet",
+        "note": "\"2TB - 4TB – 6.000/5.000MB/s\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "datasheet",
+        "note": "\"Boyutlar 22 mm x 80 mm x 2,3 mm\"; veri sayfasında soğutucu (heatsink) yok."
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "storage-msi-spatium-m470-pro-1-tb",
+    "category": "storage",
+    "brand": "MSI",
+    "model": "Spatium M470 PRO 1 TB",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Storage/SPATIUM-M470-PRO-PCIe-4.0-NVMe-M.2/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe Gen4 x4, NVMe 1.4\""
+      },
+      "capacityGb": {
+        "value": 1000,
+        "source": "maker",
+        "note": "\"1TB\""
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 6000,
+        "source": "maker",
+        "note": "\"Sequential Read up to (MB/s) 6000\" (1TB sütunu)"
+      },
+      "heatsink": {
+        "value": false,
+        "source": "maker",
+        "note": "\"80.00mm (L) x 22.00mm (W) x 2.15mm (H)\"; sayfada soğutucu (heatsink) yok."
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "storage-lexar-nq790-1-tb",
+    "category": "storage",
+    "brand": "Lexar",
+    "model": "NQ790 1 TB",
+    "mpn": "LNQ790X001T-RNNNG",
+    "sources": {
+      "maker": {
+        "url": "https://americas.lexar.com/?p=2464",
+        "retrieved": "2026-11-19",
+        "title": "Lexar NQ790 ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 4.0",
+        "source": "maker",
+        "note": "\"PCIe Gen4x4\""
+      },
+      "capacityGb": {
+        "value": 1000,
+        "source": "maker"
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker"
+      },
+      "seqReadMbps": {
+        "value": 7000,
+        "source": "maker",
+        "note": "\"1TB - 4TB: Sequential Read up to 7000MB/s, Sequential Write Speed up to 6000MB/s\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "maker",
+        "note": "\"80 x 22 x 2.45 mm\"; sayfada soğutucu (heatsink) yok."
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "storage-kioxia-exceria-pro-g2-1-tb",
+    "category": "storage",
+    "brand": "Kioxia",
+    "model": "Exceria Pro G2 1 TB",
+    "mpn": "LVE10Z1T02G8",
+    "sources": {
+      "maker": {
+        "url": "https://europe.kioxia.com/en-mea/personal/ssd/exceria-pro-g2.html",
+        "retrieved": "2026-11-19",
+        "title": "KIOXIA ürün sayfası (Product Specifications)"
+      }
+    },
+    "specs": {
+      "storageType": {
+        "value": "M.2 NVMe",
+        "source": "maker"
+      },
+      "interface": {
+        "value": "PCIe 5.0",
+        "source": "maker",
+        "note": "\"PCI Express® Base Specification Revision 5.0\""
+      },
+      "capacityGb": {
+        "value": 1024,
+        "source": "maker",
+        "note": "\"1,024GB\""
+      },
+      "formFactor": {
+        "value": "M.2 2280",
+        "source": "maker",
+        "note": "\"M.2 Type 2280-S3-M\""
+      },
+      "seqReadMbps": {
+        "value": 14400,
+        "source": "maker",
+        "note": "\"1,024GB: 14,400 MB/s\""
+      },
+      "heatsink": {
+        "value": false,
+        "source": "maker",
+        "note": "\"80.15 x 22.15 x 2.38 mm\"; sayfada soğutucu (heatsink) yok."
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
   }
 ]

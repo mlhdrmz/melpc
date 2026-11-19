@@ -507,5 +507,187 @@
     },
     "addedAt": "2026-11-18",
     "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "cooler-xpg-maestro-plus-42sa",
+    "category": "cooler",
+    "brand": "XPG",
+    "model": "Maestro Plus 42SA",
+    "sources": {
+      "maker": {
+        "url": "https://www.xpg.com/en/xpg/pc-component-maestro-plus-42SA?tab=spec",
+        "retrieved": "2026-11-19",
+        "title": "XPG ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel: LGA 1851,1700,1200,115x\", \"AMD: AM5, AM4, AM3\""
+      },
+      "heightMm": {
+        "value": 156,
+        "source": "maker",
+        "note": "\"Dimensions 120 x 71 x 156 mm (L*W*H)\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "cooler-deepcool-ag400-g2",
+    "category": "cooler",
+    "brand": "DeepCool",
+    "model": "AG400 G2",
+    "mpn": "R-AG400-BKNPMG2-G",
+    "sources": {
+      "maker": {
+        "url": "https://www.deepcool.com/products/Cooling/cpuaircoolers/AG400-G2-Superior-Performance-4-Heatpipe-Single-Tower-CPU-Cooler/2025/22515.shtml",
+        "retrieved": "2026-11-19",
+        "title": "DeepCool ürün sayfası (Specs)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "air",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"LGA1851/1700\", \"AM5/AM4\""
+      },
+      "heightMm": {
+        "value": 152,
+        "source": "maker",
+        "note": "\"Product Dimensions 125×92×152 mm(L×W×H)\"; soğutucu bloğu \"120×92×150 mm\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "cooler-msi-mag-coreliquid-a15-360",
+    "category": "cooler",
+    "brand": "MSI",
+    "model": "MAG CoreLiquid A15 360",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Liquid-Cooling/MAG-CORELIQUID-A15-360/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel Socket Support LGA 1851 / 1700\", \"AMD Socket Support AM5 / AM4\""
+      },
+      "radiatorSizeMm": {
+        "value": 360,
+        "source": "maker",
+        "note": "\"Radiator Size 360 mm\"; radyatör \"394 x 119.6 x 27.2mm\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "cooler-msi-mag-coreliquid-a13-240",
+    "category": "cooler",
+    "brand": "MSI",
+    "model": "MAG CoreLiquid A13 240",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Liquid-Cooling/MAG-CORELIQUID-A13-240/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel Socket Support LGA 1700 / 1851\", \"AMD Socket Support AM5 / AM4\""
+      },
+      "radiatorSizeMm": {
+        "value": 240,
+        "source": "maker",
+        "note": "\"Radiator Size 240 mm\"; radyatör \"277 x 119.6 x 27.2mm\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "cooler-deepcool-lt360-vision-argb",
+    "category": "cooler",
+    "brand": "DeepCool",
+    "model": "LT360 Vision ARGB",
+    "mpn": "R-LT360VISION-BKAMMC-G-1",
+    "sources": {
+      "maker": {
+        "url": "https://deepcool.com/products/Cooling/cpuliquidcoolers/LT360-VISION-ARGB-4.5-Ultrawide-LCD-Liquid-Cooler-with-Adjustable-Viewing-Angle/2026/22717.shtml",
+        "retrieved": "2026-11-19",
+        "title": "DeepCool ürün sayfası (Specs)"
+      }
+    },
+    "specs": {
+      "coolerType": {
+        "value": "liquid",
+        "source": "maker"
+      },
+      "sockets": {
+        "value": [
+          "AM5",
+          "AM4",
+          "LGA1851",
+          "LGA1700"
+        ],
+        "source": "maker",
+        "note": "\"Intel LGA1851/1700/1200/1151/1150/1155\", \"AMD AM5/AM4\""
+      },
+      "radiatorSizeMm": {
+        "value": 360,
+        "source": "maker",
+        "note": "Ürün adı LT360; radyatör \"402×120×27 mm(L×W×H)\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
   }
 ]

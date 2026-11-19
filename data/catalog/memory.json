@@ -568,5 +568,142 @@
     },
     "addedAt": "2026-11-17",
     "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "memory-kingston-fury-beast-ddr5-6000-cl30-16-gb-1-16-gb-expo",
+    "category": "memory",
+    "brand": "Kingston",
+    "model": "FURY Beast DDR5-6000 CL30 16 GB (1×16 GB) EXPO",
+    "mpn": "KF560C30BBE-16",
+    "sources": {
+      "datasheet": {
+        "url": "https://storage.mtender.gov.md/get/c173dd78-add0-4baf-8116-a69a7ca01bb3-1742847804825",
+        "retrieved": "2026-11-19",
+        "title": "Kingston veri sayfası KF560C30BBE-16, belge no. 4811291A (kingston.com'a erişilemedi; belgenin kamu ihale portalındaki kopyası)"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR5",
+        "source": "datasheet"
+      },
+      "capacityGb": {
+        "value": 16,
+        "source": "datasheet",
+        "note": "\"2G x 64-bit (16GB) DDR5-6000 CL30\""
+      },
+      "modules": {
+        "value": 1,
+        "source": "datasheet",
+        "note": "Tek modül"
+      },
+      "speedMts": {
+        "value": 6000,
+        "source": "datasheet",
+        "note": "XMP/EXPO profiliyle test edilen hız: \"EXPO Profile #0: DDR5-6000 CL30-36-36 @1.4V\""
+      },
+      "casLatency": {
+        "value": 30,
+        "source": "datasheet"
+      },
+      "heightMm": {
+        "value": 34.9,
+        "source": "datasheet",
+        "note": "Veri sayfası: \"Height 1.37” (34.9mm), w/heatsink\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "memory-teamgroup-t-force-vulcan-ddr5-5600-cl40-16-gb-2-8-gb",
+    "category": "memory",
+    "brand": "TeamGroup",
+    "model": "T-Force Vulcan DDR5-5600 CL40 16 GB (2×8 GB)",
+    "mpn": "FLBD516G5600HC40BDC01",
+    "sources": {
+      "datasheet": {
+        "url": "https://cdn.iceshop.nl/objects/mmo_118060341_1710396970_3457_29124.pdf",
+        "retrieved": "2026-11-19",
+        "title": "TeamGroup VULCAN DDR5 ürün föyü (PDF; üretici belgesinin Icecat sunucusundaki kopyası)"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR5",
+        "source": "datasheet",
+        "note": "\"DDR5 288 Pin Non-ECC Unbuffered DIMM\""
+      },
+      "capacityGb": {
+        "value": 16,
+        "source": "datasheet",
+        "note": "Föydeki satır: \"CL40-40-40-84 1.2V 2x8GB ... FLBD516G5600HC40BDC01\""
+      },
+      "modules": {
+        "value": 2,
+        "source": "datasheet"
+      },
+      "speedMts": {
+        "value": 5600,
+        "source": "datasheet",
+        "note": "XMP/EXPO profiliyle test edilen hız (DDR5-5600, PC5-44800)"
+      },
+      "casLatency": {
+        "value": 40,
+        "source": "datasheet"
+      },
+      "heightMm": {
+        "value": 32.7,
+        "source": "datasheet",
+        "note": "\"Dimensions 32.7(H) x 140(L) x 7.5(W)mm\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "memory-corsair-vengeance-lpx-ddr4-3200-cl16-16-gb-2-8-gb",
+    "category": "memory",
+    "brand": "Corsair",
+    "model": "Vengeance LPX DDR4-3200 CL16 16 GB (2×8 GB)",
+    "mpn": "CMK16GX4M2E3200C16",
+    "sources": {
+      "maker": {
+        "url": "https://www.corsair.com/us/en/p/memory/cmk16gx4m2e3200c16/vengeancea-lpx-16gb-2-x-8gb-ddr4-dram-3200mhz-c16-memory-kit-black-cmk16gx4m2e3200c16",
+        "retrieved": "2026-11-19",
+        "title": "Corsair ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "capacityGb": {
+        "value": 16,
+        "source": "maker",
+        "note": "\"16GB (2 x 8GB)\""
+      },
+      "modules": {
+        "value": 2,
+        "source": "maker"
+      },
+      "speedMts": {
+        "value": 3200,
+        "source": "maker",
+        "note": "XMP/EXPO profiliyle test edilen hız"
+      },
+      "casLatency": {
+        "value": 16,
+        "source": "maker",
+        "note": "\"Tested Latency 16-20-20-38\""
+      },
+      "heightMm": {
+        "value": null,
+        "note": "Corsair ürün sayfasında modül yüksekliği yazmıyor."
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
   }
 ]

@@ -903,5 +903,295 @@
     },
     "addedAt": "2026-11-17",
     "updatedAt": "2026-11-17"
+  },
+  {
+    "id": "cpu-amd-ryzen-5-8400f",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 5 8400F",
+    "mpn": "100-100001591BOX",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-8000-series/amd-ryzen-5-8400f.html",
+        "retrieved": "2026-11-19",
+        "title": "AMD ürün sayfası (Specifications)"
+      },
+      "maker_ja": {
+        "url": "https://www.amd.com/ja/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8400f.html",
+        "retrieved": "2026-11-19",
+        "title": "AMD ürün sayfası, Japonca (仕様)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 6,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 12,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 4.2,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 4.7,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": false,
+        "source": "maker_ja",
+        "note": "AMD'nin İngilizce sayfasında grafik modeli boş; Japonca sayfada \"ディスクリート グラフィックス カードが必要\" (ayrı ekran kartı gerekir) yazıyor"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "cpu-amd-ryzen-5-7500f",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 5 7500F",
+    "mpn": "100-100000597BOX",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7500f.html",
+        "retrieved": "2026-11-19",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 6,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 12,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.7,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 5.0,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": false,
+        "source": "maker",
+        "note": "AMD sayfasında \"Discrete Graphics Card Required\" yazıyor"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "cpu-amd-ryzen-5-5500",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 5 5500",
+    "mpn": "100-100000457BOX",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-5-5500.html",
+        "retrieved": "2026-11-19",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM4",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 6,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 12,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.6,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 4.2,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": false,
+        "source": "maker",
+        "note": "AMD sayfasında \"Discrete Graphics Card Required\" yazıyor"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR4"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "cpu-amd-ryzen-7-5700x",
+    "category": "cpu",
+    "brand": "AMD",
+    "model": "Ryzen 7 5700X",
+    "mpn": "100-100000926WOF",
+    "sources": {
+      "maker": {
+        "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-7-5700x.html",
+        "retrieved": "2026-11-19",
+        "title": "AMD ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM4",
+        "source": "maker"
+      },
+      "cores": {
+        "value": 8,
+        "source": "maker"
+      },
+      "threads": {
+        "value": 16,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.4,
+        "source": "maker"
+      },
+      "boostClockGhz": {
+        "value": 4.6,
+        "source": "maker"
+      },
+      "tdpW": {
+        "value": 65,
+        "source": "maker",
+        "note": "AMD \"Default TDP\""
+      },
+      "integratedGraphics": {
+        "value": false,
+        "source": "maker",
+        "note": "AMD sayfasında \"Discrete Graphics Card Required\" yazıyor"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR4"
+        ],
+        "source": "maker"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "cpu-intel-core-ultra-7-270k-plus",
+    "category": "cpu",
+    "brand": "Intel",
+    "model": "Core Ultra 7 270K Plus",
+    "mpn": "BX80768270K",
+    "sources": {
+      "maker": {
+        "url": "https://www.intel.com/content/www/us/en/products/sku/245692/specifications.html",
+        "retrieved": "2026-11-19",
+        "title": "Intel ürün sayfası (Specifications)"
+      },
+      "ordering": {
+        "url": "https://www.intel.de/content/www/de/de/products/sku/245692/intel-core-ultra-7-processor-270k-plus-36m-cache-up-to-5-50-ghz/ordering.html",
+        "retrieved": "2026-11-19",
+        "title": "Intel ürün sayfası (Ordering and Compliance, Almanca)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1851",
+        "source": "maker",
+        "note": "Intel sayfasında FCLGA1851"
+      },
+      "cores": {
+        "value": 24,
+        "source": "maker",
+        "note": "8 performans + 16 verimlilik çekirdeği"
+      },
+      "threads": {
+        "value": 24,
+        "source": "maker"
+      },
+      "baseClockGhz": {
+        "value": 3.7,
+        "source": "maker",
+        "note": "Performans çekirdeği (P-core) temel frekansı; verimlilik çekirdeği 3,2 GHz"
+      },
+      "boostClockGhz": {
+        "value": 5.5,
+        "source": "maker",
+        "note": "Max Turbo Frequency"
+      },
+      "tdpW": {
+        "value": 125,
+        "source": "maker",
+        "note": "Intel \"Processor Base Power\""
+      },
+      "maxTurboPowerW": {
+        "value": 250,
+        "source": "maker",
+        "note": "Intel \"Maximum Turbo Power\""
+      },
+      "integratedGraphics": {
+        "value": true,
+        "source": "maker",
+        "note": "Intel® Graphics"
+      },
+      "memoryTypes": {
+        "value": [
+          "DDR5"
+        ],
+        "source": "maker",
+        "note": "\"Up To DDR5 7200 MT/s\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
   }
 ]

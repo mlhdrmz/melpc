@@ -20,7 +20,7 @@ Kapsam: Bilgisayarım'daki laptop görselini normal bir laptop gibi göstermek v
 ### Sohbette (araştırma ve tasarım)
 
 1. Laptop görselinin taslağı: dış ve iç görünüm. ✓ Melih 19.11.2026'da onayladı; ölçüler `design/laptop-olculeri.md`'de, görseller ve taslak kodu `design/laptop-*` dosyalarında.
-2. Aday parça listesi (`docs/katalog-aday-listesi-2.md`, 46 parça). ✓ Melih 19.11.2026'da onayladı; parçalar kataloğa ekleniyor.
+2. Aday parça listesi (`docs/katalog-aday-listesi-2.md`, 46 parça). ✓ Melih 19.11.2026'da onayladı. 43 parça kataloğa eklendi (115 → 158); 3 bellek kiti için üreticinin kaynağı bulunamadı. Ayrıntı listenin "Sonuç" bölümünde.
 
 ### Code'da (kodlama)
 
@@ -35,6 +35,7 @@ Kapsam: Bilgisayarım'daki laptop görselini normal bir laptop gibi göstermek v
 
 - Oyun puanı: kullanım şartları izin veren bir kaynak bulununca.
 - Kategorileri genişletme: daha çok model ve alt segment.
+- Bu aşamada kataloğa eklenemeyen 3 bellek kiti, ayrıca yeni işlemcilerin ve RTX 3060 / RTX 3050'nin Blender ölçümleri (bkz. `docs/katalog-aday-listesi-2.md`, "Sonuç").
 - Tasarım değişiklikleri: Melih'in istekleri gelecek.
 - Laptop ve monitörler; çevre birimleri; "bilgisayar nasıl toplanır" rehberi; kurulum dosyası.
 - Önceki aşamalardan açık kalanlar: Vatan Bilgisayar'ın hız sınırı, masaüstü bilgisayar okuma, hazır sistem karşılaştırmasının kısmi kalması (bkz. `docs/asama-3-plan.md`, `docs/asama-4-plan.md`, `docs/asama-5-plan.md`).

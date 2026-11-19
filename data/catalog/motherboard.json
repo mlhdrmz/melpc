@@ -940,5 +940,430 @@
     },
     "addedAt": "2026-11-18",
     "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "motherboard-asus-prime-b850m-k",
+    "category": "motherboard",
+    "brand": "ASUS",
+    "model": "Prime B850M-K",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/motherboards/prime/prime-b850m-k/techspec/",
+        "retrieved": "2026-11-19",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker",
+        "note": "\"AMD Socket AM5 for AMD Ryzen™ 9000 & 8000 & 7000 Series Desktop Processors\""
+      },
+      "chipset": {
+        "value": "B850",
+        "source": "maker",
+        "note": "\"AMD B850 Chipset\""
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker",
+        "note": "\"micro-ATX Form Factor\", 24,4 × 22,1 cm"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 2,
+        "source": "maker",
+        "note": "\"2 x DIMM slots, max. 128GB, DDR5\""
+      },
+      "maxMemoryGb": {
+        "value": 128,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "M.2_1 (Ryzen 9000/7000 ile PCIe 5.0 x4) ve M.2_2 (PCIe 4.0 x4)"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker",
+        "note": "\"4 x SATA 6Gb/s ports\""
+      },
+      "pcieX16Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "Fiziksel x16 yuva sayısı: işlemciye bağlı 1 × PCIe 5.0 x16 (Ryzen 9000/7000 ile x16; Ryzen 8000 ile PCIe 4.0 x8/x4) ve yonga setine bağlı 1 × PCIe 4.0 x16 (\"support x4 mode\")."
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "motherboard-msi-a520m-a-pro",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "A520M-A Pro",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/A520M-A-PRO/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM4",
+        "source": "maker",
+        "note": "\"AMD Socket AM4\""
+      },
+      "chipset": {
+        "value": "A520",
+        "source": "maker",
+        "note": "\"AMD® A520 Chipset\""
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker",
+        "note": "\"Micro-ATX Form Factor\", 23,6 × 20 cm"
+      },
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 2,
+        "source": "maker",
+        "note": "\"2x DDR4 memory slots, support up to 64GB\""
+      },
+      "maxMemoryGb": {
+        "value": 64,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "\"1x M.2 slot (Key M) (from AMD Processor)\", PCIe 3.0 x4 ve SATA"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker",
+        "note": "\"4x SATA 6Gb/s ports\""
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "\"1x PCIe 3.0 x16 slot (from AMD processor)\"; ayrıca 1 × PCIe 3.0 x1"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "motherboard-msi-b650m-gaming-plus-wifi",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "B650M Gaming Plus WiFi",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/B650M-GAMING-PLUS-WIFI/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      },
+      "datasheet": {
+        "url": "https://storage-asset.msi.com/datasheet/mb/mx/B650M-GAMING-PLUS-WIFI.pdf",
+        "retrieved": "2026-11-19",
+        "title": "MSI veri sayfası (PDF)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "datasheet",
+        "note": "\"CPU Socket AM5\""
+      },
+      "chipset": {
+        "value": "B650",
+        "source": "maker",
+        "note": "\"AMD B650\""
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker",
+        "note": "\"mATX\", 243,84 × 243,84 mm"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 4,
+        "source": "maker",
+        "note": "\"4x DDR5 UDIMM, Maximum Memory Capacity 256GB\""
+      },
+      "maxMemoryGb": {
+        "value": 256,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "M.2_1 ve M.2_2, ikisi de işlemciden \"up to PCIe 4.0 x4\""
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker",
+        "note": "\"4x SATA 6G\""
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "datasheet",
+        "note": "\"1x PCIe 4.0 x16 slot, 2x PCIe 3.0 x1 slots\"; Ryzen 9000/7000 ile x16, Ryzen 8700/8600/8400 ile x8 çalışır"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "motherboard-gigabyte-b650m-s2h-rev-1-2",
+    "category": "motherboard",
+    "brand": "Gigabyte",
+    "model": "B650M S2H (rev. 1.2)",
+    "sources": {
+      "maker": {
+        "url": "https://www.gigabyte.com/Motherboard/B650M-S2H-rev-12/sp",
+        "retrieved": "2026-11-19",
+        "title": "Gigabyte ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM5",
+        "source": "maker",
+        "note": "\"AMD Socket AM5\""
+      },
+      "chipset": {
+        "value": "B650",
+        "source": "maker",
+        "note": "\"AMD B650\""
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker",
+        "note": "\"Micro ATX Form Factor; 23.0cm x 22.5cm\""
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 2,
+        "source": "maker",
+        "note": "\"2 x DDR5 DIMM sockets supporting up to 128 GB (64 GB single DIMM capacity)\""
+      },
+      "maxMemoryGb": {
+        "value": 128,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "\"1 x M.2 connector (M2A_CPU), integrated in the CPU\""
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker",
+        "note": "\"4 x SATA 6Gb/s connectors\""
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "\"1 x PCI Express x16 slot (PCIEX16), integrated in the CPU\": Ryzen 9000/7000 ile PCIe 4.0 x16, Ryzen 8000 ile x8 ya da x4; ayrıca 1 × PCIe 3.0 x1"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "motherboard-asus-prime-a520m-r",
+    "category": "motherboard",
+    "brand": "ASUS",
+    "model": "Prime A520M-R",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/motherboards/prime/prime-a520m-r/techspec/",
+        "retrieved": "2026-11-19",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "AM4",
+        "source": "maker",
+        "note": "\"AMD Socket AM4\""
+      },
+      "chipset": {
+        "value": "A520",
+        "source": "maker",
+        "note": "\"AMD A520 Chipset\""
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker",
+        "note": "\"micro-ATX Form Factor\", 23,6 × 19,3 cm"
+      },
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 2,
+        "source": "maker",
+        "note": "\"2 x DIMM slots, max. 64GB, DDR4\""
+      },
+      "maxMemoryGb": {
+        "value": 64,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "\"M.2 slot (Key M), type 2242/2260/2280 (supports PCIe 3.0 x4 & SATA modes)\""
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker",
+        "note": "\"4 x SATA 6Gb/s ports\""
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "\"1 x PCIe 3.0 x16 slot (supports x16 mode)\"; ayrıca 1 × PCIe 3.0 x1"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "motherboard-asus-prime-b760m-k",
+    "category": "motherboard",
+    "brand": "ASUS",
+    "model": "Prime B760M-K",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/motherboards/prime/prime-b760m-k/techspec/",
+        "retrieved": "2026-11-19",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1700",
+        "source": "maker",
+        "note": "\"Intel® Socket LGA1700 for Intel® Core™ 14th & 13th Gen Processors\""
+      },
+      "chipset": {
+        "value": "B760",
+        "source": "maker",
+        "note": "\"Intel® B760 Chipset\""
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker",
+        "note": "\"mATX Form Factor\", 24,4 × 21,1 cm"
+      },
+      "memoryType": {
+        "value": "DDR5",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 2,
+        "source": "maker",
+        "note": "\"2 x DIMM slots, Max. 96GB, DDR5\""
+      },
+      "maxMemoryGb": {
+        "value": 96,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 2,
+        "source": "maker",
+        "note": "M.2_1 (işlemciden) ve M.2_2 (yonga setinden), ikisi de PCIe 4.0 x4"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker",
+        "note": "\"4 x SATA 6Gb/s ports\""
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "\"1 x PCIe 4.0 x16 slot\"; ayrıca 2 × PCIe 4.0 x1"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "motherboard-msi-pro-h610m-e-ddr4",
+    "category": "motherboard",
+    "brand": "MSI",
+    "model": "PRO H610M-E DDR4",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/Motherboard/PRO-H610M-E-DDR4/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "socket": {
+        "value": "LGA1700",
+        "source": "maker",
+        "note": "\"Processor socket LGA1700\""
+      },
+      "chipset": {
+        "value": "H610",
+        "source": "maker",
+        "note": "\"Intel® H610 Chipset\""
+      },
+      "formFactor": {
+        "value": "Micro-ATX",
+        "source": "maker",
+        "note": "Sayfada \"Mirco-ATX\" yazıyor; 23,6 × 20 cm"
+      },
+      "memoryType": {
+        "value": "DDR4",
+        "source": "maker"
+      },
+      "memorySlots": {
+        "value": 2,
+        "source": "maker",
+        "note": "\"2x DDR4 memory slots, support up to 64GB\""
+      },
+      "maxMemoryGb": {
+        "value": 64,
+        "source": "maker"
+      },
+      "m2Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "\"1x M.2 slot (Key M) (from H610 chipset)\", PCIe 3.0 x4 ve SATA"
+      },
+      "sataPorts": {
+        "value": 4,
+        "source": "maker",
+        "note": "\"4x SATA 6Gb/s ports (From H610 chipset)\""
+      },
+      "pcieX16Slots": {
+        "value": 1,
+        "source": "maker",
+        "note": "\"1x PCIe x16 slot (From CPU)\", \"Supports up to PCIe 4.0 x16\"; ayrıca 1 × PCIe 3.0 x1"
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
   }
 ]

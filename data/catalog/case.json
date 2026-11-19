@@ -748,5 +748,257 @@
     },
     "addedAt": "2026-11-18",
     "updatedAt": "2026-11-18"
+  },
+  {
+    "id": "case-msi-mag-forge-100m",
+    "category": "case",
+    "brand": "MSI",
+    "model": "MAG Forge 100M",
+    "sources": {
+      "maker": {
+        "url": "https://www.msi.com/PC-Case/MAG-FORGE-100M/Specification",
+        "retrieved": "2026-11-19",
+        "title": "MSI ürün sayfası (Specification)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"ATX / Micro-ATX / Mini-ITX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 330,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 160,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "front",
+            "sizesMm": [
+              120,
+              140,
+              240
+            ]
+          },
+          {
+            "position": "top",
+            "sizesMm": [
+              120,
+              240
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120
+            ]
+          }
+        ],
+        "source": "maker",
+        "note": "Ön: \"120 / 140 / 240 mm\"; üst: \"120 / 240 mm\"; arka: \"120 mm\"."
+      },
+      "maxPsuLengthMm": {
+        "value": 200,
+        "source": "maker",
+        "note": "\"Maximum PSU Length 200 mm\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "case-lian-li-o11-vision-compact",
+    "category": "case",
+    "brand": "Lian Li",
+    "model": "O11 Vision Compact",
+    "mpn": "O11VPX",
+    "sources": {
+      "maker": {
+        "url": "https://lian-li.com/product/o11-vision-compact/",
+        "retrieved": "2026-11-19",
+        "title": "Lian Li ürün sayfası (Specifications)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "E-ATX",
+          "ATX",
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Back-Connect ATX/ E-ATX (Under 280mm) / ATX / Micro-ATX / Mini-ITX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 408,
+        "source": "maker",
+        "note": "\"408mm (Max.)\""
+      },
+      "maxCoolerHeightMm": {
+        "value": 167,
+        "source": "maker",
+        "note": "\"167mm (Max.)\""
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "side",
+            "sizesMm": [
+              240,
+              360
+            ]
+          },
+          {
+            "position": "bottom",
+            "sizesMm": [
+              240,
+              360
+            ]
+          }
+        ],
+        "source": "maker",
+        "note": "Üst: \"240mm x 1 or 280mm x 1 or 360mm x 1\"; yan: \"240mm x 1 or 360mm x 1\"; alt: \"240mm x 1 or 360mm x 1\"."
+      },
+      "maxPsuLengthMm": {
+        "value": 220,
+        "source": "maker",
+        "note": "\"ATX (Under 220mm)\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "case-nzxt-h3-flow",
+    "category": "case",
+    "brand": "NZXT",
+    "model": "H3 Flow",
+    "mpn": "CC-H31FB-01",
+    "sources": {
+      "maker": {
+        "url": "https://support.nzxt.com/hc/en-us/articles/40302055730715",
+        "retrieved": "2026-11-19",
+        "title": "NZXT destek sayfası (H3 Flow teknik özellikler)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Micro-ATX\", \"Mini-ITX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 377,
+        "source": "maker",
+        "note": "\"Up to 377 mm (without front fans)\"; önde fan varken 352 mm, ön radyatör ve fanlarla 317 mm. Kasa yalnızca arka fanla geliyor."
+      },
+      "maxCoolerHeightMm": {
+        "value": 170,
+        "source": "maker",
+        "note": "\"Up to 170 mm\""
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "front",
+            "maxMm": 280
+          },
+          {
+            "position": "top",
+            "maxMm": 240
+          }
+        ],
+        "source": "maker",
+        "note": "Ön: \"Up to 240 mm (120 mm base)\", \"Up to 280 mm (140 mm base)\"; üst: \"Up to 240 mm (120 mm base)\"."
+      },
+      "maxPsuLengthMm": {
+        "value": 185,
+        "source": "maker",
+        "note": "\"Up to 185 mm\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
+  },
+  {
+    "id": "case-asus-prime-ap201",
+    "category": "case",
+    "brand": "ASUS",
+    "model": "Prime AP201",
+    "sources": {
+      "maker": {
+        "url": "https://www.asus.com/motherboards-components/cases/prime/asus-prime-ap201-microatx-case/techspec/",
+        "retrieved": "2026-11-19",
+        "title": "ASUS ürün sayfası (Tech Specs)"
+      }
+    },
+    "specs": {
+      "motherboardSupport": {
+        "value": [
+          "Micro-ATX",
+          "Mini-ITX"
+        ],
+        "source": "maker",
+        "note": "\"Motherboard Support\": \"Mini-ITX\", \"Micro-ATX\""
+      },
+      "maxGpuLengthMm": {
+        "value": 338,
+        "source": "maker"
+      },
+      "maxCoolerHeightMm": {
+        "value": 170,
+        "source": "maker"
+      },
+      "radiatorMounts": {
+        "value": [
+          {
+            "position": "top",
+            "sizesMm": [
+              120,
+              140,
+              240,
+              280,
+              360
+            ]
+          },
+          {
+            "position": "rear",
+            "sizesMm": [
+              120
+            ]
+          }
+        ],
+        "source": "maker",
+        "note": "Üst: \"360 mm\", \"280 mm\", \"240 mm\", \"140 mm\", \"120 mm\"; arka: \"120 mm\"."
+      },
+      "maxPsuLengthMm": {
+        "value": 180,
+        "source": "maker",
+        "note": "\"Maximum PSU Length 140-180 mm\""
+      }
+    },
+    "addedAt": "2026-11-19",
+    "updatedAt": "2026-11-19"
   }
 ]
