@@ -18,6 +18,7 @@ Hem oyuncu hem mühendis dostu olmalı.
 - Sorulmayan hiçbir şeyi kendi inisiyatifinle değiştirme: tasarım, görsel, metin, içerik ya da çalışan kod. Emin değilsen önce sor.
 - Büyük bir geliştirme ya da yeni bir özellik işine başlamadan önce netleştirici soruları numaralı liste olarak sor. Melih onaylamadan başlama.
 - Fiyat, performans değeri ya da teknik özellik asla uydurulmaz. Bilinmeyen bir değer "bilinmiyor" ya da "güncel değil" olarak görünür.
+- **İş bölümü (6. aşamadan itibaren):** Parça ve kaynak araştırması (teknik özellikler, kaynak linkleri, satış kontrolleri) ve görsel taslaklar Claude sohbetinde yapılır. Sonuçlar (katalog kayıtları, ölçü dokümanları) depoya yazılır ve doğrudan `main`'e gönderilir. Kodlama Claude Code'da yapılır. Code araştırma gerektiren bir eksik görürse kendisi araştırmaz ve değer uydurmaz; eksiği plana not eder ve Melih'e söyler.
 
 ## Alınan kararlar
 
@@ -36,6 +37,9 @@ Hem oyuncu hem mühendis dostu olmalı.
 - **3D:** Tek bir standart kasa (genel model); bütün toplamalarda aynı temel görsel kullanılır. Parçalar gerçekte durdukları yerde, ATX ölçülerine göre yerleşir (bkz. `design/kasa-olculeri.md`). Temel görselde sıvı soğutma (işlemcide pompa, tavanda 360 mm radyatör ve 3 fan), arka fan, önde 3 fan ve mor-siyah kılıflı kablolar var. Kasa Topla ekranında seçilen parçanın yeri mor ışıkla vurgulanır. Her ürün için ayrı 3D model yapılmaz.
 - **3D görünümün yapısı:** Görünüm, ileride laptop modeli de eklenebilecek şekilde kurulur; gösterilen "gövde modeli" (masaüstü kasa, laptop) değiştirilebilir olmalı.
 - **Kurulum dosyası:** Şimdilik yok. Uygulama sık güncelleneceği için sonraya bırakıldı. Geliştirme sırasında `npm install` ve `npm start` ile çalıştırılır.
+- **Oyun puanı:** Şimdilik yok; kullanım şartları izin veren bir oyun ölçümü kaynağı bulununca eklenecek. Arayüzdeki "ölçüm kaynağı yok" notları yerinde kalır.
+- **Laptop görünümü (Bilgisayarım):** Varsayılan görünüm ekranı açık, normal bir laptop. "İçini göster" düğmesiyle ya da listede bir parçaya tıklanınca iç görünüme geçilir: klavyenin olduğu üst yüzey buzlu cam gibi saydamlaşır, iç kısım onun altından görünür, ekran yerinde kalır. Yazı ve logo yok.
+- **Katalog büyütme:** Önce popüler markaların en çok kullanılan parçaları eklenir; kategoriler sonra daha da genişletilir.
 
 ## Motorlar
 
@@ -64,8 +68,9 @@ Uygulamanın mantığı, birbiriyle birlikte çalışan motorlara ayrılır:
 3. Fiyat motoru (Türkiye mağazaları). ✓ Tamamlandı — plan ve açık kalanlar: `docs/asama-3-plan.md`
 4. Karşılaştırma ekranları, puanlama, açıklamalar ve hazır satılan kasalarla karşılaştırma. ✓ Tamamlandı — plan ve açık kalanlar: `docs/asama-4-plan.md`
 5. "Bilgisayarım": kendi bilgisayarını okuma ve yükseltme önerileri. ✓ Tamamlandı — plan ve açık kalanlar: `docs/asama-5-plan.md`
+6. Güncelleme: laptop görünümü (dış ve iç) ve kataloğa popüler parçalar. ← **şu an burada** — plan: `docs/asama-6-plan.md`
 
-Sonra: laptop ve monitörler; klavye, mouse, ek ekran ve monitör kolu gibi çevre birimleri; "bilgisayar nasıl toplanır" rehberi; kurulum dosyası.
+Sonra: oyun puanı (kaynak bulununca); kategorileri genişletme; tasarım değişiklikleri; laptop ve monitörler; klavye, mouse, ek ekran ve monitör kolu gibi çevre birimleri; "bilgisayar nasıl toplanır" rehberi; kurulum dosyası.
 
 Laptop görseli (laptoplar eklendiğinde ya da 5. aşamada): Laptoplarda toplama yok; işlemci ve ekran kartı karta lehimli, kullanıcı genelde yalnızca RAM (bazı modellerde), SSD ve bazen Wi-Fi kartını değiştirebilir. Bu yüzden görsel "içinde ne var, neyi yükseltebilirim" sorusuna cevap verir. Genel düzen: arkada iki fan ve ısı boruları, altlarında işlemci ve ekran kartı, ortada RAM ve SSD yuvaları, önde batarya. İnce laptoplar için RAM'in lehimli olduğu ikinci bir sürüm gerekebilir. Melih'in kendi bilgisayarı da bir laptop; "Bilgisayarım" ekranında yükseltme önerilerini bu görselle göstermek işe yarar.
 
@@ -78,4 +83,4 @@ Laptop görseli (laptoplar eklendiğinde ya da 5. aşamada): Laptoplarda toplama
 
 ## Henüz karar verilmeyenler (başlamadan önce Melih'e sor)
 
-- Şu an açık karar yok.
+- Laptop görselinin taslağı ve yeni parçaların aday listesi Melih'in onayını bekliyor (6. aşama). Onaylanmadan Code laptop görünümüne başlamaz.
